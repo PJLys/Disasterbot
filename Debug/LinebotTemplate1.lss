@@ -1707,18 +1707,18 @@ _delay_loop_2(uint16_t __count)
 	_delay_ms(500);
 	
 		
-	DriverLedWrite(a);
-     d9e:	80 91 0e 20 	lds	r24, 0x200E	; 0x80200e <a>
-     da2:	0e 94 dc 01 	call	0x3b8	; 0x3b8 <DriverLedWrite>
 	DriverMotorSet(4095,4095);
-     da6:	6f ef       	ldi	r22, 0xFF	; 255
-     da8:	7f e0       	ldi	r23, 0x0F	; 15
-     daa:	8f ef       	ldi	r24, 0xFF	; 255
-     dac:	9f e0       	ldi	r25, 0x0F	; 15
-     dae:	0e 94 69 02 	call	0x4d2	; 0x4d2 <DriverMotorSet>
+     d9e:	6f ef       	ldi	r22, 0xFF	; 255
+     da0:	7f e0       	ldi	r23, 0x0F	; 15
+     da2:	8f ef       	ldi	r24, 0xFF	; 255
+     da4:	9f e0       	ldi	r25, 0x0F	; 15
+     da6:	0e 94 69 02 	call	0x4d2	; 0x4d2 <DriverMotorSet>
 		
 	while(1)
 	{
+		DriverLedWrite(a);
+     daa:	80 91 0e 20 	lds	r24, 0x200E	; 0x80200e <a>
+     dae:	0e 94 dc 01 	call	0x3b8	; 0x3b8 <DriverLedWrite>
 		a = a<<1;
      db2:	80 91 0e 20 	lds	r24, 0x200E	; 0x80200e <a>
      db6:	88 0f       	add	r24, r24
@@ -1881,7 +1881,7 @@ _delay_loop_2(uint16_t __count)
 		}
 		_delay_ms(500);
 	}
-     ec2:	77 cf       	rjmp	.-274    	; 0xdb2 <main+0x12c>
+     ec2:	73 cf       	rjmp	.-282    	; 0xdaa <main+0x124>
 
 00000ec4 <__cmpsf2>:
      ec4:	0e 94 96 07 	call	0xf2c	; 0xf2c <__fp_cmp>

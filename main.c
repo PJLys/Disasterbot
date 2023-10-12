@@ -34,11 +34,11 @@ int main(void)
 	_delay_ms(500);
 	
 		
-	DriverLedWrite(a);
 	DriverMotorSet(4095,4095);
 		
 	while(1)
 	{
+		DriverLedWrite(a);
 		a = a<<1;
 		if (!(a&0x0F))
 		{
@@ -46,6 +46,10 @@ int main(void)
 			a = 0b01;
 		}
 		_delay_ms(500);
+	}
+	
+	while(1) {
+		
 	}
 
 	return 0;
