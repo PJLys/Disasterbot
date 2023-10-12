@@ -15,8 +15,6 @@
 char text[10];
 char a = 0b1;
 
-void SimpleFunction(void);	//A simple function: print a counter (0 to 9) to the terminal
-
 int main(void)
 {
 	//###1###
@@ -36,12 +34,11 @@ int main(void)
 	_delay_ms(500);
 	
 		
-		
+	DriverLedWrite(a);
 	DriverMotorSet(4095,4095);
 		
 	while(1)
 	{
-		DriverLedWrite(a);
 		a = a<<1;
 		if (!(a&0x0F))
 		{
