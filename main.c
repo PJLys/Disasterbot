@@ -28,6 +28,7 @@ int main(void)
 	DriverPowerInit();		//Initialize aux power driver
 	DriverAdcInit();		//Initialize ADC driver
 	DriverMotorInit();		//Initialize motor driver
+	DriverAdps9960Init();
 
 	DriverPowerVccAuxSet(1);//Enable Auxillary power line
 	
