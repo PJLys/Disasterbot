@@ -19,7 +19,7 @@
 #define REG_BDATA 0x9B
 
 #define REG_ID 0x92
-#define ID 0xAB
+#define ID 146
 
 void DriverAdps9960Init(void)
 {
@@ -28,7 +28,7 @@ void DriverAdps9960Init(void)
 	Buffer[0]=REG_ENABLE;
 	Buffer[1]=(1<<REG_ENABLE_PON);
 	res=TWIMWrite(ADPS9960_ADDR,Buffer,2);
-	//printf ("TwimWrite:%d\r\n",res);
+	printf ("TwimWrite:%d\r\n",res);
 	
 	Buffer[0]=REG_ID;
 	res=TWIMWriteRead(ADPS9960_ADDR,Buffer,1,Buffer,1);
