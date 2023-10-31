@@ -16,9 +16,8 @@ void DriverMotorInit(void)
 	PORTF.PIN1CTRL=0b00010000; //M1
 	PORTF.PIN0CTRL=0b00010000;
 
-	
 	//Timer init, hbridge
-	TCF0.CTRLA = 0b100;			//CA has factor /8
+	TCF0.CTRLA = 0b111;			//CA has factor /8
 	TCF0.CTRLB = 0b11110011;	//Enable CCx and use single slope pwm
 	TCF0.PER = 4095;			//value can vary from -4095 to 4095
 	
@@ -34,9 +33,6 @@ void DriverMotorInit(void)
 	PORTE.INT1MASK = 0b01000000;	//geeft interrupt wanneer E6 verandert
 	PORTE.PIN7CTRL = 0x00;			//no inv, output conf nvt,Bothedges
 	PORTE.PIN6CTRL = 0x00;			//no inv, output conf nvt,Bothedges
-	//Interrupt handling
-	PMIC.CTRL = 0b10000111;			//round robin scheduling + all interrupts enabled
-	SREG = 0b10000000;				//enable global interrupt
 }
 
 

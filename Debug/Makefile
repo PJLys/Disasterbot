@@ -44,6 +44,7 @@ C_SRCS +=  \
 ../Drivers/DriverAdps9960.c \
 ../Drivers/DriverCursorstick.c \
 ../Drivers/DriverDbgUSART.c \
+../Drivers/DriverInterrupt.c \
 ../Drivers/DriverLed.c \
 ../Drivers/DriverMotor.c \
 ../Drivers/DriverMPU6050.c \
@@ -68,6 +69,7 @@ Drivers/DriverAdc.o \
 Drivers/DriverAdps9960.o \
 Drivers/DriverCursorstick.o \
 Drivers/DriverDbgUSART.o \
+Drivers/DriverInterrupt.o \
 Drivers/DriverLed.o \
 Drivers/DriverMotor.o \
 DriverMPU6050.o \
@@ -84,6 +86,7 @@ Drivers/DriverAdc.o \
 Drivers/DriverAdps9960.o \
 Drivers/DriverCursorstick.o \
 Drivers/DriverDbgUSART.o \
+Drivers/DriverInterrupt.o \
 Drivers/DriverLed.o \
 Drivers/DriverMotor.o \
 DriverMPU6050.o \
@@ -100,6 +103,7 @@ Drivers/DriverAdc.d \
 Drivers/DriverAdps9960.d \
 Drivers/DriverCursorstick.d \
 Drivers/DriverDbgUSART.d \
+Drivers/DriverInterrupt.d \
 Drivers/DriverLed.d \
 Drivers/DriverMotor.d \
 DriverMPU6050.d \
@@ -116,6 +120,7 @@ Drivers/DriverAdc.d \
 Drivers/DriverAdps9960.d \
 Drivers/DriverCursorstick.d \
 Drivers/DriverDbgUSART.d \
+Drivers/DriverInterrupt.d \
 Drivers/DriverLed.d \
 Drivers/DriverMotor.d \
 DriverMPU6050.d \
@@ -162,6 +167,13 @@ Drivers/DriverCursorstick.o: ../Drivers/DriverCursorstick.c
 	
 
 Drivers/DriverDbgUSART.o: ../Drivers/DriverDbgUSART.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAC_DFP\1.1.50\include" -I".." -I"../Drivers" -I"../FreeRTOS" -I"../Tasks"  -O0 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -mmcu=atxmega384c3 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAC_DFP\1.1.50\gcc\dev\atxmega384c3" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Drivers/DriverInterrupt.o: ../Drivers/DriverInterrupt.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAC_DFP\1.1.50\include" -I".." -I"../Drivers" -I"../FreeRTOS" -I"../Tasks"  -O0 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -mmcu=atxmega384c3 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAC_DFP\1.1.50\gcc\dev\atxmega384c3" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

@@ -19,7 +19,7 @@
 #define REG_BDATA 0x9B
 
 #define REG_ID 0x92
-#define ID 146
+#define ID 146 //Enigste dat ik heb moeten aanpassen, anders ID readback fail
 
 void DriverAdps9960Init(void)
 {

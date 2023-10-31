@@ -12,8 +12,6 @@ Drivers\DriverCursorstick.c
 
 Drivers\DriverDbgUSART.c
 
-Drivers\DriverInterrupt.c
-
 Drivers\DriverLed.c
 
 Drivers\DriverMotor.c

@@ -13,7 +13,7 @@
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
     <AssemblyName>LinebotOef1</AssemblyName>
-    <Name>LinebotTemplate1</Name>
+    <Name>LinebotIoT</Name>
     <RootNamespace>LinebotOef1</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
@@ -223,6 +223,12 @@
     <Compile Include="Drivers\DriverDbgUSART.h">
       <SubType>compile</SubType>
       <Link>Drivers\DriverDbgUSART.h</Link>
+    </Compile>
+    <Compile Include="Drivers\DriverInterrupt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Drivers\DriverInterrupt.h">
+      <SubType>compile</SubType>
     </Compile>
     <Compile Include="Drivers\DriverLed.c">
       <SubType>compile</SubType>
