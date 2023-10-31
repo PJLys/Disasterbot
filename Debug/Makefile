@@ -33,9 +33,7 @@ LINKER_SCRIPT_DEP:=
 
 # Every subdirectory with source files must be described here
 SUBDIRS :=  \
-../Drivers/ \
-../FreeRTOS \
-../Tasks
+../Drivers/
 
 
 # Add inputs and outputs from these tool invocations to the build variables 

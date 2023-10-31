@@ -12,11 +12,7 @@ Drivers/Driverpl9823Bitbang.d Drivers/Driverpl9823Bitbang.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\xmega.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- ../Drivers/Driverpl9823.h ../FreeRTOS/FreeRTOS.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- ../FreeRTOSConfig.h ../FreeRTOS/projdefs.h ../FreeRTOS/portable.h \
- ../FreeRTOS/deprecated_definitions.h ../FreeRTOS/portmacro.h \
- ../FreeRTOS/mpu_wrappers.h ../FreeRTOS/task.h ../FreeRTOS/list.h
+ ../Drivers/Driverpl9823.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -43,23 +39,3 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
 ../Drivers/Driverpl9823.h:
-
-../FreeRTOS/FreeRTOS.h:
-
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
-
-../FreeRTOSConfig.h:
-
-../FreeRTOS/projdefs.h:
-
-../FreeRTOS/portable.h:
-
-../FreeRTOS/deprecated_definitions.h:
-
-../FreeRTOS/portmacro.h:
-
-../FreeRTOS/mpu_wrappers.h:
-
-../FreeRTOS/task.h:
-
-../FreeRTOS/list.h:

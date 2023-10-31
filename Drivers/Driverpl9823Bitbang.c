@@ -1,7 +1,5 @@
 #include <avr/io.h>
 #include "Driverpl9823.h"
-#include <FreeRTOS.h>
-#include <task.h>
 
 void DriverPL9823BitbangSet(uint32_t FrontLeft,uint32_t FrontRight,uint32_t RearRight,uint32_t RearLeft);
 

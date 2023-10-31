@@ -11,3 +11,7 @@
 /* Set the right bits to enable interrupts.                                                                     */
 /************************************************************************/
 void InitInterrupts(void);
+
+
+extern void PORTF_INT0_vect_ISR(void);
+
