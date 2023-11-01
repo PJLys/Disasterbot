@@ -10,7 +10,6 @@
 #include "DriverMotor.h"
 #include "DriverAdps9960.h"
 #include "DriverInterrupt.h"
-#include "Driverpl9823.h"
 
 #include <util/delay.h>
 #include <avr/sleep.h>
@@ -35,12 +34,10 @@ int main(void)
 	DriverMotorInit();						//Initialize motor driver
 	InitInterrupts();						//Global interrupts and GPIO wake up
 	DriverPowerVccAuxSet(1);				//Enable Auxillary power line
+	_delay_ms(1);
 	DriverAdps9960Init();					//Photo sensor
-	DriverPL9823Init();
 
-	_delay_ms(500);
 	
-	DriverPL9823Set(PL9823_BLANK,PL9823_BLANK,PL9823_BLANK,PL9823_BLANK);
 	//Enable sleep
 	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 	sleep_enable();
@@ -48,20 +45,18 @@ int main(void)
 	//DriverMotorSet(1500,1500);
 	
 	uint16_t clear, red, green, blue;
-	uint16_t *cptr = &clear;
-	uint16_t *rptr = &red;
-	uint16_t *gptr = &green;
-	uint16_t *bptr = &blue;
 	
 	DriverLedWrite(a); // White LEDs --> ON
 	a=1;
-	while(1) {
+	while(1)
+	{
 		a = a<<1;
-		if (!(a&0x0F)) {
+		if (!(a&0x0F))
+		{
 			DriverMotorSet(0,0);
 			a = 0b01;
 		}
-		DriverAdps9960Get(cptr, rptr, gptr, bptr);
+		DriverAdps9960Get(&clear, &red, &green, &blue);
 		_delay_ms(1000);
 		printf ("C:%d\t R:%d\t G:%d\t B:%d\t\n\r", clear, red, green, blue);
 	}

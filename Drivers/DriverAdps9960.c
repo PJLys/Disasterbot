@@ -19,7 +19,7 @@
 #define REG_BDATA 0x9B
 
 #define REG_ID 0x92
-#define ID 146 //Enigste dat ik heb moeten aanpassen, anders ID readback fail
+#define ID 0xAB 
 
 void DriverAdps9960Init(void)
 {
@@ -28,10 +28,9 @@ void DriverAdps9960Init(void)
 	Buffer[0]=REG_ENABLE;
 	Buffer[1]=(1<<REG_ENABLE_PON);
 	res=TWIMWrite(ADPS9960_ADDR,Buffer,2);
-	printf ("TwimWrite:%d\r\n",res);
 	
 	Buffer[0]=REG_ID;
-	res=TWIMWriteRead(ADPS9960_ADDR,Buffer,1,Buffer,1);
+	TWIMWriteRead(ADPS9960_ADDR,Buffer,1,Buffer,1);
 	if (Buffer[0]!=ID)
 		printf ("ADPS9960 ID readback fail: %d read\r\n",Buffer[0]);
 

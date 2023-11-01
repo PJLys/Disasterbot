@@ -2,11 +2,12 @@
 #include <avr/interrupt.h>
 #include "DriverTWIMaster.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 
 #define false 0
 #define true 1
 
+#define DRIVERTWIMASTER_DEBUG 1
 /* Transaction status defines. */
 #define TWIM_STATUS_READY              0
 #define TWIM_STATUS_BUSY               1
@@ -104,9 +105,17 @@ uint8_t TWIMWriteRead(uint8_t address, uint8_t *writeData, uint8_t bytesToWrite,
 			uint8_t readAddress = Twim_address | 0x01;
 			TWIM_BUS.MASTER.ADDR = readAddress;
 		}
-		while (Twim_status != TWIM_STATUS_READY) //Block until RX complete
-		
-		return true;
+		while (Twim_status != TWIM_STATUS_READY); //Block until RX complete
+		if (Twim_result==TWIM_RESULT_OK)
+			return true;
+		else
+			{
+			#ifdef DRIVERTWIMASTER_DEBUG
+				printf ("TWIM_RESULT:%d\r\n",Twim_result);
+			#endif
+			return false;	
+			}
+			
 	} 
 	else 
 	{
