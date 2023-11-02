@@ -19,7 +19,7 @@
 #define REG_BDATA 0x9B
 
 #define REG_ID 0x92
-#define ID 0xAB 
+#define ID 0xAB
 
 void DriverAdps9960Init(void)
 {

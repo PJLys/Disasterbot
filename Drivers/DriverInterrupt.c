@@ -10,7 +10,10 @@
  *  Author: pjlys
  */ 
 
-void InitInterrupts(void) {
+void InitInterrupts() {
+	//Enable sleep
+	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+	sleep_enable();
 	// Wake up
 	PORTF.INTCTRL = 0b0011;			//High level interrupts on INT0
 	PORTF.INT0MASK = 0b10000000;	//Set interrupt on SWC (pin7)
@@ -22,14 +25,22 @@ void InitInterrupts(void) {
 	// Start timer
 	TCC0.CTRLA = 0b0111;		//Prescaler = 1024 --> f = fclk /1024 = 31.25 KHz
 	TCC0.CTRLB = 0;				//Normal mode
-	TCC0.PER = 31250;			//Trigger timer every 1s
+	TCC0.PER = 60000;			//Trigger timer every 1s
 	TCC0.INTCTRLA = 0b0010;		//Timer error interrupt level = high; Timer overflow interrupt level = medium
 }
 
+bool getSleepFlag(void) {
+	return timerExpired;
+}
+
+void clearSleepFlag(void) {
+	timerExpired = false;
+}
+
 ISR(PORTF_INT0_vect){
-	// Wake up
+	printf("Woken up");
 }
 
 ISR(TCC0_OVF_vect) {
-	// Go to sleep
+	timerExpired = true;
 }

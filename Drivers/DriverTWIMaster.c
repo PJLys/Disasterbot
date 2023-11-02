@@ -111,7 +111,7 @@ uint8_t TWIMWriteRead(uint8_t address, uint8_t *writeData, uint8_t bytesToWrite,
 		else
 			{
 			#ifdef DRIVERTWIMASTER_DEBUG
-				printf ("TWIM_RESULT:%d\r\n",Twim_result);
+				//printf ("TWIM_RESULT:%d\r\n",Twim_result);
 			#endif
 			return false;	
 			}
