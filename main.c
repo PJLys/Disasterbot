@@ -33,11 +33,11 @@ int main(void)
 	DriverAdcInit();						//Initialize ADC driver
 	DriverMotorInit();						//Initialize motor driver
 	InitInterrupts();						//Global interrupts and GPIO wake up
+	DriverPL9823Init();
 	DriverPowerVccAuxSet(1);				//Enable Auxillary power line
 	_delay_ms(1);
 	DriverAdps9960Init();					//Photo sensor
 
-	
 	//Enable sleep
 	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 	sleep_enable();

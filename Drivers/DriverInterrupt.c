@@ -20,8 +20,10 @@ void InitInterrupts(void) {
 	SREG = 0b10000000;				//enable global interrupt
 	
 	// Start timer
-	TCC0.CTRLA = 0b0111;	//Prescaler = 1024 --> f = fclk /1024 = 
+	TCC0.CTRLA = 0b0111;	//Prescaler = 1024 --> f = fclk /1024 = 31.25 KHz
 	TCC0.CTRLB = 0;			//Normal mode
+	TCC0.PER = 31250;		//Trigger timer every 1s
+	TCC0.INTCTRLA = 0b0;
 }
 
 ISR(PORTF_INT0_vect){

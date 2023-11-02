@@ -1,4 +1,6 @@
 #include <avr/io.h>
+#include <util/delay.h>
+
 #include "Driverpl9823.h"
 
 void DriverPL9823BitbangSet(uint32_t FrontLeft,uint32_t FrontRight,uint32_t RearRight,uint32_t RearLeft);
@@ -11,6 +13,8 @@ void DriverPL9823Init()
 	//Data init
 	PORTD.DIRSET=1<<3;
 	PORTD.OUTSET=1<<3;
+	
+	DriverPL9823Set(PL9823_BLANK, PL9823_BLANK, PL9823_BLANK, PL9823_BLANK);
 }
 
 void DriverPL9823Set(uint32_t FrontLeft,uint32_t FrontRight,uint32_t RearRight,uint32_t RearLeft)

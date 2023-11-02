@@ -69,14 +69,7 @@ Discarded input sections
 
  .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAC_DFP/1.1.50/gcc/dev/atxmega384c3/avrxmega6/crtatxmega384c3.o
  .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAC_DFP/1.1.50/gcc/dev/atxmega384c3/avrxmega6/crtatxmega384c3.o
- .text          0x00000000       0x92 Drivers/Drivepl9823Bitbang.o
  .data          0x00000000        0x0 Drivers/Drivepl9823Bitbang.o
- .bss           0x00000000        0xc Drivers/Drivepl9823Bitbang.o
- .debug_line    0x00000000      0x1d9 Drivers/Drivepl9823Bitbang.o
- .debug_info    0x00000000       0x75 Drivers/Drivepl9823Bitbang.o
- .debug_abbrev  0x00000000       0x14 Drivers/Drivepl9823Bitbang.o
- .debug_aranges
-                0x00000000       0x20 Drivers/Drivepl9823Bitbang.o
  .text          0x00000000        0x0 Drivers/DriverAdc.o
  .data          0x00000000        0x0 Drivers/DriverAdc.o
  .bss           0x00000000        0x0 Drivers/DriverAdc.o
@@ -238,20 +231,6 @@ Discarded input sections
  .text          0x00000000        0x0 Drivers/Driverpl9823Bitbang.o
  .data          0x00000000        0x0 Drivers/Driverpl9823Bitbang.o
  .bss           0x00000000        0x0 Drivers/Driverpl9823Bitbang.o
- .text.DriverPL9823Init
-                0x00000000       0x38 Drivers/Driverpl9823Bitbang.o
- .text.DriverPL9823Set
-                0x00000000       0x98 Drivers/Driverpl9823Bitbang.o
- .debug_info    0x00000000      0x274 Drivers/Driverpl9823Bitbang.o
- .debug_abbrev  0x00000000       0xb7 Drivers/Driverpl9823Bitbang.o
- .debug_loc     0x00000000       0xea Drivers/Driverpl9823Bitbang.o
- .debug_aranges
-                0x00000000       0x28 Drivers/Driverpl9823Bitbang.o
- .debug_ranges  0x00000000       0x18 Drivers/Driverpl9823Bitbang.o
- .debug_line    0x00000000      0x154 Drivers/Driverpl9823Bitbang.o
- .debug_str     0x00000000      0x2b5 Drivers/Driverpl9823Bitbang.o
- .comment       0x00000000       0x31 Drivers/Driverpl9823Bitbang.o
- .debug_frame   0x00000000       0x7c Drivers/Driverpl9823Bitbang.o
  .text          0x00000000        0x0 Drivers/DriverSysClk.o
  .data          0x00000000        0x0 Drivers/DriverSysClk.o
  .bss           0x00000000        0x0 Drivers/DriverSysClk.o
@@ -536,7 +515,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1f70
+.text           0x00000000     0x213a
  *(.vectors)
  .vectors       0x00000000      0x1fc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAC_DFP/1.1.50/gcc/dev/atxmega384c3/avrxmega6/crtatxmega384c3.o
                 0x00000000                __vector_default
@@ -718,162 +697,170 @@ END GROUP
                 0x00000348                __vector_87
                 0x00000348                __vector_65
                 0x00000348                __vector_120
-                0x0000034c                . = ALIGN (0x2)
+ .text          0x0000034c       0x92 Drivers/Drivepl9823Bitbang.o
+                0x0000034c                DriverPL9823BitbangSet
+                0x000003de                . = ALIGN (0x2)
  *(.text.*)
  .text.DriverAdcInit
-                0x0000034c       0x10 Drivers/DriverAdc.o
-                0x0000034c                DriverAdcInit
+                0x000003de       0x10 Drivers/DriverAdc.o
+                0x000003de                DriverAdcInit
  .text.DriverAdps9960Init
-                0x0000035c       0xaa Drivers/DriverAdps9960.o
-                0x0000035c                DriverAdps9960Init
+                0x000003ee       0xaa Drivers/DriverAdps9960.o
+                0x000003ee                DriverAdps9960Init
  .text.DriverAdps9960Get
-                0x00000406      0x12c Drivers/DriverAdps9960.o
-                0x00000406                DriverAdps9960Get
+                0x00000498      0x12c Drivers/DriverAdps9960.o
+                0x00000498                DriverAdps9960Get
  .text.InitInterrupts
-                0x00000532       0x42 Drivers/DriverInterrupt.o
-                0x00000532                InitInterrupts
+                0x000005c4       0x6a Drivers/DriverInterrupt.o
+                0x000005c4                InitInterrupts
  .text.__vector_104
-                0x00000574       0x26 Drivers/DriverInterrupt.o
-                0x00000574                __vector_104
+                0x0000062e       0x26 Drivers/DriverInterrupt.o
+                0x0000062e                __vector_104
  .text.DriverLedInit
-                0x0000059a       0x4c Drivers/DriverLed.o
-                0x0000059a                DriverLedInit
+                0x00000654       0x4c Drivers/DriverLed.o
+                0x00000654                DriverLedInit
  .text.DriverLedWrite
-                0x000005e6       0x32 Drivers/DriverLed.o
-                0x000005e6                DriverLedWrite
+                0x000006a0       0x32 Drivers/DriverLed.o
+                0x000006a0                DriverLedWrite
  .text.DriverMotorInit
-                0x00000618       0xd4 Drivers/DriverMotor.o
-                0x00000618                DriverMotorInit
+                0x000006d2       0xd4 Drivers/DriverMotor.o
+                0x000006d2                DriverMotorInit
  .text.DriverMotorSet
-                0x000006ec       0xa4 Drivers/DriverMotor.o
-                0x000006ec                DriverMotorSet
+                0x000007a6       0xa4 Drivers/DriverMotor.o
+                0x000007a6                DriverMotorSet
  .text.__vector_2
-                0x00000790       0xd0 Drivers/DriverMotor.o
-                0x00000790                __vector_2
+                0x0000084a       0xd0 Drivers/DriverMotor.o
+                0x0000084a                __vector_2
  .text.__vector_3
-                0x00000860       0xd0 Drivers/DriverMotor.o
-                0x00000860                __vector_3
+                0x0000091a       0xd0 Drivers/DriverMotor.o
+                0x0000091a                __vector_3
  .text.__vector_43
-                0x00000930       0xd0 Drivers/DriverMotor.o
-                0x00000930                __vector_43
+                0x000009ea       0xd0 Drivers/DriverMotor.o
+                0x000009ea                __vector_43
  .text.__vector_44
-                0x00000a00       0xd0 Drivers/DriverMotor.o
-                0x00000a00                __vector_44
+                0x00000aba       0xd0 Drivers/DriverMotor.o
+                0x00000aba                __vector_44
+ .text.DriverPL9823Init
+                0x00000b8a       0x74 Drivers/Driverpl9823Bitbang.o
+                0x00000b8a                DriverPL9823Init
+ .text.DriverPL9823Set
+                0x00000bfe       0x98 Drivers/Driverpl9823Bitbang.o
+                0x00000bfe                DriverPL9823Set
  .text.DriverSysClkXtalInit
-                0x00000ad0       0x36 Drivers/DriverSysClk.o
-                0x00000ad0                DriverSysClkXtalInit
+                0x00000c96       0x36 Drivers/DriverSysClk.o
+                0x00000c96                DriverSysClkXtalInit
  .text.DriverTWIMInit
-                0x00000b06       0x46 Drivers/DriverTWIMaster.o
-                0x00000b06                DriverTWIMInit
+                0x00000ccc       0x46 Drivers/DriverTWIMaster.o
+                0x00000ccc                DriverTWIMInit
  .text.TWIMWrite
-                0x00000b4c       0x3e Drivers/DriverTWIMaster.o
-                0x00000b4c                TWIMWrite
+                0x00000d12       0x3e Drivers/DriverTWIMaster.o
+                0x00000d12                TWIMWrite
  .text.TWIMWriteRead
-                0x00000b8a       0xee Drivers/DriverTWIMaster.o
-                0x00000b8a                TWIMWriteRead
+                0x00000d50       0xee Drivers/DriverTWIMaster.o
+                0x00000d50                TWIMWriteRead
  .text.TWIMArbitrationLostBusErrorHandler
-                0x00000c78       0x4a Drivers/DriverTWIMaster.o
-                0x00000c78                TWIMArbitrationLostBusErrorHandler
+                0x00000e3e       0x4a Drivers/DriverTWIMaster.o
+                0x00000e3e                TWIMArbitrationLostBusErrorHandler
  .text.TWIMWriteHandler
-                0x00000cc2       0xb8 Drivers/DriverTWIMaster.o
-                0x00000cc2                TWIMWriteHandler
+                0x00000e88       0xb8 Drivers/DriverTWIMaster.o
+                0x00000e88                TWIMWriteHandler
  .text.TWIMReadHandler
-                0x00000d7a       0x8c Drivers/DriverTWIMaster.o
-                0x00000d7a                TWIMReadHandler
+                0x00000f40       0x8c Drivers/DriverTWIMaster.o
+                0x00000f40                TWIMReadHandler
  .text.TWIMTransactionFinished
-                0x00000e06       0x20 Drivers/DriverTWIMaster.o
-                0x00000e06                TWIMTransactionFinished
+                0x00000fcc       0x20 Drivers/DriverTWIMaster.o
+                0x00000fcc                TWIMTransactionFinished
  .text.__vector_46
-                0x00000e26       0xbc Drivers/DriverTWIMaster.o
-                0x00000e26                __vector_46
+                0x00000fec       0xbc Drivers/DriverTWIMaster.o
+                0x00000fec                __vector_46
  .text.DriverUSARTInit
-                0x00000ee2       0x6c Drivers/DriverUSART.o
-                0x00000ee2                DriverUSARTInit
+                0x000010a8       0x6c Drivers/DriverUSART.o
+                0x000010a8                DriverUSARTInit
  .text.stdio_putchar
-                0x00000f4e       0x4a Drivers/DriverUSART.o
+                0x00001114       0x4a Drivers/DriverUSART.o
  .text.stdio_getchar
-                0x00000f98       0x34 Drivers/DriverUSART.o
- .text.main     0x00000fcc      0x2d6 main.o
-                0x00000fcc                main
+                0x0000115e       0x34 Drivers/DriverUSART.o
+ .text.main     0x00001192      0x2da main.o
+                0x00001192                main
  .text.avr-libc.fplib
-                0x000012a2        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(cmpsf2.o)
-                0x000012a2                __nesf2
-                0x000012a2                __eqsf2
-                0x000012a2                __cmpsf2
-                0x000012a2                __ltsf2
-                0x000012a2                __lesf2
+                0x0000146c        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(cmpsf2.o)
+                0x0000146c                __nesf2
+                0x0000146c                __eqsf2
+                0x0000146c                __cmpsf2
+                0x0000146c                __ltsf2
+                0x0000146c                __lesf2
  .text.avr-libc.fplib
-                0x000012ac       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fixunssfsi.o)
-                0x000012ac                __fixunssfsi
+                0x00001476       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fixunssfsi.o)
+                0x00001476                __fixunssfsi
  .text.avr-libc.fplib
-                0x0000130a       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_cmp.o)
-                0x0000130a                __fp_cmp
+                0x000014d4       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_cmp.o)
+                0x000014d4                __fp_cmp
  .text.avr-libc.fplib
-                0x00001352       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_split3.o)
-                0x00001352                __fp_split3
-                0x00001362                __fp_splitA
+                0x0000151c       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_split3.o)
+                0x0000151c                __fp_split3
+                0x0000152c                __fp_splitA
  .text.avr-libc.fplib
-                0x00001396        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_zero.o)
-                0x00001396                __fp_zero
-                0x00001398                __fp_szero
+                0x00001560        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_zero.o)
+                0x00001560                __fp_zero
+                0x00001562                __fp_szero
  .text.avr-libc.fplib
-                0x000013a4        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(gesf2.o)
-                0x000013a4                __gesf2
-                0x000013a4                __gtsf2
+                0x0000156e        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(gesf2.o)
+                0x0000156e                __gesf2
+                0x0000156e                __gtsf2
  .text.avr-libc.fplib
-                0x000013ae        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(mulsf3.o)
-                0x000013ae                __mulsf3
+                0x00001578        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(mulsf3.o)
+                0x00001578                __mulsf3
  .text.avr-libc.fplib
-                0x000013b6       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(mulsf3x.o)
-                0x000013d4                __mulsf3x
-                0x000013da                __mulsf3_pse
+                0x00001580       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(mulsf3x.o)
+                0x0000159e                __mulsf3x
+                0x000015a4                __mulsf3_pse
  .text.avr-libc.fplib
-                0x00001488        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_inf.o)
-                0x00001488                __fp_inf
+                0x00001652        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_inf.o)
+                0x00001652                __fp_inf
  .text.avr-libc.fplib
-                0x00001494        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_nan.o)
-                0x00001494                __fp_nan
+                0x0000165e        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_nan.o)
+                0x0000165e                __fp_nan
  .text.avr-libc.fplib
-                0x0000149a        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_pscA.o)
-                0x0000149a                __fp_pscA
+                0x00001664        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_pscA.o)
+                0x00001664                __fp_pscA
  .text.avr-libc.fplib
-                0x000014a8        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_pscB.o)
-                0x000014a8                __fp_pscB
+                0x00001672        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_pscB.o)
+                0x00001672                __fp_pscB
  .text.avr-libc.fplib
-                0x000014b6       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_round.o)
-                0x000014b6                __fp_round
+                0x00001680       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_round.o)
+                0x00001680                __fp_round
  .text.DriverPowerInit
-                0x000014d8        0x8 ../Drivers\libDriverPower.a(DriverPower.o)
-                0x000014d8                DriverPowerInit
+                0x000016a2        0x8 ../Drivers\libDriverPower.a(DriverPower.o)
+                0x000016a2                DriverPowerInit
  .text.DriverPowerVccAuxSet
-                0x000014e0       0x14 ../Drivers\libDriverPower.a(DriverPower.o)
-                0x000014e0                DriverPowerVccAuxSet
+                0x000016aa       0x14 ../Drivers\libDriverPower.a(DriverPower.o)
+                0x000016aa                DriverPowerVccAuxSet
  .text.avr-libc
-                0x000014f4      0x740 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libprintf_flt.a(vfprintf_flt.o)
-                0x000014f4                vfprintf
+                0x000016be      0x740 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libprintf_flt.a(vfprintf_flt.o)
+                0x000016be                vfprintf
  .text.avr-libc
-                0x00001c34      0x1b0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(ftoa_engine.o)
-                0x00001c34                __ftoa_engine
+                0x00001dfe      0x1b0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(ftoa_engine.o)
+                0x00001dfe                __ftoa_engine
  .text.avr-libc
-                0x00001de4       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(strnlen_P.o)
-                0x00001de4                strnlen_P
+                0x00001fae       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(strnlen_P.o)
+                0x00001fae                strnlen_P
  .text.avr-libc
-                0x00001dfa       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(strnlen.o)
-                0x00001dfa                strnlen
+                0x00001fc4       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(strnlen.o)
+                0x00001fc4                strnlen
  .text.avr-libc
-                0x00001e10       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(fputc.o)
-                0x00001e10                fputc
+                0x00001fda       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(fputc.o)
+                0x00001fda                fputc
  .text.avr-libc
-                0x00001e88       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(printf.o)
-                0x00001e88                printf
+                0x00002052       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(printf.o)
+                0x00002052                printf
  .text.avr-libc
-                0x00001eb0       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(ultoa_invert.o)
-                0x00001eb0                __ultoa_invert
-                0x00001f6c                . = ALIGN (0x2)
+                0x0000207a       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(ultoa_invert.o)
+                0x0000207a                __ultoa_invert
+                0x00002136                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00001f6c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega6\libgcc.a(_exit.o)
-                0x00001f6c                _exit
-                0x00001f6c                exit
+ .fini9         0x00002136        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega6\libgcc.a(_exit.o)
+                0x00002136                _exit
+                0x00002136                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -892,11 +879,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00001f6c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega6\libgcc.a(_exit.o)
+ .fini0         0x00002136        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega6\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001f70                _etext = .
+                0x0000213a                _etext = .
 
-.data           0x00802000       0x76 load address 0x00001f70
+.data           0x00802000       0x76 load address 0x0000213a
                 0x00802000                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -915,43 +902,44 @@ END GROUP
                 0x00802076                _edata = .
                 0x00802076                PROVIDE (__data_end, .)
 
-.bss            0x00802076       0x15
+.bss            0x00802076       0x21
                 0x00802076                PROVIDE (__bss_start, .)
  *(.bss)
+ .bss           0x00802076        0xc Drivers/Drivepl9823Bitbang.o
  *(.bss*)
  .bss.Twim_address
-                0x00802076        0x1 Drivers/DriverTWIMaster.o
+                0x00802082        0x1 Drivers/DriverTWIMaster.o
  .bss.Twim_writeData
-                0x00802077        0x2 Drivers/DriverTWIMaster.o
+                0x00802083        0x2 Drivers/DriverTWIMaster.o
  .bss.Twim_readData
-                0x00802079        0x2 Drivers/DriverTWIMaster.o
+                0x00802085        0x2 Drivers/DriverTWIMaster.o
  .bss.Twim_bytesToWrite
-                0x0080207b        0x1 Drivers/DriverTWIMaster.o
+                0x00802087        0x1 Drivers/DriverTWIMaster.o
  .bss.Twim_bytesToRead
-                0x0080207c        0x1 Drivers/DriverTWIMaster.o
+                0x00802088        0x1 Drivers/DriverTWIMaster.o
  .bss.Twim_bytesWritten
-                0x0080207d        0x1 Drivers/DriverTWIMaster.o
+                0x00802089        0x1 Drivers/DriverTWIMaster.o
  .bss.Twim_bytesRead
-                0x0080207e        0x1 Drivers/DriverTWIMaster.o
+                0x0080208a        0x1 Drivers/DriverTWIMaster.o
  .bss.Twim_status
-                0x0080207f        0x1 Drivers/DriverTWIMaster.o
+                0x0080208b        0x1 Drivers/DriverTWIMaster.o
  .bss.Twim_result
-                0x00802080        0x1 Drivers/DriverTWIMaster.o
+                0x0080208c        0x1 Drivers/DriverTWIMaster.o
  *(COMMON)
- COMMON         0x00802081        0x4 Drivers/DriverMotor.o
-                0x00802081                motor1Pos
-                0x00802083                motor2Pos
- COMMON         0x00802085        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(iob.o)
-                0x00802085                __iob
-                0x0080208b                PROVIDE (__bss_end, .)
-                0x00001f70                __data_load_start = LOADADDR (.data)
-                0x00001fe6                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080208d        0x4 Drivers/DriverMotor.o
+                0x0080208d                motor1Pos
+                0x0080208f                motor2Pos
+ COMMON         0x00802091        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libc.a(iob.o)
+                0x00802091                __iob
+                0x00802097                PROVIDE (__bss_end, .)
+                0x0000213a                __data_load_start = LOADADDR (.data)
+                0x000021b0                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080208b        0x0
+.noinit         0x00802097        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x0080208b                _end = .
+                0x00802097                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -999,6 +987,7 @@ END GROUP
  .comment       0x00000030       0x31 Drivers/DriverInterrupt.o
  .comment       0x00000030       0x31 Drivers/DriverLed.o
  .comment       0x00000030       0x31 Drivers/DriverMotor.o
+ .comment       0x00000030       0x31 Drivers/Driverpl9823Bitbang.o
  .comment       0x00000030       0x31 Drivers/DriverSysClk.o
  .comment       0x00000030       0x31 Drivers/DriverTWIMaster.o
  .comment       0x00000030       0x31 Drivers/DriverUSART.o
@@ -1031,122 +1020,136 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x208
+.debug_aranges  0x00000000      0x250
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x28 Drivers/DriverAdc.o
+                0x00000000       0x20 Drivers/Drivepl9823Bitbang.o
  .debug_aranges
-                0x00000028       0x28 Drivers/DriverAdps9960.o
+                0x00000020       0x28 Drivers/DriverAdc.o
  .debug_aranges
-                0x00000050       0x28 Drivers/DriverInterrupt.o
+                0x00000048       0x28 Drivers/DriverAdps9960.o
  .debug_aranges
-                0x00000078       0x40 Drivers/DriverLed.o
+                0x00000070       0x28 Drivers/DriverInterrupt.o
  .debug_aranges
-                0x000000b8       0x50 Drivers/DriverMotor.o
+                0x00000098       0x40 Drivers/DriverLed.o
  .debug_aranges
-                0x00000108       0x20 Drivers/DriverSysClk.o
+                0x000000d8       0x50 Drivers/DriverMotor.o
  .debug_aranges
-                0x00000128       0x60 Drivers/DriverTWIMaster.o
+                0x00000128       0x28 Drivers/Driverpl9823Bitbang.o
  .debug_aranges
-                0x00000188       0x30 Drivers/DriverUSART.o
+                0x00000150       0x20 Drivers/DriverSysClk.o
  .debug_aranges
-                0x000001b8       0x28 main.o
+                0x00000170       0x60 Drivers/DriverTWIMaster.o
  .debug_aranges
-                0x000001e0       0x28 ../Drivers\libDriverPower.a(DriverPower.o)
+                0x000001d0       0x30 Drivers/DriverUSART.o
+ .debug_aranges
+                0x00000200       0x28 main.o
+ .debug_aranges
+                0x00000228       0x28 ../Drivers\libDriverPower.a(DriverPower.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x4db9
+.debug_info     0x00000000     0x5699
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x2a76 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAC_DFP/1.1.50/gcc/dev/atxmega384c3/avrxmega6/crtatxmega384c3.o
- .debug_info    0x00002a76       0xcc Drivers/DriverAdc.o
- .debug_info    0x00002b42      0x196 Drivers/DriverAdps9960.o
- .debug_info    0x00002cd8      0x342 Drivers/DriverInterrupt.o
- .debug_info    0x0000301a      0x2bb Drivers/DriverLed.o
- .debug_info    0x000032d5      0x971 Drivers/DriverMotor.o
- .debug_info    0x00003c46      0x1a8 Drivers/DriverSysClk.o
- .debug_info    0x00003dee      0x6fe Drivers/DriverTWIMaster.o
- .debug_info    0x000044ec      0x415 Drivers/DriverUSART.o
- .debug_info    0x00004901      0x277 main.o
- .debug_info    0x00004b78      0x241 ../Drivers\libDriverPower.a(DriverPower.o)
+ .debug_info    0x00002a76       0x75 Drivers/Drivepl9823Bitbang.o
+ .debug_info    0x00002aeb       0xcc Drivers/DriverAdc.o
+ .debug_info    0x00002bb7      0x196 Drivers/DriverAdps9960.o
+ .debug_info    0x00002d4d      0x926 Drivers/DriverInterrupt.o
+ .debug_info    0x00003673      0x2bb Drivers/DriverLed.o
+ .debug_info    0x0000392e      0x971 Drivers/DriverMotor.o
+ .debug_info    0x0000429f      0x274 Drivers/Driverpl9823Bitbang.o
+ .debug_info    0x00004513      0x1a8 Drivers/DriverSysClk.o
+ .debug_info    0x000046bb      0x6fe Drivers/DriverTWIMaster.o
+ .debug_info    0x00004db9      0x415 Drivers/DriverUSART.o
+ .debug_info    0x000051ce      0x28a main.o
+ .debug_info    0x00005458      0x241 ../Drivers\libDriverPower.a(DriverPower.o)
 
-.debug_abbrev   0x00000000     0x316e
+.debug_abbrev   0x00000000     0x3295
  *(.debug_abbrev)
  .debug_abbrev  0x00000000     0x2836 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAC_DFP/1.1.50/gcc/dev/atxmega384c3/avrxmega6/crtatxmega384c3.o
- .debug_abbrev  0x00002836       0x7a Drivers/DriverAdc.o
- .debug_abbrev  0x000028b0       0xaa Drivers/DriverAdps9960.o
- .debug_abbrev  0x0000295a       0x92 Drivers/DriverInterrupt.o
- .debug_abbrev  0x000029ec       0xd3 Drivers/DriverLed.o
- .debug_abbrev  0x00002abf      0x166 Drivers/DriverMotor.o
- .debug_abbrev  0x00002c25       0x92 Drivers/DriverSysClk.o
- .debug_abbrev  0x00002cb7      0x176 Drivers/DriverTWIMaster.o
- .debug_abbrev  0x00002e2d      0x147 Drivers/DriverUSART.o
- .debug_abbrev  0x00002f74      0x141 main.o
- .debug_abbrev  0x000030b5       0xb9 ../Drivers\libDriverPower.a(DriverPower.o)
+ .debug_abbrev  0x00002836       0x14 Drivers/Drivepl9823Bitbang.o
+ .debug_abbrev  0x0000284a       0x7a Drivers/DriverAdc.o
+ .debug_abbrev  0x000028c4       0xaa Drivers/DriverAdps9960.o
+ .debug_abbrev  0x0000296e       0xd6 Drivers/DriverInterrupt.o
+ .debug_abbrev  0x00002a44       0xd3 Drivers/DriverLed.o
+ .debug_abbrev  0x00002b17      0x166 Drivers/DriverMotor.o
+ .debug_abbrev  0x00002c7d       0xb7 Drivers/Driverpl9823Bitbang.o
+ .debug_abbrev  0x00002d34       0x92 Drivers/DriverSysClk.o
+ .debug_abbrev  0x00002dc6      0x176 Drivers/DriverTWIMaster.o
+ .debug_abbrev  0x00002f3c      0x147 Drivers/DriverUSART.o
+ .debug_abbrev  0x00003083      0x159 main.o
+ .debug_abbrev  0x000031dc       0xb9 ../Drivers\libDriverPower.a(DriverPower.o)
 
-.debug_line     0x00000000     0x16b2
+.debug_line     0x00000000     0x1a03
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x39d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAC_DFP/1.1.50/gcc/dev/atxmega384c3/avrxmega6/crtatxmega384c3.o
- .debug_line    0x0000039d       0xc0 Drivers/DriverAdc.o
- .debug_line    0x0000045d      0x1a5 Drivers/DriverAdps9960.o
- .debug_line    0x00000602      0x146 Drivers/DriverInterrupt.o
- .debug_line    0x00000748      0x1b6 Drivers/DriverLed.o
- .debug_line    0x000008fe      0x379 Drivers/DriverMotor.o
- .debug_line    0x00000c77      0x145 Drivers/DriverSysClk.o
- .debug_line    0x00000dbc      0x3c9 Drivers/DriverTWIMaster.o
- .debug_line    0x00001185      0x1b7 Drivers/DriverUSART.o
- .debug_line    0x0000133c      0x248 main.o
- .debug_line    0x00001584      0x12e ../Drivers\libDriverPower.a(DriverPower.o)
+ .debug_line    0x0000039d      0x1d9 Drivers/Drivepl9823Bitbang.o
+ .debug_line    0x00000576       0xc0 Drivers/DriverAdc.o
+ .debug_line    0x00000636      0x1a5 Drivers/DriverAdps9960.o
+ .debug_line    0x000007db      0x15e Drivers/DriverInterrupt.o
+ .debug_line    0x00000939      0x1b6 Drivers/DriverLed.o
+ .debug_line    0x00000aef      0x379 Drivers/DriverMotor.o
+ .debug_line    0x00000e68      0x15a Drivers/Driverpl9823Bitbang.o
+ .debug_line    0x00000fc2      0x145 Drivers/DriverSysClk.o
+ .debug_line    0x00001107      0x3c9 Drivers/DriverTWIMaster.o
+ .debug_line    0x000014d0      0x1b7 Drivers/DriverUSART.o
+ .debug_line    0x00001687      0x24e main.o
+ .debug_line    0x000018d5      0x12e ../Drivers\libDriverPower.a(DriverPower.o)
 
-.debug_frame    0x00000000      0x5f0
+.debug_frame    0x00000000      0x694
  *(.debug_frame)
  .debug_frame   0x00000000       0x54 Drivers/DriverAdc.o
  .debug_frame   0x00000054       0x64 Drivers/DriverAdps9960.o
  .debug_frame   0x000000b8       0x5c Drivers/DriverInterrupt.o
  .debug_frame   0x00000114       0xb4 Drivers/DriverLed.o
  .debug_frame   0x000001c8      0x174 Drivers/DriverMotor.o
- .debug_frame   0x0000033c       0x24 Drivers/DriverSysClk.o
- .debug_frame   0x00000360      0x194 Drivers/DriverTWIMaster.o
- .debug_frame   0x000004f4       0x74 Drivers/DriverUSART.o
- .debug_frame   0x00000568       0x54 main.o
- .debug_frame   0x000005bc       0x34 ../Drivers\libDriverPower.a(DriverPower.o)
+ .debug_frame   0x0000033c       0xa4 Drivers/Driverpl9823Bitbang.o
+ .debug_frame   0x000003e0       0x24 Drivers/DriverSysClk.o
+ .debug_frame   0x00000404      0x194 Drivers/DriverTWIMaster.o
+ .debug_frame   0x00000598       0x74 Drivers/DriverUSART.o
+ .debug_frame   0x0000060c       0x54 main.o
+ .debug_frame   0x00000660       0x34 ../Drivers\libDriverPower.a(DriverPower.o)
 
-.debug_str      0x00000000     0x29b3
+.debug_str      0x00000000     0x2a5b
  *(.debug_str)
  .debug_str     0x00000000     0x1be5 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAC_DFP/1.1.50/gcc/dev/atxmega384c3/avrxmega6/crtatxmega384c3.o
  .debug_str     0x00001be5      0x16b Drivers/DriverAdc.o
                                 0x1a7 (size before relaxing)
  .debug_str     0x00001d50       0x5c Drivers/DriverAdps9960.o
                                 0x1cb (size before relaxing)
- .debug_str     0x00001dac      0x1ca Drivers/DriverInterrupt.o
-                                0x331 (size before relaxing)
- .debug_str     0x00001f76       0x68 Drivers/DriverLed.o
+ .debug_str     0x00001dac      0x48e Drivers/DriverInterrupt.o
+                                0x5db (size before relaxing)
+ .debug_str     0x0000223a       0x68 Drivers/DriverLed.o
                                 0x29b (size before relaxing)
- .debug_str     0x00001fde      0x349 Drivers/DriverMotor.o
+ .debug_str     0x000022a2       0xc3 Drivers/DriverMotor.o
                                 0x5ba (size before relaxing)
- .debug_str     0x00002327       0xa7 Drivers/DriverSysClk.o
+ .debug_str     0x00002365       0x73 Drivers/Driverpl9823Bitbang.o
+                                0x2b5 (size before relaxing)
+ .debug_str     0x000023d8       0x9e Drivers/DriverSysClk.o
                                 0x223 (size before relaxing)
- .debug_str     0x000023ce      0x394 Drivers/DriverTWIMaster.o
+ .debug_str     0x00002476      0x394 Drivers/DriverTWIMaster.o
                                 0x62a (size before relaxing)
- .debug_str     0x00002762       0xb7 Drivers/DriverUSART.o
+ .debug_str     0x0000280a       0xb7 Drivers/DriverUSART.o
                                 0x30d (size before relaxing)
- .debug_str     0x00002819       0x72 main.o
-                                0x1ec (size before relaxing)
- .debug_str     0x0000288b      0x128 ../Drivers\libDriverPower.a(DriverPower.o)
+ .debug_str     0x000028c1       0x72 main.o
+                                0x20c (size before relaxing)
+ .debug_str     0x00002933      0x128 ../Drivers\libDriverPower.a(DriverPower.o)
                                 0x276 (size before relaxing)
 
-.debug_loc      0x00000000      0xb23
+.debug_loc      0x00000000      0xc75
  *(.debug_loc)
  .debug_loc     0x00000000       0x83 Drivers/DriverAdc.o
  .debug_loc     0x00000083       0xa9 Drivers/DriverAdps9960.o
  .debug_loc     0x0000012c       0x90 Drivers/DriverInterrupt.o
  .debug_loc     0x000001bc      0x15b Drivers/DriverLed.o
  .debug_loc     0x00000317      0x323 Drivers/DriverMotor.o
- .debug_loc     0x0000063a      0x355 Drivers/DriverTWIMaster.o
- .debug_loc     0x0000098f       0xcb Drivers/DriverUSART.o
- .debug_loc     0x00000a5a       0x8f main.o
- .debug_loc     0x00000ae9       0x3a ../Drivers\libDriverPower.a(DriverPower.o)
+ .debug_loc     0x0000063a      0x152 Drivers/Driverpl9823Bitbang.o
+ .debug_loc     0x0000078c      0x355 Drivers/DriverTWIMaster.o
+ .debug_loc     0x00000ae1       0xcb Drivers/DriverUSART.o
+ .debug_loc     0x00000bac       0x8f main.o
+ .debug_loc     0x00000c3b       0x3a ../Drivers\libDriverPower.a(DriverPower.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1166,18 +1169,19 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x168
+.debug_ranges   0x00000000      0x180
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x18 Drivers/DriverAdc.o
  .debug_ranges  0x00000018       0x18 Drivers/DriverAdps9960.o
  .debug_ranges  0x00000030       0x18 Drivers/DriverInterrupt.o
  .debug_ranges  0x00000048       0x30 Drivers/DriverLed.o
  .debug_ranges  0x00000078       0x40 Drivers/DriverMotor.o
- .debug_ranges  0x000000b8       0x10 Drivers/DriverSysClk.o
- .debug_ranges  0x000000c8       0x50 Drivers/DriverTWIMaster.o
- .debug_ranges  0x00000118       0x20 Drivers/DriverUSART.o
- .debug_ranges  0x00000138       0x18 main.o
- .debug_ranges  0x00000150       0x18 ../Drivers\libDriverPower.a(DriverPower.o)
+ .debug_ranges  0x000000b8       0x18 Drivers/Driverpl9823Bitbang.o
+ .debug_ranges  0x000000d0       0x10 Drivers/DriverSysClk.o
+ .debug_ranges  0x000000e0       0x50 Drivers/DriverTWIMaster.o
+ .debug_ranges  0x00000130       0x20 Drivers/DriverUSART.o
+ .debug_ranges  0x00000150       0x18 main.o
+ .debug_ranges  0x00000168       0x18 ../Drivers\libDriverPower.a(DriverPower.o)
 
 .debug_macro
  *(.debug_macro)
