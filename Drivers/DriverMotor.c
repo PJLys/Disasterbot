@@ -39,6 +39,7 @@ void DriverMotorInit(void)
 
 void DriverMotorSet(int16_t MotorLeft,int16_t MotorRight)
 {
+	printf("MotorSet %d %d\n\r", MotorLeft, MotorRight);
 	if (MotorLeft<0) {
 		TCF0.CCA = -1*MotorLeft;
 		TCF0.CCB = 0;
