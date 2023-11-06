@@ -54,7 +54,9 @@ int main(void) {
 			clearSleepFlag();
 			DriverPowerVccAuxSet(0);
 			PMIC.CTRL = 0b00000100;			//only H-lvl interrupts
+			PORTF.DIRCLR = 0b00111111;
 			sleep_cpu();
+			PORTF.DIRSET = 0b00111111;
 			PMIC.CTRL = 0b10000111;			//round robin scheduling + all interrupts enabled
 		}
 	}
