@@ -22,7 +22,7 @@ void DriverAdcInit(void);
  * \Return value: -2048 to 2047 (signed) or 0 to 4095 (unsigned)
  *                10000: Invalid channel settings
 */
-int16_t DriverAdcGetCh(uint8_t PinPos,uint8_t PinNeg);
+int16_t DriverAdcGetCh(int8_t PinPos,int8_t PinNeg);
 
 
 #endif

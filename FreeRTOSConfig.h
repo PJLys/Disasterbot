@@ -29,6 +29,7 @@
 #define FREERTOS_CONFIG_H
 
 #include <avr/io.h>
+#include "trace.h"
 
 void vAssertCalled( char *File, int Line);
 
@@ -49,7 +50,7 @@ void vAssertCalled( char *File, int Line);
 #define configUSE_TICK_HOOK			0
 #define configCPU_CLOCK_HZ			( ( unsigned long ) 32000000 )
 #define configTICK_RATE_HZ			( ( TickType_t ) 1000 )
-#define configMAX_PRIORITIES		( 4 )
+#define configMAX_PRIORITIES		( 10 )
 #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 256 )
 #define configTOTAL_HEAP_SIZE		( (size_t ) ( 16384 ) )
 #define configMAX_TASK_NAME_LEN		( 8 )
@@ -63,6 +64,8 @@ void vAssertCalled( char *File, int Line);
 #define configUSE_MALLOC_FAILED_HOOK 1
 #define configCHECK_FOR_STACK_OVERFLOW 2
 #define configUSE_MUTEXES 1
+#define configUSE_APPLICATION_TASK_TAG 1
+#define configAPPLICATION_ALLOCATED_HEAP 1
 
 #define portLU_PRINTF_SPECIFIER_REQUIRED 1
 
@@ -85,7 +88,8 @@ to exclude the API function. */
 #define INCLUDE_vTaskDelayUntil			1
 #define INCLUDE_vTaskDelay				1
 #define INCLUDE_xTaskGetIdleTaskHandle  1
-
 #define pdMS_TO_TICKS( xTimeInMs ) ( ( TickType_t ) ( ( ( uint32_t ) ( xTimeInMs ) * ( uint32_t ) configTICK_RATE_HZ ) / ( uint32_t ) 1000 ) )
+
+//#define traceTASK_SWITCHED_IN() TraceTaskSwitchedIn((uint32_t) pxCurrentTCB/*->pxTaskTag*/)
 
 #endif /* FREERTOS_CONFIG_H */

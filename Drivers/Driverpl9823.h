@@ -1,5 +1,5 @@
 /**
- * PL9823 RGB LED driver
+ * PL9823 RGB LED driver. Hardcoded for 4 LEDs in series connected to data line PD3, MUX line PA6, data transfer using USARTD0
  * \file Driverpl9823.h
  * \brief PL9823 RGB LED driver
 */
@@ -33,6 +33,5 @@ void DriverPL9823Init();
  * \param RearLeft: Respective LED color. 
 */
 void DriverPL9823Set(uint32_t FrontLeft,uint32_t FrontRight,uint32_t RearRight,uint32_t RearLeft);
-
 
 #endif

@@ -1,5 +1,5 @@
 /**
- * MPU6050 IMU I²C driver
+ * MPU6050 IMU I²C driver. Currently only supports gyroscope function
  * \file DriverMPU6050.h
  * \brief MPU6050 I²C driver
 */

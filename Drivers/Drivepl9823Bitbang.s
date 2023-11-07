@@ -16,24 +16,22 @@
 ;
 
 
- 
-.section .bss
+.section .data
 	ledarray: .skip 12   ; declare an array of 3 bytes (RGB) for the 4 leds
+
+
 
 .section .text
 .global DriverPL9823BitbangSet
 DriverPL9823BitbangSet:	
-		;Save registers on stack
 		push r0
 		push r29
 		
-		;data pin is stored in R29
-		ldi r29,(1<<3)		
-		
+		ldi r29,8		
 		;init ledarray 
 		ldi r30,lo8(ledarray) ; Load Z register low 
 		ldi r31,hi8(ledarray) ; Load Z register high 
-		; fill ledarray from parameter registers
+		; fill ledarray
 		st Z+,r22 ;R1  
 		st Z+,r23 ;G1
 		st Z+,r24 ;B1  
@@ -67,10 +65,10 @@ startx:
 		;**************************************************************************		
 		//reset pl9823  = low pulse of 50 µS
 
-		sts PORTD_OUTCLR,r29			; make output low
+		sts PORTB_OUTCLR,r29			; make output low
 		// delay of 200 clock cycles
 				ldi r21, 255
-				ldi r22, 3
+				ldi r22, 255
 		delay200:	
 				dec r21
 				brne delay200
@@ -78,18 +76,18 @@ startx:
 				brne delay200
 		;**************************************************************************
 
-		;sts PORTD_OUTSET,r29			; set PB3 to high
+		sts PORTB_OUTSET,r29			; set PD3 to high
 							
 									
 		ldi r16, 4						; set r16 to number of leds
 loop1:
 		ldi r17, 3						; set r17 to number of colors
-loop2:	sts PORTD_OUTSET,r29			; set PB3 to high
+loop2:	sts PORTB_OUTSET,r29			; set PD3 to high
 		ld r18, z+						; fetch next byte of array
 		ldi r19, 8						; set R19 as counter (8 bits for each color)
 	
 loop3:
-		sts PORTD_OUTSET,r29			; set PB3 to high
+		sts PORTB_OUTSET,r29			; set PD3 to high
 		// delay of 7 clock cycles
 				nop
 				nop
@@ -99,7 +97,7 @@ loop3:
 				nop
 				nop 
 		sbrs r18,7						; if bit 7 is high leave output high
-		sts PORTD_OUTCLR,r29			; if not output is low
+		sts PORTB_OUTCLR,r29			; if not output is low
 		nop								; nop's for timing reasons
 		nop
 		lsl r18							; shift left data
@@ -109,7 +107,7 @@ loop3:
 				dec r21
 				brne delay32
 			
-		sts PORTD_OUTCLR,r29			; make output low
+		sts PORTB_OUTCLR,r29			; make output low
 		; delay of 7 clock cycles
 				nop
 				nop
@@ -128,9 +126,8 @@ loop3:
 	
 		dec r16							; lednr -1
 		brne loop1						;next led if lednr> 0
-		sts PORTD_OUTSET,r29			; set PB3 to high    idle state of DIN pin of PL9823
+		sts PORTB_OUTSET,r29			; set PD3 to high    idle state of DIN pin of PL9823
 		
-		;Restore registers from stack
 		pop r29
 		pop r0
 		clr r1		

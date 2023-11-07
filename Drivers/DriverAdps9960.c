@@ -1,4 +1,6 @@
+#include "FreeRTOS.h"
 #include "DriverAdps9960.h"
+
 
 #include <stdio.h>
 #include <stdint.h>
@@ -28,9 +30,10 @@ void DriverAdps9960Init(void)
 	Buffer[0]=REG_ENABLE;
 	Buffer[1]=(1<<REG_ENABLE_PON);
 	res=TWIMWrite(ADPS9960_ADDR,Buffer,2);
+	//printf ("TwimWrite:%d\r\n",res);
 	
 	Buffer[0]=REG_ID;
-	TWIMWriteRead(ADPS9960_ADDR,Buffer,1,Buffer,1);
+	res=TWIMWriteRead(ADPS9960_ADDR,Buffer,1,Buffer,1);
 	if (Buffer[0]!=ID)
 		printf ("ADPS9960 ID readback fail: %d read\r\n",Buffer[0]);
 
@@ -61,12 +64,14 @@ void DriverAdps9960Get(uint16_t *Clear,uint16_t *Red,uint16_t *Green, uint16_t *
 	{
 		Buffer[0]=REG_STATUS;
 		res=TWIMWriteRead(ADPS9960_ADDR,Buffer,1,Buffer,1);
+		configASSERT(res);
 		//printf ("STATUS:%d\r\n",Buffer[0]);
 	} while (!(Buffer[0] & (1<<REG_STATUX_AVALID)) );
 
 
 	Buffer[0]=REG_CDATA;
 	res=TWIMWriteRead(ADPS9960_ADDR,Buffer,1,Buffer,8);
+	configASSERT(res);
 	//printf ("TwimWriteRead:%d\r\n",res);
 
 	if (Clear!=NULL) *Clear=*C;	

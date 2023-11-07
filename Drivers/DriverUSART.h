@@ -1,5 +1,5 @@
 /**
- * \brief Initialize USART module
+ * \brief Initialize USART module as defined in hwconfig.h, using interrupts, hardcoded to 19200bps. Binds USART to stdio functions.
 */
 
 

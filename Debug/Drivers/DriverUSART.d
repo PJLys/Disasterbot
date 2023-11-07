@@ -16,7 +16,11 @@ Drivers/DriverUSART.d Drivers/DriverUSART.o: ../Drivers/DriverUSART.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- ../hwconfig.h
+ ../hwconfig.h ../FreeRTOS/FreeRTOS.h ../FreeRTOSConfig.h ../trace.h \
+ ../FreeRTOSConfig.h ../FreeRTOS/projdefs.h ../FreeRTOS/portable.h \
+ ../FreeRTOS/deprecated_definitions.h ../FreeRTOS/portmacro.h \
+ ../FreeRTOS/mpu_wrappers.h ../FreeRTOS/queue.h ../FreeRTOS/task.h \
+ ../FreeRTOS/list.h ../FreeRTOS/semphr.h ../FreeRTOS/queue.h
 
 ../Drivers/DriverUSART.h:
 
@@ -53,3 +57,31 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
 
 ../hwconfig.h:
+
+../FreeRTOS/FreeRTOS.h:
+
+../FreeRTOSConfig.h:
+
+../trace.h:
+
+../FreeRTOSConfig.h:
+
+../FreeRTOS/projdefs.h:
+
+../FreeRTOS/portable.h:
+
+../FreeRTOS/deprecated_definitions.h:
+
+../FreeRTOS/portmacro.h:
+
+../FreeRTOS/mpu_wrappers.h:
+
+../FreeRTOS/queue.h:
+
+../FreeRTOS/task.h:
+
+../FreeRTOS/list.h:
+
+../FreeRTOS/semphr.h:
+
+../FreeRTOS/queue.h:

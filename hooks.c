@@ -13,6 +13,7 @@
 #define SET_ERR_LED() PORTA.OUTSET=1<<7
 #define CLR_ERR_LED() PORTA.OUTCLR=1<<7
 
+
 void vApplicationIdleHook( void )
 {
 	
@@ -36,11 +37,11 @@ void vApplicationMallocFailedHook(void)
 
 void vApplicationStackOverflowHook( TaskHandle_t xTask,signed char *pcTaskName )
 {
-	char Dbg[128];
 	taskDISABLE_INTERRUPTS();
 	CFG_ERR_LED();
-	snprintf(Dbg,128,"STACK overflow in task %s\r\n",pcTaskName);
-	DbgPrint(Dbg);
+	DbgPrint("STACK overflow in task ");
+	DbgPrintn(pcTaskName,10);
+	DbgPrint("\r\n");
 	while (1)
 	{
 		SET_ERR_LED();
@@ -52,11 +53,14 @@ void vApplicationStackOverflowHook( TaskHandle_t xTask,signed char *pcTaskName )
 
 void vAssertCalled( char *File, int Line)
 {
-	char Dbg[128];
 	taskDISABLE_INTERRUPTS();	
 	CFG_ERR_LED();
-	snprintf(Dbg,128,"Assert in file %s, line nr %d\r\n",File,Line);
-	DbgPrint(Dbg);
+	DbgPrint("Assert in file ");
+	DbgPrintn(File,100);
+	DbgPrint(", line nr ");
+	DbgPrintInt(Line);
+	DbgPrint("\r\n");
+
 	while (1)
 	{
 		SET_ERR_LED();

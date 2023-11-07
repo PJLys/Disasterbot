@@ -1,13 +1,13 @@
 
 #include <avr/interrupt.h>
 #include "DriverTWIMaster.h"
-#include <stdlib.h>
+#include "FreeRTOS.h"
+#include "semphr.h"
 #include <stdio.h>
 
 #define false 0
 #define true 1
 
-#define DRIVERTWIMASTER_DEBUG 1
 /* Transaction status defines. */
 #define TWIM_STATUS_READY              0
 #define TWIM_STATUS_BUSY               1
@@ -42,6 +42,8 @@ static volatile uint8_t Twim_bytesRead;								//Number of bytes read
 static volatile uint8_t Twim_status;							    //Status of transaction
 static uint8_t Twim_result;											//Result of transaction
 
+static SemaphoreHandle_t SemaBus = NULL;
+static SemaphoreHandle_t SemaRx = NULL;
 
 //Public function definitions
 void DriverTWIMInit()
@@ -55,6 +57,9 @@ void DriverTWIMInit()
 	                               TWI_MASTER_ENABLE_bm;
 	TWIM_BUS.MASTER.BAUD =  ((F_CPU / (2 * TWIM_BAUDRATE)) - 5);
 	TWIM_BUS.MASTER.STATUS = TWI_MASTER_BUSSTATE_IDLE_gc;
+	
+	SemaBus=xSemaphoreCreateMutex();
+	SemaRx=xSemaphoreCreateBinary();
 
 	return;
 }
@@ -73,6 +78,7 @@ uint8_t TWIMRead(uint8_t address,uint8_t *readData,uint8_t bytesToRead)
 
 uint8_t TWIMWriteRead(uint8_t address, uint8_t *writeData, uint8_t bytesToWrite, uint8_t *readData, uint8_t bytesToRead)
 {
+	xSemaphoreTake(SemaBus, portMAX_DELAY);
 	Twim_writeData=writeData;
 	Twim_readData=readData;
 
@@ -105,20 +111,23 @@ uint8_t TWIMWriteRead(uint8_t address, uint8_t *writeData, uint8_t bytesToWrite,
 			uint8_t readAddress = Twim_address | 0x01;
 			TWIM_BUS.MASTER.ADDR = readAddress;
 		}
-		while (Twim_status != TWIM_STATUS_READY); //Block until RX complete
+		xSemaphoreTake(SemaRx,portMAX_DELAY); //Block until RX complete
+		
 		if (Twim_result==TWIM_RESULT_OK)
+		{
+			xSemaphoreGive(SemaBus);
 			return true;
+		}
 		else
-			{
-			#ifdef DRIVERTWIMASTER_DEBUG
-				//printf ("TWIM_RESULT:%d\r\n",Twim_result);
-			#endif
-			return false;	
-			}
-			
+		{
+			printf ("Result for addr %x:%d\r\n",address,Twim_result);
+			xSemaphoreGive(SemaBus);
+			return false;
+		}
 	} 
 	else 
 	{
+		xSemaphoreGive(SemaBus);
 		return false;
 	}
 }
@@ -216,6 +225,7 @@ void TWIMTransactionFinished( uint8_t result)
 
 ISR (TWIM_BUS_vect)
 {
+	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 	uint8_t currentStatus = TWIM_BUS.MASTER.STATUS;
 
 	/* If arbitration lost or bus error. */
@@ -241,7 +251,10 @@ ISR (TWIM_BUS_vect)
 	}
 	
 	if (Twim_status == TWIM_STATUS_READY) //Transaction finished
-	{	
+	{
+		BaseType_t res=xSemaphoreGiveFromISR( SemaRx, &xHigherPriorityTaskWoken );
+
+		portYIELD_FROM_ISR( xHigherPriorityTaskWoken );		
 	}
 }
 

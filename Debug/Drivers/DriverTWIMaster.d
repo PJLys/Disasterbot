@@ -13,9 +13,13 @@ Drivers/DriverTWIMaster.d Drivers/DriverTWIMaster.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\xmega.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- ../Drivers/DriverTWIMaster.h ../hwconfig.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
+ ../Drivers/DriverTWIMaster.h ../hwconfig.h ../FreeRTOS/FreeRTOS.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
+ ../FreeRTOSConfig.h ../trace.h ../FreeRTOSConfig.h \
+ ../FreeRTOS/projdefs.h ../FreeRTOS/portable.h \
+ ../FreeRTOS/deprecated_definitions.h ../FreeRTOS/portmacro.h \
+ ../FreeRTOS/mpu_wrappers.h ../FreeRTOS/semphr.h ../FreeRTOS/queue.h \
+ ../FreeRTOS/task.h ../FreeRTOS/list.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h
 
@@ -49,9 +53,33 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../hwconfig.h:
 
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
+../FreeRTOS/FreeRTOS.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
+
+../FreeRTOSConfig.h:
+
+../trace.h:
+
+../FreeRTOSConfig.h:
+
+../FreeRTOS/projdefs.h:
+
+../FreeRTOS/portable.h:
+
+../FreeRTOS/deprecated_definitions.h:
+
+../FreeRTOS/portmacro.h:
+
+../FreeRTOS/mpu_wrappers.h:
+
+../FreeRTOS/semphr.h:
+
+../FreeRTOS/queue.h:
+
+../FreeRTOS/task.h:
+
+../FreeRTOS/list.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
 
