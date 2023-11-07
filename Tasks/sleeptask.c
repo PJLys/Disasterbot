@@ -44,6 +44,9 @@ void workerSleepTask(void *pvParameters){
 		PORTF.DIRCLR = 0b00111111;
 		PMIC.CTRL |= 0b100;
 		sleep_cpu();
+		
+		printf_P("1");
+		
 		PORTF.DIRSET = 0b00111111;
 	}
 }

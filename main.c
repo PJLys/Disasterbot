@@ -24,7 +24,7 @@ int main(void)
 	if (ucHeap==NULL) while(1);
 	
 	//Enable interrupts
-	PMIC.CTRL=0b111;
+	PMIC.CTRL = 0b111;
 	sei();
 	
 	//Init startup task
