@@ -42,11 +42,9 @@ void workerSleepTask(void *pvParameters){
 		vTaskDelay(2000);
 		DriverPowerVccAuxSet(0);
 		PORTF.DIRCLR = 0b00111111;
-		PMIC.CTRL |= 0b100;
+		PMIC.CTRL &= ~0b00000011; // Disable
 		sleep_cpu();
-		
-		printf_P("1");
-		
+		PMIC.CTRL |= 0b00000011;
 		PORTF.DIRSET = 0b00111111;
 	}
 }
