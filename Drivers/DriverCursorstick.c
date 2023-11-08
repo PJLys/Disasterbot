@@ -3,6 +3,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "sleeptask.h"
 
 #include <avr/interrupt.h>
 #include <stdio.h>
@@ -48,15 +49,10 @@ uint8_t DriverCursorStickGetFifo(TickType_t BlockTime)
 
 ISR (PORTB_INT0_vect)
 {
-	PMIC.CTRL |= 0b00000111;
-	PORTF.DIRSET = 0b00111111;
-	DriverPowerVccAuxSet(1);
-	printf("INTERRUPT!");
-	
-	static uint32_t LastIntTime=0;
-
-	BaseType_t xHigherPriorityTaskWoken=pdFALSE;
-
-		
-	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+	if (GetSleepFlag()) {
+		PMIC.CTRL |= 0b00000111;
+		PORTF.DIRSET = 0b00111111;
+		DriverPowerVccAuxSet(1);
+	}
+	//ClearSleepFlag();
 }

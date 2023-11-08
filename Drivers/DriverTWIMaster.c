@@ -120,7 +120,7 @@ uint8_t TWIMWriteRead(uint8_t address, uint8_t *writeData, uint8_t bytesToWrite,
 		}
 		else
 		{
-			printf ("Result for addr %x:%d\r\n",address,Twim_result);
+			//printf ("Result for addr %x:%d\r\n",address,Twim_result);
 			xSemaphoreGive(SemaBus);
 			return false;
 		}
