@@ -13,7 +13,7 @@
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
     <AssemblyName>LinebotOef1</AssemblyName>
-    <Name>LinebotFinal</Name>
+    <Name>LinebotIoT</Name>
     <RootNamespace>LinebotOef1</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>

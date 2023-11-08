@@ -18,7 +18,7 @@ void DriverCursorstickInit(void)
 	PORTB.PIN6CTRL=0b01011001; //Pull up, inverted
 	PORTB.PIN7CTRL=0b01011001; //Pull up, inverted
 	PORTB.INT0MASK=0b11111000; //Interrupt on all cursor stick lines
-	PORTB.INTCTRL=0b01;		   //Enable interrupt0
+	PORTB.INTCTRL=0b11;		   //Enable interrupt0
 	
 	CursorstickQueue=xQueueCreate(CURSOR_FIFO_LENGTH,1);
 }
@@ -45,22 +45,18 @@ uint8_t DriverCursorStickGetFifo(TickType_t BlockTime)
 
 }
 
+
 ISR (PORTB_INT0_vect)
 {
+	PMIC.CTRL |= 0b00000111;
+	PORTF.DIRSET = 0b00111111;
+	DriverPowerVccAuxSet(1);
+	printf("INTERRUPT!");
+	
 	static uint32_t LastIntTime=0;
-	uint32_t CurTime;
-	uint8_t ButtonState;
+
 	BaseType_t xHigherPriorityTaskWoken=pdFALSE;
-	
-	CurTime=portGET_RUN_TIME_COUNTER_VALUE();
-	ButtonState=DriverCursorstickGet();
-	
-	if ((CurTime-LastIntTime)>CURSOR_MIN_INTERVAL) //debounce
-		if (ButtonState>0) 
-		{
-			xQueueSendToBackFromISR(CursorstickQueue,&ButtonState,&xHigherPriorityTaskWoken);
-			LastIntTime=CurTime;
-		}
+
 		
 	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }

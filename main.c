@@ -27,6 +27,9 @@ int main(void)
 	PMIC.CTRL = 0b111;
 	sei();
 	
+
+
+	
 	//Init startup task
 	InitStartupTask();
 	
@@ -35,5 +38,7 @@ int main(void)
 
 	return 0;
 }
+
+
 
 
