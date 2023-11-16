@@ -70,13 +70,11 @@ static void WorkerTerminal(void *pvParameters)
 	
 	while (1)
 	{
-		DriveSegment(Pars[0]);
-
 		printf ("C>\r\n");
 		fgets(sbuf,199,stdin);
 		SplitCmd(sbuf,Cmd,Pars);
 		
-
+		DisableLineFollowerDirectTask();
 		
 		//Task list command
 		if (strstr(Cmd,"help"))
@@ -160,5 +158,6 @@ static void WorkerTerminal(void *pvParameters)
 		}
 		else
 		printf ("Unknown command\r\n");
+		EnableLineFollowerDirectTask();	
 	}
 }

@@ -23,7 +23,7 @@ void DriverUSARTInit(void)
 	USART_PORT.DIRSET=0b00001000;	
 	USART_PORT.DIRCLR=0b00000100;
 	
-	USART.CTRLA=0b00010100;
+	USART.CTRLA=0b00110100;
 	USART.CTRLB=0b00011000;
 	USART.CTRLC=0b00000011;
 	
@@ -82,5 +82,4 @@ ISR(USART_RXC_vect)
 	c=USART.DATA;
 	xQueueSendToBackFromISR(UsartRxQueue,&c,&xHigherPriorityTaskWoken);
 	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-	
 }

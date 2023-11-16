@@ -31,9 +31,8 @@ Tasks/StartupTask.d Tasks/StartupTask.o: ../Tasks/StartupTask.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- ../Drivers/DriverVL53L0X.h ../Drivers/DriverMotor.h \
- ../Tasks/OledMenuTask.h ../Tasks/MotorPosTask.h \
- ../Tasks/MotorSpeedTask.h ../Tasks/ADCTask.h \
+ ../Drivers/DriverVL53L0X.h ../Tasks/OledMenuTask.h \
+ ../Tasks/MotorPosTask.h ../Tasks/MotorSpeedTask.h ../Tasks/ADCTask.h \
  ../Tasks/LineFollowerSpeedTask.h ../Tasks/LineFollowerDirectTask.h \
  ../Tasks/RGBTask.h ../Tasks/GyroTask.h ../Tasks/TerminalTask.h \
  ../Tasks/MotionTask.h ../Tasks/sleeptask.h \
@@ -135,8 +134,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
 ../Drivers/DriverVL53L0X.h:
-
-../Drivers/DriverMotor.h:
 
 ../Tasks/OledMenuTask.h:
 

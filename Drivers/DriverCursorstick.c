@@ -1,9 +1,9 @@
 #include "DriverCursorstick.h"
+#include "sleeptask.h"
 
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
-#include "sleeptask.h"
 
 #include <avr/interrupt.h>
 #include <stdio.h>
@@ -46,7 +46,6 @@ uint8_t DriverCursorStickGetFifo(TickType_t BlockTime)
 
 }
 
-
 ISR (PORTB_INT0_vect)
 {
 	if (GetSleepFlag()) {
@@ -54,5 +53,21 @@ ISR (PORTB_INT0_vect)
 		PORTF.DIRSET = 0b00111111;
 		DriverPowerVccAuxSet(1);
 	}
-	//ClearSleepFlag();
+	
+	static uint32_t LastIntTime=0;
+	uint32_t CurTime;
+	uint8_t ButtonState;
+	BaseType_t xHigherPriorityTaskWoken=pdFALSE;
+	
+	CurTime=portGET_RUN_TIME_COUNTER_VALUE();
+	ButtonState=DriverCursorstickGet();
+	
+	if ((CurTime-LastIntTime)>CURSOR_MIN_INTERVAL) //debounce
+		if (ButtonState>0) 
+		{
+			xQueueSendToBackFromISR(CursorstickQueue,&ButtonState,&xHigherPriorityTaskWoken);
+			LastIntTime=CurTime;
+		}
+		
+	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }

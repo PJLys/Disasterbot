@@ -35,7 +35,7 @@ void DriverAdps9960Init(void)
 	Buffer[0]=REG_ID;
 	res=TWIMWriteRead(ADPS9960_ADDR,Buffer,1,Buffer,1);
 	if (Buffer[0]!=ID)
-		//printf ("ADPS9960 ID readback fail: %d read\r\n",Buffer[0]);
+		printf ("ADPS9960 ID readback fail: %d read\r\n",Buffer[0]);
 
 	Buffer[0]=REG_ATIME;
 	Buffer[1]=219; //100ms integration time

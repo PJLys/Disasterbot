@@ -16,7 +16,6 @@
 #include "DriverAdps9960.h"
 #include "DriverOled.h"
 #include "DriverVL53L0X.h"
-#include "DriverMotor.h"
 
 #include "OledMenuTask.h"
 #include "MotorPosTask.h"
@@ -31,8 +30,6 @@
 #include "sleeptask.h"
 
 #include <stdio.h>
-
-#define MAX_PARS 2
 
 
 //Private function prototypes
@@ -58,10 +55,10 @@ static void WorkerStartup(void *pvParameters)
 	DriverTWIMInit();		//Initialize TWI in master mode
 	DriverPL9823Init();		//Initialize PL9823 LEDs
 	DriverAdcInit();		//Initialize ADC driver
-	//DriverMotorInit();
 	
-	//DriverOLEDInit(2);		//Initialize OLED display
+	DriverOLEDInit(2);		//Initialize OLED display
 	DriverAdps9960Init();	//Initialize color sensor	
+	
 	//DriverVL53L0XInit();	//Initialize rangefinder
 
 	
@@ -71,20 +68,19 @@ static void WorkerStartup(void *pvParameters)
 	PORTA.DIRSET=1<<5;	
 	//Initialize application tasks			
 	
-	//InitOLEDMenuTask();
+	InitOLEDMenuTask();
 	InitADCTask();
 	InitMotorPosTask();
 	InitMotorSpeedTask();
 	InitLineFollowerSpeedTask();
 	InitLineFollowerDirectTask();
-	//InitRGBTask();
+	InitRGBTask();
 	//InitGyroTask();
-	//InitTerminalTask();
+	InitTerminalTask();
 	InitMotionTask();
 	InitSleepTask();
 	
-	float Pars[MAX_PARS];
-	DriveSegment(Pars[0]);
+	EnableLineFollowerDirectTask();
 	
 	vTaskSuspend(NULL);
 

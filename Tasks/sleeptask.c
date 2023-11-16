@@ -26,7 +26,7 @@ void InitSleepTask(void) {
 	PMIC.CTRL |= 0b10000111;
 	sei();
 	
-	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+	set_sleep_mode(SLEEP_MODE_IDLE);
 	
 	// Enable interrupt on pin 7
 	PORTF.DIRCLR = 0b10000000;
@@ -48,7 +48,7 @@ bool GetSleepFlag() {
 void workerSleepTask(void *pvParameters){
 	while(1) {
 		// Do nothing
-		vTaskDelay(2000);
+		vTaskDelay(5000);
 		/*
 		Stop moving
 		*/
@@ -76,6 +76,7 @@ void workerSleepTask(void *pvParameters){
 		sleep = true;
 		vTaskDelay(10);
 		sleep_mode();
+	
 		sleep = false;
 	}
 }

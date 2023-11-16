@@ -23,6 +23,7 @@ static void WorkerLineFollowerDirect(void *pvParameters);
 void InitLineFollowerDirectTask()
 {
 	xTaskCreate( WorkerLineFollowerDirect, "LFdirect", 256, NULL, tskIDLE_PRIORITY+3, &LineFollowerDirectTaskHandle );	
+	DisableLineFollowerDirectTask();
 }
 
 void EnableLineFollowerDirectTask()
@@ -50,7 +51,7 @@ static void WorkerLineFollowerDirect(void *pvParameters)
 
 		ADCData=GetADCData();
 		Diff=(float) (ADCData.PhotoL-ADCData.PhotoR+SensorOffset);
-		//printf_P("Diff:%f\r\n",Diff);
+		printf ("Diff:%f\r\n",Diff);
 		OutL=Speed+(Diff*LineFollowKp);
 		OutR=Speed-(Diff*LineFollowKp);
 		
