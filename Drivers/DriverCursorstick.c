@@ -52,6 +52,7 @@ ISR (PORTB_INT0_vect)
 		PMIC.CTRL |= 0b00000111;
 		PORTF.DIRSET = 0b00111111;
 		DriverPowerVccAuxSet(1);
+		DriverLedSet(0b0111);
 	}
 	
 	static uint32_t LastIntTime=0;

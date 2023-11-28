@@ -68,7 +68,7 @@ static void WorkerStartup(void *pvParameters)
 	PORTA.DIRSET=1<<5;	
 	//Initialize application tasks			
 	
-	InitOLEDMenuTask();
+	//InitOLEDMenuTask();
 	InitADCTask();
 	InitMotorPosTask();
 	InitMotorSpeedTask();

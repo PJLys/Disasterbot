@@ -68,9 +68,8 @@ void workerSleepTask(void *pvParameters){
 		vTaskDelay(25);
 		
 		DriverMotorResetEncoder();
-		DriverLedClear(0b1000);
 
-		
+		DriverLedClear(0b1111;)
 		DriverPowerVccAuxSet(0);
 		PMIC.CTRL &= 0b11111100; // Only allow H-lvl interrupts
 		sleep = true;
