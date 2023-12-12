@@ -1,0 +1,8 @@
+../Core/Src/main.c:71:6:SHT40_Init	0	static
+../Core/Src/main.c:75:6:SHT40_Read	40	static
+../Core/Src/main.c:101:6:LTR329_Init	48	static
+../Core/Src/main.c:113:6:LTR329_Read	24	static
+../Core/Src/main.c:125:6:HAL_UART_RxCpltCallback	8	static
+../Core/Src/main.c:237:6:SystemClock_Config	96	static,ignoring_inline_asm
+../Core/Src/main.c:138:5:main	136	static,ignoring_inline_asm
+../Core/Src/main.c:467:6:Error_Handler	0	static,ignoring_inline_asm
