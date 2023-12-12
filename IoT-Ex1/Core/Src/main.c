@@ -1,4 +1,3 @@
-/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
   * @file           : main.c
@@ -15,43 +14,23 @@
   *
   ******************************************************************************
   */
-/* USER CODE END Header */
 
-/* Includes ------------------------------------------------------------------*/
+#include <dash7.h>
 #include "main.h"
 #include <math.h>
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
 #include "SHT40.h" // humidity & temperature sensor
 #include "LTR329.h" // light sensor
-#include "node_com.h"
-/* USER CODE END Includes */
 
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
 uint8_t Rx_data[10];
-/* USER CODE END PTD */
 
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
-I2C_HandleTypeDef hi2c1;
-I2C_HandleTypeDef hi2c3;
+I2C_HandleTypeDef hi2c1; // Handles i2c communication with SHT40
+I2C_HandleTypeDef hi2c3; // Handles i2c communication with LTR329
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 
-/* USER CODE BEGIN PV */
 float radiation;
-/* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -123,10 +102,8 @@ void LTR329_Read(uint8_t *data)
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
-	  uart_rx_buffer_handler(Rx_data[0]);
-	  uart_rx_buffer_handler(Rx_data[1]);
-	  uart_rx_buffer_handler(Rx_data[2]);
 	  HAL_UART_Receive_IT(&huart2, Rx_data,3);
+	  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
 }
 
 /* USER CODE END 0 */
@@ -141,23 +118,9 @@ int main(void) {
     uint8_t data[4];
     /* USER CODE END 1 */
 
-    /* MCU Configuration--------------------------------------------------------*/
-
-    /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
     HAL_Init();
-
-    /* USER CODE BEGIN Init */
-
-    /* USER CODE END Init */
-
-    /* Configure the system clock */
     SystemClock_Config();
 
-    /* USER CODE BEGIN SysInit */
-
-    /* USER CODE END SysInit */
-
-    /* Initialize all configured peripherals */
     MX_GPIO_Init();
     MX_I2C1_Init();
     MX_I2C3_Init();
@@ -166,66 +129,72 @@ int main(void) {
     /* USER CODE BEGIN 2 */
     SHT40_Init();
     LTR329_Init();
-    HAL_UART_Receive_IT (&huart2, Rx_data, 3);
-    /* USER CODE END 2 */
+    HAL_UART_Receive_IT(&huart2, Rx_data, 3);
 
+    uart_rx_buffer_clear();
+
+    HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_3);
+
+    static uint8_t txdata[] = {0x14, 0x87, 0x33} ;
+
+    /* USER CODE END 2 */
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
     while (1) {
-        /* USER CODE END WHILE */
-    	if (uart_rx_done_flag) {
-    	  		  enum msg_type_e msg_type = uart_rx_buffer[1];
+    	/* USER CODE END WHILE */
+	  enum msg_type_e msg_type = uart_rx_buffer[1];
 
-    	  		  if (msg_type == REQUEST_DATA) {
-    	  			  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
-    	  			  uint8_t temperature[4];
-    	  			  message Tempm = {.msg_start_char = MSG_START_CHARACTER, .msg_end_char = MSG_END_CHARACTER,
-    	  					  .msg_data.temperature = 30, .msg_type = RESPONSE_TEMPERATURE};
-    	  			  int TempBytes = create_payload(Tempm, temperature);
-    	  			  HAL_UART_Transmit(&huart2, temperature, TempBytes, 10);
-
-
-    	  			  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
-    	  			  uint8_t humidity[4];
-    	  			  message Humm = {.msg_start_char = MSG_START_CHARACTER, .msg_end_char = MSG_END_CHARACTER,
-    	  					  .msg_data.humidity = rh, .msg_type = RESPONSE_HUMIDITY};
-    	  			  int HumBytes = create_payload(Humm, humidity);
-    	  			  HAL_UART_Transmit(&huart2, humidity, HumBytes, 10);
+	  if (msg_type == REQUEST_DATA) {
+		  //HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+		  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
+		  uint8_t temperature[4];
+		  message Tempm = {.msg_start_char = MSG_START_CHARACTER, .msg_end_char = MSG_END_CHARACTER,
+				  .msg_data.temperature = 30, .msg_type = RESPONSE_TEMPERATURE};
+		  int TempBytes = create_payload(Tempm, temperature);
+		  HAL_UART_Transmit(&huart2, temperature, TempBytes, 10);
 
 
-    	  			  LTR329_Read(data);
-    	  			  uint8_t light[4];
-    	  			  message Lightm = {.msg_start_char = MSG_START_CHARACTER, .msg_end_char = MSG_END_CHARACTER,
-    	  					  .msg_data.light = data, .msg_type = RESPONSE_LIGHT};
-    	  			  int LightBytes = create_payload(Lightm, light);
-    	  			  HAL_UART_Transmit(&huart2, light, LightBytes, 10);
+		  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
+		  uint8_t humidity[4];
+		  message Humm = {.msg_start_char = MSG_START_CHARACTER, .msg_end_char = MSG_END_CHARACTER,
+				  .msg_data.humidity = rh, .msg_type = RESPONSE_HUMIDITY};
+		  int HumBytes = create_payload(Humm, humidity);
+		  HAL_UART_Transmit(&huart2, humidity, HumBytes, 10);
 
 
-    	  			  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
-    	  			  float radiate = t;
-    	  			  uint8_t radiation[4];
-    	  			  message Radm = {.msg_start_char = MSG_START_CHARACTER, .msg_end_char = MSG_END_CHARACTER,
-    	  					  .msg_data.radiation = radiate, .msg_type = RESPONSE_RADIATION};
-    	  			  int RadBytes = create_payload(Radm, radiation);
-    	  			  HAL_UART_Transmit(&huart2, radiation, RadBytes, 10);
+		  LTR329_Read(data);
+		  uint8_t light[4];
+		  message Lightm = {.msg_start_char = MSG_START_CHARACTER, .msg_end_char = MSG_END_CHARACTER,
+				  .msg_data.light = data, .msg_type = RESPONSE_LIGHT};
+		  int LightBytes = create_payload(Lightm, light);
+		  HAL_UART_Transmit(&huart2, light, LightBytes, 10);
 
 
-    	  			  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
-    	  			  float dustsens = rh;
-    	  			  uint8_t dust[4];
-    	  			  message Dustm = {.msg_start_char = MSG_START_CHARACTER, .msg_end_char = MSG_END_CHARACTER,
-    	  					  .msg_data.radiation = dustsens, .msg_type = RESPONSE_DUST};
-    	  			  int DustBytes = create_payload(Dustm, dust);
-    	  			  HAL_UART_Transmit(&huart2, dust, DustBytes, 10);
+		  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
+		  float radiate = t;
+		  uint8_t radiation[4];
+		  message Radm = {.msg_start_char = MSG_START_CHARACTER, .msg_end_char = MSG_END_CHARACTER,
+				  .msg_data.radiation = radiate, .msg_type = RESPONSE_RADIATION};
+		  int RadBytes = create_payload(Radm, radiation);
+		  HAL_UART_Transmit(&huart2, radiation, RadBytes, 10);
 
 
-    	  		  }
-    	  		// Reset the flag after processing the received data
-    	  		uart_rx_done_flag = 0;
-    	  	}
-        /* USER CODE BEGIN 3 */
+		  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
+		  float dustsens = rh;
+		  uint8_t dust[4];
+		  message Dustm = {.msg_start_char = MSG_START_CHARACTER, .msg_end_char = MSG_END_CHARACTER,
+				  .msg_data.radiation = dustsens, .msg_type = RESPONSE_DUST};
+		  int DustBytes = create_payload(Dustm, dust);
+		  HAL_UART_Transmit(&huart2, dust, DustBytes, 10);
+
+		  uart_rx_buffer_clear();
+	  	  } else {
+	  		HAL_UART_Transmit_IT(&huart2, txdata, 3);
+	  	  }
+
+	  HAL_Delay(10);
+	  /* START SLEEP until huart2 receives data*/
     }
-    /* USER CODE END 3 */
 }
 
 /**
@@ -405,14 +374,6 @@ static void MX_USART1_UART_Init(void)
   */
 static void MX_USART2_UART_Init(void)
 {
-
-  /* USER CODE BEGIN USART2_Init 0 */
-
-  /* USER CODE END USART2_Init 0 */
-
-  /* USER CODE BEGIN USART2_Init 1 */
-
-  /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
   huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
@@ -427,9 +388,7 @@ static void MX_USART2_UART_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN USART2_Init 2 */
-
-  /* USER CODE END USART2_Init 2 */
+  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_3);
 
 }
 
@@ -444,6 +403,16 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    /* Configure the GPIO pin for the LED */
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+    GPIO_InitStruct.Pin = LD3_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(LD3_GPIO_Port, &GPIO_InitStruct);
 
 }
 

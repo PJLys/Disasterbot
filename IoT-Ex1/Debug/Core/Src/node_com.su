@@ -1,2 +1,0 @@
-../Core/Src/node_com.c:15:9:create_payload	32	static
-../Core/Src/node_com.c:48:6:uart_rx_buffer_handler	16	static
