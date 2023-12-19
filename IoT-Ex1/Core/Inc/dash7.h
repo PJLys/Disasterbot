@@ -25,27 +25,14 @@ enum msg_type_e {
 	RESPONSE_DUST,
 };
 
-union msg_data_u {
-    float temperature;
-    float humidity;
-    float radiation;
-    float dust;
-    uint8_t light[4];
-};
-
-typedef struct {
-    const char msg_start_char;
-    enum msg_type_e msg_type;
-    union msg_data_u msg_data;
-    const char msg_end_char;
-} message;
-
 extern volatile uint8_t uart_rx_buffer[BUFFER_SIZE];
 extern volatile bool uart_rx_done_flag;
 
-uint8_t create_payload(message msg, uint8_t* payload);
+uint8_t* create_payload_f(uint8_t msg_type, float data);
+uint8_t* create_payload(uint8_t msg_type, uint8_t* data);
 void uart_rx_buffer_handler(uint8_t input_byte);
 void uart_rx_buffer_clear();
+uint8_t* floatToUint8Vector(float val);
 
 
 #endif /* INC_DASH7_H_ */

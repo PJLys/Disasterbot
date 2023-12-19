@@ -12,37 +12,31 @@ volatile uint8_t uart_rx_buffer[BUFFER_SIZE];
 static volatile uint8_t uart_rx_buffer_i = 0;
 volatile bool uart_rx_done_flag;
 
-uint8_t create_payload(message msg, uint8_t *payload){
-    uint8_t payload_i = 0;
+uint8_t* create_payload_f(uint8_t msg_type, float data) {
+    // Assuming data is a 4-byte uint8_t array
+	uint8_t* data_array=floatToUint8Vector(data);
+	return create_payload(msg_type, data_array);
+}
 
-    payload[payload_i++] = msg.msg_start_char;
-    memcpy(payload+payload_i, &msg.msg_type, sizeof(msg.msg_type));
-    payload_i += sizeof(msg.msg_type);
+uint8_t* create_payload(uint8_t msg_type, uint8_t* data_array){
+    // Allocate memory for the payload (6 bytes)
+    uint8_t* payload = malloc(7);
 
-    if (msg.msg_type == RESPONSE_TEMPERATURE){
-        memcpy(payload+payload_i, &msg.msg_data.temperature, sizeof(msg.msg_data.temperature));
-        payload_i += sizeof(msg.msg_data.temperature);
-    }
-    else if (msg.msg_type == RESPONSE_HUMIDITY){
-        memcpy(payload+payload_i, &msg.msg_data.humidity, sizeof(msg.msg_data.humidity));
-        payload_i += sizeof(msg.msg_data.humidity);
-    }
-    else if (msg.msg_type == RESPONSE_LIGHT){
-        memcpy(payload+payload_i, msg.msg_data.light, sizeof(msg.msg_data.light));
-        payload_i += sizeof(msg.msg_data.light);
-    }
-    else if (msg.msg_type == RESPONSE_RADIATION){
-    	memcpy(payload+payload_i, &msg.msg_data.radiation, sizeof(msg.msg_data.radiation));
-    	payload_i += sizeof(msg.msg_data.radiation);
-    }
-    else if (msg.msg_type == RESPONSE_DUST) {
-    	memcpy(payload+payload_i, &msg.msg_data.dust, sizeof(msg.msg_data.dust));
-    	payload_i += sizeof(msg.msg_data.dust);
+    if (payload != NULL) {
+        // Place 'e' in the first byte
+        payload[0] = MSG_START_CHARACTER;
+        payload[1] = msg_type;
+
+        // Copy the 4-byte data into bytes 1-4
+        for (int i = 0; i < 4; ++i) {
+            payload[i + 2] = data_array[i];
+        }
+
+        // Place 's' in the last byte
+        payload[6] = MSG_END_CHARACTER;
     }
 
-    payload[payload_i++] = msg.msg_end_char;
-
-    return payload_i;
+    return payload;
 }
 
 void uart_rx_buffer_handler(uint8_t input_byte){
@@ -69,5 +63,13 @@ void uart_rx_buffer_clear(){
 	for (int i=0; i<(BUFFER_SIZE); i++) {
 		uart_rx_buffer[i] = 0x0;
 	}
+}
+
+uint8_t* floatToUint8Vector(float val) {
+	char data[sizeof(float)];
+
+	memcpy(data, &val, sizeof(val));
+
+	return data;
 }
 

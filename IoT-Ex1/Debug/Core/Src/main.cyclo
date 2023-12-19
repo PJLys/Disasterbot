@@ -2,10 +2,10 @@
 ../Core/Src/main.c:75:6:SHT40_Read	3
 ../Core/Src/main.c:99:6:LTR329_Init	1
 ../Core/Src/main.c:111:6:LTR329_Read	1
-../Core/Src/main.c:123:6:HAL_UART_RxCpltCallback	2
-../Core/Src/main.c:139:5:main	3
-../Core/Src/main.c:252:6:SystemClock_Config	4
-../Core/Src/main.c:307:13:MX_I2C1_Init	4
-../Core/Src/main.c:355:13:MX_USART2_UART_Init	2
-../Core/Src/main.c:390:13:MX_GPIO_Init	1
-../Core/Src/main.c:432:6:Error_Handler	1
+../Core/Src/main.c:123:6:HAL_UART_RxCpltCallback	1
+../Core/Src/main.c:137:5:main	3
+../Core/Src/main.c:236:6:SystemClock_Config	4
+../Core/Src/main.c:291:13:MX_I2C1_Init	4
+../Core/Src/main.c:339:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:374:13:MX_GPIO_Init	1
+../Core/Src/main.c:416:6:Error_Handler	1
