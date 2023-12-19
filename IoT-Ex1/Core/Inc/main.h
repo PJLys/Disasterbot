@@ -64,13 +64,6 @@ void Error_Handler(void);
 #define LD3_Pin GPIO_PIN_3
 #define LD3_GPIO_Port GPIOB
 
-typedef enum {
-	STATE_SLEEP,
-	STATE_MEASURING,
-	STATE_D7,
-	STATE_BT
-} SystemState;
-
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

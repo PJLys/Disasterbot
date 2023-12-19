@@ -67,7 +67,7 @@ void uart_rx_buffer_handler(uint8_t input_byte){
 
 void uart_rx_buffer_clear(){
 	for (int i=0; i<(BUFFER_SIZE); i++) {
-		uart_rx_buffer[i] = 0xF;
+		uart_rx_buffer[i] = 0x0;
 	}
 }
 

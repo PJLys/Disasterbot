@@ -1432,6 +1432,7 @@ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData,
         ATOMIC_SET_BIT(huart->Instance->CR1, USART_CR1_RTOIE);
       }
     }
+
     return (UART_Start_Receive_IT(huart, pData, Size));
   }
   else
