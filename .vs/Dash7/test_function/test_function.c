@@ -48,6 +48,8 @@
 #include "modules_defs.h"
 #include "platform.h"
 
+#include <unistd.h>
+
 #include <time.h>  // for srand and rand functions
 #include <stdint.h>
 
@@ -124,6 +126,11 @@ void ask_data(){
     payload[1] = DATA_REQ;
     payload[2] = END_DELIMITER;
     uart_send_bytes(uarthandler,payload,sizeof(payload));
+    //non blocking delay ot allow reception
+    int i = 300000;//no clue how much delay this is but it's delay..
+    while(i!=0){
+        i--;
+    }
 }
 
 void startTask(){
@@ -133,6 +140,7 @@ void startTask(){
 }
 
 void process_received_data(uint8_t* buffer, uint16_t size){
+    //uart_send_string(uarthandler,"received");
     CustomMessage message;
     size_t offset = 0;
     // Manually copy data from buffer to struct fields
@@ -146,34 +154,47 @@ void process_received_data(uint8_t* buffer, uint16_t size){
     message.endDelimiter = buffer[offset];
 
     static uint32_t data = 0;
-    static uint32_t temperature = 2383946474;
+    static uint32_t temperature = 40;
+
+
     //check delimiters
     if (message.sensorType == TEMPERATURE_SENSOR){ //temperature
         data = __builtin_bswap16(message.sensorData); // need to store in big endian in fs
         int rc = d7ap_fs_write_file(TEMPERATURE_FILE_ID, 0, (uint8_t*)&data, SENSOR_FILE_SIZE, ROOT_AUTH);
         assert(rc == 0);
         data = __builtin_bswap16(data); // revert to make sure we're working with the right value(?)
+        uart_send_string(uarthandler, "temp");
         //uart_send_string("temperature processed \n\r");
     } else if (message.sensorType == HUMIDITY_SENSOR){
         data = __builtin_bswap16(message.sensorData); // need to store in big endian in fs
         int rc = d7ap_fs_write_file(HUMIDITY_FILE_ID, 0, (uint8_t*)&data, SENSOR_FILE_SIZE, ROOT_AUTH);
         assert(rc == 0);
         data = __builtin_bswap16(data); // revert to make sure we're working with the right value(?)
+        uart_send_string(uarthandler, "hum");
     }else if (message.sensorType == LIGHT_SENSOR){
         data = __builtin_bswap16(message.sensorData); // need to store in big endian in fs
         int rc = d7ap_fs_write_file(LIGHT_FILE_ID, 0, (uint8_t*)&data, SENSOR_FILE_SIZE, ROOT_AUTH);
         assert(rc == 0);
         data = __builtin_bswap16(data); // revert to make sure we're working with the right value(?)
+        uart_send_string(uarthandler, "light");
     }else if (message.sensorType == RADIO_SENSOR){
         data = __builtin_bswap16(message.sensorData); // need to store in big endian in fs
         int rc = d7ap_fs_write_file(RADIO_FILE_ID, 0, (uint8_t*)&data, SENSOR_FILE_SIZE, ROOT_AUTH);
         assert(rc == 0);
         data = __builtin_bswap16(data); // revert to make sure we're working with the right value(?)
+        uart_send_string(uarthandler, "rad");
     }else if (message.sensorType == DUST_SENSOR){
         data = __builtin_bswap16(message.sensorData); // need to store in big endian in fs
         int rc = d7ap_fs_write_file(DUST_FILE_ID, 0, (uint8_t*)&data, SENSOR_FILE_SIZE, ROOT_AUTH);
         assert(rc == 0);
         data = __builtin_bswap16(data); // revert to make sure we're working with the right value(?)
+        uart_send_string(uarthandler, "dust");
+    }else{
+        data = __builtin_bswap16(message.sensorData); // need to store in big endian in fs
+        int rc = d7ap_fs_write_file(TEMPERATURE_FILE_ID, 0, (uint8_t*)&temperature, SENSOR_FILE_SIZE, ROOT_AUTH);
+        assert(rc == 0);
+        data = __builtin_bswap16(data); // revert to make sure we're working with the right value(?)
+        uart_send_string(uarthandler, "bug");
     }
    // push_data(buffer,size, message);
 }
@@ -190,9 +211,10 @@ void uart_rx_callback(uart_handle_t* uart_handler, uint8_t byte){
             data_buffer_index=0;
             process_received_data(data_buffer,tempIndex);
             }
-        }//room for buffer overflow handler
+        }
         
     }
+    
 }
 
 void execute_sensor_measurement()
@@ -206,7 +228,7 @@ void execute_sensor_measurement()
   assert(rc == 0);
   temperature = __builtin_bswap32(temperature); // revert to make sure we're working with the right value
 
-  timer_post_task_delay(&execute_sensor_measurement, SENSOR_INTERVAL_SEC);
+ // timer_post_task_delay(&execute_sensor_measurement, SENSOR_INTERVAL_SEC);
 }
 
 void init_user_files()
@@ -249,8 +271,9 @@ void bootstrap()
     uart_set_rx_interrupt_callback(uarthandler, uart_rx_callback);
     uart_rx_interrupt_enable(uarthandler);
 
-    sched_register_task(&execute_sensor_measurement);
-    sched_post_task(&execute_sensor_measurement);
+    //sched_register_task(&execute_sensor_measurement);
+    //sched_post_task(&execute_sensor_measurement);
     sched_register_task(&startTask);
     sched_register_task(&ask_data);
+    //uart_send_string(uarthandler, "Test");
 }
