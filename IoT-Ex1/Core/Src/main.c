@@ -188,28 +188,28 @@ int main(void)
 		  HAL_GPIO_TogglePin(GPIOB, LD3_Pin);
 
 		  // Perform measurements
-		  LTR329_Read(data);
-		  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
+		  //LTR329_Read(data);
+		  //SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
 
 		  // SEND TEMP
 		  uint8_t* TempBytes = create_payload_f(RESPONSE_TEMPERATURE, 30.0);
 		  HAL_UART_Transmit(&huart2, TempBytes, 7, 10);
 
 		  //SEND HUMIDITY
-		  uint8_t* HumBytes = create_payload_f(RESPONSE_HUMIDITY, rh);
-		  HAL_UART_Transmit(&huart2, HumBytes, 7, 10);
+		  //uint8_t* HumBytes = create_payload_f(RESPONSE_HUMIDITY, rh);
+		  //HAL_UART_Transmit(&huart2, HumBytes, 7, 10);
 
 		  //SEND LIGHT
-		  uint8_t* LightBytes = create_payload(RESPONSE_LIGHT, data);
-		  HAL_UART_Transmit(&huart2, LightBytes, 7, 10);
+		  //uint8_t* LightBytes = create_payload(RESPONSE_LIGHT, data);
+		  //HAL_UART_Transmit(&huart2, LightBytes, 7, 10);
 
 		  //SIMULATE AND SEND RADIATION
-		  uint8_t* RadBytes = create_payload_f(RESPONSE_RADIATION, t*rh);
-		  HAL_UART_Transmit(&huart2, RadBytes, 7, 10);
+		  //uint8_t* RadBytes = create_payload_f(RESPONSE_RADIATION, t*rh);
+		  //HAL_UART_Transmit(&huart2, RadBytes, 7, 10);
 
 		  //SIMULATE AND SEND DUST
-		  uint8_t* DustBytes = create_payload_f(RESPONSE_DUST, rh/t);
-		  HAL_UART_Transmit(&huart2, DustBytes, 7, 10);
+		  //uint8_t* DustBytes = create_payload_f(RESPONSE_DUST, rh/t);
+		  //HAL_UART_Transmit(&huart2, DustBytes, 7, 10);
 
 		  //Clear Rx Buffer
 		  for (uint8_t i=0; i<3; i++) {

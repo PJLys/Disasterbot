@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (11.3.rel1)
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
 ################################################################################
 
 -include ../makefile.init
@@ -60,8 +60,8 @@ all: main-build
 main-build: IoT-Ex1.elf secondary-outputs
 
 # Tool invocations
-IoT-Ex1.elf IoT-Ex1.map: $(OBJS) $(USER_OBJS) C:\Users\pjlys\Documents\Pieter-Jan\UA\I-IoT\LinebotIoT\IoT-Ex1\STM32L412KBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "IoT-Ex1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\pjlys\Documents\Pieter-Jan\UA\I-IoT\LinebotIoT\IoT-Ex1\STM32L412KBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="IoT-Ex1.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+IoT-Ex1.elf IoT-Ex1.map: $(OBJS) $(USER_OBJS) C:\Users\jensv\OneDrive\Bureaublad\IOT\Disasterbot\IoT-Ex1\STM32L412KBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "IoT-Ex1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\jensv\OneDrive\Bureaublad\IOT\Disasterbot\IoT-Ex1\STM32L412KBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="IoT-Ex1.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
