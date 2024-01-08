@@ -35,7 +35,7 @@ Tasks/StartupTask.d Tasks/StartupTask.o: ../Tasks/StartupTask.c \
  ../Tasks/MotorPosTask.h ../Tasks/MotorSpeedTask.h ../Tasks/ADCTask.h \
  ../Tasks/LineFollowerSpeedTask.h ../Tasks/LineFollowerDirectTask.h \
  ../Tasks/RGBTask.h ../Tasks/GyroTask.h ../Tasks/TerminalTask.h \
- ../Tasks/MotionTask.h ../Tasks/sleeptask.h \
+ ../Tasks/MotionTask.h ../Tasks/Disasterbot.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sleep.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
@@ -155,7 +155,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../Tasks/MotionTask.h:
 
-../Tasks/sleeptask.h:
+../Tasks/Disasterbot.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sleep.h:
 

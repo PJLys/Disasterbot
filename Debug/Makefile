@@ -72,7 +72,7 @@ C_SRCS +=  \
 ../Tasks/MotorSpeedTask.c \
 ../Tasks/OledMenuTask.c \
 ../Tasks/RGBTask.c \
-../Tasks/sleeptask.c \
+../Tasks/Disasterbot.c \
 ../Tasks/StartupTask.c \
 ../Tasks/TerminalTask.c \
 ../trace.c
@@ -117,7 +117,7 @@ Tasks/MotorPosTask.o \
 Tasks/MotorSpeedTask.o \
 Tasks/OledMenuTask.o \
 Tasks/RGBTask.o \
-Tasks/sleeptask.o \
+Tasks/Disasterbot.o \
 Tasks/StartupTask.o \
 Tasks/TerminalTask.o \
 trace.o
@@ -155,7 +155,7 @@ Tasks/MotorPosTask.o \
 Tasks/MotorSpeedTask.o \
 Tasks/OledMenuTask.o \
 Tasks/RGBTask.o \
-Tasks/sleeptask.o \
+Tasks/Disasterbot.o \
 Tasks/StartupTask.o \
 Tasks/TerminalTask.o \
 trace.o
@@ -193,7 +193,7 @@ Tasks/MotorPosTask.d \
 Tasks/MotorSpeedTask.d \
 Tasks/OledMenuTask.d \
 Tasks/RGBTask.d \
-Tasks/sleeptask.d \
+Tasks/Disasterbot.d \
 Tasks/StartupTask.d \
 Tasks/TerminalTask.d \
 trace.d
@@ -231,7 +231,7 @@ Tasks/MotorPosTask.d \
 Tasks/MotorSpeedTask.d \
 Tasks/OledMenuTask.d \
 Tasks/RGBTask.d \
-Tasks/sleeptask.d \
+Tasks/Disasterbot.d \
 Tasks/StartupTask.d \
 Tasks/TerminalTask.d \
 trace.d
@@ -474,7 +474,7 @@ Tasks/RGBTask.o: ../Tasks/RGBTask.c
 	@echo Finished building: $<
 	
 
-Tasks/sleeptask.o: ../Tasks/sleeptask.c
+Tasks/Disasterbot.o: ../Tasks/Disasterbot.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAC_DFP\1.1.50\include" -I".." -I"../Drivers" -I"../FreeRTOS" -I"../Tasks"  -O2 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -mmcu=atxmega384c3 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAC_DFP\1.1.50\gcc\dev\atxmega384c3" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

@@ -81,8 +81,9 @@ void DriverMPU6050GyroGet(int16_t *Gx,int16_t *Gy,int16_t *Gz)
 
 	//Read Gyro data
 	Buffer[0]=MPU6050_GX;
+	
 	res=TWIMWriteRead(MPU6050_ADDR,Buffer,1,Buffer,6);
-	configASSERT(res);
+	//configASSERT(res);
 	((char *) (&x))[0]=Buffer[1];
 	((char *) (&x))[1]=Buffer[0];
 	

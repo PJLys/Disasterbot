@@ -1,5 +1,5 @@
-Tasks/sleeptask.d Tasks/sleeptask.o: ../Tasks/sleeptask.c \
- ../Tasks/sleeptask.h \
+Tasks/Disasterbot.d Tasks/Disasterbot.o: ../Tasks/Disasterbot.c \
+ ../Tasks/Disasterbot.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sleep.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
@@ -26,7 +26,7 @@ Tasks/sleeptask.d Tasks/sleeptask.o: ../Tasks/sleeptask.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h
 
-../Tasks/sleeptask.h:
+../Tasks/Disasterbot.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sleep.h:
 

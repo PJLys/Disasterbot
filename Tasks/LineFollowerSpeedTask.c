@@ -49,7 +49,6 @@ void WorkerLineFollowerSpeed(void *pvParameters)
 			
 			ADCData=GetADCData();
 			Diff=(float) (ADCData.PhotoL-ADCData.PhotoR+SensorOffset);
-			//printf ("Diff:%f\r\n",Diff);
 			OutL=Speed+(Diff*(float) (LINEFOLLOW_SPEED_KP));
 			OutR=Speed-(Diff*(float) (LINEFOLLOW_SPEED_KP));
 			if (OutL<0) OutL=0;

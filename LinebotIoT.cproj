@@ -390,10 +390,10 @@
       <SubType>compile</SubType>
       <Link>Tasks\RGBTask.h</Link>
     </Compile>
-    <Compile Include="Tasks\sleeptask.c">
+    <Compile Include="Tasks\Disasterbot.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Tasks\sleeptask.h">
+    <Compile Include="Tasks\Disasterbot.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Tasks\StartupTask.c">

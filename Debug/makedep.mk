@@ -66,7 +66,7 @@ Tasks\OledMenuTask.c
 
 Tasks\RGBTask.c
 
-Tasks\sleeptask.c
+Tasks\Disasterbot.c
 
 Tasks\StartupTask.c
 

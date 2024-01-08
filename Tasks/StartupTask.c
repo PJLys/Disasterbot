@@ -27,7 +27,7 @@
 #include "GyroTask.h"
 #include "TerminalTask.h"
 #include "MotionTask.h"
-#include "sleeptask.h"
+#include "Disasterbot.h"
 
 #include <stdio.h>
 
@@ -75,13 +75,9 @@ static void WorkerStartup(void *pvParameters)
 	InitLineFollowerSpeedTask();
 	InitLineFollowerDirectTask();
 	InitRGBTask();
-	//InitGyroTask();
+	InitGyroTask();
 	InitTerminalTask();
 	InitMotionTask();
-	InitSleepTask();
-	
-	EnableLineFollowerDirectTask();
-	
+	InitSqSleepTask();
 	vTaskSuspend(NULL);
-
 }
