@@ -37,6 +37,9 @@ UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 
 float radiation;
+// Add a global flag to indicate whether data is ready
+volatile uint8_t dataReadyFlag = 0;
+uint8_t ledStatus = 0; // 0 means LED is off, 1 means LED is on
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -122,6 +125,9 @@ void LTR329_Read(uint8_t *data)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 	if (huart->Instance == USART2) {
+		dataReadyFlag = 1;
+		ledStatus = 1 - ledStatus;
+		HAL_GPIO_WritePin(GPIOB, LD3_Pin, ledStatus);
 	} else {
 		return;
 	}
@@ -182,42 +188,51 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  //enum msg_type_e msg_type = Rx_data[1];
-	  if (Rx_data[1] == 0x1) {
-		  // For debugging
-		  HAL_GPIO_TogglePin(GPIOB, LD3_Pin);
-
-		  // Perform measurements
-		  //LTR329_Read(data);
-		  //SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
-
-		  // SEND TEMP
-		  uint8_t* TempBytes = create_payload_f(RESPONSE_TEMPERATURE, 30.0);
-		  HAL_UART_Transmit(&huart2, TempBytes, 7, 10);
-
-		  //SEND HUMIDITY
-		  //uint8_t* HumBytes = create_payload_f(RESPONSE_HUMIDITY, rh);
-		  //HAL_UART_Transmit(&huart2, HumBytes, 7, 10);
-
-		  //SEND LIGHT
-		  //uint8_t* LightBytes = create_payload(RESPONSE_LIGHT, data);
-		  //HAL_UART_Transmit(&huart2, LightBytes, 7, 10);
-
-		  //SIMULATE AND SEND RADIATION
-		  //uint8_t* RadBytes = create_payload_f(RESPONSE_RADIATION, t*rh);
-		  //HAL_UART_Transmit(&huart2, RadBytes, 7, 10);
-
-		  //SIMULATE AND SEND DUST
-		  //uint8_t* DustBytes = create_payload_f(RESPONSE_DUST, rh/t);
-		  //HAL_UART_Transmit(&huart2, DustBytes, 7, 10);
-
-		  //Clear Rx Buffer
-		  for (uint8_t i=0; i<3; i++) {
-			  Rx_data[i] = 0;
-		  }
-		  MX_USART2_UART_Init();
+	  // Enter low-power mode if no data is ready
+	  if (dataReadyFlag == 0){
+		  printf("Entering low-power mode...\n");
+		  // Enable UART interrupt and enter low-power mode
 		  HAL_UART_Receive_IT(&huart2, Rx_data, 3);
+	      //HAL_PWR_EnterSLEEPMode(PWR_LOWPOWERREGULATOR_ON, PWR_SLEEPENTRY_WFI);
 	  }
+	  else{
+		  if (Rx_data[1] == 0x1) {
+			  	  printf("Waking up from low-power mode...\n");
+		  		  // Perform measurements
+		  		  LTR329_Read(data);
+		  		  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
+		  		  float radiation = t*rh;
+		  		  float dust = rh/t;
+
+		  		  // SEND TEMP
+		  		  uint8_t* TempBytes = create_payload_f(RESPONSE_TEMPERATURE, t);
+		  		  HAL_UART_Transmit(&huart2, TempBytes, 7, 10);
+
+		  		  //SEND HUMIDITY
+		  		  uint8_t* HumBytes = create_payload_f(RESPONSE_HUMIDITY, rh);
+		  		  HAL_UART_Transmit(&huart2, HumBytes, 7, 10);
+
+		  		  //SEND LIGHT
+		  		  uint8_t* LightBytes = create_payload(RESPONSE_LIGHT, data);
+		  		  HAL_UART_Transmit(&huart2, LightBytes, 7, 10);
+
+		  		  //SIMULATE AND SEND RADIATION
+		  		  uint8_t* RadBytes = create_payload_f(RESPONSE_RADIATION, radiation);
+		  		  HAL_UART_Transmit(&huart2, RadBytes, 7, 10);
+
+		  		  //SIMULATE AND SEND DUST
+		  		  uint8_t* DustBytes = create_payload_f(RESPONSE_DUST, dust);
+		  		  HAL_UART_Transmit(&huart2, DustBytes, 7, 10);
+
+		  		  //Clear Rx Buffer
+		  		  for (uint8_t i=0; i<3; i++) {
+		  			  Rx_data[i] = 0;
+		  		  }
+		  		  // Data is processed, reset the flag
+		  		  dataReadyFlag = 0;
+		  	  }
+	  }
+	  //enum msg_type_e msg_type = Rx_data[1];
 
     /* USER CODE END WHILE */
 

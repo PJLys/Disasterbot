@@ -17,6 +17,7 @@
 #define BUFFER_SIZE 30
 
 enum msg_type_e {
+	TEST_DATA,
     REQUEST_DATA,
     RESPONSE_TEMPERATURE,
     RESPONSE_HUMIDITY,
