@@ -1,4 +1,3 @@
-
 #ifndef LTR329_H
 #define LTR329_H
 
@@ -23,6 +22,6 @@
 
 // Function Prototypes
 void LTR329_Init(void);
-void LTR329_Read(uint8_t *data);
+void LTR329_Read(uint16_t *ch0, uint16_t *ch1);
 
 #endif // LTR329_H

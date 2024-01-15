@@ -20,6 +20,7 @@ uint8_t* create_payload_f(uint8_t msg_type, float data) {
     // Free the memory allocated for data_array
     free(data_array);
 
+
     return payload;
 }
 

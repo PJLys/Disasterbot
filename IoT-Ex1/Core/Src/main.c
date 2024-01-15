@@ -29,6 +29,7 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 uint8_t Rx_data[3];
+uint8_t BT_data[8];
 
 I2C_HandleTypeDef hi2c1; // Handles i2c communication with SHT40
 I2C_HandleTypeDef hi2c3; // Handles i2c communication with LTR329
@@ -64,6 +65,7 @@ UART_HandleTypeDef huart2;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_USART1_UART_Init(void);
 static void MX_I2C1_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -111,23 +113,23 @@ void LTR329_Init()
     data = LTR329_MEAS_RATE;
     HAL_I2C_Mem_Write(&hi2c3, LTR329_I2C_ADDRESS, LTR329_ALS_MEAS_RATE, I2C_MEMADD_SIZE_8BIT, &data, 1, 100);
 }
-void LTR329_Read(uint8_t *data)
+void LTR329_Read(uint16_t *ch0, uint16_t *ch1)
 {
-    //uint8_t data[4];
+    uint8_t data[4];
+
     // Read 4 bytes of data starting from LTR329_ALS_DATA_CH1_0
     HAL_I2C_Mem_Read(&hi2c3, LTR329_I2C_ADDRESS, LTR329_ALS_DATA_CH1_0, I2C_MEMADD_SIZE_8BIT, data, 4, 100);
 
     // Combine bytes to get the light data for each channel
-    //*ch1 = (uint16_t)(data[1] << 8) | data[0];
-    //*ch0 = (uint16_t)(data[3] << 8) | data[2];
-
+    *ch1 = (uint16_t)(data[1] << 8) | data[0];
+    *ch0 = (uint16_t)(data[3] << 8) | data[2];
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 	if (huart->Instance == USART2) {
 		dataReadyFlag = 1;
-		ledStatus = 1 - ledStatus;
-		HAL_GPIO_WritePin(GPIOB, LD3_Pin, ledStatus);
+		//ledStatus = 1 - ledStatus;
+		//HAL_GPIO_WritePin(GPIOB, LD3_Pin, ledStatus);
 	} else {
 		return;
 	}
@@ -143,8 +145,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-    float t, rh;
-    uint8_t data[4];
+	float t, rh;
+	uint16_t light_ch0, light_ch1;
 
   /* USER CODE END 1 */
 
@@ -154,8 +156,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  //HAL_UART_IRQHandler(&huart1);
-  //HAL_UART_IRQHandler(&huart2);
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -163,19 +164,21 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
   __enable_irq();
-  //HAL_UART_IRQHandler(&huart1);
+  HAL_UART_IRQHandler(&huart1);
   HAL_UART_IRQHandler(&huart2);
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
+  MX_USART1_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
     SHT40_Init();
     LTR329_Init();
     uart_rx_buffer_clear();
     HAL_UART_Receive_IT(&huart2, Rx_data, 3);
+    HAL_UART_Receive_IT(&huart1, BT_data, 8);
 
 
     static uint8_t txdata[] = {0x14, 0x87, 0x33} ;
@@ -186,9 +189,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int counter = 0;
   while (1)
   {
+	 /* LTR329_Read(data);
+	  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
+	  float radiation = t*rh;
+	  float dust = rh/t;*/
 	  // Enter low-power mode if no data is ready
+
+
 	  if (dataReadyFlag == 0){
 		  printf("Entering low-power mode...\n");
 		  // Enable UART interrupt and enter low-power mode
@@ -197,33 +207,51 @@ int main(void)
 	  }
 	  else{
 		  if (Rx_data[1] == 0x1) {
+	  		  HAL_UART_Transmit(&huart1, txdata, 3, 10);
+
+			  	  if(counter >= 5){
+			  		  counter = 0;
+			  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,0);
+			  	  }
 			  	  printf("Waking up from low-power mode...\n");
 		  		  // Perform measurements
-		  		  LTR329_Read(data);
+			  	  LTR329_Read(&light_ch0, &light_ch1);
 		  		  SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
 		  		  float radiation = t*rh;
-		  		  float dust = rh/t;
+		  		  float light0 = (float)light_ch0;
+		  		  float light1 = (float)light_ch1;
 
+		  		  float dust = light0+t;
+
+		  		  HAL_GPIO_TogglePin(GPIOB, LD3_Pin);
 		  		  // SEND TEMP
-		  		  uint8_t* TempBytes = create_payload_f(RESPONSE_TEMPERATURE, t);
-		  		  HAL_UART_Transmit(&huart2, TempBytes, 7, 10);
+		  		  if(counter == 0){
+		  			SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
+			  		  uint8_t* TempBytes = create_payload_f(RESPONSE_TEMPERATURE, t);
+			  		  HAL_UART_Transmit(&huart2, TempBytes, 7, 10);
+			  		  free(TempBytes);
+		  		  }else if(counter == 1){
+			  		  uint8_t* HumBytes = create_payload_f(RESPONSE_HUMIDITY, rh);
+			  		  HAL_UART_Transmit(&huart2, HumBytes, 7, 10);
+			  		  free(HumBytes);
+		  		  }else if(counter == 2){
+			  		  uint8_t* LightBytes = create_payload_f(RESPONSE_LIGHT, light1);
+			  		  HAL_UART_Transmit(&huart2, LightBytes, 7, 10);
+			  		  free(LightBytes);
+		  		  }else if(counter == 3){
+			  		  uint8_t* RadBytes = create_payload_f(RESPONSE_RADIATION, radiation);
+			  		  HAL_UART_Transmit(&huart2, RadBytes, 7, 10);
+			  		  free(RadBytes);
 
-		  		  //SEND HUMIDITY
-		  		  uint8_t* HumBytes = create_payload_f(RESPONSE_HUMIDITY, rh);
-		  		  HAL_UART_Transmit(&huart2, HumBytes, 7, 10);
+		  		  }else if(counter == 4){
+			  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,1);
+			  		  uint8_t* DustBytes = create_payload_f(RESPONSE_DUST, dust);
+			  		  HAL_UART_Transmit(&huart2, DustBytes, 7, 10);
+					  free(DustBytes);
+		  		  }
 
-		  		  //SEND LIGHT
-		  		  uint8_t* LightBytes = create_payload(RESPONSE_LIGHT, data);
-		  		  HAL_UART_Transmit(&huart2, LightBytes, 7, 10);
 
-		  		  //SIMULATE AND SEND RADIATION
-		  		  uint8_t* RadBytes = create_payload_f(RESPONSE_RADIATION, radiation);
-		  		  HAL_UART_Transmit(&huart2, RadBytes, 7, 10);
-
-		  		  //SIMULATE AND SEND DUST
-		  		  uint8_t* DustBytes = create_payload_f(RESPONSE_DUST, dust);
-		  		  HAL_UART_Transmit(&huart2, DustBytes, 7, 10);
-
+		  		  counter++;
 		  		  //Clear Rx Buffer
 		  		  for (uint8_t i=0; i<3; i++) {
 		  			  Rx_data[i] = 0;
@@ -380,6 +408,41 @@ static void MX_USART2_UART_Init(void)
 }
 
 /**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART1_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart1.Instance = USART2;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_RS485Ex_Init(&huart1, UART_DE_POLARITY_HIGH, 0, 0) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -397,6 +460,12 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET);
+
+  GPIO_InitStruct.Pin = GPIO_PIN_8;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : LD3_Pin */
   GPIO_InitStruct.Pin = LD3_Pin;
