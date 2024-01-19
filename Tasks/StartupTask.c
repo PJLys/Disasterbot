@@ -78,6 +78,6 @@ static void WorkerStartup(void *pvParameters)
 	InitGyroTask();
 	InitTerminalTask();
 	InitMotionTask();
-	InitSqSleepTask();
+	InitLineSleepTask();
 	vTaskSuspend(NULL);
 }

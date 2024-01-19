@@ -11,8 +11,8 @@
 
 static int16_t SensorOffset=0;
 static float ReqSpeed;
-static const float LineFollowKp=0.2;
-static float Speed=3200.0;
+static const float LineFollowKp=0.15;
+static float Speed=2500.0;
 
 static TaskHandle_t LineFollowerDirectTaskHandle;
 
@@ -39,7 +39,7 @@ void DisableLineFollowerDirectTask()
 static void WorkerLineFollowerDirect(void *pvParameters)
 {
 	TickType_t xLastWakeTime;
-	const TickType_t xPeriod = 10;
+	const TickType_t xPeriod = 1;
 	float Diff;
 	float OutL,OutR;
 	ADCStruct ADCData;
