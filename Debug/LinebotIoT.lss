@@ -10579,8 +10579,8 @@ static void WorkerLineFollowerDirect(void *pvParameters)
     4e20:	6b 01       	movw	r12, r22
     4e22:	7c 01       	movw	r14, r24
     4e24:	20 e0       	ldi	r18, 0x00	; 0
-    4e26:	30 e4       	ldi	r19, 0x40	; 64
-    4e28:	4c e1       	ldi	r20, 0x1C	; 28
+    4e26:	30 ea       	ldi	r19, 0xA0	; 160
+    4e28:	4e e3       	ldi	r20, 0x3E	; 62
     4e2a:	55 e4       	ldi	r21, 0x45	; 69
     4e2c:	0e 94 52 31 	call	0x62a4	; 0x62a4 <__addsf3>
     4e30:	4b 01       	movw	r8, r22
@@ -10589,8 +10589,8 @@ static void WorkerLineFollowerDirect(void *pvParameters)
     4e34:	a7 01       	movw	r20, r14
     4e36:	96 01       	movw	r18, r12
     4e38:	60 e0       	ldi	r22, 0x00	; 0
-    4e3a:	70 e4       	ldi	r23, 0x40	; 64
-    4e3c:	8c e1       	ldi	r24, 0x1C	; 28
+    4e3a:	70 ea       	ldi	r23, 0xA0	; 160
+    4e3c:	8e e3       	ldi	r24, 0x3E	; 62
     4e3e:	95 e4       	ldi	r25, 0x45	; 69
     4e40:	0e 94 51 31 	call	0x62a2	; 0x62a2 <__subsf3>
     4e44:	6b 01       	movw	r12, r22
