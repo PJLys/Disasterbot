@@ -24,6 +24,7 @@ enum msg_type_e {
     RESPONSE_LIGHT,
 	RESPONSE_RADIATION,
 	RESPONSE_DUST,
+	NEW_DUST,
 };
 
 extern volatile uint8_t uart_rx_buffer[BUFFER_SIZE];

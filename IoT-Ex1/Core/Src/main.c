@@ -209,10 +209,6 @@ int main(void)
 		  if (Rx_data[1] == 0x1) {
 	  		  HAL_UART_Transmit(&huart1, txdata, 3, 10);
 
-			  	  if(counter >= 5){
-			  		  counter = 0;
-			  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,0);
-			  	  }
 			  	  printf("Waking up from low-power mode...\n");
 		  		  // Perform measurements
 			  	  LTR329_Read(&light_ch0, &light_ch1);
@@ -245,10 +241,16 @@ int main(void)
 
 		  		  }else if(counter == 4){
 			  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,1);
-			  		  uint8_t* DustBytes = create_payload_f(RESPONSE_DUST, dust);
-			  		  HAL_UART_Transmit(&huart2, DustBytes, 7, 10);
+			  		  uint8_t* DustBytes = create_payload_f(NEW_DUST, dust);
+			  		  HAL_Delay(5000);
+			  		  HAL_UART_Transmit(&huart1, DustBytes, 7, 10);
+			  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,0);
 					  free(DustBytes);
+					  counter = 0;
 		  		  }
+		  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_11,1);
+		  		  HAL_Delay(100);
+		  		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_11,0);
 
 
 		  		  counter++;
@@ -462,6 +464,12 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET);
 
   GPIO_InitStruct.Pin = GPIO_PIN_8;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  GPIO_InitStruct.Pin = GPIO_PIN_11;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
