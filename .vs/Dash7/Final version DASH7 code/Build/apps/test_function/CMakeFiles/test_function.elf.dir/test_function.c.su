@@ -1,0 +1,7 @@
+test_function.c:123:6:ask_data	16	static
+test_function.c:137:6:startTask	16	static
+test_function.c:143:6:process_received_data	16	static
+test_function.c:197:6:uart_rx_callback	8	static
+test_function.c:214:6:execute_sensor_measurement	16	static
+test_function.c:228:6:init_user_files	32	static
+test_function.c:251:6:bootstrap	8	static

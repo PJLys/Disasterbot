@@ -1,0 +1,8 @@
+device STM32L072CZ
+if SWD
+speed 10000
+h
+loadfile test_function-eeprom-fs.hex, 0x0
+verifybin test_function-app.bin, 0x08000000
+r
+qc
