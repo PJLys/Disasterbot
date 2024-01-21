@@ -29,8 +29,8 @@ Disassembly of section .text:
  80000ce:	d000      	beq.n	80000d2 <deregister_tm_clones+0x12>
  80000d0:	4798      	blx	r3
  80000d2:	bd10      	pop	{r4, pc}
- 80000d4:	20000648 	.word	0x20000648
- 80000d8:	20000648 	.word	0x20000648
+ 80000d4:	2000064c 	.word	0x2000064c
+ 80000d8:	2000064c 	.word	0x2000064c
  80000dc:	00000000 	.word	0x00000000
 
 080000e0 <register_tm_clones>:
@@ -48,8 +48,8 @@ Disassembly of section .text:
  80000f6:	d000      	beq.n	80000fa <register_tm_clones+0x1a>
  80000f8:	4798      	blx	r3
  80000fa:	bd10      	pop	{r4, pc}
- 80000fc:	20000648 	.word	0x20000648
- 8000100:	20000648 	.word	0x20000648
+ 80000fc:	2000064c 	.word	0x2000064c
+ 8000100:	2000064c 	.word	0x2000064c
  8000104:	00000000 	.word	0x00000000
 
 08000108 <__do_global_dtors_aux>:
@@ -68,7 +68,7 @@ Disassembly of section .text:
  8000122:	2301      	movs	r3, #1
  8000124:	7023      	strb	r3, [r4, #0]
  8000126:	bd10      	pop	{r4, pc}
- 8000128:	20000648 	.word	0x20000648
+ 8000128:	2000064c 	.word	0x2000064c
  800012c:	00000000 	.word	0x00000000
  8000130:	0801ae2c 	.word	0x0801ae2c
 
@@ -85,7 +85,7 @@ Disassembly of section .text:
  8000148:	bd10      	pop	{r4, pc}
  800014a:	46c0      	nop			; (mov r8, r8)
  800014c:	00000000 	.word	0x00000000
- 8000150:	2000064c 	.word	0x2000064c
+ 8000150:	20000650 	.word	0x20000650
  8000154:	0801ae2c 	.word	0x0801ae2c
 
 08000158 <ask_data>:
@@ -128,7 +128,7 @@ void ask_data(){
  800017e:	b003      	add	sp, #12
  8000180:	bd00      	pop	{pc}
  8000182:	46c0      	nop			; (mov r8, r8)
- 8000184:	20000674 	.word	0x20000674
+ 8000184:	20000678 	.word	0x20000678
  8000188:	00007530 	.word	0x00007530
 
 0800018c <startTask>:
@@ -402,7 +402,7 @@ void process_received_data(uint8_t* buffer, uint8_t size){
  8000310:	4804      	ldr	r0, [pc, #16]	; (8000324 <process_received_data+0x158>)
  8000312:	f008 f975 	bl	8008600 <__assert_func>
  8000316:	46c0      	nop			; (mov r8, r8)
- 8000318:	20000664 	.word	0x20000664
+ 8000318:	20000668 	.word	0x20000668
  800031c:	080168cc 	.word	0x080168cc
  8000320:	08016928 	.word	0x08016928
  8000324:	080168d4 	.word	0x080168d4
@@ -461,9 +461,9 @@ void uart_rx_callback(uart_handle_t* uart_handler, uint8_t byte){
 }
  8000368:	e7f1      	b.n	800034e <uart_rx_callback+0x26>
  800036a:	46c0      	nop			; (mov r8, r8)
- 800036c:	20000672 	.word	0x20000672
- 8000370:	20000670 	.word	0x20000670
- 8000374:	20000668 	.word	0x20000668
+ 800036c:	20000676 	.word	0x20000676
+ 8000370:	20000674 	.word	0x20000674
+ 8000374:	2000066c 	.word	0x2000066c
 
 08000378 <init_user_files>:
 
@@ -600,7 +600,7 @@ static inline error_t sched_register_task(task_t task) { return sched_register_t
 }
  8000436:	bd10      	pop	{r4, pc}
  8000438:	08016918 	.word	0x08016918
- 800043c:	20000674 	.word	0x20000674
+ 800043c:	20000678 	.word	0x20000678
  8000440:	08000329 	.word	0x08000329
  8000444:	0800018d 	.word	0x0800018d
  8000448:	08000159 	.word	0x08000159
@@ -678,7 +678,7 @@ static alp_command_t* get_request_command(uint8_t tag_id, uint8_t itf_id)
 }
  80004b8:	bd30      	pop	{r4, r5, pc}
  80004ba:	46c0      	nop			; (mov r8, r8)
- 80004bc:	20000678 	.word	0x20000678
+ 80004bc:	2000067c 	.word	0x2000067c
 
 080004c0 <alp_layer_get_command_by_transid>:
 
@@ -739,7 +739,7 @@ static alp_command_t* alp_layer_get_command_by_transid(uint16_t trans_id, uint8_
 }
  8000518:	bd30      	pop	{r4, r5, pc}
  800051a:	46c0      	nop			; (mov r8, r8)
- 800051c:	20000678 	.word	0x20000678
+ 800051c:	2000067c 	.word	0x2000067c
 
 08000520 <alp_translate_error>:
 
@@ -923,7 +923,7 @@ static alp_interface_t* find_interface(uint8_t itf_id)
 }
  80005e8:	bd10      	pop	{r4, pc}
  80005ea:	46c0      	nop			; (mov r8, r8)
- 80005ec:	20001780 	.word	0x20001780
+ 80005ec:	20001784 	.word	0x20001784
 
 080005f0 <free_command>:
 static void free_command(alp_command_t* command) {
@@ -1022,8 +1022,8 @@ static void free_command(alp_command_t* command) {
             return ALP_STATUS_FIFO_OUT_OF_BOUNDS;
  800068c:	20e0      	movs	r0, #224	; 0xe0
  800068e:	e7fb      	b.n	8000688 <process_op_read_file_data+0x74>
- 8000690:	2000132c 	.word	0x2000132c
- 8000694:	20001218 	.word	0x20001218
+ 8000690:	20001330 	.word	0x20001330
+ 8000694:	2000121c 	.word	0x2000121c
 
 08000698 <process_op_return_file_data>:
 {
@@ -1386,10 +1386,10 @@ static alp_status_codes_t process_op_write_file_data(alp_action_t* action, authe
                 return ALP_STATUS_WRONG_OPERAND_FORMAT;
  80008c4:	20f4      	movs	r0, #244	; 0xf4
  80008c6:	e7fb      	b.n	80008c0 <process_op_indirect_forward+0xcc>
- 80008c8:	200014ce 	.word	0x200014ce
+ 80008c8:	200014d2 	.word	0x200014d2
  80008cc:	20000500 	.word	0x20000500
- 80008d0:	200014d0 	.word	0x200014d0
- 80008d4:	20001780 	.word	0x20001780
+ 80008d0:	200014d4 	.word	0x200014d4
+ 80008d4:	20001784 	.word	0x20001784
  80008d8:	08000591 	.word	0x08000591
 
 080008dc <process_op_create_file>:
@@ -1548,7 +1548,7 @@ static error_t transmit_response(
             return ALP_STATUS_FIFO_OUT_OF_BOUNDS;
  80009b8:	20e0      	movs	r0, #224	; 0xe0
  80009ba:	e7ea      	b.n	8000992 <transmit_response+0x3e>
- 80009bc:	20001218 	.word	0x20001218
+ 80009bc:	2000121c 	.word	0x2000121c
  80009c0:	080169c8 	.word	0x080169c8
  80009c4:	08017144 	.word	0x08017144
  80009c8:	08016a60 	.word	0x08016a60
@@ -1576,7 +1576,7 @@ static error_t transmit_response(
 }
  80009ec:	bd10      	pop	{r4, pc}
  80009ee:	46c0      	nop			; (mov r8, r8)
- 80009f0:	20000678 	.word	0x20000678
+ 80009f0:	2000067c 	.word	0x2000067c
 
 080009f4 <alp_layer_command_alloc>:
 {
@@ -1655,8 +1655,8 @@ static error_t transmit_response(
  8000a6e:	2000      	movs	r0, #0
  8000a70:	e7fc      	b.n	8000a6c <alp_layer_command_alloc+0x78>
  8000a72:	46c0      	nop			; (mov r8, r8)
- 8000a74:	200014cd 	.word	0x200014cd
- 8000a78:	20000678 	.word	0x20000678
+ 8000a74:	200014d1 	.word	0x200014d1
+ 8000a78:	2000067c 	.word	0x2000067c
 
 08000a7c <alp_layer_register_interface>:
 void alp_layer_register_interface(alp_interface_t* interface) {
@@ -1862,8 +1862,8 @@ bool process_arithm_predicate(uint8_t* value1, uint8_t* value2, uint32_t len, al
         return ALP_STATUS_FIFO_OUT_OF_BOUNDS;
  8000bc4:	26e0      	movs	r6, #224	; 0xe0
  8000bc6:	e7f6      	b.n	8000bb6 <process_op_break_query+0xb2>
- 8000bc8:	2000132c 	.word	0x2000132c
- 8000bcc:	2000142c 	.word	0x2000142c
+ 8000bc8:	20001330 	.word	0x20001330
+ 8000bcc:	20001430 	.word	0x20001430
 
 08000bd0 <alp_layer_process>:
     free_command(command);
@@ -1945,7 +1945,7 @@ bool alp_layer_process(alp_command_t* command)
  8000c2e:	2000      	movs	r0, #0
  8000c30:	e7ed      	b.n	8000c0e <alp_layer_process+0x3e>
  8000c32:	46c0      	nop			; (mov r8, r8)
- 8000c34:	20001494 	.word	0x20001494
+ 8000c34:	20001498 	.word	0x20001498
  8000c38:	0800105d 	.word	0x0800105d
  8000c3c:	08016ad4 	.word	0x08016ad4
 
@@ -2177,7 +2177,7 @@ void alp_layer_process_d7aactp(uint8_t *interface_config, uint8_t* alp_command, 
  8000db6:	4690      	mov	r8, r2
  8000db8:	bdf0      	pop	{r4, r5, r6, r7, pc}
  8000dba:	46c0      	nop			; (mov r8, r8)
- 8000dbc:	20000678 	.word	0x20000678
+ 8000dbc:	2000067c 	.word	0x2000067c
 
 08000dc0 <itf_ctrl_file_callback>:
 {
@@ -2306,10 +2306,10 @@ void alp_layer_process_d7aactp(uint8_t *interface_config, uint8_t* alp_command, 
 }
  8000e88:	b004      	add	sp, #16
  8000e8a:	bd70      	pop	{r4, r5, r6, pc}
- 8000e8c:	200014c4 	.word	0x200014c4
+ 8000e8c:	200014c8 	.word	0x200014c8
  8000e90:	08016ca4 	.word	0x08016ca4
- 8000e94:	200014c8 	.word	0x200014c8
- 8000e98:	20001780 	.word	0x20001780
+ 8000e94:	200014cc 	.word	0x200014cc
+ 8000e98:	20001784 	.word	0x20001784
  8000e9c:	08016ce8 	.word	0x08016ce8
  8000ea0:	08016d1c 	.word	0x08016d1c
 
@@ -2362,13 +2362,13 @@ void alp_layer_process_d7aactp(uint8_t *interface_config, uint8_t* alp_command, 
  8000ef4:	2040      	movs	r0, #64	; 0x40
  8000ef6:	f7ff ff63 	bl	8000dc0 <itf_ctrl_file_callback>
  8000efa:	e7f6      	b.n	8000eea <alp_layer_init+0x46>
- 8000efc:	20001218 	.word	0x20001218
- 8000f00:	200014cc 	.word	0x200014cc
- 8000f04:	200014a4 	.word	0x200014a4
- 8000f08:	20001494 	.word	0x20001494
+ 8000efc:	2000121c 	.word	0x2000121c
+ 8000f00:	200014d0 	.word	0x200014d0
+ 8000f04:	200014a8 	.word	0x200014a8
+ 8000f08:	20001498 	.word	0x20001498
  8000f0c:	08000c41 	.word	0x08000c41
  8000f10:	0800105d 	.word	0x0800105d
- 8000f14:	200014c4 	.word	0x200014c4
+ 8000f14:	200014c8 	.word	0x200014c8
  8000f18:	08000dc1 	.word	0x08000dc1
 
 08000f1c <forward_command>:
@@ -2553,9 +2553,9 @@ void alp_layer_process_d7aactp(uint8_t *interface_config, uint8_t* alp_command, 
  8001046:	4690      	mov	r8, r2
  8001048:	4699      	mov	r9, r3
  800104a:	bdf0      	pop	{r4, r5, r6, r7, pc}
- 800104c:	20001780 	.word	0x20001780
- 8001050:	200014c4 	.word	0x200014c4
- 8001054:	200014c8 	.word	0x200014c8
+ 800104c:	20001784 	.word	0x20001784
+ 8001050:	200014c8 	.word	0x200014c8
+ 8001054:	200014cc 	.word	0x200014cc
  8001058:	08016d54 	.word	0x08016d54
 
 0800105c <process_async>:
@@ -3011,16 +3011,16 @@ static inline error_t sched_post_task(task_t task) { return sched_post_task_prio
             return;
  8001368:	e683      	b.n	8001072 <process_async+0x16>
  800136a:	46c0      	nop			; (mov r8, r8)
- 800136c:	20001490 	.word	0x20001490
- 8001370:	20001494 	.word	0x20001494
+ 800136c:	20001494 	.word	0x20001494
+ 8001370:	20001498 	.word	0x20001498
  8001374:	0800105d 	.word	0x0800105d
  8001378:	08016d9c 	.word	0x08016d9c
- 800137c:	2000121c 	.word	0x2000121c
+ 800137c:	20001220 	.word	0x20001220
  8001380:	08016dec 	.word	0x08016dec
  8001384:	08016f9c 	.word	0x08016f9c
  8001388:	08016e30 	.word	0x08016e30
- 800138c:	2000132c 	.word	0x2000132c
- 8001390:	20001218 	.word	0x20001218
+ 800138c:	20001330 	.word	0x20001330
+ 8001390:	2000121c 	.word	0x2000121c
  8001394:	08016e68 	.word	0x08016e68
  8001398:	08016eac 	.word	0x08016eac
                     if(!alp_append_tag_response_action(resp_command, request_command->tag_id, command->is_response_completed, command->is_response_error)) {
@@ -3131,9 +3131,9 @@ static inline error_t sched_post_task(task_t task) { return sched_post_task_prio
  8001464:	f7ff f8c4 	bl	80005f0 <free_command>
  8001468:	e7d0      	b.n	800140c <process_async+0x3b0>
  800146a:	46c0      	nop			; (mov r8, r8)
- 800146c:	20001490 	.word	0x20001490
+ 800146c:	20001494 	.word	0x20001494
  8001470:	08016f08 	.word	0x08016f08
- 8001474:	200014cc 	.word	0x200014cc
+ 8001474:	200014d0 	.word	0x200014d0
  8001478:	08016f60 	.word	0x08016f60
 
 0800147c <alp_layer_received_response>:
@@ -3470,7 +3470,7 @@ static inline uint8_t d7ap_addressee_id_length(d7ap_addressee_id_type_t id_type)
         return false;
  800167c:	2000      	movs	r0, #0
  800167e:	e7ad      	b.n	80015dc <parse_operand_indirect_interface+0x20>
- 8001680:	20001780 	.word	0x20001780
+ 8001680:	20001784 	.word	0x20001784
  8001684:	080169c8 	.word	0x080169c8
  8001688:	08017310 	.word	0x08017310
  800168c:	080169d0 	.word	0x080169d0
@@ -3579,7 +3579,7 @@ static inline uint8_t d7ap_addressee_id_length(d7ap_addressee_id_type_t id_type)
  8001736:	2001      	movs	r0, #1
  8001738:	e7fa      	b.n	8001730 <parse_op_forward+0xa0>
  800173a:	46c0      	nop			; (mov r8, r8)
- 800173c:	20001780 	.word	0x20001780
+ 800173c:	20001784 	.word	0x20001784
  8001740:	080169c8 	.word	0x080169c8
  8001744:	08017310 	.word	0x08017310
  8001748:	080169d0 	.word	0x080169d0
@@ -3692,7 +3692,7 @@ static inline uint8_t d7ap_addressee_id_length(d7ap_addressee_id_type_t id_type)
                     return false;
  80017f8:	2000      	movs	r0, #0
  80017fa:	e7fa      	b.n	80017f2 <parse_operand_interface_config+0xa6>
- 80017fc:	20001780 	.word	0x20001780
+ 80017fc:	20001784 	.word	0x20001784
  8001800:	080169c8 	.word	0x080169c8
  8001804:	08017310 	.word	0x08017310
  8001808:	080169d0 	.word	0x080169d0
@@ -3737,7 +3737,7 @@ static inline uint8_t d7ap_addressee_id_length(d7ap_addressee_id_type_t id_type)
 }
  8001840:	bd10      	pop	{r4, pc}
  8001842:	46c0      	nop			; (mov r8, r8)
- 8001844:	20001780 	.word	0x20001780
+ 8001844:	20001784 	.word	0x20001784
 
 08001848 <alp_parse_length_operand>:
 {
@@ -4755,10 +4755,10 @@ uint8_t alp_length_operand_coded_length(uint32_t length) {
  8001e7e:	200e      	movs	r0, #14
  8001e80:	4240      	negs	r0, r0
  8001e82:	e7ed      	b.n	8001e60 <alp_get_expected_response_length+0x1c4>
- 8001e84:	2000160c 	.word	0x2000160c
- 8001e88:	20001670 	.word	0x20001670
+ 8001e84:	20001610 	.word	0x20001610
+ 8001e88:	20001674 	.word	0x20001674
  8001e8c:	08017234 	.word	0x08017234
- 8001e90:	200014fc 	.word	0x200014fc
+ 8001e90:	20001500 	.word	0x20001500
 
 08001e94 <serial_interface_cmd_handler>:
     .itf_id = ALP_ITF_ID_SERIAL,
@@ -4829,7 +4829,7 @@ static void serial_interface_cmd_handler(fifo_t* cmd_fifo)
  8001ef2:	f00d f875 	bl	800efe0 <log_print_error_string>
         return;
  8001ef6:	e7f4      	b.n	8001ee2 <serial_interface_cmd_handler+0x4e>
- 8001ef8:	20001798 	.word	0x20001798
+ 8001ef8:	2000179c 	.word	0x2000179c
  8001efc:	20000504 	.word	0x20000504
  8001f00:	0801732c 	.word	0x0801732c
  8001f04:	080173d0 	.word	0x080173d0
@@ -4877,7 +4877,7 @@ void serial_interface_register() {
 }
  8001f40:	bd70      	pop	{r4, r5, r6, pc}
  8001f42:	46c0      	nop			; (mov r8, r8)
- 8001f44:	20001898 	.word	0x20001898
+ 8001f44:	2000189c 	.word	0x2000189c
  8001f48:	080173bc 	.word	0x080173bc
  8001f4c:	08001e95 	.word	0x08001e95
 
@@ -4906,7 +4906,7 @@ static void d7ap_interface_stop()
  8001f62:	2200      	movs	r2, #0
  8001f64:	701a      	strb	r2, [r3, #0]
  8001f66:	e7f8      	b.n	8001f5a <d7ap_interface_stop+0xa>
- 8001f68:	200018c4 	.word	0x200018c4
+ 8001f68:	200018c8 	.word	0x200018c8
 
 08001f6c <d7ap_interface_init>:
 {
@@ -4942,9 +4942,9 @@ static void d7ap_interface_stop()
  8001f9a:	2078      	movs	r0, #120	; 0x78
  8001f9c:	e7fb      	b.n	8001f96 <d7ap_interface_init+0x2a>
  8001f9e:	46c0      	nop			; (mov r8, r8)
- 8001fa0:	200018c4 	.word	0x200018c4
+ 8001fa0:	200018c8 	.word	0x200018c8
  8001fa4:	0801742c 	.word	0x0801742c
- 8001fa8:	200018ac 	.word	0x200018ac
+ 8001fa8:	200018b0 	.word	0x200018b0
 
 08001fac <d7ap_command_completed>:
 static alp_interface_status_t empty_itf_status = {
@@ -5000,7 +5000,7 @@ static error_t d7ap_alp_send(uint8_t* payload, uint8_t payload_length, uint8_t e
  8001ff4:	2100      	movs	r1, #0
  8001ff6:	f000 fb87 	bl	8002708 <d7ap_send>
  8001ffa:	e7f3      	b.n	8001fe4 <d7ap_alp_send+0x20>
- 8001ffc:	200018ac 	.word	0x200018ac
+ 8001ffc:	200018b0 	.word	0x200018b0
 
 08002000 <serialize_session_result_to_alp_interface_status>:
 {
@@ -5249,7 +5249,7 @@ void d7ap_interface_register()
  8002196:	f7fe fc71 	bl	8000a7c <alp_layer_register_interface>
 }
  800219a:	bd70      	pop	{r4, r5, r6, pc}
- 800219c:	200018b0 	.word	0x200018b0
+ 800219c:	200018b4 	.word	0x200018b4
  80021a0:	0801742c 	.word	0x0801742c
 
 080021a4 <bitmap_get>:
@@ -5323,7 +5323,7 @@ static session_t* alloc_session(uint8_t client_id) {
  80021e8:	2000      	movs	r0, #0
 }
  80021ea:	bd10      	pop	{r4, pc}
- 80021ec:	200018c8 	.word	0x200018c8
+ 80021ec:	200018cc 	.word	0x200018cc
 
 080021f0 <init_session_list>:
 
@@ -5347,7 +5347,7 @@ static void init_session_list()
 }
  8002208:	bd10      	pop	{r4, pc}
  800220a:	46c0      	nop			; (mov r8, r8)
- 800220c:	200018c8 	.word	0x200018c8
+ 800220c:	200018cc 	.word	0x200018cc
 
 08002210 <get_session_by_session_token>:
 
@@ -5382,7 +5382,7 @@ static session_t* get_session_by_session_token(uint8_t session_token)
  8002230:	2000      	movs	r0, #0
 }
  8002232:	bd10      	pop	{r4, pc}
- 8002234:	200018c8 	.word	0x200018c8
+ 8002234:	200018cc 	.word	0x200018cc
 
 08002238 <switch_state>:
 {
@@ -5476,7 +5476,7 @@ static session_t* get_session_by_session_token(uint8_t session_token)
  80022c8:	4804      	ldr	r0, [pc, #16]	; (80022dc <switch_state+0xa4>)
  80022ca:	f006 f999 	bl	8008600 <__assert_func>
  80022ce:	46c0      	nop			; (mov r8, r8)
- 80022d0:	200018c5 	.word	0x200018c5
+ 80022d0:	200018c9 	.word	0x200018c9
  80022d4:	080169c8 	.word	0x080169c8
  80022d8:	08017510 	.word	0x08017510
  80022dc:	0801747c 	.word	0x0801747c
@@ -5538,7 +5538,7 @@ static void on_access_profile_file_changed(uint8_t file_id) {
  8002338:	ddf6      	ble.n	8002328 <d7ap_stack_init+0x38>
 }
  800233a:	bd10      	pop	{r4, pc}
- 800233c:	200018c5 	.word	0x200018c5
+ 800233c:	200018c9 	.word	0x200018c9
  8002340:	080174b8 	.word	0x080174b8
  8002344:	08017520 	.word	0x08017520
  8002348:	0801747c 	.word	0x0801747c
@@ -5564,7 +5564,7 @@ static void on_access_profile_file_changed(uint8_t file_id) {
 }
  800236c:	bd10      	pop	{r4, pc}
  800236e:	46c0      	nop			; (mov r8, r8)
- 8002370:	200018c5 	.word	0x200018c5
+ 8002370:	200018c9 	.word	0x200018c9
 
 08002374 <d7ap_stack_send>:
     return NULL;
@@ -5689,7 +5689,7 @@ error_t d7ap_stack_send(uint8_t client_id, d7ap_session_config_t* config, uint8_
         return -ESIZE;
  80023fc:	4802      	ldr	r0, [pc, #8]	; (8002408 <d7ap_stack_send+0x94>)
  80023fe:	e7e9      	b.n	80023d4 <d7ap_stack_send+0x60>
- 8002400:	200018c5 	.word	0x200018c5
+ 8002400:	200018c9 	.word	0x200018c9
  8002404:	0000138d 	.word	0x0000138d
  8002408:	ffffec76 	.word	0xffffec76
 
@@ -5791,9 +5791,9 @@ bool d7ap_stack_process_unsolicited_request(uint8_t *payload, uint8_t length, d7
  8002490:	2004      	movs	r0, #4
  8002492:	f7ff fed1 	bl	8002238 <switch_state>
  8002496:	e7f2      	b.n	800247e <d7ap_stack_process_unsolicited_request+0x72>
- 8002498:	200018d8 	.word	0x200018d8
- 800249c:	200018f4 	.word	0x200018f4
- 80024a0:	200018dc 	.word	0x200018dc
+ 8002498:	200018dc 	.word	0x200018dc
+ 800249c:	200018f8 	.word	0x200018f8
+ 80024a0:	200018e0 	.word	0x200018e0
 
 080024a4 <d7ap_stack_process_received_response>:
 
@@ -5894,7 +5894,7 @@ void d7ap_stack_process_received_response(uint8_t *payload, uint8_t length, d7ap
  800252c:	080174e8 	.word	0x080174e8
  8002530:	08017530 	.word	0x08017530
  8002534:	0801747c 	.word	0x0801747c
- 8002538:	200018dc 	.word	0x200018dc
+ 8002538:	200018e0 	.word	0x200018e0
  800253c:	080174f8 	.word	0x080174f8
 
 08002540 <d7ap_stack_session_completed>:
@@ -5996,7 +5996,7 @@ free_session:
  80025ce:	4699      	mov	r9, r3
  80025d0:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
  80025d2:	46c0      	nop			; (mov r8, r8)
- 80025d4:	200018dc 	.word	0x200018dc
+ 80025d4:	200018e0 	.word	0x200018e0
  80025d8:	080174e8 	.word	0x080174e8
  80025dc:	08017558 	.word	0x08017558
  80025e0:	0801747c 	.word	0x0801747c
@@ -6051,7 +6051,7 @@ void d7ap_stack_signal_slave_session_terminated(void)
  8002626:	f7ff fe07 	bl	8002238 <switch_state>
 }
  800262a:	bd10      	pop	{r4, pc}
- 800262c:	200018d8 	.word	0x200018d8
+ 800262c:	200018dc 	.word	0x200018dc
 
 08002630 <d7ap_stack_signal_transaction_terminated>:
 
@@ -6073,7 +6073,7 @@ void d7ap_stack_signal_transaction_terminated(void)
  800263e:	f7ff fdfb 	bl	8002238 <switch_state>
 }
  8002642:	e7fa      	b.n	800263a <d7ap_stack_signal_transaction_terminated+0xa>
- 8002644:	200018c5 	.word	0x200018c5
+ 8002644:	200018c9 	.word	0x200018c9
 
 08002648 <d7ap_init>:
 uint8_t registered_client_nb = 0;
@@ -6107,8 +6107,8 @@ void d7ap_init()
  8002662:	701a      	strb	r2, [r3, #0]
  8002664:	e7f5      	b.n	8002652 <d7ap_init+0xa>
  8002666:	46c0      	nop			; (mov r8, r8)
- 8002668:	200018db 	.word	0x200018db
- 800266c:	200018f4 	.word	0x200018f4
+ 8002668:	200018df 	.word	0x200018df
+ 800266c:	200018f8 	.word	0x200018f8
 
 08002670 <d7ap_stop>:
 
@@ -6127,8 +6127,8 @@ void d7ap_stop()
 }
  8002680:	bd10      	pop	{r4, pc}
  8002682:	46c0      	nop			; (mov r8, r8)
- 8002684:	200018db 	.word	0x200018db
- 8002688:	200018f4 	.word	0x200018f4
+ 8002684:	200018df 	.word	0x200018df
+ 8002688:	200018f8 	.word	0x200018f8
 
 0800268c <d7ap_register>:
  * @param[in] desc pointer to the client resource
@@ -6177,9 +6177,9 @@ uint8_t d7ap_register(d7ap_resource_desc_t* desc)
  80026c8:	4806      	ldr	r0, [pc, #24]	; (80026e4 <d7ap_register+0x58>)
  80026ca:	f005 ff99 	bl	8008600 <__assert_func>
  80026ce:	46c0      	nop			; (mov r8, r8)
- 80026d0:	200018db 	.word	0x200018db
- 80026d4:	200018f4 	.word	0x200018f4
- 80026d8:	200018dc 	.word	0x200018dc
+ 80026d0:	200018df 	.word	0x200018df
+ 80026d4:	200018f8 	.word	0x200018f8
+ 80026d8:	200018e0 	.word	0x200018e0
  80026dc:	080175a0 	.word	0x080175a0
  80026e0:	08017610 	.word	0x08017610
  80026e4:	080175a8 	.word	0x080175a8
@@ -6246,7 +6246,7 @@ error_t d7ap_send(uint8_t client_id, d7ap_session_config_t* config, uint8_t* pay
  8002726:	4802      	ldr	r0, [pc, #8]	; (8002730 <d7ap_send+0x28>)
  8002728:	e7fb      	b.n	8002722 <d7ap_send+0x1a>
  800272a:	46c0      	nop			; (mov r8, r8)
- 800272c:	200018f4 	.word	0x200018f4
+ 800272c:	200018f8 	.word	0x200018f8
  8002730:	ffffec76 	.word	0xffffec76
 
 08002734 <bitmap_get>:
@@ -6322,8 +6322,8 @@ static void mark_current_request_done()
 }
  8002788:	4770      	bx	lr
  800278a:	46c0      	nop			; (mov r8, r8)
- 800278c:	200019e2 	.word	0x200019e2
- 8002790:	20001906 	.word	0x20001906
+ 800278c:	200019e6 	.word	0x200019e6
+ 8002790:	2000190a 	.word	0x2000190a
 
 08002794 <mark_current_request_successful>:
 
@@ -6345,8 +6345,8 @@ static void mark_current_request_successful()
 }
  80027ac:	4770      	bx	lr
  80027ae:	46c0      	nop			; (mov r8, r8)
- 80027b0:	200019e2 	.word	0x200019e2
- 80027b4:	20001907 	.word	0x20001907
+ 80027b0:	200019e6 	.word	0x200019e6
+ 80027b4:	2000190b 	.word	0x2000190b
 
 080027b8 <get_master_session_from_token>:
 
@@ -6374,7 +6374,7 @@ static d7asp_master_session_t* get_master_session_from_token(uint8_t session_tok
  80027cc:	31ff      	adds	r1, #255	; 0xff
  80027ce:	4804      	ldr	r0, [pc, #16]	; (80027e0 <get_master_session_from_token+0x28>)
  80027d0:	f005 ff16 	bl	8008600 <__assert_func>
- 80027d4:	200018f8 	.word	0x200018f8
+ 80027d4:	200018fc 	.word	0x200018fc
  80027d8:	08017620 	.word	0x08017620
  80027dc:	08017d10 	.word	0x08017d10
  80027e0:	08017650 	.word	0x08017650
@@ -6487,9 +6487,9 @@ static void schedule_current_session() {
  8002898:	4806      	ldr	r0, [pc, #24]	; (80028b4 <schedule_current_session+0x64>)
  800289a:	f005 feb1 	bl	8008600 <__assert_func>
  800289e:	46c0      	nop			; (mov r8, r8)
- 80028a0:	200019f1 	.word	0x200019f1
- 80028a4:	200018f8 	.word	0x200018f8
- 80028a8:	20001a00 	.word	0x20001a00
+ 80028a0:	200019f5 	.word	0x200019f5
+ 80028a4:	200018fc 	.word	0x200018fc
+ 80028a8:	20001a04 	.word	0x20001a04
  80028ac:	08017684 	.word	0x08017684
  80028b0:	08017c94 	.word	0x08017c94
  80028b4:	08017650 	.word	0x08017650
@@ -6649,11 +6649,11 @@ static void schedule_current_session() {
  80029b6:	4805      	ldr	r0, [pc, #20]	; (80029cc <switch_state+0x10c>)
  80029b8:	f005 fe22 	bl	8008600 <__assert_func>
  80029bc:	08017864 	.word	0x08017864
- 80029c0:	200019f1 	.word	0x200019f1
+ 80029c0:	200019f5 	.word	0x200019f5
  80029c4:	080169c8 	.word	0x080169c8
  80029c8:	08017cbc 	.word	0x08017cbc
  80029cc:	08017650 	.word	0x08017650
- 80029d0:	200019e2 	.word	0x200019e2
+ 80029d0:	200019e6 	.word	0x200019e6
  80029d4:	08017748 	.word	0x08017748
  80029d8:	080177cc 	.word	0x080177cc
  80029dc:	08017810 	.word	0x08017810
@@ -6687,7 +6687,7 @@ static void flush_completed() {
 }
  8002a0c:	bd10      	pop	{r4, pc}
  8002a0e:	46c0      	nop			; (mov r8, r8)
- 8002a10:	200018f8 	.word	0x200018f8
+ 8002a10:	200018fc 	.word	0x200018fc
 
 08002a14 <flush_fifos>:
 {
@@ -6924,19 +6924,19 @@ static void flush_completed() {
             return;
  8002ba8:	e777      	b.n	8002a9a <flush_fifos+0x86>
  8002baa:	46c0      	nop			; (mov r8, r8)
- 8002bac:	200019f1 	.word	0x200019f1
- 8002bb0:	200018f8 	.word	0x200018f8
- 8002bb4:	200019f4 	.word	0x200019f4
- 8002bb8:	200019e2 	.word	0x200019e2
- 8002bbc:	200019e8 	.word	0x200019e8
- 8002bc0:	200019f0 	.word	0x200019f0
- 8002bc4:	200019e4 	.word	0x200019e4
- 8002bc8:	20001906 	.word	0x20001906
- 8002bcc:	200018fa 	.word	0x200018fa
+ 8002bac:	200019f5 	.word	0x200019f5
+ 8002bb0:	200018fc 	.word	0x200018fc
+ 8002bb4:	200019f8 	.word	0x200019f8
+ 8002bb8:	200019e6 	.word	0x200019e6
+ 8002bbc:	200019ec 	.word	0x200019ec
+ 8002bc0:	200019f4 	.word	0x200019f4
+ 8002bc4:	200019e8 	.word	0x200019e8
+ 8002bc8:	2000190a 	.word	0x2000190a
+ 8002bcc:	200018fe 	.word	0x200018fe
  8002bd0:	08017880 	.word	0x08017880
  8002bd4:	08017cb0 	.word	0x08017cb0
  8002bd8:	08017650 	.word	0x08017650
- 8002bdc:	200019da 	.word	0x200019da
+ 8002bdc:	200019de 	.word	0x200019de
 
 08002be0 <dormant_session_timeout>:
 static void dormant_session_timeout() {
@@ -6966,8 +6966,8 @@ static void dormant_session_timeout() {
  8002c02:	3202      	adds	r2, #2
  8002c04:	701a      	strb	r2, [r3, #0]
  8002c06:	e7f8      	b.n	8002bfa <dormant_session_timeout+0x1a>
- 8002c08:	200018f8 	.word	0x200018f8
- 8002c0c:	200019f1 	.word	0x200019f1
+ 8002c08:	200018fc 	.word	0x200018fc
+ 8002c0c:	200019f5 	.word	0x200019f5
 
 08002c10 <on_request_completed>:
         return false;
@@ -7102,18 +7102,18 @@ static void on_request_completed()
             return;
  8002cd4:	e7bb      	b.n	8002c4e <on_request_completed+0x3e>
  8002cd6:	46c0      	nop			; (mov r8, r8)
- 8002cd8:	200019f1 	.word	0x200019f1
- 8002cdc:	200018f8 	.word	0x200018f8
- 8002ce0:	200019e2 	.word	0x200019e2
- 8002ce4:	20001906 	.word	0x20001906
- 8002ce8:	200019e8 	.word	0x200019e8
+ 8002cd8:	200019f5 	.word	0x200019f5
+ 8002cdc:	200018fc 	.word	0x200018fc
+ 8002ce0:	200019e6 	.word	0x200019e6
+ 8002ce4:	2000190a 	.word	0x2000190a
+ 8002ce8:	200019ec 	.word	0x200019ec
  8002cec:	08017898 	.word	0x08017898
  8002cf0:	08017d84 	.word	0x08017d84
  8002cf4:	000002e6 	.word	0x000002e6
  8002cf8:	08017650 	.word	0x08017650
- 8002cfc:	200019f4 	.word	0x200019f4
- 8002d00:	200019da 	.word	0x200019da
- 8002d04:	200019e4 	.word	0x200019e4
+ 8002cfc:	200019f8 	.word	0x200019f8
+ 8002d00:	200019de 	.word	0x200019de
+ 8002d04:	200019e8 	.word	0x200019e8
 
 08002d08 <schedule_dormant_session>:
 static void schedule_dormant_session(d7asp_master_session_t* dormant_session) {
@@ -7168,7 +7168,7 @@ static void schedule_dormant_session(d7asp_master_session_t* dormant_session) {
  8002d66:	4805      	ldr	r0, [pc, #20]	; (8002d7c <schedule_dormant_session+0x74>)
  8002d68:	f005 fc4a 	bl	8008600 <__assert_func>
  8002d6c:	40100000 	.word	0x40100000
- 8002d70:	20001a14 	.word	0x20001a14
+ 8002d70:	20001a18 	.word	0x20001a18
  8002d74:	080178bc 	.word	0x080178bc
  8002d78:	08017ccc 	.word	0x08017ccc
  8002d7c:	08017650 	.word	0x08017650
@@ -7233,14 +7233,14 @@ static void schedule_dormant_session(d7asp_master_session_t* dormant_session) {
  8002de8:	0049      	lsls	r1, r1, #1
  8002dea:	480b      	ldr	r0, [pc, #44]	; (8002e18 <d7asp_init+0x94>)
  8002dec:	f005 fc08 	bl	8008600 <__assert_func>
- 8002df0:	200019f1 	.word	0x200019f1
- 8002df4:	200019e2 	.word	0x200019e2
- 8002df8:	200018f8 	.word	0x200018f8
- 8002dfc:	200019f4 	.word	0x200019f4
+ 8002df0:	200019f5 	.word	0x200019f5
+ 8002df4:	200019e6 	.word	0x200019e6
+ 8002df8:	200018fc 	.word	0x200018fc
+ 8002dfc:	200019f8 	.word	0x200019f8
  8002e00:	08002be1 	.word	0x08002be1
- 8002e04:	20001a14 	.word	0x20001a14
+ 8002e04:	20001a18 	.word	0x20001a18
  8002e08:	08002a15 	.word	0x08002a15
- 8002e0c:	20001a00 	.word	0x20001a00
+ 8002e0c:	20001a04 	.word	0x20001a04
  8002e10:	080178f4 	.word	0x080178f4
  8002e14:	08017ce8 	.word	0x08017ce8
  8002e18:	08017650 	.word	0x08017650
@@ -7261,9 +7261,9 @@ static void schedule_dormant_session(d7asp_master_session_t* dormant_session) {
 }
  8002e30:	bd10      	pop	{r4, pc}
  8002e32:	46c0      	nop			; (mov r8, r8)
- 8002e34:	200019f1 	.word	0x200019f1
- 8002e38:	20001a00 	.word	0x20001a00
- 8002e3c:	20001a14 	.word	0x20001a14
+ 8002e34:	200019f5 	.word	0x200019f5
+ 8002e38:	20001a04 	.word	0x20001a04
+ 8002e3c:	20001a18 	.word	0x20001a18
 
 08002e40 <d7asp_master_session_create>:
 uint8_t d7asp_master_session_create(d7ap_session_config_t* d7asp_master_session_config) {
@@ -7417,8 +7417,8 @@ uint8_t d7asp_master_session_create(d7ap_session_config_t* d7asp_master_session_
  8002f30:	f7ff feea 	bl	8002d08 <schedule_dormant_session>
  8002f34:	e7f6      	b.n	8002f24 <d7asp_master_session_create+0xe4>
  8002f36:	46c0      	nop			; (mov r8, r8)
- 8002f38:	200018f8 	.word	0x200018f8
- 8002f3c:	200018fc 	.word	0x200018fc
+ 8002f38:	200018fc 	.word	0x200018fc
+ 8002f3c:	20001900 	.word	0x20001900
  8002f40:	080169c8 	.word	0x080169c8
  8002f44:	08017c78 	.word	0x08017c78
  8002f48:	080169d0 	.word	0x080169d0
@@ -7503,9 +7503,9 @@ uint8_t d7asp_master_session_create(d7ap_session_config_t* d7asp_master_session_
  8002fd2:	2016      	movs	r0, #22
  8002fd4:	e7e8      	b.n	8002fa8 <d7asp_send_response+0x50>
  8002fd6:	46c0      	nop			; (mov r8, r8)
- 8002fd8:	200019f1 	.word	0x200019f1
- 8002fdc:	200019ec 	.word	0x200019ec
- 8002fe0:	200018f8 	.word	0x200018f8
+ 8002fd8:	200019f5 	.word	0x200019f5
+ 8002fdc:	200019f0 	.word	0x200019f0
+ 8002fe0:	200018fc 	.word	0x200018fc
  8002fe4:	08017c64 	.word	0x08017c64
  8002fe8:	08017650 	.word	0x08017650
  8002fec:	080179a4 	.word	0x080179a4
@@ -7636,9 +7636,9 @@ uint8_t d7asp_master_session_create(d7ap_session_config_t* d7asp_master_session_
  80030c0:	f7ff fbfe 	bl	80028c0 <switch_state>
  80030c4:	e7d1      	b.n	800306a <d7asp_queue_request+0x7a>
  80030c6:	46c0      	nop			; (mov r8, r8)
- 80030c8:	200019f0 	.word	0x200019f0
- 80030cc:	200018f8 	.word	0x200018f8
- 80030d0:	200019f1 	.word	0x200019f1
+ 80030c8:	200019f4 	.word	0x200019f4
+ 80030cc:	200018fc 	.word	0x200018fc
+ 80030d0:	200019f5 	.word	0x200019f5
  80030d4:	080174e8 	.word	0x080174e8
  80030d8:	08017d30 	.word	0x08017d30
  80030dc:	08017650 	.word	0x08017650
@@ -7939,10 +7939,10 @@ uint8_t d7asp_master_session_create(d7ap_session_config_t* d7asp_master_session_
  80032ec:	2002      	movs	r0, #2
  80032ee:	f7ff fae7 	bl	80028c0 <switch_state>
  80032f2:	e78a      	b.n	800320a <d7asp_process_received_response+0x11e>
- 80032f4:	200019f1 	.word	0x200019f1
- 80032f8:	200018f8 	.word	0x200018f8
- 80032fc:	200019e2 	.word	0x200019e2
- 8003300:	200019e4 	.word	0x200019e4
+ 80032f4:	200019f5 	.word	0x200019f5
+ 80032f8:	200018fc 	.word	0x200018fc
+ 80032fc:	200019e6 	.word	0x200019e6
+ 8003300:	200019e8 	.word	0x200019e8
  8003304:	08017898 	.word	0x08017898
  8003308:	08017d44 	.word	0x08017d44
  800330c:	00000233 	.word	0x00000233
@@ -7950,11 +7950,11 @@ uint8_t d7asp_master_session_create(d7ap_session_config_t* d7asp_master_session_
  8003314:	08017b0c 	.word	0x08017b0c
  8003318:	08017b44 	.word	0x08017b44
  800331c:	00000235 	.word	0x00000235
- 8003320:	200019da 	.word	0x200019da
- 8003324:	200019f4 	.word	0x200019f4
+ 8003320:	200019de 	.word	0x200019de
+ 8003324:	200019f8 	.word	0x200019f8
  8003328:	08017b78 	.word	0x08017b78
  800332c:	00000259 	.word	0x00000259
- 8003330:	20001907 	.word	0x20001907
+ 8003330:	2000190b 	.word	0x2000190b
 
 08003334 <d7asp_process_received_packet>:
 {
@@ -8235,14 +8235,14 @@ uint8_t d7asp_master_session_create(d7ap_session_config_t* d7asp_master_session_
  80034f6:	2500      	movs	r5, #0
  80034f8:	e74b      	b.n	8003392 <d7asp_process_received_packet+0x5e>
  80034fa:	46c0      	nop			; (mov r8, r8)
- 80034fc:	200019f1 	.word	0x200019f1
- 8003500:	200018f8 	.word	0x200018f8
- 8003504:	200019ec 	.word	0x200019ec
+ 80034fc:	200019f5 	.word	0x200019f5
+ 8003500:	200018fc 	.word	0x200018fc
+ 8003504:	200019f0 	.word	0x200019f0
  8003508:	08017b9c 	.word	0x08017b9c
  800350c:	08017d64 	.word	0x08017d64
  8003510:	00000283 	.word	0x00000283
  8003514:	08017650 	.word	0x08017650
- 8003518:	200018fc 	.word	0x200018fc
+ 8003518:	20001900 	.word	0x20001900
  800351c:	080169c8 	.word	0x080169c8
  8003520:	08017c78 	.word	0x08017c78
  8003524:	080169d0 	.word	0x080169d0
@@ -8308,9 +8308,9 @@ void d7asp_signal_packet_transmitted(packet_t *packet)
  8003570:	4807      	ldr	r0, [pc, #28]	; (8003590 <d7asp_signal_packet_transmitted+0x68>)
  8003572:	f005 f845 	bl	8008600 <__assert_func>
  8003576:	46c0      	nop			; (mov r8, r8)
- 8003578:	200019f1 	.word	0x200019f1
- 800357c:	200019ec 	.word	0x200019ec
- 8003580:	200018f8 	.word	0x200018f8
+ 8003578:	200019f5 	.word	0x200019f5
+ 800357c:	200019f0 	.word	0x200019f0
+ 8003580:	200018fc 	.word	0x200018fc
  8003584:	08017c40 	.word	0x08017c40
  8003588:	08017d9c 	.word	0x08017d9c
  800358c:	0000031f 	.word	0x0000031f
@@ -8351,8 +8351,8 @@ void d7asp_signal_transmission_failure()
  80035b8:	6023      	str	r3, [r4, #0]
 }
  80035ba:	e7f4      	b.n	80035a6 <d7asp_signal_transmission_failure+0x12>
- 80035bc:	200019f1 	.word	0x200019f1
- 80035c0:	200019ec 	.word	0x200019ec
+ 80035bc:	200019f5 	.word	0x200019f5
+ 80035c0:	200019f0 	.word	0x200019f0
 
 080035c4 <d7asp_signal_transaction_terminated>:
 
@@ -8395,8 +8395,8 @@ void d7asp_signal_transaction_terminated()
 }
  80035f4:	e7ed      	b.n	80035d2 <d7asp_signal_transaction_terminated+0xe>
  80035f6:	46c0      	nop			; (mov r8, r8)
- 80035f8:	200019f1 	.word	0x200019f1
- 80035fc:	200018f8 	.word	0x200018f8
+ 80035f8:	200019f5 	.word	0x200019f5
+ 80035fc:	200018fc 	.word	0x200018fc
 
 08003600 <d7asp_signal_dialog_terminated>:
 
@@ -8456,9 +8456,9 @@ void d7asp_signal_dialog_terminated()
       schedule_current_session();
  8003646:	f7ff f903 	bl	8002850 <schedule_current_session>
  800364a:	e7f0      	b.n	800362e <d7asp_signal_dialog_terminated+0x2e>
- 800364c:	200019f1 	.word	0x200019f1
- 8003650:	200019ec 	.word	0x200019ec
- 8003654:	200018f8 	.word	0x200018f8
+ 800364c:	200019f5 	.word	0x200019f5
+ 8003650:	200019f0 	.word	0x200019f0
+ 8003654:	200018fc 	.word	0x200018fc
  8003658:	08017810 	.word	0x08017810
  800365c:	08017dbc 	.word	0x08017dbc
  8003660:	00000346 	.word	0x00000346
@@ -8594,7 +8594,7 @@ static void switch_state(state_t new_state)
  800370e:	f004 ff77 	bl	8008600 <__assert_func>
  8003712:	46c0      	nop			; (mov r8, r8)
  8003714:	08017f94 	.word	0x08017f94
- 8003718:	20001a80 	.word	0x20001a80
+ 8003718:	20001a84 	.word	0x20001a84
  800371c:	08017ddc 	.word	0x08017ddc
  8003720:	08018338 	.word	0x08018338
  8003724:	08017e40 	.word	0x08017e40
@@ -8640,10 +8640,10 @@ static void terminate_dialog()
  800375e:	f002 fe53 	bl	8006408 <dll_notify_dialog_terminated>
 }
  8003762:	bd10      	pop	{r4, pc}
- 8003764:	20001a7e 	.word	0x20001a7e
- 8003768:	20001a7f 	.word	0x20001a7f
- 800376c:	20001a81 	.word	0x20001a81
- 8003770:	20001a98 	.word	0x20001a98
+ 8003764:	20001a82 	.word	0x20001a82
+ 8003768:	20001a83 	.word	0x20001a83
+ 800376c:	20001a85 	.word	0x20001a85
+ 8003770:	20001a9c 	.word	0x20001a9c
 
 08003774 <execution_delay_timeout_handler>:
 {
@@ -8663,7 +8663,7 @@ static void terminate_dialog()
  8003788:	2188      	movs	r1, #136	; 0x88
  800378a:	4804      	ldr	r0, [pc, #16]	; (800379c <execution_delay_timeout_handler+0x28>)
  800378c:	f004 ff38 	bl	8008600 <__assert_func>
- 8003790:	20001a80 	.word	0x20001a80
+ 8003790:	20001a84 	.word	0x20001a84
  8003794:	08017fb0 	.word	0x08017fb0
  8003798:	08018348 	.word	0x08018348
  800379c:	08017e40 	.word	0x08017e40
@@ -8735,10 +8735,10 @@ static void response_period_timeout_handler()
 }
  80037ec:	e7ee      	b.n	80037cc <response_period_timeout_handler+0x2c>
  80037ee:	46c0      	nop			; (mov r8, r8)
- 80037f0:	20001a80 	.word	0x20001a80
- 80037f4:	20001a7f 	.word	0x20001a7f
- 80037f8:	20001a81 	.word	0x20001a81
- 80037fc:	20001a6c 	.word	0x20001a6c
+ 80037f0:	20001a84 	.word	0x20001a84
+ 80037f4:	20001a83 	.word	0x20001a83
+ 80037f8:	20001a85 	.word	0x20001a85
+ 80037fc:	20001a70 	.word	0x20001a70
  8003800:	08017ff0 	.word	0x08017ff0
  8003804:	08018368 	.word	0x08018368
  8003808:	08017e40 	.word	0x08017e40
@@ -8774,7 +8774,7 @@ static void sel_config_modified_callback(uint8_t file_id)
 }
  8003830:	b004      	add	sp, #16
  8003832:	bd10      	pop	{r4, pc}
- 8003834:	20001a82 	.word	0x20001a82
+ 8003834:	20001a86 	.word	0x20001a86
 
 08003838 <schedule_response_period_timeout_handler>:
 
@@ -8803,7 +8803,7 @@ static void schedule_response_period_timeout_handler(timer_tick_t timeout_ticks)
  8003850:	4804      	ldr	r0, [pc, #16]	; (8003864 <schedule_response_period_timeout_handler+0x2c>)
  8003852:	f004 fed5 	bl	8008600 <__assert_func>
  8003856:	46c0      	nop			; (mov r8, r8)
- 8003858:	20001a98 	.word	0x20001a98
+ 8003858:	20001a9c 	.word	0x20001a9c
  800385c:	08017738 	.word	0x08017738
  8003860:	08018388 	.word	0x08018388
  8003864:	08017e40 	.word	0x08017e40
@@ -8877,8 +8877,8 @@ void d7atp_signal_foreground_scan_expired()
  80038ac:	f7ff fe8a 	bl	80035c4 <d7asp_signal_transaction_terminated>
  80038b0:	e7fb      	b.n	80038aa <d7atp_signal_foreground_scan_expired+0x26>
  80038b2:	46c0      	nop			; (mov r8, r8)
- 80038b4:	20001a7f 	.word	0x20001a7f
- 80038b8:	20001a80 	.word	0x20001a80
+ 80038b4:	20001a83 	.word	0x20001a83
+ 80038b8:	20001a84 	.word	0x20001a84
 
 080038bc <d7atp_signal_dialog_termination>:
 
@@ -8925,10 +8925,10 @@ void d7atp_signal_dialog_termination()
 }
  80038e8:	e7f9      	b.n	80038de <d7atp_signal_dialog_termination+0x22>
  80038ea:	46c0      	nop			; (mov r8, r8)
- 80038ec:	20001a7e 	.word	0x20001a7e
- 80038f0:	20001a7f 	.word	0x20001a7f
- 80038f4:	20001a98 	.word	0x20001a98
- 80038f8:	20001a6c 	.word	0x20001a6c
+ 80038ec:	20001a82 	.word	0x20001a82
+ 80038f0:	20001a83 	.word	0x20001a83
+ 80038f4:	20001a9c 	.word	0x20001a9c
+ 80038f8:	20001a70 	.word	0x20001a70
 
 080038fc <d7atp_init>:
     // stop the DLL foreground scan
@@ -8988,15 +8988,15 @@ void d7atp_init()
  8003948:	480d      	ldr	r0, [pc, #52]	; (8003980 <d7atp_init+0x84>)
  800394a:	f004 fe59 	bl	8008600 <__assert_func>
  800394e:	46c0      	nop			; (mov r8, r8)
- 8003950:	20001a80 	.word	0x20001a80
- 8003954:	20001a70 	.word	0x20001a70
- 8003958:	20001a7e 	.word	0x20001a7e
- 800395c:	20001a6c 	.word	0x20001a6c
- 8003960:	20001a81 	.word	0x20001a81
+ 8003950:	20001a84 	.word	0x20001a84
+ 8003954:	20001a74 	.word	0x20001a74
+ 8003958:	20001a82 	.word	0x20001a82
+ 800395c:	20001a70 	.word	0x20001a70
+ 8003960:	20001a85 	.word	0x20001a85
  8003964:	080037a1 	.word	0x080037a1
- 8003968:	20001a98 	.word	0x20001a98
+ 8003968:	20001a9c 	.word	0x20001a9c
  800396c:	08003775 	.word	0x08003775
- 8003970:	20001a84 	.word	0x20001a84
+ 8003970:	20001a88 	.word	0x20001a88
  8003974:	0800380d 	.word	0x0800380d
  8003978:	080180b0 	.word	0x080180b0
  800397c:	080183b4 	.word	0x080183b4
@@ -9013,7 +9013,7 @@ void d7atp_notify_access_profile_file_changed(uint8_t file_id)
  8003988:	701a      	strb	r2, [r3, #0]
 }
  800398a:	4770      	bx	lr
- 800398c:	20001a70 	.word	0x20001a70
+ 800398c:	20001a74 	.word	0x20001a74
 
 08003990 <d7atp_stop>:
 
@@ -9033,9 +9033,9 @@ void d7atp_stop()
 }
  80039a4:	bd10      	pop	{r4, pc}
  80039a6:	46c0      	nop			; (mov r8, r8)
- 80039a8:	20001a80 	.word	0x20001a80
- 80039ac:	20001a98 	.word	0x20001a98
- 80039b0:	20001a84 	.word	0x20001a84
+ 80039a8:	20001a84 	.word	0x20001a84
+ 80039ac:	20001a9c 	.word	0x20001a9c
+ 80039b0:	20001a88 	.word	0x20001a88
 
 080039b4 <d7atp_send_request>:
 
@@ -9314,14 +9314,14 @@ send_packet:
  8003b2e:	b2c5      	uxtb	r5, r0
  8003b30:	3506      	adds	r5, #6
  8003b32:	e7c2      	b.n	8003aba <d7atp_send_request+0x106>
- 8003b34:	20001a7e 	.word	0x20001a7e
- 8003b38:	20001a80 	.word	0x20001a80
- 8003b3c:	20001a7f 	.word	0x20001a7f
- 8003b40:	20001a70 	.word	0x20001a70
+ 8003b34:	20001a82 	.word	0x20001a82
+ 8003b38:	20001a84 	.word	0x20001a84
+ 8003b3c:	20001a83 	.word	0x20001a83
+ 8003b40:	20001a74 	.word	0x20001a74
  8003b44:	080180d4 	.word	0x080180d4
  8003b48:	080183c0 	.word	0x080183c0
  8003b4c:	08017e40 	.word	0x08017e40
- 8003b50:	20001a28 	.word	0x20001a28
+ 8003b50:	20001a2c 	.word	0x20001a2c
  8003b54:	40100000 	.word	0x40100000
 
 08003b58 <d7atp_send_response>:
@@ -9416,7 +9416,7 @@ error_t d7atp_send_response(packet_t* packet)
  8003bb2:	2101      	movs	r1, #1
  8003bb4:	e7ef      	b.n	8003b96 <d7atp_send_response+0x3e>
  8003bb6:	46c0      	nop			; (mov r8, r8)
- 8003bb8:	20001a82 	.word	0x20001a82
+ 8003bb8:	20001a86 	.word	0x20001a86
 
 08003bbc <d7atp_assemble_packet_header>:
 
@@ -9517,7 +9517,7 @@ uint8_t d7atp_assemble_packet_header(packet_t* packet, uint8_t* data_ptr)
  8003c2a:	3302      	adds	r3, #2
  8003c2c:	e7f1      	b.n	8003c12 <d7atp_assemble_packet_header+0x56>
  8003c2e:	46c0      	nop			; (mov r8, r8)
- 8003c30:	20001a80 	.word	0x20001a80
+ 8003c30:	20001a84 	.word	0x20001a84
 
 08003c34 <d7atp_disassemble_packet_header>:
 
@@ -9758,7 +9758,7 @@ bool d7atp_disassemble_packet_header(packet_t *packet, uint8_t *data_idx)
  8003d82:	2000      	movs	r0, #0
  8003d84:	e7f4      	b.n	8003d70 <d7atp_disassemble_packet_header+0x13c>
  8003d86:	46c0      	nop			; (mov r8, r8)
- 8003d88:	20001a80 	.word	0x20001a80
+ 8003d88:	20001a84 	.word	0x20001a84
 
 08003d8c <d7atp_signal_packet_transmitted>:
 
@@ -9944,11 +9944,11 @@ void d7atp_signal_packet_transmitted(packet_t* packet)
  8003edc:	4908      	ldr	r1, [pc, #32]	; (8003f00 <d7atp_signal_packet_transmitted+0x174>)
  8003ede:	4809      	ldr	r0, [pc, #36]	; (8003f04 <d7atp_signal_packet_transmitted+0x178>)
  8003ee0:	f004 fb8e 	bl	8008600 <__assert_func>
- 8003ee4:	20001a80 	.word	0x20001a80
+ 8003ee4:	20001a84 	.word	0x20001a84
  8003ee8:	40100000 	.word	0x40100000
- 8003eec:	20001a84 	.word	0x20001a84
- 8003ef0:	20001a7f 	.word	0x20001a7f
- 8003ef4:	20001a81 	.word	0x20001a81
+ 8003eec:	20001a88 	.word	0x20001a88
+ 8003ef0:	20001a83 	.word	0x20001a83
+ 8003ef4:	20001a85 	.word	0x20001a85
  8003ef8:	080180f4 	.word	0x080180f4
  8003efc:	080183d4 	.word	0x080183d4
  8003f00:	00000256 	.word	0x00000256
@@ -9999,8 +9999,8 @@ void d7atp_signal_transmission_failure()
         return;
  8003f3c:	e7f3      	b.n	8003f26 <d7atp_signal_transmission_failure+0x1e>
  8003f3e:	46c0      	nop			; (mov r8, r8)
- 8003f40:	20001a80 	.word	0x20001a80
- 8003f44:	20001a81 	.word	0x20001a81
+ 8003f40:	20001a84 	.word	0x20001a84
+ 8003f44:	20001a85 	.word	0x20001a85
  8003f48:	08018120 	.word	0x08018120
  8003f4c:	080183f4 	.word	0x080183f4
  8003f50:	0000025b 	.word	0x0000025b
@@ -10435,22 +10435,22 @@ void d7atp_process_received_packet(packet_t* packet)
  8004208:	f7ff fa98 	bl	800373c <terminate_dialog>
  800420c:	e744      	b.n	8004098 <d7atp_process_received_packet+0x140>
  800420e:	46c0      	nop			; (mov r8, r8)
- 8004210:	20001a80 	.word	0x20001a80
- 8004214:	20001a74 	.word	0x20001a74
- 8004218:	20001a6c 	.word	0x20001a6c
- 800421c:	20001a7e 	.word	0x20001a7e
+ 8004210:	20001a84 	.word	0x20001a84
+ 8004214:	20001a78 	.word	0x20001a78
+ 8004218:	20001a70 	.word	0x20001a70
+ 800421c:	20001a82 	.word	0x20001a82
  8004220:	40100000 	.word	0x40100000
  8004224:	080181a4 	.word	0x080181a4
  8004228:	08018418 	.word	0x08018418
  800422c:	08017e40 	.word	0x08017e40
- 8004230:	20001a7f 	.word	0x20001a7f
+ 8004230:	20001a83 	.word	0x20001a83
  8004234:	08018248 	.word	0x08018248
  8004238:	08018294 	.word	0x08018294
  800423c:	080182d8 	.word	0x080182d8
- 8004240:	20001a81 	.word	0x20001a81
+ 8004240:	20001a85 	.word	0x20001a85
  8004244:	080182fc 	.word	0x080182fc
- 8004248:	20001a70 	.word	0x20001a70
- 800424c:	20001a28 	.word	0x20001a28
+ 8004248:	20001a74 	.word	0x20001a74
+ 800424c:	20001a2c 	.word	0x20001a2c
 
 08004250 <schedule_foreground_scan_expired_timer>:
     fg_scan_timeout_ticks = 0;
@@ -10483,8 +10483,8 @@ static void schedule_foreground_scan_expired_timer()
  8004268:	21a1      	movs	r1, #161	; 0xa1
  800426a:	4805      	ldr	r0, [pc, #20]	; (8004280 <schedule_foreground_scan_expired_timer+0x30>)
  800426c:	f004 f9c8 	bl	8008600 <__assert_func>
- 8004270:	20001bd0 	.word	0x20001bd0
- 8004274:	20001ab0 	.word	0x20001ab0
+ 8004270:	20001bd4 	.word	0x20001bd4
+ 8004274:	20001ab4 	.word	0x20001ab4
  8004278:	08017738 	.word	0x08017738
  800427c:	080186c0 	.word	0x080186c0
  8004280:	08018438 	.word	0x08018438
@@ -10516,7 +10516,7 @@ static void schedule_foreground_scan_after_D7AAdvP(timer_tick_t eta)
  800429c:	31ff      	adds	r1, #255	; 0xff
  800429e:	4804      	ldr	r0, [pc, #16]	; (80042b0 <schedule_foreground_scan_after_D7AAdvP+0x2c>)
  80042a0:	f004 f9ae 	bl	8008600 <__assert_func>
- 80042a4:	20001be4 	.word	0x20001be4
+ 80042a4:	20001be8 	.word	0x20001be8
  80042a8:	08017738 	.word	0x08017738
  80042ac:	0801873c 	.word	0x0801873c
  80042b0:	08018438 	.word	0x08018438
@@ -10598,7 +10598,7 @@ static void schedule_foreground_scan_after_D7AAdvP(timer_tick_t eta)
  800432c:	2003      	movs	r0, #3
  800432e:	f004 f95e 	bl	80085ee <hw_debug_set>
  8004332:	e7cd      	b.n	80042d0 <switch_state+0x1c>
- 8004334:	20001aad 	.word	0x20001aad
+ 8004334:	20001ab1 	.word	0x20001ab1
  8004338:	0801846c 	.word	0x0801846c
  800433c:	08018698 	.word	0x08018698
  8004340:	08018438 	.word	0x08018438
@@ -10617,8 +10617,8 @@ static void schedule_foreground_scan_after_D7AAdvP(timer_tick_t eta)
  8004358:	601a      	str	r2, [r3, #0]
 }
  800435a:	bd10      	pop	{r4, pc}
- 800435c:	20001bd0 	.word	0x20001bd0
- 8004360:	20001ab0 	.word	0x20001ab0
+ 800435c:	20001bd4 	.word	0x20001bd4
+ 8004360:	20001ab4 	.word	0x20001ab4
 
 08004364 <d7anp_set_address_id>:
 {
@@ -10629,7 +10629,7 @@ static void schedule_foreground_scan_after_D7AAdvP(timer_tick_t eta)
 }
  800436c:	bd10      	pop	{r4, pc}
  800436e:	46c0      	nop			; (mov r8, r8)
- 8004370:	20001bc4 	.word	0x20001bc4
+ 8004370:	20001bc8 	.word	0x20001bc8
 
 08004374 <foreground_scan_expired>:
 {
@@ -10665,8 +10665,8 @@ static void schedule_foreground_scan_after_D7AAdvP(timer_tick_t eta)
  80043a4:	f7ff ff86 	bl	80042b4 <switch_state>
  80043a8:	e7ed      	b.n	8004386 <foreground_scan_expired+0x12>
  80043aa:	46c0      	nop			; (mov r8, r8)
- 80043ac:	20001aad 	.word	0x20001aad
- 80043b0:	20001ab0 	.word	0x20001ab0
+ 80043ac:	20001ab1 	.word	0x20001ab1
+ 80043b0:	20001ab4 	.word	0x20001ab4
  80043b4:	08018558 	.word	0x08018558
  80043b8:	080186a8 	.word	0x080186a8
  80043bc:	08018438 	.word	0x08018438
@@ -10837,7 +10837,7 @@ static void build_iv(packet_t *packet, uint8_t payload_len, uint8_t *iv)
  8004492:	f002 fa15 	bl	80068c0 <dll_start_foreground_scan>
 }
  8004496:	e7f8      	b.n	800448a <d7anp_start_foreground_scan+0xe>
- 8004498:	20001aad 	.word	0x20001aad
+ 8004498:	20001ab1 	.word	0x20001ab1
 
 0800449c <start_foreground_scan_after_D7AAdvP>:
 {
@@ -10851,7 +10851,7 @@ static void build_iv(packet_t *packet, uint8_t payload_len, uint8_t *iv)
 }
  80044a8:	bd10      	pop	{r4, pc}
  80044aa:	46c0      	nop			; (mov r8, r8)
- 80044ac:	20001ab0 	.word	0x20001ab0
+ 80044ac:	20001ab4 	.word	0x20001ab4
 
 080044b0 <d7anp_set_foreground_scan_timeout>:
 {
@@ -10874,8 +10874,8 @@ static void build_iv(packet_t *packet, uint8_t payload_len, uint8_t *iv)
  80044c8:	21b6      	movs	r1, #182	; 0xb6
  80044ca:	4805      	ldr	r0, [pc, #20]	; (80044e0 <d7anp_set_foreground_scan_timeout+0x30>)
  80044cc:	f004 f898 	bl	8008600 <__assert_func>
- 80044d0:	20001aad 	.word	0x20001aad
- 80044d4:	20001ab0 	.word	0x20001ab0
+ 80044d0:	20001ab1 	.word	0x20001ab1
+ 80044d4:	20001ab4 	.word	0x20001ab4
  80044d8:	0801846c 	.word	0x0801846c
  80044dc:	080186e8 	.word	0x080186e8
  80044e0:	08018438 	.word	0x08018438
@@ -10898,7 +10898,7 @@ static void build_iv(packet_t *packet, uint8_t payload_len, uint8_t *iv)
  80044f8:	2001      	movs	r0, #1
  80044fa:	f7ff fedb 	bl	80042b4 <switch_state>
  80044fe:	e7f6      	b.n	80044ee <d7anp_stop_foreground_scan+0xa>
- 8004500:	20001aad 	.word	0x20001aad
+ 8004500:	20001ab1 	.word	0x20001ab1
 
 08004504 <d7anp_init>:
 {
@@ -10981,19 +10981,19 @@ static void build_iv(packet_t *packet, uint8_t payload_len, uint8_t *iv)
  800458e:	701a      	strb	r2, [r3, #0]
  8004590:	e7dd      	b.n	800454e <d7anp_init+0x4a>
  8004592:	46c0      	nop			; (mov r8, r8)
- 8004594:	20001aad 	.word	0x20001aad
- 8004598:	20001ab0 	.word	0x20001ab0
+ 8004594:	20001ab1 	.word	0x20001ab1
+ 8004598:	20001ab4 	.word	0x20001ab4
  800459c:	08004375 	.word	0x08004375
- 80045a0:	20001bd0 	.word	0x20001bd0
+ 80045a0:	20001bd4 	.word	0x20001bd4
  80045a4:	0800449d 	.word	0x0800449d
- 80045a8:	20001be4 	.word	0x20001be4
- 80045ac:	20001bc4 	.word	0x20001bc4
+ 80045a8:	20001be8 	.word	0x20001be8
+ 80045ac:	20001bc8 	.word	0x20001bc8
  80045b0:	08018684 	.word	0x08018684
- 80045b4:	20001bcc 	.word	0x20001bcc
+ 80045b4:	20001bd0 	.word	0x20001bd0
  80045b8:	080043c1 	.word	0x080043c1
- 80045bc:	20001bbc 	.word	0x20001bbc
- 80045c0:	20001ab8 	.word	0x20001ab8
- 80045c4:	20001ab4 	.word	0x20001ab4
+ 80045bc:	20001bc0 	.word	0x20001bc0
+ 80045c0:	20001abc 	.word	0x20001abc
+ 80045c4:	20001ab8 	.word	0x20001ab8
  80045c8:	080185dc 	.word	0x080185dc
  80045cc:	08018714 	.word	0x08018714
  80045d0:	08018438 	.word	0x08018438
@@ -11015,9 +11015,9 @@ static void build_iv(packet_t *packet, uint8_t payload_len, uint8_t *iv)
 }
  80045ec:	bd10      	pop	{r4, pc}
  80045ee:	46c0      	nop			; (mov r8, r8)
- 80045f0:	20001aad 	.word	0x20001aad
- 80045f4:	20001bd0 	.word	0x20001bd0
- 80045f8:	20001be4 	.word	0x20001be4
+ 80045f0:	20001ab1 	.word	0x20001ab1
+ 80045f4:	20001bd4 	.word	0x20001bd4
+ 80045f8:	20001be8 	.word	0x20001be8
 
 080045fc <d7anp_tx_foreground_frame>:
 {
@@ -11132,13 +11132,13 @@ static void build_iv(packet_t *packet, uint8_t payload_len, uint8_t *iv)
  80046ae:	2001      	movs	r0, #1
  80046b0:	e7e8      	b.n	8004684 <d7anp_tx_foreground_frame+0x88>
  80046b2:	46c0      	nop			; (mov r8, r8)
- 80046b4:	20001aad 	.word	0x20001aad
- 80046b8:	20001aac 	.word	0x20001aac
- 80046bc:	20001bbc 	.word	0x20001bbc
+ 80046b4:	20001ab1 	.word	0x20001ab1
+ 80046b8:	20001ab0 	.word	0x20001ab0
+ 80046bc:	20001bc0 	.word	0x20001bc0
  80046c0:	0801846c 	.word	0x0801846c
  80046c4:	08018720 	.word	0x08018720
  80046c8:	08018438 	.word	0x08018438
- 80046cc:	20001bcc 	.word	0x20001bcc
+ 80046cc:	20001bd0 	.word	0x20001bd0
 
 080046d0 <d7anp_secure_payload>:
 
@@ -11762,7 +11762,7 @@ uint8_t d7anp_assemble_packet_header(packet_t *packet, uint8_t *data_ptr)
  8004a84:	08018640 	.word	0x08018640
  8004a88:	08018764 	.word	0x08018764
  8004a8c:	08018438 	.word	0x08018438
- 8004a90:	20001bc4 	.word	0x20001bc4
+ 8004a90:	20001bc8 	.word	0x20001bc8
 
 08004a94 <get_trusted_node>:
 
@@ -11806,7 +11806,7 @@ dae_nwl_trusted_node_t *get_trusted_node(uint8_t *address)
  8004ac8:	2000      	movs	r0, #0
 }
  8004aca:	bd70      	pop	{r4, r5, r6, pc}
- 8004acc:	20001ab8 	.word	0x20001ab8
+ 8004acc:	20001abc 	.word	0x20001abc
 
 08004ad0 <add_trusted_node>:
 
@@ -11866,7 +11866,7 @@ dae_nwl_trusted_node_t *add_trusted_node(uint8_t *address, uint32_t frame_counte
         return NULL;
  8004b10:	2600      	movs	r6, #0
  8004b12:	e7fa      	b.n	8004b0a <add_trusted_node+0x3a>
- 8004b14:	20001ab8 	.word	0x20001ab8
+ 8004b14:	20001abc 	.word	0x20001abc
 
 08004b18 <d7anp_disassemble_packet_header>:
 #endif
@@ -12215,8 +12215,8 @@ bool d7anp_disassemble_packet_header(packet_t* packet, uint8_t *data_idx)
                     return false;
  8004cd0:	2000      	movs	r0, #0
  8004cd2:	e7f4      	b.n	8004cbe <d7anp_disassemble_packet_header+0x1a6>
- 8004cd4:	20001ab8 	.word	0x20001ab8
- 8004cd8:	20001ab4 	.word	0x20001ab4
+ 8004cd4:	20001abc 	.word	0x20001abc
+ 8004cd8:	20001ab8 	.word	0x20001ab8
  8004cdc:	08018640 	.word	0x08018640
  8004ce0:	08018784 	.word	0x08018784
  8004ce4:	08018438 	.word	0x08018438
@@ -12250,8 +12250,8 @@ void d7anp_signal_transmission_failure()
  8004d04:	4905      	ldr	r1, [pc, #20]	; (8004d1c <d7anp_signal_transmission_failure+0x34>)
  8004d06:	4806      	ldr	r0, [pc, #24]	; (8004d20 <d7anp_signal_transmission_failure+0x38>)
  8004d08:	f003 fc7a 	bl	8008600 <__assert_func>
- 8004d0c:	20001aad 	.word	0x20001aad
- 8004d10:	20001aac 	.word	0x20001aac
+ 8004d0c:	20001ab1 	.word	0x20001ab1
+ 8004d10:	20001ab0 	.word	0x20001ab0
  8004d14:	08018660 	.word	0x08018660
  8004d18:	080187a4 	.word	0x080187a4
  8004d1c:	0000030b 	.word	0x0000030b
@@ -12286,8 +12286,8 @@ void d7anp_signal_packet_transmitted(packet_t* packet)
  8004d44:	4905      	ldr	r1, [pc, #20]	; (8004d5c <d7anp_signal_packet_transmitted+0x38>)
  8004d46:	4806      	ldr	r0, [pc, #24]	; (8004d60 <d7anp_signal_packet_transmitted+0x3c>)
  8004d48:	f003 fc5a 	bl	8008600 <__assert_func>
- 8004d4c:	20001aad 	.word	0x20001aad
- 8004d50:	20001aac 	.word	0x20001aac
+ 8004d4c:	20001ab1 	.word	0x20001ab1
+ 8004d50:	20001ab0 	.word	0x20001ab0
  8004d54:	08018660 	.word	0x08018660
  8004d58:	080187c8 	.word	0x080187c8
  8004d5c:	00000317 	.word	0x00000317
@@ -12378,7 +12378,7 @@ void d7anp_process_received_packet(packet_t* packet)
  8004dd0:	4805      	ldr	r0, [pc, #20]	; (8004de8 <d7anp_process_received_packet+0x84>)
  8004dd2:	f003 fc15 	bl	8008600 <__assert_func>
  8004dd6:	46c0      	nop			; (mov r8, r8)
- 8004dd8:	20001aad 	.word	0x20001aad
+ 8004dd8:	20001ab1 	.word	0x20001ab1
  8004ddc:	080169c8 	.word	0x080169c8
  8004de0:	080187e8 	.word	0x080187e8
  8004de4:	00000349 	.word	0x00000349
@@ -12434,9 +12434,9 @@ static void stop_mode() {
  8004e12:	f002 f915 	bl	8007040 <phy_switch_to_sleep_mode>
       break;
  8004e16:	e7fb      	b.n	8004e10 <stop_mode+0x1c>
- 8004e18:	20001bf8 	.word	0x20001bf8
+ 8004e18:	20001bfc 	.word	0x20001bfc
  8004e1c:	08018808 	.word	0x08018808
- 8004e20:	20001d2e 	.word	0x20001d2e
+ 8004e20:	20001d32 	.word	0x20001d32
 
 08004e24 <packet_received_em>:
 static void packet_received_em(packet_t* packet) {
@@ -12677,11 +12677,11 @@ static void packet_received_em(packet_t* packet) {
  8004fd6:	2700      	movs	r7, #0
  8004fd8:	e7ca      	b.n	8004f70 <packet_received_em+0x14c>
  8004fda:	46c0      	nop			; (mov r8, r8)
- 8004fdc:	20001c0e 	.word	0x20001c0e
+ 8004fdc:	20001c12 	.word	0x20001c12
  8004fe0:	2000055a 	.word	0x2000055a
  8004fe4:	0000ffff 	.word	0x0000ffff
- 8004fe8:	20001d24 	.word	0x20001d24
- 8004fec:	20001d20 	.word	0x20001d20
+ 8004fe8:	20001d28 	.word	0x20001d28
+ 8004fec:	20001d24 	.word	0x20001d24
  8004ff0:	40590000 	.word	0x40590000
  8004ff4:	08018888 	.word	0x08018888
  8004ff8:	08005049 	.word	0x08005049
@@ -12715,8 +12715,8 @@ static void packet_transmitted_callback(packet_t* packet) {
  8005032:	b003      	add	sp, #12
  8005034:	bd00      	pop	{pc}
  8005036:	46c0      	nop			; (mov r8, r8)
- 8005038:	20001d20 	.word	0x20001d20
- 800503c:	20001d22 	.word	0x20001d22
+ 8005038:	20001d24 	.word	0x20001d24
+ 800503c:	20001d26 	.word	0x20001d26
  8005040:	0000639c 	.word	0x0000639c
  8005044:	08005049 	.word	0x08005049
 
@@ -12828,19 +12828,19 @@ static void start_mode() {
  8005106:	f001 ff0b 	bl	8006f20 <phy_switch_to_standby_mode>
 }
  800510a:	e7a9      	b.n	8005060 <start_mode+0x18>
- 800510c:	20001bf8 	.word	0x20001bf8
+ 800510c:	20001bfc 	.word	0x20001bfc
  8005110:	080188b0 	.word	0x080188b0
- 8005114:	20001d2f 	.word	0x20001d2f
+ 8005114:	20001d33 	.word	0x20001d33
  8005118:	08004ded 	.word	0x08004ded
- 800511c:	20001d30 	.word	0x20001d30
- 8005120:	20001d2e 	.word	0x20001d2e
+ 800511c:	20001d34 	.word	0x20001d34
+ 8005120:	20001d32 	.word	0x20001d32
  8005124:	08005049 	.word	0x08005049
- 8005128:	20001d28 	.word	0x20001d28
+ 8005128:	20001d2c 	.word	0x20001d2c
  800512c:	08004e25 	.word	0x08004e25
- 8005130:	20001d20 	.word	0x20001d20
- 8005134:	20001bfc 	.word	0x20001bfc
- 8005138:	20001c08 	.word	0x20001c08
- 800513c:	20001c1e 	.word	0x20001c1e
+ 8005130:	20001d24 	.word	0x20001d24
+ 8005134:	20001c00 	.word	0x20001c00
+ 8005138:	20001c0c 	.word	0x20001c0c
+ 800513c:	20001c22 	.word	0x20001c22
  8005140:	08005009 	.word	0x08005009
 
 08005144 <em_file_change_callback>:
@@ -13065,19 +13065,19 @@ static void em_file_change_callback(uint8_t file_id) {
  80052c4:	f00b fa2e 	bl	8010724 <timer_post_task_prio>
  80052c8:	e7e6      	b.n	8005298 <em_file_change_callback+0x154>
  80052ca:	46c0      	nop			; (mov r8, r8)
- 80052cc:	20001d28 	.word	0x20001d28
- 80052d0:	20001d30 	.word	0x20001d30
- 80052d4:	20001d2f 	.word	0x20001d2f
- 80052d8:	20001bf8 	.word	0x20001bf8
+ 80052cc:	20001d2c 	.word	0x20001d2c
+ 80052d0:	20001d34 	.word	0x20001d34
+ 80052d4:	20001d33 	.word	0x20001d33
+ 80052d8:	20001bfc 	.word	0x20001bfc
  80052dc:	080188c8 	.word	0x080188c8
  80052e0:	08005049 	.word	0x08005049
- 80052e4:	20001d2e 	.word	0x20001d2e
+ 80052e4:	20001d32 	.word	0x20001d32
  80052e8:	08004df5 	.word	0x08004df5
- 80052ec:	20001d20 	.word	0x20001d20
- 80052f0:	20001c0e 	.word	0x20001c0e
- 80052f4:	20001d24 	.word	0x20001d24
+ 80052ec:	20001d24 	.word	0x20001d24
+ 80052f0:	20001c12 	.word	0x20001c12
+ 80052f4:	20001d28 	.word	0x20001d28
  80052f8:	2000055a 	.word	0x2000055a
- 80052fc:	20001d22 	.word	0x20001d22
+ 80052fc:	20001d26 	.word	0x20001d26
 
 08005300 <engineering_mode_init>:
 
@@ -13171,8 +13171,8 @@ void packet_queue_init()
     }
 }
  800537a:	bd10      	pop	{r4, pc}
- 800537c:	20001d38 	.word	0x20001d38
- 8005380:	200026e0 	.word	0x200026e0
+ 800537c:	20001d3c 	.word	0x20001d3c
+ 8005380:	200026e4 	.word	0x200026e4
 
 08005384 <packet_queue_alloc_packet>:
 
@@ -13214,8 +13214,8 @@ packet_t* packet_queue_alloc_packet()
  80053ac:	2000      	movs	r0, #0
 }
  80053ae:	4770      	bx	lr
- 80053b0:	200026e0 	.word	0x200026e0
- 80053b4:	20001d38 	.word	0x20001d38
+ 80053b0:	200026e4 	.word	0x200026e4
+ 80053b4:	20001d3c 	.word	0x20001d3c
 
 080053b8 <packet_queue_free_packet>:
 
@@ -13278,8 +13278,8 @@ void packet_queue_free_packet(packet_t* packet)
  8005404:	080188f4 	.word	0x080188f4
  8005408:	080189bc 	.word	0x080189bc
  800540c:	0801893c 	.word	0x0801893c
- 8005410:	20001d38 	.word	0x20001d38
- 8005414:	200026e0 	.word	0x200026e0
+ 8005410:	20001d3c 	.word	0x20001d3c
+ 8005414:	200026e4 	.word	0x200026e4
  8005418:	080169c8 	.word	0x080169c8
 
 0800541c <packet_queue_find_packet>:
@@ -13318,7 +13318,7 @@ packet_t* packet_queue_find_packet(hw_radio_packet_t* hw_radio_packet)
  8005448:	2000      	movs	r0, #0
 }
  800544a:	bd10      	pop	{r4, pc}
- 800544c:	20001d38 	.word	0x20001d38
+ 800544c:	20001d3c 	.word	0x20001d3c
 
 08005450 <packet_queue_mark_processing>:
 
@@ -13379,8 +13379,8 @@ void packet_queue_mark_processing(packet_t* packet)
  8005498:	08018978 	.word	0x08018978
  800549c:	080189d8 	.word	0x080189d8
  80054a0:	0801893c 	.word	0x0801893c
- 80054a4:	20001d38 	.word	0x20001d38
- 80054a8:	200026e0 	.word	0x200026e0
+ 80054a4:	20001d3c 	.word	0x20001d3c
+ 80054a8:	200026e4 	.word	0x200026e4
  80054ac:	080169c8 	.word	0x080169c8
 
 080054b0 <packet_init>:
@@ -13736,7 +13736,7 @@ static bool is_tx_busy()
     switch(dll_state)
  8005694:	2001      	movs	r0, #1
  8005696:	e7f4      	b.n	8005682 <is_tx_busy+0xe>
- 8005698:	2000273a 	.word	0x2000273a
+ 8005698:	2000273e 	.word	0x2000273e
 
 0800569c <get_position_channel>:
         }
@@ -13833,8 +13833,8 @@ static uint8_t get_position_channel() {
 }
  800571c:	b003      	add	sp, #12
  800571e:	bd30      	pop	{r4, r5, pc}
- 8005720:	2000272c 	.word	0x2000272c
- 8005724:	2000278c 	.word	0x2000278c
+ 8005720:	20002730 	.word	0x20002730
+ 8005724:	20002790 	.word	0x20002790
  8005728:	08018a8c 	.word	0x08018a8c
 
 0800572c <save_noise_floor>:
@@ -13964,10 +13964,10 @@ static void save_noise_floor(uint8_t position) {
  80057fa:	46a2      	mov	sl, r4
  80057fc:	46ab      	mov	fp, r5
  80057fe:	bdf0      	pop	{r4, r5, r6, r7, pc}
- 8005800:	2000278c 	.word	0x2000278c
- 8005804:	2000272c 	.word	0x2000272c
- 8005808:	200026e4 	.word	0x200026e4
- 800580c:	20002832 	.word	0x20002832
+ 8005800:	20002790 	.word	0x20002790
+ 8005804:	20002730 	.word	0x20002730
+ 8005808:	200026e8 	.word	0x200026e8
+ 800580c:	20002836 	.word	0x20002836
 
 08005810 <dll_signal_packet_received>:
 {
@@ -14065,16 +14065,16 @@ static void save_noise_floor(uint8_t position) {
  80058ac:	0020      	movs	r0, r4
  80058ae:	f7ff fe49 	bl	8005544 <packet_disassemble>
  80058b2:	e7c6      	b.n	8005842 <dll_signal_packet_received+0x32>
- 80058b4:	2000273a 	.word	0x2000273a
- 80058b8:	20002741 	.word	0x20002741
- 80058bc:	200027e8 	.word	0x200027e8
+ 80058b4:	2000273e 	.word	0x2000273e
+ 80058b8:	20002745 	.word	0x20002745
+ 80058bc:	200027ec 	.word	0x200027ec
  80058c0:	08018ad8 	.word	0x08018ad8
  80058c4:	0801924c 	.word	0x0801924c
  80058c8:	08018b70 	.word	0x08018b70
  80058cc:	08018ba4 	.word	0x08018ba4
- 80058d0:	2000272c 	.word	0x2000272c
- 80058d4:	20002810 	.word	0x20002810
- 80058d8:	20002740 	.word	0x20002740
+ 80058d0:	20002730 	.word	0x20002730
+ 80058d4:	20002814 	.word	0x20002814
+ 80058d8:	20002744 	.word	0x20002744
 
 080058dc <packet_received>:
 {
@@ -14339,7 +14339,7 @@ static void save_noise_floor(uint8_t position) {
  8005a90:	e79f      	b.n	80059d2 <switch_state+0xee>
  8005a92:	46c0      	nop			; (mov r8, r8)
  8005a94:	08019098 	.word	0x08019098
- 8005a98:	2000273a 	.word	0x2000273a
+ 8005a98:	2000273e 	.word	0x2000273e
  8005a9c:	08018bb4 	.word	0x08018bb4
  8005aa0:	08019208 	.word	0x08019208
  8005aa4:	08018b70 	.word	0x08018b70
@@ -14402,10 +14402,10 @@ static void start_foreground_scan()
         hw_radio_set_idle();
  8005afa:	f007 fc17 	bl	800d32c <hw_radio_set_idle>
  8005afe:	e7ec      	b.n	8005ada <start_foreground_scan+0xa>
- 8005b00:	2000273a 	.word	0x2000273a
+ 8005b00:	2000273e 	.word	0x2000273e
  8005b04:	08005811 	.word	0x08005811
- 8005b08:	2000272c 	.word	0x2000272c
- 8005b0c:	200027ac 	.word	0x200027ac
+ 8005b08:	20002730 	.word	0x20002730
+ 8005b0c:	200027b0 	.word	0x200027b0
 
 08005b10 <dll_signal_packet_transmitted>:
 {
@@ -14487,14 +14487,14 @@ static void start_foreground_scan()
  8005b94:	701a      	strb	r2, [r3, #0]
 }
  8005b96:	e7dd      	b.n	8005b54 <dll_signal_packet_transmitted+0x44>
- 8005b98:	2000273a 	.word	0x2000273a
- 8005b9c:	20002810 	.word	0x20002810
- 8005ba0:	20002741 	.word	0x20002741
- 8005ba4:	20002785 	.word	0x20002785
+ 8005b98:	2000273e 	.word	0x2000273e
+ 8005b9c:	20002814 	.word	0x20002814
+ 8005ba0:	20002745 	.word	0x20002745
+ 8005ba4:	20002789 	.word	0x20002789
  8005ba8:	08018fe0 	.word	0x08018fe0
  8005bac:	08019268 	.word	0x08019268
  8005bb0:	08018b70 	.word	0x08018b70
- 8005bb4:	200027e8 	.word	0x200027e8
+ 8005bb4:	200027ec 	.word	0x200027ec
  8005bb8:	08017738 	.word	0x08017738
 
 08005bbc <conf_file_changed_callback>:
@@ -14540,10 +14540,10 @@ static void start_foreground_scan()
  8005bfc:	4808      	ldr	r0, [pc, #32]	; (8005c20 <conf_file_changed_callback+0x64>)
  8005bfe:	f002 fcff 	bl	8008600 <__assert_func>
  8005c02:	46c0      	nop			; (mov r8, r8)
- 8005c04:	200026e6 	.word	0x200026e6
- 8005c08:	200026e8 	.word	0x200026e8
- 8005c0c:	2000273a 	.word	0x2000273a
- 8005c10:	200027fc 	.word	0x200027fc
+ 8005c04:	200026ea 	.word	0x200026ea
+ 8005c08:	200026ec 	.word	0x200026ec
+ 8005c0c:	2000273e 	.word	0x2000273e
+ 8005c10:	20002800 	.word	0x20002800
  8005c14:	08017738 	.word	0x08017738
  8005c18:	080192d0 	.word	0x080192d0
  8005c1c:	0000036a 	.word	0x0000036a
@@ -14980,33 +14980,33 @@ static void start_foreground_scan()
  8005f2e:	2200      	movs	r2, #0
  8005f30:	701a      	strb	r2, [r3, #0]
  8005f32:	e7e3      	b.n	8005efc <execute_csma_ca+0x2d8>
- 8005f34:	20002740 	.word	0x20002740
- 8005f38:	20002730 	.word	0x20002730
- 8005f3c:	2000273a 	.word	0x2000273a
- 8005f40:	20002810 	.word	0x20002810
+ 8005f34:	20002744 	.word	0x20002744
+ 8005f38:	20002734 	.word	0x20002734
+ 8005f3c:	2000273e 	.word	0x2000273e
+ 8005f40:	20002814 	.word	0x20002814
  8005f44:	08005b11 	.word	0x08005b11
  8005f48:	08017738 	.word	0x08017738
  8005f4c:	080192a4 	.word	0x080192a4
  8005f50:	0000020d 	.word	0x0000020d
  8005f54:	08018b70 	.word	0x08018b70
- 8005f58:	2000273c 	.word	0x2000273c
- 8005f5c:	20002734 	.word	0x20002734
- 8005f60:	200026e7 	.word	0x200026e7
- 8005f64:	2000273e 	.word	0x2000273e
- 8005f68:	200027c0 	.word	0x200027c0
+ 8005f58:	20002740 	.word	0x20002740
+ 8005f5c:	20002738 	.word	0x20002738
+ 8005f60:	200026eb 	.word	0x200026eb
+ 8005f64:	20002742 	.word	0x20002742
+ 8005f68:	200027c4 	.word	0x200027c4
  8005f6c:	00000266 	.word	0x00000266
  8005f70:	40100000 	.word	0x40100000
  8005f74:	080190c8 	.word	0x080190c8
- 8005f78:	20002785 	.word	0x20002785
- 8005f7c:	20002738 	.word	0x20002738
+ 8005f78:	20002789 	.word	0x20002789
+ 8005f7c:	2000273c 	.word	0x2000273c
  8005f80:	3fe00000 	.word	0x3fe00000
  8005f84:	0000026d 	.word	0x0000026d
  8005f88:	080190e4 	.word	0x080190e4
- 8005f8c:	200027d4 	.word	0x200027d4
+ 8005f8c:	200027d8 	.word	0x200027d8
  8005f90:	0000027d 	.word	0x0000027d
- 8005f94:	20002741 	.word	0x20002741
- 8005f98:	20002834 	.word	0x20002834
- 8005f9c:	200027e8 	.word	0x200027e8
+ 8005f94:	20002745 	.word	0x20002745
+ 8005f98:	20002838 	.word	0x20002838
+ 8005f9c:	200027ec 	.word	0x200027ec
 
 08005fa0 <execute_cca>:
 {
@@ -15032,9 +15032,9 @@ static void start_foreground_scan()
  8005fc0:	31ff      	adds	r1, #255	; 0xff
  8005fc2:	4806      	ldr	r0, [pc, #24]	; (8005fdc <execute_cca+0x3c>)
  8005fc4:	f002 fb1c 	bl	8008600 <__assert_func>
- 8005fc8:	2000273a 	.word	0x2000273a
+ 8005fc8:	2000273e 	.word	0x2000273e
  8005fcc:	0800693d 	.word	0x0800693d
- 8005fd0:	2000272c 	.word	0x2000272c
+ 8005fd0:	20002730 	.word	0x20002730
  8005fd4:	08018c58 	.word	0x08018c58
  8005fd8:	08019298 	.word	0x08019298
  8005fdc:	08018b70 	.word	0x08018b70
@@ -15089,10 +15089,10 @@ static void start_foreground_scan()
  800602e:	f7ff fc59 	bl	80058e4 <switch_state>
 }
  8006032:	bd10      	pop	{r4, pc}
- 8006034:	2000273a 	.word	0x2000273a
- 8006038:	20002740 	.word	0x20002740
- 800603c:	200027c0 	.word	0x200027c0
- 8006040:	200027d4 	.word	0x200027d4
+ 8006034:	2000273e 	.word	0x2000273e
+ 8006038:	20002744 	.word	0x20002744
+ 800603c:	200027c4 	.word	0x200027c4
+ 8006040:	200027d8 	.word	0x200027d8
 
 08006044 <median_measured_noisefloor>:
 void median_measured_noisefloor(uint8_t position) {
@@ -15182,10 +15182,10 @@ void median_measured_noisefloor(uint8_t position) {
 }
  80060d4:	bd10      	pop	{r4, pc}
  80060d6:	46c0      	nop			; (mov r8, r8)
- 80060d8:	20002834 	.word	0x20002834
- 80060dc:	20002814 	.word	0x20002814
- 80060e0:	200026e4 	.word	0x200026e4
- 80060e4:	200026e8 	.word	0x200026e8
+ 80060d8:	20002838 	.word	0x20002838
+ 80060dc:	20002818 	.word	0x20002818
+ 80060e0:	200026e8 	.word	0x200026e8
+ 80060e4:	200026ec 	.word	0x200026ec
 
 080060e8 <start_background_scan>:
 {
@@ -15275,18 +15275,18 @@ void median_measured_noisefloor(uint8_t position) {
  800617e:	70ab      	strb	r3, [r5, #2]
  8006180:	e7e8      	b.n	8006154 <start_background_scan+0x6c>
  8006182:	46c0      	nop			; (mov r8, r8)
- 8006184:	2000273a 	.word	0x2000273a
- 8006188:	200027ac 	.word	0x200027ac
- 800618c:	20002788 	.word	0x20002788
- 8006190:	2000272c 	.word	0x2000272c
- 8006194:	200026e4 	.word	0x200026e4
+ 8006184:	2000273e 	.word	0x2000273e
+ 8006188:	200027b0 	.word	0x200027b0
+ 800618c:	2000278c 	.word	0x2000278c
+ 8006190:	20002730 	.word	0x20002730
+ 8006194:	200026e8 	.word	0x200026e8
  8006198:	08005811 	.word	0x08005811
- 800619c:	20002786 	.word	0x20002786
+ 800619c:	2000278a 	.word	0x2000278a
  80061a0:	08018b48 	.word	0x08018b48
  80061a4:	08019218 	.word	0x08019218
  80061a8:	08018b70 	.word	0x08018b70
- 80061ac:	200026e8 	.word	0x200026e8
- 80061b0:	20002814 	.word	0x20002814
+ 80061ac:	200026ec 	.word	0x200026ec
+ 80061b0:	20002818 	.word	0x20002818
 
 080061b4 <dll_stop_background_scan>:
 {
@@ -15310,8 +15310,8 @@ void median_measured_noisefloor(uint8_t position) {
  80061d0:	31ff      	adds	r1, #255	; 0xff
  80061d2:	4805      	ldr	r0, [pc, #20]	; (80061e8 <dll_stop_background_scan+0x34>)
  80061d4:	f002 fa14 	bl	8008600 <__assert_func>
- 80061d8:	2000273a 	.word	0x2000273a
- 80061dc:	200027ac 	.word	0x200027ac
+ 80061d8:	2000273e 	.word	0x2000273e
+ 80061dc:	200027b0 	.word	0x200027b0
  80061e0:	08018b48 	.word	0x08018b48
  80061e4:	08019230 	.word	0x08019230
  80061e8:	08018b70 	.word	0x08018b70
@@ -15517,17 +15517,17 @@ void median_measured_noisefloor(uint8_t position) {
  8006348:	480f      	ldr	r0, [pc, #60]	; (8006388 <dll_execute_scan_automation+0x19c>)
  800634a:	f002 f959 	bl	8008600 <__assert_func>
  800634e:	46c0      	nop			; (mov r8, r8)
- 8006350:	2000273a 	.word	0x2000273a
- 8006354:	200027ac 	.word	0x200027ac
- 8006358:	200026e8 	.word	0x200026e8
- 800635c:	20002788 	.word	0x20002788
- 8006360:	200026e6 	.word	0x200026e6
+ 8006350:	2000273e 	.word	0x2000273e
+ 8006354:	200027b0 	.word	0x200027b0
+ 8006358:	200026ec 	.word	0x200026ec
+ 800635c:	2000278c 	.word	0x2000278c
+ 8006360:	200026ea 	.word	0x200026ea
  8006364:	40100000 	.word	0x40100000
  8006368:	0000ffff 	.word	0x0000ffff
- 800636c:	2000272c 	.word	0x2000272c
- 8006370:	20002786 	.word	0x20002786
- 8006374:	200026e4 	.word	0x200026e4
- 8006378:	2000272f 	.word	0x2000272f
+ 800636c:	20002730 	.word	0x20002730
+ 8006370:	2000278a 	.word	0x2000278a
+ 8006374:	200026e8 	.word	0x200026e8
+ 8006378:	20002733 	.word	0x20002733
  800637c:	08019104 	.word	0x08019104
  8006380:	080192b4 	.word	0x080192b4
  8006384:	00000323 	.word	0x00000323
@@ -15584,10 +15584,10 @@ void median_measured_noisefloor(uint8_t position) {
  80063e0:	4907      	ldr	r1, [pc, #28]	; (8006400 <dll_notify_access_profile_file_changed+0x58>)
  80063e2:	4808      	ldr	r0, [pc, #32]	; (8006404 <dll_notify_access_profile_file_changed+0x5c>)
  80063e4:	f002 f90c 	bl	8008600 <__assert_func>
- 80063e8:	200026e6 	.word	0x200026e6
- 80063ec:	200026e8 	.word	0x200026e8
- 80063f0:	2000273a 	.word	0x2000273a
- 80063f4:	200027fc 	.word	0x200027fc
+ 80063e8:	200026ea 	.word	0x200026ea
+ 80063ec:	200026ec 	.word	0x200026ec
+ 80063f0:	2000273e 	.word	0x2000273e
+ 80063f4:	20002800 	.word	0x20002800
  80063f8:	08017738 	.word	0x08017738
  80063fc:	080192ec 	.word	0x080192ec
  8006400:	0000037e 	.word	0x0000037e
@@ -15769,33 +15769,33 @@ void median_measured_noisefloor(uint8_t position) {
  8006534:	f001 fbb4 	bl	8007ca0 <d7ap_fs_read_file>
  8006538:	e7df      	b.n	80064fa <dll_init+0xea>
  800653a:	46c0      	nop			; (mov r8, r8)
- 800653c:	2000273a 	.word	0x2000273a
+ 800653c:	2000273e 	.word	0x2000273e
  8006540:	08005fa1 	.word	0x08005fa1
- 8006544:	200027c0 	.word	0x200027c0
+ 8006544:	200027c4 	.word	0x200027c4
  8006548:	08005c25 	.word	0x08005c25
- 800654c:	200027d4 	.word	0x200027d4
+ 800654c:	200027d8 	.word	0x200027d8
  8006550:	080063a1 	.word	0x080063a1
- 8006554:	200027fc 	.word	0x200027fc
+ 8006554:	20002800 	.word	0x20002800
  8006558:	080060e9 	.word	0x080060e9
- 800655c:	200027ac 	.word	0x200027ac
+ 800655c:	200027b0 	.word	0x200027b0
  8006560:	080058dd 	.word	0x080058dd
- 8006564:	200027e8 	.word	0x200027e8
- 8006568:	20002833 	.word	0x20002833
- 800656c:	2000278a 	.word	0x2000278a
- 8006570:	20002786 	.word	0x20002786
- 8006574:	200026e6 	.word	0x200026e6
- 8006578:	200026e8 	.word	0x200026e8
- 800657c:	20002741 	.word	0x20002741
- 8006580:	20002785 	.word	0x20002785
+ 8006564:	200027ec 	.word	0x200027ec
+ 8006568:	20002837 	.word	0x20002837
+ 800656c:	2000278e 	.word	0x2000278e
+ 8006570:	2000278a 	.word	0x2000278a
+ 8006574:	200026ea 	.word	0x200026ea
+ 8006578:	200026ec 	.word	0x200026ec
+ 800657c:	20002745 	.word	0x20002745
+ 8006580:	20002789 	.word	0x20002789
  8006584:	08005bbd 	.word	0x08005bbd
- 8006588:	20002832 	.word	0x20002832
- 800658c:	20002740 	.word	0x20002740
+ 8006588:	20002836 	.word	0x20002836
+ 800658c:	20002744 	.word	0x20002744
  8006590:	0801911c 	.word	0x0801911c
  8006594:	08019314 	.word	0x08019314
  8006598:	0000038b 	.word	0x0000038b
  800659c:	08018b70 	.word	0x08018b70
  80065a0:	0801913c 	.word	0x0801913c
- 80065a4:	2000278c 	.word	0x2000278c
+ 80065a4:	20002790 	.word	0x20002790
 
 080065a8 <dll_stop>:
 {
@@ -15829,12 +15829,12 @@ void median_measured_noisefloor(uint8_t position) {
 }
  80065dc:	bd10      	pop	{r4, pc}
  80065de:	46c0      	nop			; (mov r8, r8)
- 80065e0:	2000273a 	.word	0x2000273a
- 80065e4:	200027c0 	.word	0x200027c0
- 80065e8:	200027d4 	.word	0x200027d4
- 80065ec:	200027fc 	.word	0x200027fc
- 80065f0:	200027ac 	.word	0x200027ac
- 80065f4:	200027e8 	.word	0x200027e8
+ 80065e0:	2000273e 	.word	0x2000273e
+ 80065e4:	200027c4 	.word	0x200027c4
+ 80065e8:	200027d8 	.word	0x200027d8
+ 80065ec:	20002800 	.word	0x20002800
+ 80065f0:	200027b0 	.word	0x200027b0
+ 80065f4:	200027ec 	.word	0x200027ec
 
 080065f8 <dll_tx_frame>:
 {
@@ -16193,24 +16193,24 @@ void median_measured_noisefloor(uint8_t position) {
  8006872:	f009 ffdf 	bl	8010834 <timer_add_event>
                 return;
  8006876:	e747      	b.n	8006708 <dll_tx_frame+0x110>
- 8006878:	200027fc 	.word	0x200027fc
- 800687c:	2000273a 	.word	0x2000273a
- 8006880:	20002785 	.word	0x20002785
- 8006884:	200026e6 	.word	0x200026e6
- 8006888:	2000272f 	.word	0x2000272f
- 800688c:	200027ac 	.word	0x200027ac
- 8006890:	2000272c 	.word	0x2000272c
- 8006894:	20002730 	.word	0x20002730
- 8006898:	20002744 	.word	0x20002744
- 800689c:	20002788 	.word	0x20002788
+ 8006878:	20002800 	.word	0x20002800
+ 800687c:	2000273e 	.word	0x2000273e
+ 8006880:	20002789 	.word	0x20002789
+ 8006884:	200026ea 	.word	0x200026ea
+ 8006888:	20002733 	.word	0x20002733
+ 800688c:	200027b0 	.word	0x200027b0
+ 8006890:	20002730 	.word	0x20002730
+ 8006894:	20002734 	.word	0x20002734
+ 8006898:	20002748 	.word	0x20002748
+ 800689c:	2000278c 	.word	0x2000278c
  80068a0:	40100000 	.word	0x40100000
- 80068a4:	2000278a 	.word	0x2000278a
- 80068a8:	200026e4 	.word	0x200026e4
+ 80068a4:	2000278e 	.word	0x2000278e
+ 80068a8:	200026e8 	.word	0x200026e8
  80068ac:	080169c8 	.word	0x080169c8
  80068b0:	08019320 	.word	0x08019320
  80068b4:	0000044d 	.word	0x0000044d
  80068b8:	08018b70 	.word	0x08018b70
- 80068bc:	200027d4 	.word	0x200027d4
+ 80068bc:	200027d8 	.word	0x200027d8
 
 080068c0 <dll_start_foreground_scan>:
 
@@ -16270,7 +16270,7 @@ void dll_stop_foreground_scan()
  80068fc:	2001      	movs	r0, #1
  80068fe:	f7fe fff1 	bl	80058e4 <switch_state>
  8006902:	e7f2      	b.n	80068ea <dll_stop_foreground_scan+0x12>
- 8006904:	2000273a 	.word	0x2000273a
+ 8006904:	2000273e 	.word	0x2000273e
 
 08006908 <dll_assemble_packet_header_bg>:
 
@@ -16445,14 +16445,14 @@ uint8_t dll_assemble_packet_header_bg(packet_t* packet, uint8_t* data_ptr)
  8006a18:	f7ff f904 	bl	8005c24 <execute_csma_ca>
  8006a1c:	e7aa      	b.n	8006974 <cca_rssi_valid+0x38>
  8006a1e:	46c0      	nop			; (mov r8, r8)
- 8006a20:	2000273a 	.word	0x2000273a
- 8006a24:	200026e4 	.word	0x200026e4
- 8006a28:	2000278a 	.word	0x2000278a
- 8006a2c:	20002786 	.word	0x20002786
- 8006a30:	20002814 	.word	0x20002814
+ 8006a20:	2000273e 	.word	0x2000273e
+ 8006a24:	200026e8 	.word	0x200026e8
+ 8006a28:	2000278e 	.word	0x2000278e
+ 8006a2c:	2000278a 	.word	0x2000278a
+ 8006a30:	20002818 	.word	0x20002818
  8006a34:	00001388 	.word	0x00001388
- 8006a38:	20002740 	.word	0x20002740
- 8006a3c:	20002730 	.word	0x20002730
+ 8006a38:	20002744 	.word	0x20002744
+ 8006a3c:	20002734 	.word	0x20002734
  8006a40:	08005b11 	.word	0x08005b11
  8006a44:	0801732c 	.word	0x0801732c
  8006a48:	08019288 	.word	0x08019288
@@ -16769,7 +16769,7 @@ bool dll_disassemble_packet_header(packet_t* packet, uint8_t* data_idx)
  8006bd6:	2000      	movs	r0, #0
  8006bd8:	e7f7      	b.n	8006bca <dll_disassemble_packet_header+0x11e>
  8006bda:	46c0      	nop			; (mov r8, r8)
- 8006bdc:	200026e6 	.word	0x200026e6
+ 8006bdc:	200026ea 	.word	0x200026ea
  8006be0:	080191e8 	.word	0x080191e8
  8006be4:	08018b70 	.word	0x08018b70
  8006be8:	08019194 	.word	0x08019194
@@ -17001,28 +17001,28 @@ void fact_settings_file_change_callback(uint8_t file_id)
 }
  8006d44:	b013      	add	sp, #76	; 0x4c
  8006d46:	bd30      	pop	{r4, r5, pc}
- 8006d48:	20002aa8 	.word	0x20002aa8
- 8006d4c:	20002af0 	.word	0x20002af0
- 8006d50:	20002af4 	.word	0x20002af4
- 8006d54:	20002aec 	.word	0x20002aec
- 8006d58:	20002868 	.word	0x20002868
- 8006d5c:	20002890 	.word	0x20002890
- 8006d60:	2000286c 	.word	0x2000286c
- 8006d64:	20002894 	.word	0x20002894
- 8006d68:	20002864 	.word	0x20002864
- 8006d6c:	2000288c 	.word	0x2000288c
- 8006d70:	20002ae0 	.word	0x20002ae0
- 8006d74:	20002ae1 	.word	0x20002ae1
- 8006d78:	20002adf 	.word	0x20002adf
- 8006d7c:	20002add 	.word	0x20002add
- 8006d80:	20002ade 	.word	0x20002ade
- 8006d84:	20002adc 	.word	0x20002adc
- 8006d88:	20002ae3 	.word	0x20002ae3
- 8006d8c:	20002ae4 	.word	0x20002ae4
- 8006d90:	20002ae2 	.word	0x20002ae2
- 8006d94:	20002ad8 	.word	0x20002ad8
- 8006d98:	20002ad4 	.word	0x20002ad4
- 8006d9c:	2000288b 	.word	0x2000288b
+ 8006d48:	20002aac 	.word	0x20002aac
+ 8006d4c:	20002af4 	.word	0x20002af4
+ 8006d50:	20002af8 	.word	0x20002af8
+ 8006d54:	20002af0 	.word	0x20002af0
+ 8006d58:	2000286c 	.word	0x2000286c
+ 8006d5c:	20002894 	.word	0x20002894
+ 8006d60:	20002870 	.word	0x20002870
+ 8006d64:	20002898 	.word	0x20002898
+ 8006d68:	20002868 	.word	0x20002868
+ 8006d6c:	20002890 	.word	0x20002890
+ 8006d70:	20002ae4 	.word	0x20002ae4
+ 8006d74:	20002ae5 	.word	0x20002ae5
+ 8006d78:	20002ae3 	.word	0x20002ae3
+ 8006d7c:	20002ae1 	.word	0x20002ae1
+ 8006d80:	20002ae2 	.word	0x20002ae2
+ 8006d84:	20002ae0 	.word	0x20002ae0
+ 8006d88:	20002ae7 	.word	0x20002ae7
+ 8006d8c:	20002ae8 	.word	0x20002ae8
+ 8006d90:	20002ae6 	.word	0x20002ae6
+ 8006d94:	20002adc 	.word	0x20002adc
+ 8006d98:	20002ad8 	.word	0x20002ad8
+ 8006d9c:	2000288f 	.word	0x2000288f
 
 08006da0 <assemble_background_payload>:
 
@@ -17112,7 +17112,7 @@ static uint8_t assemble_background_payload()
  8006e0c:	f008 f976 	bl	800f0fc <pn9_encode>
  8006e10:	e7f0      	b.n	8006df4 <assemble_background_payload+0x54>
  8006e12:	46c0      	nop			; (mov r8, r8)
- 8006e14:	20002838 	.word	0x20002838
+ 8006e14:	2000283c 	.word	0x2000283c
  8006e18:	2000055c 	.word	0x2000055c
 
 08006e1c <encode_packet>:
@@ -17252,9 +17252,9 @@ static uint8_t assemble_background_payload()
 }
  8006efc:	bd10      	pop	{r4, pc}
  8006efe:	46c0      	nop			; (mov r8, r8)
- 8006f00:	2000288a 	.word	0x2000288a
+ 8006f00:	2000288e 	.word	0x2000288e
  8006f04:	08019494 	.word	0x08019494
- 8006f08:	20002888 	.word	0x20002888
+ 8006f08:	2000288c 	.word	0x2000288c
 
 08006f0c <configure_eirp>:
 {
@@ -17268,7 +17268,7 @@ static uint8_t assemble_background_payload()
  8006f16:	f005 fd17 	bl	800c948 <hw_radio_set_tx_power>
 }
  8006f1a:	bd10      	pop	{r4, pc}
- 8006f1c:	20002aa8 	.word	0x20002aa8
+ 8006f1c:	20002aac 	.word	0x20002aac
 
 08006f20 <phy_switch_to_standby_mode>:
 {
@@ -17282,7 +17282,7 @@ static uint8_t assemble_background_payload()
  8006f2c:	701a      	strb	r2, [r3, #0]
 }
  8006f2e:	bd10      	pop	{r4, pc}
- 8006f30:	20002af8 	.word	0x20002af8
+ 8006f30:	20002afc 	.word	0x20002afc
 
 08006f34 <packet_transmitted>:
 {
@@ -17315,9 +17315,9 @@ static uint8_t assemble_background_payload()
  8006f60:	31ff      	adds	r1, #255	; 0xff
  8006f62:	4806      	ldr	r0, [pc, #24]	; (8006f7c <packet_transmitted+0x48>)
  8006f64:	f001 fb4c 	bl	8008600 <__assert_func>
- 8006f68:	20002af8 	.word	0x20002af8
- 8006f6c:	20002884 	.word	0x20002884
- 8006f70:	20002b04 	.word	0x20002b04
+ 8006f68:	20002afc 	.word	0x20002afc
+ 8006f6c:	20002888 	.word	0x20002888
+ 8006f70:	20002b08 	.word	0x20002b08
  8006f74:	08019370 	.word	0x08019370
  8006f78:	0801940c 	.word	0x0801940c
  8006f7c:	0801933c 	.word	0x0801933c
@@ -17416,11 +17416,11 @@ static uint8_t assemble_background_payload()
         phy_switch_to_standby_mode();
  800701a:	f7ff ff81 	bl	8006f20 <phy_switch_to_standby_mode>
  800701e:	e7e6      	b.n	8006fee <packet_received+0x6e>
- 8007020:	20002af8 	.word	0x20002af8
+ 8007020:	20002afc 	.word	0x20002afc
  8007024:	2000055c 	.word	0x2000055c
- 8007028:	2000288a 	.word	0x2000288a
- 800702c:	20002b00 	.word	0x20002b00
- 8007030:	20002ae8 	.word	0x20002ae8
+ 8007028:	2000288e 	.word	0x2000288e
+ 800702c:	20002b04 	.word	0x20002b04
+ 8007030:	20002aec 	.word	0x20002aec
  8007034:	0801939c 	.word	0x0801939c
  8007038:	08019420 	.word	0x08019420
  800703c:	0801933c 	.word	0x0801933c
@@ -17437,7 +17437,7 @@ static uint8_t assemble_background_payload()
 }
  800704c:	bd10      	pop	{r4, pc}
  800704e:	46c0      	nop			; (mov r8, r8)
- 8007050:	20002af8 	.word	0x20002af8
+ 8007050:	20002afc 	.word	0x20002afc
 
 08007054 <phy_radio_channel_ids_equal>:
     return (a->channel_header_raw == b->channel_header_raw) && (a->center_freq_index == b->center_freq_index);
@@ -17661,30 +17661,30 @@ static void configure_channel(const channel_id_t* channel) {
  80071d8:	4a1b      	ldr	r2, [pc, #108]	; (8007248 <configure_channel+0x1cc>)
  80071da:	e782      	b.n	80070e2 <configure_channel+0x66>
  80071dc:	2000055c 	.word	0x2000055c
- 80071e0:	2000288b 	.word	0x2000288b
+ 80071e0:	2000288f 	.word	0x2000288f
  80071e4:	19cff8a0 	.word	0x19cff8a0
  80071e8:	000186a0 	.word	0x000186a0
  80071ec:	000061a8 	.word	0x000061a8
- 80071f0:	20002868 	.word	0x20002868
- 80071f4:	20002890 	.word	0x20002890
- 80071f8:	20002af0 	.word	0x20002af0
- 80071fc:	20002ae0 	.word	0x20002ae0
- 8007200:	20002ae3 	.word	0x20002ae3
- 8007204:	20002add 	.word	0x20002add
- 8007208:	2000286c 	.word	0x2000286c
- 800720c:	20002894 	.word	0x20002894
- 8007210:	20002af4 	.word	0x20002af4
- 8007214:	20002ae1 	.word	0x20002ae1
- 8007218:	20002ae4 	.word	0x20002ae4
- 800721c:	20002ade 	.word	0x20002ade
- 8007220:	20002864 	.word	0x20002864
- 8007224:	2000288c 	.word	0x2000288c
- 8007228:	20002aec 	.word	0x20002aec
- 800722c:	20002adf 	.word	0x20002adf
- 8007230:	20002ae2 	.word	0x20002ae2
- 8007234:	20002adc 	.word	0x20002adc
- 8007238:	20002ad4 	.word	0x20002ad4
- 800723c:	20002ad8 	.word	0x20002ad8
+ 80071f0:	2000286c 	.word	0x2000286c
+ 80071f4:	20002894 	.word	0x20002894
+ 80071f8:	20002af4 	.word	0x20002af4
+ 80071fc:	20002ae4 	.word	0x20002ae4
+ 8007200:	20002ae7 	.word	0x20002ae7
+ 8007204:	20002ae1 	.word	0x20002ae1
+ 8007208:	20002870 	.word	0x20002870
+ 800720c:	20002898 	.word	0x20002898
+ 8007210:	20002af8 	.word	0x20002af8
+ 8007214:	20002ae5 	.word	0x20002ae5
+ 8007218:	20002ae8 	.word	0x20002ae8
+ 800721c:	20002ae2 	.word	0x20002ae2
+ 8007220:	20002868 	.word	0x20002868
+ 8007224:	20002890 	.word	0x20002890
+ 8007228:	20002af0 	.word	0x20002af0
+ 800722c:	20002ae3 	.word	0x20002ae3
+ 8007230:	20002ae6 	.word	0x20002ae6
+ 8007234:	20002ae0 	.word	0x20002ae0
+ 8007238:	20002ad8 	.word	0x20002ad8
+ 800723c:	20002adc 	.word	0x20002adc
  8007240:	337055c0 	.word	0x337055c0
  8007244:	35c36d80 	.word	0x35c36d80
  8007248:	000030d4 	.word	0x000030d4
@@ -17816,15 +17816,15 @@ static void configure_channel(const channel_id_t* channel) {
  800732c:	3ff00000 	.word	0x3ff00000
  8007330:	40140000 	.word	0x40140000
  8007334:	40200000 	.word	0x40200000
- 8007338:	20002ad4 	.word	0x20002ad4
- 800733c:	20002ad8 	.word	0x20002ad8
- 8007340:	20002ae0 	.word	0x20002ae0
+ 8007338:	20002ad8 	.word	0x20002ad8
+ 800733c:	20002adc 	.word	0x20002adc
+ 8007340:	20002ae4 	.word	0x20002ae4
  8007344:	33333333 	.word	0x33333333
  8007348:	3ff33333 	.word	0x3ff33333
- 800734c:	20002ae1 	.word	0x20002ae1
+ 800734c:	20002ae5 	.word	0x20002ae5
  8007350:	9999999a 	.word	0x9999999a
  8007354:	401b9999 	.word	0x401b9999
- 8007358:	20002ae2 	.word	0x20002ae2
+ 8007358:	20002ae6 	.word	0x20002ae6
  800735c:	cccccccd 	.word	0xcccccccd
  8007360:	4034cccc 	.word	0x4034cccc
 
@@ -17968,11 +17968,11 @@ static void fill_in_fifo(uint16_t remaining_bytes_len)
  8007440:	2000      	movs	r0, #0
  8007442:	f006 fa49 	bl	800d8d8 <hw_radio_enable_refill>
  8007446:	e799      	b.n	800737c <fill_in_fifo+0x18>
- 8007448:	20002898 	.word	0x20002898
+ 8007448:	2000289c 	.word	0x2000289c
  800744c:	0000020e 	.word	0x0000020e
- 8007450:	20002af8 	.word	0x20002af8
+ 8007450:	20002afc 	.word	0x20002afc
  8007454:	2000055c 	.word	0x2000055c
- 8007458:	20002838 	.word	0x20002838
+ 8007458:	2000283c 	.word	0x2000283c
 
 0800745c <phy_init>:
 error_t phy_init(void) {
@@ -18034,8 +18034,8 @@ error_t phy_init(void) {
  80074ba:	2000      	movs	r0, #0
  80074bc:	bd10      	pop	{r4, pc}
  80074be:	46c0      	nop			; (mov r8, r8)
- 80074c0:	20002af8 	.word	0x20002af8
- 80074c4:	20002aac 	.word	0x20002aac
+ 80074c0:	20002afc 	.word	0x20002afc
+ 80074c4:	20002ab0 	.word	0x20002ab0
  80074c8:	08006ecd 	.word	0x08006ecd
  80074cc:	08006ec1 	.word	0x08006ec1
  80074d0:	08006f81 	.word	0x08006f81
@@ -18045,7 +18045,7 @@ error_t phy_init(void) {
  80074e0:	08006bfd 	.word	0x08006bfd
  80074e4:	08019490 	.word	0x08019490
  80074e8:	08006bf1 	.word	0x08006bf1
- 80074ec:	20002870 	.word	0x20002870
+ 80074ec:	20002874 	.word	0x20002874
 
 080074f0 <phy_stop>:
 error_t phy_stop() {
@@ -18060,7 +18060,7 @@ error_t phy_stop() {
  80074fe:	2000      	movs	r0, #0
  8007500:	bd10      	pop	{r4, pc}
  8007502:	46c0      	nop			; (mov r8, r8)
- 8007504:	20002870 	.word	0x20002870
+ 8007504:	20002874 	.word	0x20002874
 
 08007508 <status_write>:
 void status_write() {
@@ -18116,11 +18116,11 @@ void status_write() {
 }
  8007560:	e7db      	b.n	800751a <status_write+0x12>
  8007562:	46c0      	nop			; (mov r8, r8)
- 8007564:	20002b08 	.word	0x20002b08
- 8007568:	20002afe 	.word	0x20002afe
- 800756c:	20002afa 	.word	0x20002afa
- 8007570:	20002afc 	.word	0x20002afc
- 8007574:	20002b00 	.word	0x20002b00
+ 8007564:	20002b0c 	.word	0x20002b0c
+ 8007568:	20002b02 	.word	0x20002b02
+ 800756c:	20002afe 	.word	0x20002afe
+ 8007570:	20002b00 	.word	0x20002b00
+ 8007574:	20002b04 	.word	0x20002b04
 
 08007578 <phy_start_rx>:
 error_t phy_start_rx(channel_id_t* channel, syncword_class_t syncword_class, phy_rx_packet_callback_t rx_cb) {
@@ -18165,9 +18165,9 @@ error_t phy_start_rx(channel_id_t* channel, syncword_class_t syncword_class, phy
  80075ba:	2000      	movs	r0, #0
  80075bc:	bd70      	pop	{r4, r5, r6, pc}
  80075be:	46c0      	nop			; (mov r8, r8)
- 80075c0:	20002ae8 	.word	0x20002ae8
- 80075c4:	20002af8 	.word	0x20002af8
- 80075c8:	20002afc 	.word	0x20002afc
+ 80075c0:	20002aec 	.word	0x20002aec
+ 80075c4:	20002afc 	.word	0x20002afc
+ 80075c8:	20002b00 	.word	0x20002b00
 
 080075cc <phy_start_energy_scan>:
 {
@@ -18209,7 +18209,7 @@ error_t phy_start_rx(channel_id_t* channel, syncword_class_t syncword_class, phy
  8007608:	4805      	ldr	r0, [pc, #20]	; (8007620 <phy_start_energy_scan+0x54>)
  800760a:	f000 fff9 	bl	8008600 <__assert_func>
  800760e:	46c0      	nop			; (mov r8, r8)
- 8007610:	20002af8 	.word	0x20002af8
+ 8007610:	20002afc 	.word	0x20002afc
  8007614:	080193c8 	.word	0x080193c8
  8007618:	08019448 	.word	0x08019448
  800761c:	000002b7 	.word	0x000002b7
@@ -18300,10 +18300,10 @@ error_t phy_stop_rx(){
         return ESIZE;
  80076ac:	4807      	ldr	r0, [pc, #28]	; (80076cc <phy_send_packet+0x9c>)
  80076ae:	e7f1      	b.n	8007694 <phy_send_packet+0x64>
- 80076b0:	20002b04 	.word	0x20002b04
- 80076b4:	20002884 	.word	0x20002884
- 80076b8:	20002af8 	.word	0x20002af8
- 80076bc:	2000289a 	.word	0x2000289a
+ 80076b0:	20002b08 	.word	0x20002b08
+ 80076b4:	20002888 	.word	0x20002888
+ 80076b8:	20002afc 	.word	0x20002afc
+ 80076bc:	2000289e 	.word	0x2000289e
  80076c0:	080193dc 	.word	0x080193dc
  80076c4:	08019460 	.word	0x08019460
  80076c8:	0801933c 	.word	0x0801933c
@@ -18521,14 +18521,14 @@ error_t phy_stop_rx(){
  800784a:	54d0      	strb	r0, [r2, r3]
  800784c:	e78e      	b.n	800776c <phy_send_packet_with_advertising+0x9c>
  800784e:	46c0      	nop			; (mov r8, r8)
- 8007850:	20002b04 	.word	0x20002b04
- 8007854:	20002884 	.word	0x20002884
+ 8007850:	20002b08 	.word	0x20002b08
+ 8007854:	20002888 	.word	0x20002888
  8007858:	2000055c 	.word	0x2000055c
- 800785c:	20002838 	.word	0x20002838
+ 800785c:	2000283c 	.word	0x2000283c
  8007860:	08019494 	.word	0x08019494
- 8007864:	20002898 	.word	0x20002898
+ 8007864:	2000289c 	.word	0x2000289c
  8007868:	0000020e 	.word	0x0000020e
- 800786c:	20002af8 	.word	0x20002af8
+ 800786c:	20002afc 	.word	0x20002afc
 
 08007870 <phy_start_background_scan>:
 
@@ -18661,11 +18661,11 @@ error_t phy_start_background_scan(phy_rx_config_t* config, phy_rx_packet_callbac
  8007912:	480b      	ldr	r0, [pc, #44]	; (8007940 <phy_start_background_scan+0xd0>)
  8007914:	e7ea      	b.n	80078ec <phy_start_background_scan+0x7c>
  8007916:	46c0      	nop			; (mov r8, r8)
- 8007918:	20002ae8 	.word	0x20002ae8
- 800791c:	20002af8 	.word	0x20002af8
+ 8007918:	20002aec 	.word	0x20002aec
+ 800791c:	20002afc 	.word	0x20002afc
  8007920:	2000055c 	.word	0x2000055c
- 8007924:	20002afa 	.word	0x20002afa
- 8007928:	20002afe 	.word	0x20002afe
+ 8007924:	20002afe 	.word	0x20002afe
+ 8007928:	20002b02 	.word	0x20002b02
  800792c:	0801948c 	.word	0x0801948c
  8007930:	080193c8 	.word	0x080193c8
  8007934:	08019470 	.word	0x08019470
@@ -18840,13 +18840,13 @@ void phy_continuous_tx(phy_tx_config_t const* tx_cfg, uint8_t time_period, phy_t
  8007a26:	801a      	strh	r2, [r3, #0]
  8007a28:	e7d8      	b.n	80079dc <phy_continuous_tx+0x98>
  8007a2a:	46c0      	nop			; (mov r8, r8)
- 8007a2c:	20002b04 	.word	0x20002b04
- 8007a30:	20002af8 	.word	0x20002af8
- 8007a34:	20002898 	.word	0x20002898
+ 8007a2c:	20002b08 	.word	0x20002b08
+ 8007a30:	20002afc 	.word	0x20002afc
+ 8007a34:	2000289c 	.word	0x2000289c
  8007a38:	0000020e 	.word	0x0000020e
  8007a3c:	2000055c 	.word	0x2000055c
- 8007a40:	20002870 	.word	0x20002870
- 8007a44:	2000289a 	.word	0x2000289a
+ 8007a40:	20002874 	.word	0x20002874
+ 8007a44:	2000289e 	.word	0x2000289e
 
 08007a48 <d7ap_fs_set_process_d7aactp_callback>:
   return SUCCESS;
@@ -18860,7 +18860,7 @@ void d7ap_fs_set_process_d7aactp_callback(process_d7aactp_callback_t callback)
 }
  8007a4c:	4770      	bx	lr
  8007a4e:	46c0      	nop			; (mov r8, r8)
- 8007a50:	20002da8 	.word	0x20002da8
+ 8007a50:	20002dac 	.word	0x20002dac
 
 08007a54 <d7ap_fs_init_file_on_blockdevice>:
     return d7ap_fs_init_file_on_blockdevice(file_id, bd_type, file_header, initial_data);
@@ -18959,7 +18959,7 @@ int d7ap_fs_init_file_on_blockdevice(
  8007ae2:	4240      	negs	r0, r0
  8007ae4:	e7f6      	b.n	8007ad4 <d7ap_fs_init_file_on_blockdevice+0x80>
  8007ae6:	46c0      	nop			; (mov r8, r8)
- 8007ae8:	20002b0c 	.word	0x20002b0c
+ 8007ae8:	20002b10 	.word	0x20002b10
 
 08007aec <d7ap_fs_init_file>:
 {
@@ -19251,8 +19251,8 @@ uint32_t d7ap_fs_get_file_length(uint8_t file_id)
  8007c92:	4264      	negs	r4, r4
  8007c94:	e7df      	b.n	8007c56 <execute_d7a_action_protocol+0x32>
  8007c96:	46c0      	nop			; (mov r8, r8)
- 8007c98:	20002b0c 	.word	0x20002b0c
- 8007c9c:	20002da8 	.word	0x20002da8
+ 8007c98:	20002b10 	.word	0x20002b10
+ 8007c9c:	20002dac 	.word	0x20002dac
 
 08007ca0 <d7ap_fs_read_file>:
 {
@@ -19687,8 +19687,8 @@ uint32_t d7ap_fs_get_file_length(uint8_t file_id)
  8007f52:	248a      	movs	r4, #138	; 0x8a
  8007f54:	4264      	negs	r4, r4
  8007f56:	e7d8      	b.n	8007f0a <d7ap_fs_write_file_with_callback+0x92>
- 8007f58:	20002c88 	.word	0x20002c88
- 8007f5c:	20002b68 	.word	0x20002b68
+ 8007f58:	20002c8c 	.word	0x20002c8c
+ 8007f5c:	20002b6c 	.word	0x20002b6c
 
 08007f60 <d7ap_fs_write_file>:
 {
@@ -19961,7 +19961,7 @@ bool d7ap_fs_unregister_file_modified_callback(uint8_t file_id) {
  8008126:	2000      	movs	r0, #0
  8008128:	e7fc      	b.n	8008124 <d7ap_fs_unregister_file_modified_callback+0x14>
  800812a:	46c0      	nop			; (mov r8, r8)
- 800812c:	20002b68 	.word	0x20002b68
+ 800812c:	20002b6c 	.word	0x20002b6c
 
 08008130 <d7ap_fs_register_file_modified_callback>:
 
@@ -19995,7 +19995,7 @@ bool d7ap_fs_register_file_modified_callback(uint8_t file_id, d7ap_fs_modified_f
     return true;
  8008150:	e7fb      	b.n	800814a <d7ap_fs_register_file_modified_callback+0x1a>
  8008152:	46c0      	nop			; (mov r8, r8)
- 8008154:	20002b68 	.word	0x20002b68
+ 8008154:	20002b6c 	.word	0x20002b6c
 
 08008158 <__framework_bootstrap>:
 #include "console.h"
@@ -20246,11 +20246,11 @@ void hw_radio_io_init(bool disable_interrupts) {
  80082d2:	f008 fb03 	bl	80108dc <blockdevice_init>
 }
  80082d6:	bd70      	pop	{r4, r5, r6, pc}
- 80082d8:	20002de8 	.word	0x20002de8
+ 80082d8:	20002dec 	.word	0x20002dec
  80082dc:	20000578 	.word	0x20000578
  80082e0:	08080908 	.word	0x08080908
  80082e4:	08080000 	.word	0x08080000
- 80082e8:	20002df4 	.word	0x20002df4
+ 80082e8:	20002df8 	.word	0x20002df8
  80082ec:	080811a0 	.word	0x080811a0
  80082f0:	08080908 	.word	0x08080908
  80082f4:	20000560 	.word	0x20000560
@@ -20406,7 +20406,7 @@ void __led_init()
 }
  80083e4:	bd70      	pop	{r4, r5, r6, pc}
  80083e6:	46c0      	nop			; (mov r8, r8)
- 80083e8:	20002e00 	.word	0x20002e00
+ 80083e8:	20002e04 	.word	0x20002e04
  80083ec:	50000405 	.word	0x50000405
  80083f0:	50000005 	.word	0x50000005
  80083f4:	50000406 	.word	0x50000406
@@ -20433,7 +20433,7 @@ void led_on(uint8_t led_nr)
  8008416:	f002 fbad 	bl	800ab74 <hw_gpio_set>
 }
  800841a:	e7f8      	b.n	800840e <led_on+0x6>
- 800841c:	20002e00 	.word	0x20002e00
+ 800841c:	20002e04 	.word	0x20002e04
 
 08008420 <led_off>:
 
@@ -20453,7 +20453,7 @@ void led_off(unsigned char led_nr)
  800842e:	f002 fbae 	bl	800ab8e <hw_gpio_clr>
 }
  8008432:	e7f8      	b.n	8008426 <led_off+0x6>
- 8008434:	20002e00 	.word	0x20002e00
+ 8008434:	20002e04 	.word	0x20002e04
 
 08008438 <end_flash_green>:
 }
@@ -20483,7 +20483,7 @@ static void end_flash_green()  { led_off(LED_GREEN);  }
  8008452:	f002 fba9 	bl	800aba8 <hw_gpio_toggle>
 }
  8008456:	e7f8      	b.n	800844a <led_toggle+0x6>
- 8008458:	20002e00 	.word	0x20002e00
+ 8008458:	20002e04 	.word	0x20002e04
 
 0800845c <led_init>:
 void led_flash_green() {
@@ -20611,7 +20611,7 @@ static inline error_t sched_post_task(task_t task) { return sched_post_task_prio
 			break;
  80084fe:	e7c1      	b.n	8008484 <button_task+0x10>
  8008500:	08008475 	.word	0x08008475
- 8008504:	20002e10 	.word	0x20002e10
+ 8008504:	20002e14 	.word	0x20002e14
 
 08008508 <button_callback>:
 {
@@ -20648,7 +20648,7 @@ static inline error_t sched_post_task(task_t task) { return sched_post_task_prio
  8008538:	4802      	ldr	r0, [pc, #8]	; (8008544 <button_callback+0x3c>)
  800853a:	f007 f833 	bl	800f5a4 <sched_post_task_prio>
  800853e:	e7f0      	b.n	8008522 <button_callback+0x1a>
- 8008540:	20002e10 	.word	0x20002e10
+ 8008540:	20002e14 	.word	0x20002e14
  8008544:	08008475 	.word	0x08008475
 
 08008548 <__ubutton_init>:
@@ -20725,7 +20725,7 @@ static inline error_t sched_register_task(task_t task) { return sched_register_t
  80085c4:	213a      	movs	r1, #58	; 0x3a
  80085c6:	4808      	ldr	r0, [pc, #32]	; (80085e8 <__ubutton_init+0xa0>)
  80085c8:	f000 f81a 	bl	8008600 <__assert_func>
- 80085cc:	20002e10 	.word	0x20002e10
+ 80085cc:	20002e14 	.word	0x20002e14
  80085d0:	50000402 	.word	0x50000402
  80085d4:	08008475 	.word	0x08008475
  80085d8:	10210000 	.word	0x10210000
@@ -20950,11 +20950,11 @@ LoopForever:
   ldr  r0, =_sdata
  80086c8:	20000500 	.word	0x20000500
   ldr  r3, =_edata
- 80086cc:	20000648 	.word	0x20000648
+ 80086cc:	2000064c 	.word	0x2000064c
   ldr  r2, =_sbss
- 80086d0:	20000648 	.word	0x20000648
+ 80086d0:	2000064c 	.word	0x2000064c
   ldr  r3, = _ebss
- 80086d4:	200043d8 	.word	0x200043d8
+ 80086d4:	200043dc 	.word	0x200043dc
 
 080086d8 <ADC1_COMP_IRQHandler>:
  * @retval : None
@@ -26951,7 +26951,7 @@ void start_atomic()
 }
  800a9bc:	4770      	bx	lr
  800a9be:	46c0      	nop			; (mov r8, r8)
- 800a9c0:	20002e40 	.word	0x20002e40
+ 800a9c0:	20002e44 	.word	0x20002e44
 
 0800a9c4 <end_atomic>:
 
@@ -26978,7 +26978,7 @@ void end_atomic()
     __enable_irq();
 }
  800a9de:	4770      	bx	lr
- 800a9e0:	20002e40 	.word	0x20002e40
+ 800a9e0:	20002e44 	.word	0x20002e44
 
 0800a9e4 <in_atomic>:
 
@@ -26992,7 +26992,7 @@ _Bool in_atomic()
  800a9ec:	b2c0      	uxtb	r0, r0
 }
  800a9ee:	4770      	bx	lr
- 800a9f0:	20002e40 	.word	0x20002e40
+ 800a9f0:	20002e44 	.word	0x20002e44
 
 0800a9f4 <gpio_int_callback>:
 {
@@ -27031,7 +27031,7 @@ static void gpio_int_callback(uint8_t pin)
  800aa18:	21d7      	movs	r1, #215	; 0xd7
  800aa1a:	4804      	ldr	r0, [pc, #16]	; (800aa2c <gpio_int_callback+0x38>)
  800aa1c:	f7fd fdf0 	bl	8008600 <__assert_func>
- 800aa20:	20002e44 	.word	0x20002e44
+ 800aa20:	20002e48 	.word	0x20002e48
  800aa24:	080197e4 	.word	0x080197e4
  800aa28:	080198dc 	.word	0x080198dc
  800aa2c:	08019808 	.word	0x08019808
@@ -27205,7 +27205,7 @@ static void gpio_int_callback(uint8_t pin)
  800ab4a:	46a2      	mov	sl, r4
  800ab4c:	bdf0      	pop	{r4, r5, r6, r7, pc}
  800ab4e:	46c0      	nop			; (mov r8, r8)
- 800ab50:	20002e44 	.word	0x20002e44
+ 800ab50:	20002e48 	.word	0x20002e48
  800ab54:	40021000 	.word	0x40021000
  800ab58:	00009fff 	.word	0x00009fff
  800ab5c:	0000ffff 	.word	0x0000ffff
@@ -27588,7 +27588,7 @@ __LINK_C error_t hw_gpio_configure_interrupt(pin_id_t pin_id, uint8_t event_mask
  800ad82:	2016      	movs	r0, #22
  800ad84:	e7cd      	b.n	800ad22 <hw_gpio_configure_interrupt+0xde>
  800ad86:	46c0      	nop			; (mov r8, r8)
- 800ad88:	20002e44 	.word	0x20002e44
+ 800ad88:	20002e48 	.word	0x20002e48
  800ad8c:	40021000 	.word	0x40021000
  800ad90:	40010000 	.word	0x40010000
  800ad94:	40010400 	.word	0x40010400
@@ -27911,7 +27911,7 @@ __LINK_C error_t hw_gpio_enable_interrupt(pin_id_t pin_id)
  800afb0:	50000400 	.word	0x50000400
  800afb4:	50000800 	.word	0x50000800
  800afb8:	40021000 	.word	0x40021000
- 800afbc:	20002e44 	.word	0x20002e44
+ 800afbc:	20002e48 	.word	0x20002e48
  800afc0:	10110000 	.word	0x10110000
  800afc4:	10210000 	.word	0x10210000
  800afc8:	10310000 	.word	0x10310000
@@ -29026,7 +29026,7 @@ spi_handle_t* spi_init(uint8_t spi_number, uint32_t baudrate, uint8_t databits, 
  800b6c6:	2280      	movs	r2, #128	; 0x80
  800b6c8:	621a      	str	r2, [r3, #32]
  800b6ca:	e7bc      	b.n	800b646 <spi_init+0x18e>
- 800b6cc:	20002f04 	.word	0x20002f04
+ 800b6cc:	20002f08 	.word	0x20002f08
  800b6d0:	08019a70 	.word	0x08019a70
  800b6d4:	08019af0 	.word	0x08019af0
  800b6d8:	080199e4 	.word	0x080199e4
@@ -29131,8 +29131,8 @@ spi_slave_handle_t*  spi_init_slave(spi_handle_t* spi, pin_id_t cs_pin, bool cs_
  800b79c:	f7ff f9f7 	bl	800ab8e <hw_gpio_clr>
  800b7a0:	e7da      	b.n	800b758 <spi_init_slave+0x50>
  800b7a2:	46c0      	nop			; (mov r8, r8)
- 800b7a4:	20002fec 	.word	0x20002fec
- 800b7a8:	20002ff0 	.word	0x20002ff0
+ 800b7a4:	20002ff0 	.word	0x20002ff0
+ 800b7a8:	20002ff4 	.word	0x20002ff4
  800b7ac:	08019a98 	.word	0x08019a98
  800b7b0:	08019afc 	.word	0x08019afc
  800b7b4:	080199e4 	.word	0x080199e4
@@ -29355,19 +29355,19 @@ static void gpio_config_save() {
  800b900:	601a      	str	r2, [r3, #0]
 }
  800b902:	4770      	bx	lr
- 800b904:	2000302c 	.word	0x2000302c
+ 800b904:	20003030 	.word	0x20003030
  800b908:	50000400 	.word	0x50000400
- 800b90c:	20003030 	.word	0x20003030
+ 800b90c:	20003034 	.word	0x20003034
  800b910:	50000800 	.word	0x50000800
- 800b914:	20003034 	.word	0x20003034
+ 800b914:	20003038 	.word	0x20003038
  800b918:	50000c00 	.word	0x50000c00
- 800b91c:	20003038 	.word	0x20003038
+ 800b91c:	2000303c 	.word	0x2000303c
  800b920:	50001000 	.word	0x50001000
- 800b924:	2000303c 	.word	0x2000303c
+ 800b924:	20003040 	.word	0x20003040
  800b928:	50001c00 	.word	0x50001c00
- 800b92c:	20003040 	.word	0x20003040
+ 800b92c:	20003044 	.word	0x20003044
  800b930:	40021000 	.word	0x40021000
- 800b934:	20003044 	.word	0x20003044
+ 800b934:	20003048 	.word	0x20003048
 
 0800b938 <gpio_config_restore>:
 
@@ -29497,18 +29497,18 @@ static void gpio_config_restore() {
  800b9f8:	b006      	add	sp, #24
  800b9fa:	4770      	bx	lr
  800b9fc:	40021000 	.word	0x40021000
- 800ba00:	2000302c 	.word	0x2000302c
- 800ba04:	20003030 	.word	0x20003030
+ 800ba00:	20003030 	.word	0x20003030
+ 800ba04:	20003034 	.word	0x20003034
  800ba08:	50000400 	.word	0x50000400
- 800ba0c:	20003034 	.word	0x20003034
+ 800ba0c:	20003038 	.word	0x20003038
  800ba10:	50000800 	.word	0x50000800
- 800ba14:	20003038 	.word	0x20003038
+ 800ba14:	2000303c 	.word	0x2000303c
  800ba18:	50000c00 	.word	0x50000c00
- 800ba1c:	2000303c 	.word	0x2000303c
+ 800ba1c:	20003040 	.word	0x20003040
  800ba20:	50001000 	.word	0x50001000
- 800ba24:	20003040 	.word	0x20003040
+ 800ba24:	20003044 	.word	0x20003044
  800ba28:	50001c00 	.word	0x50001c00
- 800ba2c:	20003044 	.word	0x20003044
+ 800ba2c:	20003048 	.word	0x20003048
 
 0800ba30 <hw_system_reboot_reason>:
 
@@ -30081,11 +30081,11 @@ error_t hw_timer_init(hwtimer_id_t timer_id, uint8_t frequency, timer_callback_t
 		return EINVAL;
  800bd68:	2016      	movs	r0, #22
  800bd6a:	e7eb      	b.n	800bd44 <hw_timer_init+0xbc>
- 800bd6c:	20003088 	.word	0x20003088
- 800bd70:	2000304c 	.word	0x2000304c
- 800bd74:	20003050 	.word	0x20003050
+ 800bd6c:	2000308c 	.word	0x2000308c
+ 800bd70:	20003050 	.word	0x20003050
+ 800bd74:	20003054 	.word	0x20003054
  800bd78:	40021000 	.word	0x40021000
- 800bd7c:	20003058 	.word	0x20003058
+ 800bd7c:	2000305c 	.word	0x2000305c
  800bd80:	40007c00 	.word	0x40007c00
  800bd84:	0000ffff 	.word	0x0000ffff
  800bd88:	08019c4c 	.word	0x08019c4c
@@ -30159,7 +30159,7 @@ hwtimer_tick_t hw_timer_getvalue(hwtimer_id_t timer_id)
  800bdd2:	2000      	movs	r0, #0
  800bdd4:	e7fc      	b.n	800bdd0 <hw_timer_getvalue+0x24>
  800bdd6:	46c0      	nop			; (mov r8, r8)
- 800bdd8:	20003088 	.word	0x20003088
+ 800bdd8:	2000308c 	.word	0x2000308c
  800bddc:	40007c00 	.word	0x40007c00
 
 0800bde0 <hw_timer_schedule>:
@@ -30251,10 +30251,10 @@ error_t hw_timer_schedule(hwtimer_id_t timer_id, hwtimer_tick_t tick )
  		return EOFF;
  800be50:	4809      	ldr	r0, [pc, #36]	; (800be78 <hw_timer_schedule+0x98>)
  800be52:	e7ed      	b.n	800be30 <hw_timer_schedule+0x50>
- 800be54:	20003088 	.word	0x20003088
- 800be58:	20003054 	.word	0x20003054
- 800be5c:	20003048 	.word	0x20003048
- 800be60:	20003058 	.word	0x20003058
+ 800be54:	2000308c 	.word	0x2000308c
+ 800be58:	20003058 	.word	0x20003058
+ 800be5c:	2000304c 	.word	0x2000304c
+ 800be60:	2000305c 	.word	0x2000305c
  800be64:	08019d00 	.word	0x08019d00
  800be68:	08019d50 	.word	0x08019d50
  800be6c:	08019d80 	.word	0x08019d80
@@ -30314,9 +30314,9 @@ error_t hw_timer_cancel(hwtimer_id_t timer_id)
  		return EOFF;
  800beb4:	4804      	ldr	r0, [pc, #16]	; (800bec8 <hw_timer_cancel+0x4c>)
  800beb6:	e7fa      	b.n	800beae <hw_timer_cancel+0x32>
- 800beb8:	20003088 	.word	0x20003088
- 800bebc:	20003058 	.word	0x20003058
- 800bec0:	20003054 	.word	0x20003054
+ 800beb8:	2000308c 	.word	0x2000308c
+ 800bebc:	2000305c 	.word	0x2000305c
+ 800bec0:	20003058 	.word	0x20003058
  800bec4:	0000138a 	.word	0x0000138a
  800bec8:	0000138c 	.word	0x0000138c
 
@@ -30357,7 +30357,7 @@ bool hw_timer_is_overflow_pending(hwtimer_id_t timer_id)
   return is_pending;
  800bef0:	e7f0      	b.n	800bed4 <hw_timer_is_overflow_pending+0x8>
  800bef2:	46c0      	nop			; (mov r8, r8)
- 800bef4:	20003058 	.word	0x20003058
+ 800bef4:	2000305c 	.word	0x2000305c
 
 0800bef8 <LPTIM1_IRQHandler>:
 void TIMER_ISR_real(volatile uintptr_t sp)
@@ -30482,11 +30482,11 @@ void TIMER_ISR(void)
 }
  800bf78:	bd10      	pop	{r4, pc}
  800bf7a:	46c0      	nop			; (mov r8, r8)
- 800bf7c:	20003058 	.word	0x20003058
- 800bf80:	20003054 	.word	0x20003054
- 800bf84:	20003048 	.word	0x20003048
- 800bf88:	20003050 	.word	0x20003050
- 800bf8c:	2000304c 	.word	0x2000304c
+ 800bf7c:	2000305c 	.word	0x2000305c
+ 800bf80:	20003058 	.word	0x20003058
+ 800bf84:	2000304c 	.word	0x2000304c
+ 800bf88:	20003054 	.word	0x20003054
+ 800bf8c:	20003050 	.word	0x20003050
 
 0800bf90 <uart_irq_handler>:
   HAL_NVIC_DisableIRQ(uart->uart_port->irq);
@@ -30749,7 +30749,7 @@ __STATIC_INLINE void LL_USART_RequestRxDataFlush(USART_TypeDef *USARTx)
           return;
  800c0c4:	e7eb      	b.n	800c09e <uart_irq_handler+0x10e>
  800c0c6:	46c0      	nop			; (mov r8, r8)
- 800c0c8:	2000308c 	.word	0x2000308c
+ 800c0c8:	20003090 	.word	0x20003090
  800c0cc:	080169c8 	.word	0x080169c8
  800c0d0:	08019e9c 	.word	0x08019e9c
  800c0d4:	08019d98 	.word	0x08019d98
@@ -30791,7 +30791,7 @@ uart_handle_t* uart_init(uint8_t port_idx, uint32_t baudrate, uint8_t pins) {
  800c10a:	f7fc fa79 	bl	8008600 <__assert_func>
  800c10e:	46c0      	nop			; (mov r8, r8)
  800c110:	08019eec 	.word	0x08019eec
- 800c114:	2000308c 	.word	0x2000308c
+ 800c114:	20003090 	.word	0x20003090
  800c118:	08019dec 	.word	0x08019dec
  800c11c:	08019eb0 	.word	0x08019eb0
  800c120:	08019d98 	.word	0x08019d98
@@ -31331,7 +31331,7 @@ void __watchdog_init()
  800c490:	b005      	add	sp, #20
  800c492:	bd30      	pop	{r4, r5, pc}
  800c494:	00000fff 	.word	0x00000fff
- 800c498:	20003194 	.word	0x20003194
+ 800c498:	20003198 	.word	0x20003198
  800c49c:	40003000 	.word	0x40003000
 
 0800c4a0 <hw_watchdog_feed>:
@@ -31345,7 +31345,7 @@ void hw_watchdog_feed()
 }
  800c4a8:	bd10      	pop	{r4, pc}
  800c4aa:	46c0      	nop			; (mov r8, r8)
- 800c4ac:	20003194 	.word	0x20003194
+ 800c4ac:	20003198 	.word	0x20003198
 
 0800c4b0 <hw_watchdog_get_timeout>:
 
@@ -31534,9 +31534,9 @@ static void packet_transmitted_isr() {
 }
  800c594:	e7f3      	b.n	800c57e <packet_transmitted_isr+0x1a>
  800c596:	46c0      	nop			; (mov r8, r8)
- 800c598:	200031f8 	.word	0x200031f8
- 800c59c:	200031bf 	.word	0x200031bf
- 800c5a0:	200031fc 	.word	0x200031fc
+ 800c598:	200031fc 	.word	0x200031fc
+ 800c59c:	200031c3 	.word	0x200031c3
+ 800c5a0:	20003200 	.word	0x20003200
 
 0800c5a4 <update_active_times>:
     update_active_times(HW_STATE_RX);
@@ -31682,11 +31682,11 @@ static void update_active_times(hw_radio_state_t opmode)
  800c65c:	6013      	str	r3, [r2, #0]
 }
  800c65e:	e7c8      	b.n	800c5f2 <update_active_times+0x4e>
- 800c660:	200031bf 	.word	0x200031bf
- 800c664:	200031f0 	.word	0x200031f0
- 800c668:	20003204 	.word	0x20003204
- 800c66c:	200031e8 	.word	0x200031e8
- 800c670:	200031b8 	.word	0x200031b8
+ 800c660:	200031c3 	.word	0x200031c3
+ 800c664:	200031f4 	.word	0x200031f4
+ 800c668:	20003208 	.word	0x20003208
+ 800c66c:	200031ec 	.word	0x200031ec
+ 800c670:	200031bc 	.word	0x200031bc
 
 0800c674 <dio1_isr>:
 static void dio1_isr(void *arg) {
@@ -31727,9 +31727,9 @@ static inline error_t sched_post_task(task_t task) { return sched_post_task_prio
  800c6b2:	e7ea      	b.n	800c68a <dio1_isr+0x16>
  800c6b4:	50000401 	.word	0x50000401
  800c6b8:	2000059a 	.word	0x2000059a
- 800c6bc:	200031bb 	.word	0x200031bb
- 800c6c0:	200031bf 	.word	0x200031bf
- 800c6c4:	200031dc 	.word	0x200031dc
+ 800c6bc:	200031bf 	.word	0x200031bf
+ 800c6c0:	200031c3 	.word	0x200031c3
+ 800c6c4:	200031e0 	.word	0x200031e0
  800c6c8:	0800ce75 	.word	0x0800ce75
  800c6cc:	0800cc71 	.word	0x0800cc71
 
@@ -31767,7 +31767,7 @@ static void dio0_isr(void *arg) {
  800c70a:	bd10      	pop	{r4, pc}
  800c70c:	50000404 	.word	0x50000404
  800c710:	2000059a 	.word	0x2000059a
- 800c714:	200031bf 	.word	0x200031bf
+ 800c714:	200031c3 	.word	0x200031c3
  800c718:	0800cecd 	.word	0x0800cecd
  800c71c:	0800cb6d 	.word	0x0800cb6d
  800c720:	0800c565 	.word	0x0800c565
@@ -31784,7 +31784,7 @@ void hw_radio_enable_preloading(bool enable) {
 }
  800c728:	4770      	bx	lr
  800c72a:	46c0      	nop			; (mov r8, r8)
- 800c72c:	200031b9 	.word	0x200031b9
+ 800c72c:	200031bd 	.word	0x200031bd
 
 0800c730 <hw_radio_set_rx_timeout>:
 
@@ -31832,8 +31832,8 @@ static void enable_spi_io() {
  800c76e:	701a      	strb	r2, [r3, #0]
  800c770:	e7f3      	b.n	800c75a <enable_spi_io+0xa>
  800c772:	46c0      	nop			; (mov r8, r8)
- 800c774:	200031bc 	.word	0x200031bc
- 800c778:	200031ec 	.word	0x200031ec
+ 800c774:	200031c0 	.word	0x200031c0
+ 800c778:	200031f0 	.word	0x200031f0
 
 0800c77c <write_reg>:
 static void write_reg(uint8_t addr, uint8_t value) {
@@ -31862,7 +31862,7 @@ static void write_reg(uint8_t addr, uint8_t value) {
  800c7a6:	f7ff f820 	bl	800b7ea <spi_deselect>
 }
  800c7aa:	bd70      	pop	{r4, r5, r6, pc}
- 800c7ac:	200031f4 	.word	0x200031f4
+ 800c7ac:	200031f8 	.word	0x200031f8
 
 0800c7b0 <write_reg_16>:
 void write_reg_16(uint8_t start_reg, uint16_t value) {
@@ -31977,7 +31977,7 @@ void hw_radio_set_rssi_config(uint8_t rssi_smoothing, uint8_t rssi_offset) {
 }
  800c858:	bd10      	pop	{r4, pc}
  800c85a:	46c0      	nop			; (mov r8, r8)
- 800c85c:	200031ca 	.word	0x200031ca
+ 800c85c:	200031ce 	.word	0x200031ce
 
 0800c860 <hw_radio_set_center_freq>:
 void hw_radio_set_center_freq(uint32_t center_freq) {
@@ -32009,7 +32009,7 @@ void hw_radio_set_center_freq(uint32_t center_freq) {
 }
  800c894:	bd10      	pop	{r4, pc}
  800c896:	46c0      	nop			; (mov r8, r8)
- 800c898:	200031b0 	.word	0x200031b0
+ 800c898:	200031b4 	.word	0x200031b4
  800c89c:	404e8480 	.word	0x404e8480
 
 0800c8a0 <hw_radio_set_rx_bw_hz>:
@@ -32100,7 +32100,7 @@ void hw_radio_set_rx_bw_hz(uint32_t bw_hz) {
  800c936:	46c0      	nop			; (mov r8, r8)
  800c938:	00989680 	.word	0x00989680
  800c93c:	20000598 	.word	0x20000598
- 800c940:	200031d0 	.word	0x200031d0
+ 800c940:	200031d4 	.word	0x200031d4
  800c944:	01e84800 	.word	0x01e84800
 
 0800c948 <hw_radio_set_tx_power>:
@@ -32165,7 +32165,7 @@ void hw_radio_set_tx_power(int8_t eirp) {
  800c9ae:	f7ff fee5 	bl	800c77c <write_reg>
 }
  800c9b2:	e7e7      	b.n	800c984 <hw_radio_set_tx_power+0x3c>
- 800c9b4:	200031b8 	.word	0x200031b8
+ 800c9b4:	200031bc 	.word	0x200031bc
  800c9b8:	9999999a 	.word	0x9999999a
  800c9bc:	40259999 	.word	0x40259999
  800c9c0:	402e0000 	.word	0x402e0000
@@ -32275,9 +32275,9 @@ static void init_regs() {
  800ca80:	f7ff fe7c 	bl	800c77c <write_reg>
  800ca84:	e7b2      	b.n	800c9ec <init_regs+0x28>
  800ca86:	46c0      	nop			; (mov r8, r8)
- 800ca88:	200031bd 	.word	0x200031bd
- 800ca8c:	200031ca 	.word	0x200031ca
- 800ca90:	200031c0 	.word	0x200031c0
+ 800ca88:	200031c1 	.word	0x200031c1
+ 800ca8c:	200031ce 	.word	0x200031ce
+ 800ca90:	200031c4 	.word	0x200031c4
 
 0800ca94 <read_fifo>:
 static void read_fifo(uint8_t* buffer, uint8_t size) {
@@ -32306,7 +32306,7 @@ static void read_fifo(uint8_t* buffer, uint8_t size) {
 }
  800cac0:	bd70      	pop	{r4, r5, r6, pc}
  800cac2:	46c0      	nop			; (mov r8, r8)
- 800cac4:	200031f4 	.word	0x200031f4
+ 800cac4:	200031f8 	.word	0x200031f8
 
 0800cac8 <read_reg>:
 static uint8_t read_reg(uint8_t addr) {
@@ -32335,7 +32335,7 @@ static uint8_t read_reg(uint8_t addr) {
  800caf2:	0028      	movs	r0, r5
  800caf4:	bd70      	pop	{r4, r5, r6, pc}
  800caf6:	46c0      	nop			; (mov r8, r8)
- 800caf8:	200031f4 	.word	0x200031f4
+ 800caf8:	200031f8 	.word	0x200031f8
 
 0800cafc <fifo_level_isr>:
 {
@@ -32365,8 +32365,8 @@ static uint8_t read_reg(uint8_t addr) {
  800cb22:	f7fb fd6d 	bl	8008600 <__assert_func>
  800cb26:	46c0      	nop			; (mov r8, r8)
  800cb28:	50000401 	.word	0x50000401
- 800cb2c:	200031c8 	.word	0x200031c8
- 800cb30:	20003200 	.word	0x20003200
+ 800cb2c:	200031cc 	.word	0x200031cc
+ 800cb30:	20003204 	.word	0x20003204
  800cb34:	080169c8 	.word	0x080169c8
  800cb38:	0801a164 	.word	0x0801a164
  800cb3c:	00000256 	.word	0x00000256
@@ -32394,7 +32394,7 @@ static void wait_for_fifo_level_isr() {
  800cb5e:	f7ff ffcd 	bl	800cafc <fifo_level_isr>
 }
  800cb62:	bd10      	pop	{r4, pc}
- 800cb64:	200031bb 	.word	0x200031bb
+ 800cb64:	200031bf 	.word	0x200031bf
  800cb68:	2000059a 	.word	0x2000059a
 
 0800cb6c <bg_scan_rx_done>:
@@ -32467,10 +32467,10 @@ static inline error_t sched_cancel_task(task_t task) { return sched_cancel_task_
  800cbd0:	4808      	ldr	r0, [pc, #32]	; (800cbf4 <bg_scan_rx_done+0x88>)
  800cbd2:	f7fb fd15 	bl	8008600 <__assert_func>
  800cbd6:	46c0      	nop			; (mov r8, r8)
- 800cbd8:	200031a4 	.word	0x200031a4
- 800cbdc:	200031ac 	.word	0x200031ac
- 800cbe0:	200031b4 	.word	0x200031b4
- 800cbe4:	200031e0 	.word	0x200031e0
+ 800cbd8:	200031a8 	.word	0x200031a8
+ 800cbdc:	200031b0 	.word	0x200031b0
+ 800cbe0:	200031b8 	.word	0x200031b8
+ 800cbe4:	200031e4 	.word	0x200031e4
  800cbe8:	0800cc71 	.word	0x0800cc71
  800cbec:	08019f58 	.word	0x08019f58
  800cbf0:	0801a130 	.word	0x0801a130
@@ -32533,8 +32533,8 @@ static void reinit_rx() {
 }
  800cc5c:	bd10      	pop	{r4, pc}
  800cc5e:	46c0      	nop			; (mov r8, r8)
- 800cc60:	200031a4 	.word	0x200031a4
- 800cc64:	200031c0 	.word	0x200031c0
+ 800cc60:	200031a8 	.word	0x200031a8
+ 800cc64:	200031c4 	.word	0x200031c4
  800cc68:	0800cc71 	.word	0x0800cc71
  800cc6c:	50000401 	.word	0x50000401
 
@@ -32799,19 +32799,19 @@ static void fifo_threshold_isr() {
  800ce36:	46c0      	nop			; (mov r8, r8)
  800ce38:	50000401 	.word	0x50000401
  800ce3c:	2000059a 	.word	0x2000059a
- 800ce40:	200031a4 	.word	0x200031a4
+ 800ce40:	200031a8 	.word	0x200031a8
  800ce44:	08019f68 	.word	0x08019f68
  800ce48:	0801a174 	.word	0x0801a174
  800ce4c:	00000286 	.word	0x00000286
  800ce50:	08019f14 	.word	0x08019f14
  800ce54:	5000080d 	.word	0x5000080d
- 800ce58:	200031e4 	.word	0x200031e4
- 800ce5c:	200031ac 	.word	0x200031ac
- 800ce60:	200031b4 	.word	0x200031b4
+ 800ce58:	200031e8 	.word	0x200031e8
+ 800ce5c:	200031b0 	.word	0x200031b0
+ 800ce60:	200031b8 	.word	0x200031b8
  800ce64:	08019f7c 	.word	0x08019f7c
  800ce68:	08019f8c 	.word	0x08019f8c
  800ce6c:	08019fb4 	.word	0x08019fb4
- 800ce70:	200031e0 	.word	0x200031e0
+ 800ce70:	200031e4 	.word	0x200031e4
 
 0800ce74 <lora_rxtimeout_isr>:
 static void lora_rxtimeout_isr() {
@@ -32848,7 +32848,7 @@ static void lora_rxtimeout_isr() {
  800cea8:	f7fb fbaa 	bl	8008600 <__assert_func>
  800ceac:	50000401 	.word	0x50000401
  800ceb0:	0800d5a5 	.word	0x0800d5a5
- 800ceb4:	200031dc 	.word	0x200031dc
+ 800ceb4:	200031e0 	.word	0x200031e0
  800ceb8:	08019fdc 	.word	0x08019fdc
  800cebc:	080169c8 	.word	0x080169c8
  800cec0:	0801a150 	.word	0x0801a150
@@ -33012,18 +33012,18 @@ static void lora_rxdone_isr() {
       return;
  800cfda:	e7d0      	b.n	800cf7e <lora_rxdone_isr+0xb2>
  800cfdc:	2000059a 	.word	0x2000059a
- 800cfe0:	200031bf 	.word	0x200031bf
- 800cfe4:	200031d4 	.word	0x200031d4
+ 800cfe0:	200031c3 	.word	0x200031c3
+ 800cfe4:	200031d8 	.word	0x200031d8
  800cfe8:	50000404 	.word	0x50000404
  800cfec:	0801a044 	.word	0x0801a044
  800cff0:	0801a140 	.word	0x0801a140
  800cff4:	08019f14 	.word	0x08019f14
  800cff8:	0801a064 	.word	0x0801a064
- 800cffc:	200031d8 	.word	0x200031d8
- 800d000:	200031cc 	.word	0x200031cc
- 800d004:	200031ac 	.word	0x200031ac
- 800d008:	200031b4 	.word	0x200031b4
- 800d00c:	200031e0 	.word	0x200031e0
+ 800cffc:	200031dc 	.word	0x200031dc
+ 800d000:	200031d0 	.word	0x200031d0
+ 800d004:	200031b0 	.word	0x200031b0
+ 800d008:	200031b8 	.word	0x200031b8
+ 800d00c:	200031e4 	.word	0x200031e4
  800d010:	0801a08c 	.word	0x0801a08c
 
 0800d014 <get_opmode>:
@@ -33302,8 +33302,8 @@ void hw_radio_set_payload_length(uint16_t length) {
  800d1fa:	4b01      	ldr	r3, [pc, #4]	; (800d200 <hw_radio_set_payload_length+0x3c>)
  800d1fc:	801c      	strh	r4, [r3, #0]
  800d1fe:	e7e7      	b.n	800d1d0 <hw_radio_set_payload_length+0xc>
- 800d200:	200031c0 	.word	0x200031c0
- 800d204:	200031a4 	.word	0x200031a4
+ 800d200:	200031c4 	.word	0x200031c4
+ 800d204:	200031a8 	.word	0x200031a8
 
 0800d208 <hw_radio_switch_longRangeMode>:
 void hw_radio_switch_longRangeMode(bool use_lora) {
@@ -33355,11 +33355,11 @@ void hw_radio_switch_longRangeMode(bool use_lora) {
 }
  800d254:	e7de      	b.n	800d214 <hw_radio_switch_longRangeMode+0xc>
  800d256:	46c0      	nop			; (mov r8, r8)
- 800d258:	200031bf 	.word	0x200031bf
- 800d25c:	200031f8 	.word	0x200031f8
- 800d260:	200031d8 	.word	0x200031d8
- 800d264:	200031d4 	.word	0x200031d4
- 800d268:	200031dc 	.word	0x200031dc
+ 800d258:	200031c3 	.word	0x200031c3
+ 800d25c:	200031fc 	.word	0x200031fc
+ 800d260:	200031dc 	.word	0x200031dc
+ 800d264:	200031d8 	.word	0x200031d8
+ 800d268:	200031e0 	.word	0x200031e0
 
 0800d26c <write_fifo>:
 static void write_fifo(uint8_t* buffer, uint8_t size) {
@@ -33388,7 +33388,7 @@ static void write_fifo(uint8_t* buffer, uint8_t size) {
 }
  800d298:	bd70      	pop	{r4, r5, r6, pc}
  800d29a:	46c0      	nop			; (mov r8, r8)
- 800d29c:	200031f4 	.word	0x200031f4
+ 800d29c:	200031f8 	.word	0x200031f8
 
 0800d2a0 <hw_radio_set_opmode>:
 void hw_radio_set_opmode(hw_radio_state_t opmode) {
@@ -33462,8 +33462,8 @@ void hw_radio_set_opmode(hw_radio_state_t opmode) {
  800d318:	0801a0f0 	.word	0x0801a0f0
  800d31c:	50000404 	.word	0x50000404
  800d320:	50000401 	.word	0x50000401
- 800d324:	200031ec 	.word	0x200031ec
- 800d328:	200031bc 	.word	0x200031bc
+ 800d324:	200031f0 	.word	0x200031f0
+ 800d328:	200031c0 	.word	0x200031c0
 
 0800d32c <hw_radio_set_idle>:
 error_t hw_radio_set_idle() {
@@ -33530,10 +33530,10 @@ error_t hw_radio_set_idle() {
  800d39c:	e7fc      	b.n	800d398 <hw_radio_set_idle+0x6c>
  800d39e:	46c0      	nop			; (mov r8, r8)
  800d3a0:	2000059a 	.word	0x2000059a
- 800d3a4:	200031bc 	.word	0x200031bc
- 800d3a8:	200031a4 	.word	0x200031a4
- 800d3ac:	200031b4 	.word	0x200031b4
- 800d3b0:	200031c4 	.word	0x200031c4
+ 800d3a4:	200031c0 	.word	0x200031c0
+ 800d3a8:	200031a8 	.word	0x200031a8
+ 800d3ac:	200031b8 	.word	0x200031b8
+ 800d3b0:	200031c8 	.word	0x200031c8
  800d3b4:	0800cc71 	.word	0x0800cc71
  800d3b8:	0800cb45 	.word	0x0800cb45
  800d3bc:	0800cb6d 	.word	0x0800cb6d
@@ -33724,20 +33724,20 @@ static inline error_t sched_register_task(task_t task) { return sched_register_t
  800d518:	481f      	ldr	r0, [pc, #124]	; (800d598 <hw_radio_init+0x1d0>)
  800d51a:	f7fb f871 	bl	8008600 <__assert_func>
  800d51e:	46c0      	nop			; (mov r8, r8)
- 800d520:	200031ac 	.word	0x200031ac
- 800d524:	200031c4 	.word	0x200031c4
- 800d528:	200031e0 	.word	0x200031e0
- 800d52c:	200031e4 	.word	0x200031e4
- 800d530:	200031fc 	.word	0x200031fc
- 800d534:	20003200 	.word	0x20003200
- 800d538:	200031f8 	.word	0x200031f8
- 800d53c:	200031d8 	.word	0x200031d8
- 800d540:	200031d4 	.word	0x200031d4
- 800d544:	200031dc 	.word	0x200031dc
- 800d548:	200031f4 	.word	0x200031f4
- 800d54c:	200031ec 	.word	0x200031ec
- 800d550:	200031bc 	.word	0x200031bc
- 800d554:	200031bd 	.word	0x200031bd
+ 800d520:	200031b0 	.word	0x200031b0
+ 800d524:	200031c8 	.word	0x200031c8
+ 800d528:	200031e4 	.word	0x200031e4
+ 800d52c:	200031e8 	.word	0x200031e8
+ 800d530:	20003200 	.word	0x20003200
+ 800d534:	20003204 	.word	0x20003204
+ 800d538:	200031fc 	.word	0x200031fc
+ 800d53c:	200031dc 	.word	0x200031dc
+ 800d540:	200031d8 	.word	0x200031d8
+ 800d544:	200031e0 	.word	0x200031e0
+ 800d548:	200031f8 	.word	0x200031f8
+ 800d54c:	200031f0 	.word	0x200031f0
+ 800d550:	200031c0 	.word	0x200031c0
+ 800d554:	200031c1 	.word	0x200031c1
  800d558:	0800c6d1 	.word	0x0800c6d1
  800d55c:	50000404 	.word	0x50000404
  800d560:	0800c675 	.word	0x0800c675
@@ -33778,8 +33778,8 @@ static void rx_timeout(void *arg) {
 }
  800d5bc:	bd10      	pop	{r4, pc}
  800d5be:	46c0      	nop			; (mov r8, r8)
- 800d5c0:	200031bf 	.word	0x200031bf
- 800d5c4:	200031dc 	.word	0x200031dc
+ 800d5c0:	200031c3 	.word	0x200031c3
+ 800d5c4:	200031e0 	.word	0x200031e0
 
 0800d5c8 <hw_radio_stop>:
 void hw_radio_stop() {
@@ -33928,13 +33928,13 @@ static inline error_t sched_cancel_task(task_t task) { return sched_cancel_task_
  800d6d0:	f7fd fb6a 	bl	800ada8 <hw_gpio_enable_interrupt>
  800d6d4:	e7ef      	b.n	800d6b6 <set_state_rx+0xe6>
  800d6d6:	46c0      	nop			; (mov r8, r8)
- 800d6d8:	200031bf 	.word	0x200031bf
+ 800d6d8:	200031c3 	.word	0x200031c3
  800d6dc:	50000404 	.word	0x50000404
  800d6e0:	50000401 	.word	0x50000401
- 800d6e4:	200031cc 	.word	0x200031cc
+ 800d6e4:	200031d0 	.word	0x200031d0
  800d6e8:	20000599 	.word	0x20000599
  800d6ec:	0800cc71 	.word	0x0800cc71
- 800d6f0:	200031a4 	.word	0x200031a4
+ 800d6f0:	200031a8 	.word	0x200031a8
 
 0800d6f4 <hw_radio_send_payload>:
 error_t hw_radio_send_payload(uint8_t * data, uint16_t len) {
@@ -34182,15 +34182,15 @@ static inline error_t sched_post_task(task_t task) { return sched_post_task_prio
  800d8a2:	480c      	ldr	r0, [pc, #48]	; (800d8d4 <hw_radio_send_payload+0x1e0>)
  800d8a4:	e777      	b.n	800d796 <hw_radio_send_payload+0xa2>
  800d8a6:	46c0      	nop			; (mov r8, r8)
- 800d8a8:	200031d8 	.word	0x200031d8
- 800d8ac:	200031cc 	.word	0x200031cc
+ 800d8a8:	200031dc 	.word	0x200031dc
+ 800d8ac:	200031d0 	.word	0x200031d0
  800d8b0:	2000059a 	.word	0x2000059a
- 800d8b4:	200031bf 	.word	0x200031bf
- 800d8b8:	200031c2 	.word	0x200031c2
- 800d8bc:	200031c8 	.word	0x200031c8
- 800d8c0:	200031ba 	.word	0x200031ba
+ 800d8b4:	200031c3 	.word	0x200031c3
+ 800d8b8:	200031c6 	.word	0x200031c6
+ 800d8bc:	200031cc 	.word	0x200031cc
+ 800d8c0:	200031be 	.word	0x200031be
  800d8c4:	50000404 	.word	0x50000404
- 800d8c8:	200031b9 	.word	0x200031b9
+ 800d8c8:	200031bd 	.word	0x200031bd
  800d8cc:	50000401 	.word	0x50000401
  800d8d0:	0800cb45 	.word	0x0800cb45
  800d8d4:	0000138a 	.word	0x0000138a
@@ -34223,8 +34223,8 @@ void hw_radio_enable_refill(bool enable) {
  800d900:	f7ff fcce 	bl	800d2a0 <hw_radio_set_opmode>
  800d904:	e7f0      	b.n	800d8e8 <hw_radio_enable_refill+0x10>
  800d906:	46c0      	nop			; (mov r8, r8)
- 800d908:	200031bf 	.word	0x200031bf
- 800d90c:	200031ba 	.word	0x200031ba
+ 800d908:	200031c3 	.word	0x200031c3
+ 800d90c:	200031be 	.word	0x200031be
 
 0800d910 <hw_radio_set_lora_mode>:
 void hw_radio_set_lora_mode(uint32_t lora_bw, uint8_t lora_SF) {
@@ -34297,7 +34297,7 @@ void hw_radio_set_lora_mode(uint32_t lora_bw, uint8_t lora_SF) {
  800d984:	4905      	ldr	r1, [pc, #20]	; (800d99c <hw_radio_set_lora_mode+0x8c>)
  800d986:	4806      	ldr	r0, [pc, #24]	; (800d9a0 <hw_radio_set_lora_mode+0x90>)
  800d988:	f7fa fe3a 	bl	8008600 <__assert_func>
- 800d98c:	200031be 	.word	0x200031be
+ 800d98c:	200031c2 	.word	0x200031c2
  800d990:	0801a1c4 	.word	0x0801a1c4
  800d994:	0801a10c 	.word	0x0801a10c
  800d998:	0801a1ac 	.word	0x0801a1ac
@@ -34398,12 +34398,12 @@ int16_t hw_radio_get_rssi() {
  800da46:	e7d9      	b.n	800d9fc <hw_radio_get_rssi+0x58>
  800da48:	50000404 	.word	0x50000404
  800da4c:	50000401 	.word	0x50000401
- 800da50:	200031bf 	.word	0x200031bf
+ 800da50:	200031c3 	.word	0x200031c3
  800da54:	20000598 	.word	0x20000598
  800da58:	0801a1f8 	.word	0x0801a1f8
- 800da5c:	200031ca 	.word	0x200031ca
- 800da60:	200031d0 	.word	0x200031d0
- 800da64:	200031be 	.word	0x200031be
+ 800da5c:	200031ce 	.word	0x200031ce
+ 800da60:	200031d4 	.word	0x200031d4
+ 800da64:	200031c2 	.word	0x200031c2
  800da68:	0801a1ec 	.word	0x0801a1ec
  800da6c:	0801a1c4 	.word	0x0801a1c4
 
@@ -34580,8 +34580,8 @@ static void KeyExpansion(void)
  800db42:	4690      	mov	r8, r2
  800db44:	4699      	mov	r9, r3
  800db46:	bdf0      	pop	{r4, r5, r6, r7, pc}
- 800db48:	20003218 	.word	0x20003218
- 800db4c:	2000321c 	.word	0x2000321c
+ 800db48:	2000321c 	.word	0x2000321c
+ 800db4c:	20003220 	.word	0x20003220
  800db50:	0801a224 	.word	0x0801a224
 
 0800db54 <AddRoundKey>:
@@ -34631,8 +34631,8 @@ static void AddRoundKey(uint8_t round)
 }
  800db88:	bd30      	pop	{r4, r5, pc}
  800db8a:	46c0      	nop			; (mov r8, r8)
- 800db8c:	200032cc 	.word	0x200032cc
- 800db90:	2000321c 	.word	0x2000321c
+ 800db8c:	200032d0 	.word	0x200032d0
+ 800db90:	20003220 	.word	0x20003220
 
 0800db94 <SubBytes>:
 
@@ -34674,7 +34674,7 @@ static void SubBytes(void)
     }
 }
  800dbbe:	bd70      	pop	{r4, r5, r6, pc}
- 800dbc0:	200032cc 	.word	0x200032cc
+ 800dbc0:	200032d0 	.word	0x200032d0
 
 0800dbc4 <ShiftRows>:
 static void ShiftRows(void)
@@ -34732,7 +34732,7 @@ static void ShiftRows(void)
 }
  800dbf8:	4770      	bx	lr
  800dbfa:	46c0      	nop			; (mov r8, r8)
- 800dbfc:	200032cc 	.word	0x200032cc
+ 800dbfc:	200032d0 	.word	0x200032d0
 
 0800dc00 <xtime>:
 
@@ -34834,7 +34834,7 @@ static void MixColumns(void)
  800dc96:	4699      	mov	r9, r3
  800dc98:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
  800dc9a:	46c0      	nop			; (mov r8, r8)
- 800dc9c:	200032cc 	.word	0x200032cc
+ 800dc9c:	200032d0 	.word	0x200032d0
 
 0800dca0 <Cipher>:
 }
@@ -34929,8 +34929,8 @@ void AES128_init(const uint8_t *key)
  800dcfa:	f7ff febf 	bl	800da7c <KeyExpansion>
 }
  800dcfe:	bd10      	pop	{r4, pc}
- 800dd00:	20003208 	.word	0x20003208
- 800dd04:	20003218 	.word	0x20003218
+ 800dd00:	2000320c 	.word	0x2000320c
+ 800dd04:	2000321c 	.word	0x2000321c
 
 0800dd08 <AES128_ECB_encrypt>:
 
@@ -34961,7 +34961,7 @@ void AES128_ECB_encrypt(uint8_t *input, uint8_t *output)
 }
  800dd1c:	bd10      	pop	{r4, pc}
  800dd1e:	46c0      	nop			; (mov r8, r8)
- 800dd20:	200032cc 	.word	0x200032cc
+ 800dd20:	200032d0 	.word	0x200032d0
 
 0800dd24 <AES128_CTR_encrypt>:
  * operation to the same length as the final plaintext block, returning
@@ -35100,7 +35100,7 @@ void AES128_CTR_encrypt(uint8_t *output, uint8_t *input, uint32_t length, uint8_
  800ddce:	459b      	cmp	fp, r3
  800ddd0:	d8f6      	bhi.n	800ddc0 <AES128_CTR_encrypt+0x9c>
  800ddd2:	e7ea      	b.n	800ddaa <AES128_CTR_encrypt+0x86>
- 800ddd4:	200032cc 	.word	0x200032cc
+ 800ddd4:	200032d0 	.word	0x200032d0
 
 0800ddd8 <xor_aes_block>:
  * Counter with CBC-MAC (CCM) is a generic authenticated encryption
@@ -35772,8 +35772,8 @@ static void flush_console_tx_fifo(void *arg) {
 }
  800e160:	e7ec      	b.n	800e13c <flush_console_tx_fifo+0x28>
  800e162:	46c0      	nop			; (mov r8, r8)
- 800e164:	200033d0 	.word	0x200033d0
- 800e168:	200033e0 	.word	0x200033e0
+ 800e164:	200033d4 	.word	0x200033d4
+ 800e168:	200033e4 	.word	0x200033e4
  800e16c:	0800e115 	.word	0x0800e115
 
 0800e170 <console_init>:
@@ -35812,10 +35812,10 @@ static inline error_t sched_register_task(task_t task) { return sched_register_t
  800e1a4:	4807      	ldr	r0, [pc, #28]	; (800e1c4 <console_init+0x54>)
  800e1a6:	f7fa fa2b 	bl	8008600 <__assert_func>
  800e1aa:	46c0      	nop			; (mov r8, r8)
- 800e1ac:	200032d0 	.word	0x200032d0
- 800e1b0:	200033d0 	.word	0x200033d0
+ 800e1ac:	200032d4 	.word	0x200032d4
+ 800e1b0:	200033d4 	.word	0x200033d4
  800e1b4:	0800e115 	.word	0x0800e115
- 800e1b8:	200033e0 	.word	0x200033e0
+ 800e1b8:	200033e4 	.word	0x200033e4
  800e1bc:	0801a424 	.word	0x0801a424
  800e1c0:	0801a480 	.word	0x0801a480
  800e1c4:	0801a438 	.word	0x0801a438
@@ -35855,7 +35855,7 @@ static void update_crc(uint8_t x)
 }
  800e1f0:	4770      	bx	lr
  800e1f2:	46c0      	nop			; (mov r8, r8)
- 800e1f4:	200033e4 	.word	0x200033e4
+ 800e1f4:	200033e8 	.word	0x200033e8
 
 0800e1f8 <crc_calculate>:
 
@@ -35890,7 +35890,7 @@ uint16_t crc_calculate(uint8_t* data, uint8_t length)
 }
  800e21c:	bd70      	pop	{r4, r5, r6, pc}
  800e21e:	46c0      	nop			; (mov r8, r8)
- 800e220:	200033e4 	.word	0x200033e4
+ 800e220:	200033e8 	.word	0x200033e8
 
 0800e224 <fec_decode>:
 
@@ -36390,13 +36390,13 @@ static bool fec_decode(uint8_t* input)
 		return false;
  800e4e4:	2000      	movs	r0, #0
  800e4e6:	e7f6      	b.n	800e4d6 <fec_decode+0x2b2>
- 800e4e8:	200034e8 	.word	0x200034e8
- 800e4ec:	200034f0 	.word	0x200034f0
- 800e4f0:	200034f4 	.word	0x200034f4
+ 800e4e8:	200034ec 	.word	0x200034ec
+ 800e4ec:	200034f4 	.word	0x200034f4
+ 800e4f0:	200034f8 	.word	0x200034f8
  800e4f4:	0801a4a0 	.word	0x0801a4a0
  800e4f8:	0801a4a8 	.word	0x0801a4a8
- 800e4fc:	200034f2 	.word	0x200034f2
- 800e500:	200034ec 	.word	0x200034ec
+ 800e4fc:	200034f6 	.word	0x200034f6
+ 800e500:	200034f0 	.word	0x200034f0
 
 0800e504 <fec_calculated_decoded_length>:
 	return 2* (packet_length + 2 - (packet_length % 2));
@@ -36653,7 +36653,7 @@ static bool fec_decode(uint8_t* input)
 			buffer_pointer=0;
  800e67c:	2100      	movs	r1, #0
  800e67e:	e78e      	b.n	800e59e <fec_encode+0x8a>
- 800e680:	200033e8 	.word	0x200033e8
+ 800e680:	200033ec 	.word	0x200033ec
  800e684:	0801a490 	.word	0x0801a490
 
 0800e688 <fec_decode_packet>:
@@ -36743,12 +36743,12 @@ static bool fec_decode(uint8_t* input)
  800e706:	2500      	movs	r5, #0
  800e708:	e7f9      	b.n	800e6fe <fec_decode_packet+0x76>
  800e70a:	46c0      	nop			; (mov r8, r8)
- 800e70c:	200034ec 	.word	0x200034ec
- 800e710:	200033e8 	.word	0x200033e8
- 800e714:	200034f0 	.word	0x200034f0
- 800e718:	200034f2 	.word	0x200034f2
- 800e71c:	200034e8 	.word	0x200034e8
- 800e720:	200034f4 	.word	0x200034f4
+ 800e70c:	200034f0 	.word	0x200034f0
+ 800e710:	200033ec 	.word	0x200033ec
+ 800e714:	200034f4 	.word	0x200034f4
+ 800e718:	200034f6 	.word	0x200034f6
+ 800e71c:	200034ec 	.word	0x200034ec
+ 800e720:	200034f8 	.word	0x200034f8
 
 0800e724 <skip>:
   if(len > fifo_get_size(fifo)) { return ESIZE; }
@@ -37236,8 +37236,8 @@ static int _fs_verify_magic(uint8_t* expected_magic_number)
  800e9da:	2016      	movs	r0, #22
  800e9dc:	4240      	negs	r0, r0
  800e9de:	e7fa      	b.n	800e9d6 <_fs_verify_magic+0x32>
- 800e9e0:	200037e0 	.word	0x200037e0
- 800e9e4:	20003540 	.word	0x20003540
+ 800e9e0:	200037e4 	.word	0x200037e4
+ 800e9e4:	20003544 	.word	0x20003544
 
 0800e9e8 <_fs_create_magic>:
 {
@@ -37264,7 +37264,7 @@ static int _fs_verify_magic(uint8_t* expected_magic_number)
  800ea08:	4805      	ldr	r0, [pc, #20]	; (800ea20 <_fs_create_magic+0x38>)
  800ea0a:	f7f9 fdf9 	bl	8008600 <__assert_func>
  800ea0e:	46c0      	nop			; (mov r8, r8)
- 800ea10:	200037e0 	.word	0x200037e0
+ 800ea10:	200037e4 	.word	0x200037e4
  800ea14:	0000c234 	.word	0x0000c234
  800ea18:	0801a4b0 	.word	0x0801a4b0
  800ea1c:	0801a554 	.word	0x0801a554
@@ -37412,12 +37412,12 @@ static int _fs_verify_magic(uint8_t* expected_magic_number)
  800eb18:	e7b5      	b.n	800ea86 <_fs_init+0x62>
  800eb1a:	46c0      	nop			; (mov r8, r8)
  800eb1c:	0000c234 	.word	0x0000c234
- 800eb20:	20003540 	.word	0x20003540
+ 800eb20:	20003544 	.word	0x20003544
  800eb24:	0801a504 	.word	0x0801a504
  800eb28:	0801a548 	.word	0x0801a548
  800eb2c:	0801a4c8 	.word	0x0801a4c8
- 800eb30:	2000354c 	.word	0x2000354c
- 800eb34:	20003558 	.word	0x20003558
+ 800eb30:	20003550 	.word	0x20003550
+ 800eb34:	2000355c 	.word	0x2000355c
 
 0800eb38 <_fs_create_file>:
 
@@ -37802,9 +37802,9 @@ int _fs_create_file(uint8_t file_id, fs_blockdevice_types_t bd_type, const uint8
  800ed9a:	4240      	negs	r0, r0
  800ed9c:	e7b0      	b.n	800ed00 <_fs_create_file+0x1c8>
  800ed9e:	46c0      	nop			; (mov r8, r8)
- 800eda0:	20003558 	.word	0x20003558
- 800eda4:	2000354c 	.word	0x2000354c
- 800eda8:	20003540 	.word	0x20003540
+ 800eda0:	2000355c 	.word	0x2000355c
+ 800eda4:	20003550 	.word	0x20003550
+ 800eda8:	20003544 	.word	0x20003544
 
 0800edac <fs_init>:
 {
@@ -37843,9 +37843,9 @@ int _fs_create_file(uint8_t file_id, fs_blockdevice_types_t bd_type, const uint8
  800ede0:	701a      	strb	r2, [r3, #0]
     DPRINT("fs_init OK");
  800ede2:	e7e8      	b.n	800edb6 <fs_init+0xa>
- 800ede4:	200037e0 	.word	0x200037e0
- 800ede8:	20003558 	.word	0x20003558
- 800edec:	20003540 	.word	0x20003540
+ 800ede4:	200037e4 	.word	0x200037e4
+ 800ede8:	2000355c 	.word	0x2000355c
+ 800edec:	20003544 	.word	0x20003544
  800edf0:	080195e0 	.word	0x080195e0
  800edf4:	080195e4 	.word	0x080195e4
  800edf8:	080195e8 	.word	0x080195e8
@@ -37884,7 +37884,7 @@ int fs_init_file(uint8_t file_id, fs_blockdevice_types_t bd_type, const uint8_t*
  800ee26:	2009      	movs	r0, #9
  800ee28:	4240      	negs	r0, r0
  800ee2a:	e7f3      	b.n	800ee14 <fs_init_file+0x18>
- 800ee2c:	200037e0 	.word	0x200037e0
+ 800ee2c:	200037e4 	.word	0x200037e4
  800ee30:	0801a530 	.word	0x0801a530
  800ee34:	0801a568 	.word	0x0801a568
  800ee38:	0801a4c8 	.word	0x0801a4c8
@@ -37962,8 +37962,8 @@ int fs_read_file(uint8_t file_id, uint32_t offset, uint8_t* buffer, uint32_t len
  800eeaa:	2016      	movs	r0, #22
  800eeac:	4240      	negs	r0, r0
  800eeae:	e7f5      	b.n	800ee9c <fs_read_file+0x60>
- 800eeb0:	20003558 	.word	0x20003558
- 800eeb4:	20003540 	.word	0x20003540
+ 800eeb0:	2000355c 	.word	0x2000355c
+ 800eeb4:	20003544 	.word	0x20003544
 
 0800eeb8 <fs_write_file>:
 
@@ -38091,8 +38091,8 @@ int fs_write_file(uint8_t file_id, uint32_t offset, const uint8_t* buffer, uint3
  800ef6a:	2069      	movs	r0, #105	; 0x69
  800ef6c:	4240      	negs	r0, r0
  800ef6e:	e7f2      	b.n	800ef56 <fs_write_file+0x9e>
- 800ef70:	20003558 	.word	0x20003558
- 800ef74:	20003540 	.word	0x20003540
+ 800ef70:	2000355c 	.word	0x2000355c
+ 800ef74:	20003544 	.word	0x20003544
 
 0800ef78 <fs_is_file_defined>:
     return files[file_id].length != 0;
@@ -38119,7 +38119,7 @@ bool fs_is_file_defined(uint8_t file_id)
     return _is_file_defined(file_id);
 }
  800ef9a:	4770      	bx	lr
- 800ef9c:	20003558 	.word	0x20003558
+ 800ef9c:	2000355c 	.word	0x2000355c
 
 0800efa0 <log_counter_reset>:
 static uint32_t NGDEF(counter);
@@ -38133,7 +38133,7 @@ __LINK_C void log_counter_reset()
  800efa4:	601a      	str	r2, [r3, #0]
 }
  800efa6:	4770      	bx	lr
- 800efa8:	200037e4 	.word	0x200037e4
+ 800efa8:	200037e8 	.word	0x200037e8
 
 0800efac <log_print_string>:
 
@@ -38165,7 +38165,7 @@ __LINK_C void log_print_string(const char* format, ...)
  800efd2:	bc08      	pop	{r3}
  800efd4:	b004      	add	sp, #16
  800efd6:	4718      	bx	r3
- 800efd8:	200037e4 	.word	0x200037e4
+ 800efd8:	200037e8 	.word	0x200037e8
  800efdc:	0801a578 	.word	0x0801a578
 
 0800efe0 <log_print_error_string>:
@@ -38203,7 +38203,7 @@ void log_print_error_string(const char* format,...)
  800f00a:	bc08      	pop	{r3}
  800f00c:	b004      	add	sp, #16
  800f00e:	4718      	bx	r3
- 800f010:	200037e4 	.word	0x200037e4
+ 800f010:	200037e8 	.word	0x200037e8
  800f014:	0801a584 	.word	0x0801a584
  800f018:	0801a58c 	.word	0x0801a58c
  800f01c:	0801a594 	.word	0x0801a594
@@ -38240,7 +38240,7 @@ static void modem_interface_cmd_handler(serial_protocol_handle_t* handle, serial
 }
  800f034:	bd10      	pop	{r4, pc}
  800f036:	46c0      	nop			; (mov r8, r8)
- 800f038:	200037e8 	.word	0x200037e8
+ 800f038:	200037ec 	.word	0x200037ec
 
 0800f03c <modem_interface_init>:
 {
@@ -38270,7 +38270,7 @@ static void modem_interface_cmd_handler(serial_protocol_handle_t* handle, serial
  800f066:	b006      	add	sp, #24
  800f068:	bd10      	pop	{r4, pc}
  800f06a:	46c0      	nop			; (mov r8, r8)
- 800f06c:	20003800 	.word	0x20003800
+ 800f06c:	20003804 	.word	0x20003804
  800f070:	0800f021 	.word	0x0800f021
 
 0800f074 <modem_interface_transfer_bytes>:
@@ -38287,7 +38287,7 @@ static void modem_interface_cmd_handler(serial_protocol_handle_t* handle, serial
  800f084:	47a8      	blx	r5
 }
  800f086:	bd70      	pop	{r4, r5, r6, pc}
- 800f088:	20003800 	.word	0x20003800
+ 800f088:	20003804 	.word	0x20003804
 
 0800f08c <modem_interface_register_handler>:
 
@@ -38322,8 +38322,8 @@ error_t modem_interface_register_handler(modem_interface_cmd_handler_t cmd_handl
  800f0ae:	4240      	negs	r0, r0
  800f0b0:	e7fb      	b.n	800f0aa <modem_interface_register_handler+0x1e>
  800f0b2:	46c0      	nop			; (mov r8, r8)
- 800f0b4:	200037e8 	.word	0x200037e8
- 800f0b8:	20003800 	.word	0x20003800
+ 800f0b4:	200037ec 	.word	0x200037ec
+ 800f0b8:	20003804 	.word	0x20003804
  800f0bc:	0800f025 	.word	0x0800f025
 
 0800f0c0 <pn9_next>:
@@ -38475,9 +38475,9 @@ error_t power_tracking_persist_file()
  800f16c:	4240      	negs	r0, r0
  800f16e:	e7fb      	b.n	800f168 <power_tracking_persist_file+0x20>
  800f170:	2000059b 	.word	0x2000059b
- 800f174:	20003a54 	.word	0x20003a54
- 800f178:	20003a50 	.word	0x20003a50
- 800f17c:	20003a68 	.word	0x20003a68
+ 800f174:	20003a58 	.word	0x20003a58
+ 800f178:	20003a54 	.word	0x20003a54
+ 800f17c:	20003a6c 	.word	0x20003a6c
 
 0800f180 <power_tracking_register_radio_action>:
 
@@ -38554,7 +38554,7 @@ error_t power_tracking_register_radio_action(power_tracking_transmit_mode_t powe
  800f1ec:	741a      	strb	r2, [r3, #16]
         break;
  800f1ee:	e7cd      	b.n	800f18c <power_tracking_register_radio_action+0xc>
- 800f1f0:	20003a54 	.word	0x20003a54
+ 800f1f0:	20003a58 	.word	0x20003a58
 
 0800f1f4 <power_tracking_register_run_time>:
 #endif // FRAMEWORK_POWER_TRACKING_RF
@@ -38594,9 +38594,9 @@ error_t power_tracking_register_run_time(timer_tick_t time)
 }
  800f228:	2000      	movs	r0, #0
  800f22a:	bd10      	pop	{r4, pc}
- 800f22c:	20003a54 	.word	0x20003a54
- 800f230:	20003a50 	.word	0x20003a50
- 800f234:	20003a68 	.word	0x20003a68
+ 800f22c:	20003a58 	.word	0x20003a58
+ 800f230:	20003a54 	.word	0x20003a54
+ 800f234:	20003a6c 	.word	0x20003a6c
  800f238:	05460000 	.word	0x05460000
 
 0800f23c <get_rnd>:
@@ -38633,7 +38633,7 @@ static void __feed_watchdog_task(void *arg) { watchdog_wakeup = true; }
  800f24e:	2201      	movs	r2, #1
  800f250:	701a      	strb	r2, [r3, #0]
  800f252:	4770      	bx	lr
- 800f254:	20003dbf 	.word	0x20003dbf
+ 800f254:	20003dc2 	.word	0x20003dc2
 
 0800f258 <is_scheduled_with_arg>:
 	check_structs_are_valid();
@@ -38717,9 +38717,9 @@ static bool is_scheduled_with_arg(uint8_t id, void *arg)
  800f2c4:	0801a5a4 	.word	0x0801a5a4
  800f2c8:	0801a6c4 	.word	0x0801a6c4
  800f2cc:	0801a5b4 	.word	0x0801a5b4
- 800f2d0:	20003a78 	.word	0x20003a78
- 800f2d4:	20003bc0 	.word	0x20003bc0
- 800f2d8:	20003db4 	.word	0x20003db4
+ 800f2d0:	20003a7c 	.word	0x20003a7c
+ 800f2d4:	20003bc4 	.word	0x20003bc4
+ 800f2d8:	20003db8 	.word	0x20003db8
 
 0800f2dc <do_initial_task_checks>:
 	end_atomic();
@@ -38824,9 +38824,9 @@ static error_t do_initial_task_checks(uint8_t task_id, void *arg, bool cancel)
  800f362:	2078      	movs	r0, #120	; 0x78
  800f364:	4240      	negs	r0, r0
  800f366:	e7e3      	b.n	800f330 <do_initial_task_checks+0x54>
- 800f368:	20003db4 	.word	0x20003db4
- 800f36c:	20003a78 	.word	0x20003a78
- 800f370:	20003bc0 	.word	0x20003bc0
+ 800f368:	20003db8 	.word	0x20003db8
+ 800f36c:	20003a7c 	.word	0x20003a7c
+ 800f370:	20003bc4 	.word	0x20003bc4
  800f374:	0801a5a4 	.word	0x0801a5a4
  800f378:	0801a6b4 	.word	0x0801a6b4
  800f37c:	0801a5b4 	.word	0x0801a5b4
@@ -38901,9 +38901,9 @@ static uint8_t pop_task(int priority)
  800f3d2:	2229      	movs	r2, #41	; 0x29
  800f3d4:	555a      	strb	r2, [r3, r5]
  800f3d6:	e7ec      	b.n	800f3b2 <pop_task+0x32>
- 800f3d8:	20003a70 	.word	0x20003a70
- 800f3dc:	20003bc0 	.word	0x20003bc0
- 800f3e0:	20003dac 	.word	0x20003dac
+ 800f3d8:	20003a74 	.word	0x20003a74
+ 800f3dc:	20003bc4 	.word	0x20003bc4
+ 800f3e0:	20003db0 	.word	0x20003db0
 
 0800f3e4 <get_task_id>:
 {
@@ -38981,11 +38981,11 @@ static uint8_t pop_task(int priority)
  800f450:	2029      	movs	r0, #41	; 0x29
 }
  800f452:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
- 800f454:	20003db4 	.word	0x20003db4
+ 800f454:	20003db8 	.word	0x20003db8
  800f458:	0801a600 	.word	0x0801a600
  800f45c:	0801a684 	.word	0x0801a684
  800f460:	0801a5b4 	.word	0x0801a5b4
- 800f464:	20003a78 	.word	0x20003a78
+ 800f464:	20003a7c 	.word	0x20003a7c
  800f468:	0801a628 	.word	0x0801a628
 
 0800f46c <sched_register_task_allow_multiple>:
@@ -39069,12 +39069,12 @@ static uint8_t pop_task(int priority)
  800f4ea:	4240      	negs	r0, r0
  800f4ec:	e7fb      	b.n	800f4e6 <sched_register_task_allow_multiple+0x7a>
  800f4ee:	46c0      	nop			; (mov r8, r8)
- 800f4f0:	20003db4 	.word	0x20003db4
+ 800f4f0:	20003db8 	.word	0x20003db8
  800f4f4:	0801a648 	.word	0x0801a648
  800f4f8:	0801a690 	.word	0x0801a690
  800f4fc:	0801a5b4 	.word	0x0801a5b4
- 800f500:	20003a78 	.word	0x20003a78
- 800f504:	20003bc0 	.word	0x20003bc0
+ 800f500:	20003a7c 	.word	0x20003a7c
+ 800f504:	20003bc4 	.word	0x20003bc4
 
 0800f508 <scheduler_init>:
 {
@@ -39150,12 +39150,12 @@ static uint8_t pop_task(int priority)
  800f582:	b002      	add	sp, #8
  800f584:	bd70      	pop	{r4, r5, r6, pc}
  800f586:	46c0      	nop			; (mov r8, r8)
- 800f588:	20003bc0 	.word	0x20003bc0
- 800f58c:	20003a78 	.word	0x20003a78
- 800f590:	20003a70 	.word	0x20003a70
- 800f594:	20003dac 	.word	0x20003dac
- 800f598:	20003a6c 	.word	0x20003a6c
- 800f59c:	20003db4 	.word	0x20003db4
+ 800f588:	20003bc4 	.word	0x20003bc4
+ 800f58c:	20003a7c 	.word	0x20003a7c
+ 800f590:	20003a74 	.word	0x20003a74
+ 800f594:	20003db0 	.word	0x20003db0
+ 800f598:	20003a70 	.word	0x20003a70
+ 800f59c:	20003db8 	.word	0x20003db8
  800f5a0:	0800f24d 	.word	0x0800f24d
 
 0800f5a4 <sched_post_task_prio>:
@@ -39315,13 +39315,13 @@ static uint8_t pop_task(int priority)
 		retVal = -ESIZE;
  800f6a4:	4d07      	ldr	r5, [pc, #28]	; (800f6c4 <sched_post_task_prio+0x120>)
  800f6a6:	e7cb      	b.n	800f640 <sched_post_task_prio+0x9c>
- 800f6a8:	20003db4 	.word	0x20003db4
- 800f6ac:	20003a78 	.word	0x20003a78
- 800f6b0:	20003a70 	.word	0x20003a70
- 800f6b4:	20003dac 	.word	0x20003dac
- 800f6b8:	20003bc0 	.word	0x20003bc0
- 800f6bc:	20003a6c 	.word	0x20003a6c
- 800f6c0:	20003dbe 	.word	0x20003dbe
+ 800f6a8:	20003db8 	.word	0x20003db8
+ 800f6ac:	20003a7c 	.word	0x20003a7c
+ 800f6b0:	20003a74 	.word	0x20003a74
+ 800f6b4:	20003db0 	.word	0x20003db0
+ 800f6b8:	20003bc4 	.word	0x20003bc4
+ 800f6bc:	20003a70 	.word	0x20003a70
+ 800f6c0:	20003dc1 	.word	0x20003dc1
  800f6c4:	ffffec76 	.word	0xffffec76
 
 0800f6c8 <sched_cancel_task_with_arg>:
@@ -39499,11 +39499,11 @@ static uint8_t pop_task(int priority)
  800f7f2:	4a05      	ldr	r2, [pc, #20]	; (800f808 <sched_cancel_task_with_arg+0x140>)
  800f7f4:	5450      	strb	r0, [r2, r1]
  800f7f6:	e7b7      	b.n	800f768 <sched_cancel_task_with_arg+0xa0>
- 800f7f8:	20003db4 	.word	0x20003db4
- 800f7fc:	20003a78 	.word	0x20003a78
- 800f800:	20003bc0 	.word	0x20003bc0
- 800f804:	20003a70 	.word	0x20003a70
- 800f808:	20003dac 	.word	0x20003dac
+ 800f7f8:	20003db8 	.word	0x20003db8
+ 800f7fc:	20003a7c 	.word	0x20003a7c
+ 800f800:	20003bc4 	.word	0x20003bc4
+ 800f804:	20003a74 	.word	0x20003a74
+ 800f808:	20003db0 	.word	0x20003db0
 
 0800f80c <sched_check_software_watchdog>:
 void sched_set_low_power_mode(uint8_t mode) {
@@ -39556,8 +39556,8 @@ __LINK_C timer_tick_t sched_check_software_watchdog(task_t task, timer_tick_t cu
  800f848:	0280      	lsls	r0, r0, #10
  800f84a:	e7e4      	b.n	800f816 <sched_check_software_watchdog+0xa>
  800f84c:	0800f24d 	.word	0x0800f24d
- 800f850:	20003dbd 	.word	0x20003dbd
- 800f854:	20003db8 	.word	0x20003db8
+ 800f850:	20003dc0 	.word	0x20003dc0
+ 800f854:	20003dbc 	.word	0x20003dbc
 
 0800f858 <scheduler_run>:
 		return 0;
@@ -39755,19 +39755,19 @@ __LINK_C void scheduler_run()
  800f948:	7818      	ldrb	r0, [r3, #0]
  800f94a:	f7fc f8b9 	bl	800bac0 <hw_enter_lowpower_mode>
  800f94e:	e7f7      	b.n	800f940 <scheduler_run+0xe8>
- 800f950:	20003dbf 	.word	0x20003dbf
- 800f954:	20003a6c 	.word	0x20003a6c
- 800f958:	20003dbd 	.word	0x20003dbd
- 800f95c:	20003db8 	.word	0x20003db8
- 800f960:	20003db5 	.word	0x20003db5
- 800f964:	20003bc0 	.word	0x20003bc0
- 800f968:	20003a70 	.word	0x20003a70
+ 800f950:	20003dc2 	.word	0x20003dc2
+ 800f954:	20003a70 	.word	0x20003a70
+ 800f958:	20003dc0 	.word	0x20003dc0
+ 800f95c:	20003dbc 	.word	0x20003dbc
+ 800f960:	20003db9 	.word	0x20003db9
+ 800f964:	20003bc4 	.word	0x20003bc4
+ 800f968:	20003a74 	.word	0x20003a74
  800f96c:	0801a670 	.word	0x0801a670
  800f970:	0801a6dc 	.word	0x0801a6dc
  800f974:	00000239 	.word	0x00000239
  800f978:	0801a5b4 	.word	0x0801a5b4
- 800f97c:	20003dbe 	.word	0x20003dbe
- 800f980:	20003dbc 	.word	0x20003dbc
+ 800f97c:	20003dc1 	.word	0x20003dc1
+ 800f980:	2000059c 	.word	0x2000059c
 
 0800f984 <_GetAvailWriteSpace>:
   unsigned r;
@@ -39978,10 +39978,10 @@ static void _DoInit(void) {
  800fa9c:	71a3      	strb	r3, [r4, #6]
 }
  800fa9e:	bd10      	pop	{r4, pc}
- 800faa0:	20003dc0 	.word	0x20003dc0
+ 800faa0:	20003dc4 	.word	0x20003dc4
  800faa4:	0801a6ec 	.word	0x0801a6ec
- 800faa8:	20003df0 	.word	0x20003df0
- 800faac:	20003df0 	.word	0x20003df0
+ 800faa8:	20003df4 	.word	0x20003df4
+ 800faac:	20003df4 	.word	0x20003df4
  800fab0:	0801a6f8 	.word	0x0801a6f8
  800fab4:	0801a6fc 	.word	0x0801a6fc
 
@@ -40069,7 +40069,7 @@ unsigned SEGGER_RTT_WriteNoLock(unsigned BufferIndex, const void* pBuffer, unsig
  800fb24:	0005      	movs	r5, r0
     break;
  800fb26:	e7dd      	b.n	800fae4 <SEGGER_RTT_WriteNoLock+0x2c>
- 800fb28:	20003dc0 	.word	0x20003dc0
+ 800fb28:	20003dc4 	.word	0x20003dc4
 
 0800fb2c <SEGGER_RTT_Write>:
 *    Number of bytes which have been stored in the "Up"-buffer.
@@ -40113,7 +40113,7 @@ unsigned SEGGER_RTT_Write(unsigned BufferIndex, const void* pBuffer, unsigned Nu
   INIT();
  800fb56:	f7ff ff81 	bl	800fa5c <_DoInit>
  800fb5a:	e7ef      	b.n	800fb3c <SEGGER_RTT_Write+0x10>
- 800fb5c:	20003dc0 	.word	0x20003dc0
+ 800fb5c:	20003dc4 	.word	0x20003dc4
 
 0800fb60 <add_serial_protocol>:
 }
@@ -40151,7 +40151,7 @@ static void add_serial_protocol(priv_serial_protocol_handle_t* new_phandle)
     return;
  800fb7c:	e7fb      	b.n	800fb76 <add_serial_protocol+0x16>
  800fb7e:	46c0      	nop			; (mov r8, r8)
- 800fb80:	200041f0 	.word	0x200041f0
+ 800fb80:	200041f4 	.word	0x200041f4
 
 0800fb84 <get_serial_protocol>:
 
@@ -40184,7 +40184,7 @@ static priv_serial_protocol_handle_t* get_serial_protocol(uart_handle_t* uart)
 }
  800fba0:	4770      	bx	lr
  800fba2:	46c0      	nop			; (mov r8, r8)
- 800fba4:	200041f0 	.word	0x200041f0
+ 800fba4:	200041f4 	.word	0x200041f4
 
 0800fba8 <serial_protocol_register_handler>:
 }
@@ -40468,7 +40468,7 @@ static void serial_protocol_clear_handler(serial_protocol_handle_t* handle) {
     return true;
  800fd48:	2001      	movs	r0, #1
  800fd4a:	e7f4      	b.n	800fd36 <verify_payload+0x46>
- 800fd4c:	200041f4 	.word	0x200041f4
+ 800fd4c:	200041f8 	.word	0x200041f8
  800fd50:	00000247 	.word	0x00000247
  800fd54:	0801a7a0 	.word	0x0801a7a0
  800fd58:	0801a788 	.word	0x0801a788
@@ -41165,7 +41165,7 @@ static void serial_protocol_set_error_callback(uart_handle_t* uart, uart_error_h
  801022e:	46c0      	nop			; (mov r8, r8)
  8010230:	0800ff59 	.word	0x0800ff59
  8010234:	0800fd5d 	.word	0x0800fd5d
- 8010238:	2000059c 	.word	0x2000059c
+ 8010238:	200005a0 	.word	0x200005a0
  801023c:	0800fc2d 	.word	0x0800fc2d
  8010240:	0800fbf1 	.word	0x0800fbf1
  8010244:	0801a8ac 	.word	0x0801a8ac
@@ -41238,13 +41238,13 @@ __LINK_C void timer_init()
  80102b8:	214c      	movs	r1, #76	; 0x4c
  80102ba:	480a      	ldr	r0, [pc, #40]	; (80102e4 <timer_init+0x74>)
  80102bc:	f7f8 f9a0 	bl	8008600 <__assert_func>
- 80102c0:	200042f8 	.word	0x200042f8
- 80102c4:	200042f0 	.word	0x200042f0
- 80102c8:	200042f4 	.word	0x200042f4
- 80102cc:	200042ed 	.word	0x200042ed
+ 80102c0:	200042fc 	.word	0x200042fc
+ 80102c4:	200042f4 	.word	0x200042f4
+ 80102c8:	200042f8 	.word	0x200042f8
+ 80102cc:	200042f1 	.word	0x200042f1
  80102d0:	08010655 	.word	0x08010655
  80102d4:	080104ad 	.word	0x080104ad
- 80102d8:	200043c4 	.word	0x200043c4
+ 80102d8:	200043c8 	.word	0x200043c8
  80102dc:	0801732c 	.word	0x0801732c
  80102e0:	0801aab8 	.word	0x0801aab8
  80102e4:	0801a93c 	.word	0x0801a93c
@@ -41314,7 +41314,7 @@ __LINK_C timer_tick_t timer_get_counter_value()
  801032e:	0020      	movs	r0, r4
  8010330:	bd70      	pop	{r4, r5, r6, pc}
  8010332:	46c0      	nop			; (mov r8, r8)
- 8010334:	200042f4 	.word	0x200042f4
+ 8010334:	200042f8 	.word	0x200042f8
  8010338:	0000fff5 	.word	0x0000fff5
 
 0801033c <get_next_event>:
@@ -41379,7 +41379,7 @@ static uint32_t get_next_event()
 }
  801037c:	bd70      	pop	{r4, r5, r6, pc}
  801037e:	46c0      	nop			; (mov r8, r8)
- 8010380:	200042f8 	.word	0x200042f8
+ 8010380:	200042fc 	.word	0x200042fc
 
 08010384 <timer_calculate_difference>:
     return timer_calculate_difference(start_time, timer_get_counter_value());
@@ -41549,12 +41549,12 @@ static inline error_t hw_timer_schedule_delay(hwtimer_id_t timer_id, hwtimer_tic
     bool called_atomic = false;
  8010484:	2600      	movs	r6, #0
  8010486:	e7f2      	b.n	801046e <configure_next_event+0xde>
- 8010488:	200043c0 	.word	0x200043c0
- 801048c:	200005b4 	.word	0x200005b4
- 8010490:	200042f0 	.word	0x200042f0
- 8010494:	200043c4 	.word	0x200043c4
- 8010498:	200042f8 	.word	0x200042f8
- 801049c:	200042ed 	.word	0x200042ed
+ 8010488:	200043c4 	.word	0x200043c4
+ 801048c:	200005b8 	.word	0x200005b8
+ 8010490:	200042f4 	.word	0x200042f4
+ 8010494:	200043c8 	.word	0x200043c8
+ 8010498:	200042fc 	.word	0x200042fc
+ 801049c:	200042f1 	.word	0x200042f1
  80104a0:	0801a980 	.word	0x0801a980
  80104a4:	0801aac4 	.word	0x0801aac4
  80104a8:	0801a93c 	.word	0x0801a93c
@@ -41787,11 +41787,11 @@ static void timer_fired()
         configure_next_event();
  8010622:	f7ff feb5 	bl	8010390 <configure_next_event>
  8010626:	e7a4      	b.n	8010572 <timer_fired+0xc6>
- 8010628:	200043c0 	.word	0x200043c0
- 801062c:	200005b4 	.word	0x200005b4
- 8010630:	200042f0 	.word	0x200042f0
- 8010634:	200042f8 	.word	0x200042f8
- 8010638:	200043c4 	.word	0x200043c4
+ 8010628:	200043c4 	.word	0x200043c4
+ 801062c:	200005b8 	.word	0x200005b8
+ 8010630:	200042f4 	.word	0x200042f4
+ 8010634:	200042fc 	.word	0x200042fc
+ 8010638:	200043c8 	.word	0x200043c8
  801063c:	0801a99c 	.word	0x0801a99c
  8010640:	0801aaec 	.word	0x0801aaec
  8010644:	0801a93c 	.word	0x0801a93c
@@ -41896,12 +41896,12 @@ static void timer_fired()
  80106f8:	0049      	lsls	r1, r1, #1
  80106fa:	4809      	ldr	r0, [pc, #36]	; (8010720 <timer_overflow+0xcc>)
  80106fc:	f7f7 ff80 	bl	8008600 <__assert_func>
- 8010700:	200042f4 	.word	0x200042f4
- 8010704:	200042f0 	.word	0x200042f0
- 8010708:	200042ed 	.word	0x200042ed
- 801070c:	200042f8 	.word	0x200042f8
+ 8010700:	200042f8 	.word	0x200042f8
+ 8010704:	200042f4 	.word	0x200042f4
+ 8010708:	200042f1 	.word	0x200042f1
+ 801070c:	200042fc 	.word	0x200042fc
  8010710:	0000ffff 	.word	0x0000ffff
- 8010714:	200043c4 	.word	0x200043c4
+ 8010714:	200043c8 	.word	0x200043c8
  8010718:	0801aa8c 	.word	0x0801aa8c
  801071c:	0801aadc 	.word	0x0801aadc
  8010720:	0801a93c 	.word	0x0801a93c
@@ -42075,8 +42075,8 @@ static void timer_fired()
         return EINVAL;
  8010828:	2416      	movs	r4, #22
  801082a:	e7d5      	b.n	80107d8 <timer_post_task_prio+0xb4>
- 801082c:	200042f8 	.word	0x200042f8
- 8010830:	200042f0 	.word	0x200042f0
+ 801082c:	200042fc 	.word	0x200042fc
+ 8010830:	200042f4 	.word	0x200042f4
 
 08010834 <timer_add_event>:
 {
@@ -42156,8 +42156,8 @@ static void timer_fired()
     return status;
  80108a8:	e7fa      	b.n	80108a0 <timer_cancel_task+0x48>
  80108aa:	46c0      	nop			; (mov r8, r8)
- 80108ac:	200042f8 	.word	0x200042f8
- 80108b0:	200042f0 	.word	0x200042f0
+ 80108ac:	200042fc 	.word	0x200042fc
+ 80108b0:	200042f4 	.word	0x200042f4
 
 080108b4 <timer_cancel_event>:
 {
@@ -44282,7 +44282,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8011afa:	9101      	str	r1, [sp, #4]
  8011afc:	e783      	b.n	8011a06 <pow+0x7a>
  8011afe:	46c0      	nop			; (mov r8, r8)
- 8011b00:	200005d8 	.word	0x200005d8
+ 8011b00:	200005dc 	.word	0x200005dc
  8011b04:	3ff00000 	.word	0x3ff00000
  8011b08:	7ff00000 	.word	0x7ff00000
  8011b0c:	fff00000 	.word	0xfff00000
@@ -50105,7 +50105,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  80148aa:	6818      	ldr	r0, [r3, #0]
  80148ac:	4770      	bx	lr
  80148ae:	46c0      	nop			; (mov r8, r8)
- 80148b0:	200005dc 	.word	0x200005dc
+ 80148b0:	200005e0 	.word	0x200005e0
 
 080148b4 <__sflush_r>:
  80148b4:	b5f0      	push	{r4, r5, r6, r7, lr}
@@ -50318,7 +50318,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8014a58:	6818      	ldr	r0, [r3, #0]
  8014a5a:	f000 f949 	bl	8014cf0 <_fwalk_reent>
  8014a5e:	e7f8      	b.n	8014a52 <fflush+0xe>
- 8014a60:	200005dc 	.word	0x200005dc
+ 8014a60:	200005e0 	.word	0x200005e0
  8014a64:	0801ada0 	.word	0x0801ada0
  8014a68:	080149e9 	.word	0x080149e9
 
@@ -50591,7 +50591,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8014c84:	f000 f812 	bl	8014cac <_fwalk>
  8014c88:	bd10      	pop	{r4, pc}
  8014c8a:	46c0      	nop			; (mov r8, r8)
- 8014c8c:	200005dc 	.word	0x200005dc
+ 8014c8c:	200005e0 	.word	0x200005e0
  8014c90:	08014a6d 	.word	0x08014a6d
 
 08014c94 <__fp_unlock_all>:
@@ -50602,7 +50602,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8014c9c:	f000 f806 	bl	8014cac <_fwalk>
  8014ca0:	bd10      	pop	{r4, pc}
  8014ca2:	46c0      	nop			; (mov r8, r8)
- 8014ca4:	200005dc 	.word	0x200005dc
+ 8014ca4:	200005e0 	.word	0x200005e0
  8014ca8:	08014a81 	.word	0x08014a81
 
 08014cac <_fwalk>:
@@ -50707,10 +50707,10 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8014d6a:	42a6      	cmp	r6, r4
  8014d6c:	d1fa      	bne.n	8014d64 <__libc_init_array+0x28>
  8014d6e:	bd70      	pop	{r4, r5, r6, pc}
- 8014d70:	20000640 	.word	0x20000640
- 8014d74:	20000640 	.word	0x20000640
- 8014d78:	20000640 	.word	0x20000640
- 8014d7c:	20000644 	.word	0x20000644
+ 8014d70:	20000644 	.word	0x20000644
+ 8014d74:	20000644 	.word	0x20000644
+ 8014d78:	20000644 	.word	0x20000644
+ 8014d7c:	20000648 	.word	0x20000648
 
 08014d80 <memcmp>:
  8014d80:	b530      	push	{r4, r5, lr}
@@ -51007,7 +51007,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8014fc0:	602b      	str	r3, [r5, #0]
  8014fc2:	f000 fa4b 	bl	801545c <__malloc_unlock>
  8014fc6:	e7c5      	b.n	8014f54 <_free_r+0x34>
- 8014fc8:	200043c8 	.word	0x200043c8
+ 8014fc8:	200043cc 	.word	0x200043cc
 
 08014fcc <_malloc_r>:
  8014fcc:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
@@ -51104,7 +51104,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  801508c:	f000 f8ac 	bl	80151e8 <_sbrk_r>
  8015090:	6078      	str	r0, [r7, #4]
  8015092:	e7bb      	b.n	801500c <_malloc_r+0x40>
- 8015094:	200043c8 	.word	0x200043c8
+ 8015094:	200043cc 	.word	0x200043cc
 
 08015098 <_iprintf_r>:
  8015098:	b40e      	push	{r1, r2, r3}
@@ -51155,7 +51155,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  80150f4:	0020      	movs	r0, r4
  80150f6:	f7ff fdb1 	bl	8014c5c <__sinit>
  80150fa:	e7ef      	b.n	80150dc <iprintf+0x14>
- 80150fc:	200005dc 	.word	0x200005dc
+ 80150fc:	200005e0 	.word	0x200005e0
 
 08015100 <srand>:
  8015100:	4b11      	ldr	r3, [pc, #68]	; (8015148 <srand+0x48>)
@@ -51192,7 +51192,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8015140:	2142      	movs	r1, #66	; 0x42
  8015142:	4806      	ldr	r0, [pc, #24]	; (801515c <srand+0x5c>)
  8015144:	f7f3 fa5c 	bl	8008600 <__assert_func>
- 8015148:	200005dc 	.word	0x200005dc
+ 8015148:	200005e0 	.word	0x200005e0
  801514c:	abcd330e 	.word	0xabcd330e
  8015150:	e66d1234 	.word	0xe66d1234
  8015154:	0005deec 	.word	0x0005deec
@@ -51247,7 +51247,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  80151bc:	4809      	ldr	r0, [pc, #36]	; (80151e4 <rand+0x84>)
  80151be:	f7f3 fa1f 	bl	8008600 <__assert_func>
  80151c2:	46c0      	nop			; (mov r8, r8)
- 80151c4:	200005dc 	.word	0x200005dc
+ 80151c4:	200005e0 	.word	0x200005e0
  80151c8:	4c957f2d 	.word	0x4c957f2d
  80151cc:	5851f42d 	.word	0x5851f42d
  80151d0:	abcd330e 	.word	0xabcd330e
@@ -51273,7 +51273,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8015202:	d0fb      	beq.n	80151fc <_sbrk_r+0x14>
  8015204:	602b      	str	r3, [r5, #0]
  8015206:	e7f9      	b.n	80151fc <_sbrk_r+0x14>
- 8015208:	200043d4 	.word	0x200043d4
+ 8015208:	200043d8 	.word	0x200043d8
 
 0801520c <_siprintf_r>:
  801520c:	b40c      	push	{r2, r3}
@@ -51330,7 +51330,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8015276:	46c0      	nop			; (mov r8, r8)
  8015278:	7fffffff 	.word	0x7fffffff
  801527c:	ffff0208 	.word	0xffff0208
- 8015280:	200005dc 	.word	0x200005dc
+ 8015280:	200005e0 	.word	0x200005e0
 
 08015284 <__sread>:
  8015284:	b570      	push	{r4, r5, r6, lr}
@@ -51471,7 +51471,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8015388:	f7ff fc68 	bl	8014c5c <__sinit>
  801538c:	e7f4      	b.n	8015378 <viprintf+0x14>
  801538e:	46c0      	nop			; (mov r8, r8)
- 8015390:	200005dc 	.word	0x200005dc
+ 8015390:	200005e0 	.word	0x200005e0
 
 08015394 <_viprintf_r>:
  8015394:	b570      	push	{r4, r5, r6, lr}
@@ -51511,7 +51511,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  80153da:	d0fb      	beq.n	80153d4 <_write_r+0x18>
  80153dc:	602b      	str	r3, [r5, #0]
  80153de:	e7f9      	b.n	80153d4 <_write_r+0x18>
- 80153e0:	200043d4 	.word	0x200043d4
+ 80153e0:	200043d8 	.word	0x200043d8
 
 080153e4 <_close_r>:
  80153e4:	2300      	movs	r3, #0
@@ -51529,7 +51529,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  80153fe:	d0fb      	beq.n	80153f8 <_close_r+0x14>
  8015400:	602b      	str	r3, [r5, #0]
  8015402:	e7f9      	b.n	80153f8 <_close_r+0x14>
- 8015404:	200043d4 	.word	0x200043d4
+ 8015404:	200043d8 	.word	0x200043d8
 
 08015408 <_lseek_r>:
  8015408:	b570      	push	{r4, r5, r6, lr}
@@ -51549,7 +51549,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8015426:	d0fb      	beq.n	8015420 <_lseek_r+0x18>
  8015428:	602b      	str	r3, [r5, #0]
  801542a:	e7f9      	b.n	8015420 <_lseek_r+0x18>
- 801542c:	200043d4 	.word	0x200043d4
+ 801542c:	200043d8 	.word	0x200043d8
 
 08015430 <malloc>:
  8015430:	b510      	push	{r4, lr}
@@ -51559,7 +51559,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8015438:	f7ff fdc8 	bl	8014fcc <_malloc_r>
  801543c:	bd10      	pop	{r4, pc}
  801543e:	46c0      	nop			; (mov r8, r8)
- 8015440:	200005dc 	.word	0x200005dc
+ 8015440:	200005e0 	.word	0x200005e0
 
 08015444 <free>:
  8015444:	b510      	push	{r4, lr}
@@ -51569,7 +51569,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  801544c:	f7ff fd68 	bl	8014f20 <_free_r>
  8015450:	bd10      	pop	{r4, pc}
  8015452:	46c0      	nop			; (mov r8, r8)
- 8015454:	200005dc 	.word	0x200005dc
+ 8015454:	200005e0 	.word	0x200005e0
 
 08015458 <__malloc_lock>:
  8015458:	4770      	bx	lr
@@ -52572,7 +52572,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8015c58:	0021      	movs	r1, r4
  8015c5a:	f7ff fe79 	bl	8015950 <_vfiprintf_r>
  8015c5e:	bd10      	pop	{r4, pc}
- 8015c60:	200005dc 	.word	0x200005dc
+ 8015c60:	200005e0 	.word	0x200005e0
 
 08015c64 <_printf_common>:
  8015c64:	b5f0      	push	{r4, r5, r6, r7, lr}
@@ -53083,7 +53083,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  801605a:	d0fb      	beq.n	8016054 <_read_r+0x18>
  801605c:	602b      	str	r3, [r5, #0]
  801605e:	e7f9      	b.n	8016054 <_read_r+0x18>
- 8016060:	200043d4 	.word	0x200043d4
+ 8016060:	200043d8 	.word	0x200043d8
 
 08016064 <__swbuf_r>:
  8016064:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
@@ -53196,7 +53196,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8016144:	f7ff ff8e 	bl	8016064 <__swbuf_r>
  8016148:	bd10      	pop	{r4, pc}
  801614a:	46c0      	nop			; (mov r8, r8)
- 801614c:	200005dc 	.word	0x200005dc
+ 801614c:	200005e0 	.word	0x200005e0
 
 08016150 <__swsetup_r>:
  8016150:	4b3e      	ldr	r3, [pc, #248]	; (801624c <__swsetup_r+0xfc>)
@@ -53322,7 +53322,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8016246:	81a2      	strh	r2, [r4, #12]
  8016248:	4240      	negs	r0, r0
  801624a:	e7a6      	b.n	801619a <__swsetup_r+0x4a>
- 801624c:	200005dc 	.word	0x200005dc
+ 801624c:	200005e0 	.word	0x200005e0
  8016250:	0801ad80 	.word	0x0801ad80
  8016254:	0801ad60 	.word	0x0801ad60
  8016258:	0801ad40 	.word	0x0801ad40
@@ -54034,7 +54034,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  8016806:	602b      	str	r3, [r5, #0]
  8016808:	e7f9      	b.n	80167fe <_fstat_r+0x16>
  801680a:	46c0      	nop			; (mov r8, r8)
- 801680c:	200043d4 	.word	0x200043d4
+ 801680c:	200043d8 	.word	0x200043d8
 
 08016810 <_isatty_r>:
  8016810:	2300      	movs	r3, #0
@@ -54052,7 +54052,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  801682a:	d0fb      	beq.n	8016824 <_isatty_r+0x14>
  801682c:	602b      	str	r3, [r5, #0]
  801682e:	e7f9      	b.n	8016824 <_isatty_r+0x14>
- 8016830:	200043d4 	.word	0x200043d4
+ 8016830:	200043d8 	.word	0x200043d8
 
 08016834 <_malloc_usable_size_r>:
  8016834:	1f0b      	subs	r3, r1, #4
@@ -54073,7 +54073,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  801684e:	4240      	negs	r0, r0
  8016850:	601a      	str	r2, [r3, #0]
  8016852:	4770      	bx	lr
- 8016854:	200043d4 	.word	0x200043d4
+ 8016854:	200043d8 	.word	0x200043d8
 
 08016858 <_fstat>:
  8016858:	2258      	movs	r2, #88	; 0x58
@@ -54082,7 +54082,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  801685e:	4240      	negs	r0, r0
  8016860:	601a      	str	r2, [r3, #0]
  8016862:	4770      	bx	lr
- 8016864:	200043d4 	.word	0x200043d4
+ 8016864:	200043d8 	.word	0x200043d8
 
 08016868 <_isatty>:
  8016868:	2258      	movs	r2, #88	; 0x58
@@ -54091,7 +54091,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  801686e:	601a      	str	r2, [r3, #0]
  8016870:	4770      	bx	lr
  8016872:	46c0      	nop			; (mov r8, r8)
- 8016874:	200043d4 	.word	0x200043d4
+ 8016874:	200043d8 	.word	0x200043d8
 
 08016878 <_lseek>:
  8016878:	2258      	movs	r2, #88	; 0x58
@@ -54100,7 +54100,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  801687e:	4240      	negs	r0, r0
  8016880:	601a      	str	r2, [r3, #0]
  8016882:	4770      	bx	lr
- 8016884:	200043d4 	.word	0x200043d4
+ 8016884:	200043d8 	.word	0x200043d8
 
 08016888 <_read>:
  8016888:	2258      	movs	r2, #88	; 0x58
@@ -54109,7 +54109,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  801688e:	4240      	negs	r0, r0
  8016890:	601a      	str	r2, [r3, #0]
  8016892:	4770      	bx	lr
- 8016894:	200043d4 	.word	0x200043d4
+ 8016894:	200043d8 	.word	0x200043d8
 
 08016898 <_sbrk>:
  8016898:	4a04      	ldr	r2, [pc, #16]	; (80168ac <_sbrk+0x14>)
@@ -54122,8 +54122,8 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  80168a6:	4770      	bx	lr
  80168a8:	4b01      	ldr	r3, [pc, #4]	; (80168b0 <_sbrk+0x18>)
  80168aa:	e7f9      	b.n	80168a0 <_sbrk+0x8>
- 80168ac:	200043d0 	.word	0x200043d0
- 80168b0:	200043d8 	.word	0x200043d8
+ 80168ac:	200043d4 	.word	0x200043d4
+ 80168b0:	200043e0 	.word	0x200043e0
 
 080168b4 <_init>:
  80168b4:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
@@ -55068,10 +55068,10 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
  80195d0:	725f7768 6f696461 7365725f 00007465     hw_radio_reset..
 
 080195e0 <metadata_blockdevice>:
- 80195e0:	20002de8                                .-. 
+ 80195e0:	20002dec                                .-. 
 
 080195e4 <persistent_files_blockdevice>:
- 80195e4:	20002df4                                .-. 
+ 80195e4:	20002df8                                .-. 
 
 080195e8 <volatile_blockdevice>:
  80195e8:	20000560 6d6f682f 656a2f65 532f736e     `.. /home/jens/S
@@ -55623,7 +55623,7 @@ static error_t read(blockdevice_t* bd, uint8_t* data, uint32_t addr, uint32_t si
 	...
 
 0801ada0 <_global_impure_ptr>:
- 801ada0:	200005e0 4e454552 616d2054 636f6c6c     ... REENT malloc
+ 801ada0:	200005e4 4e454552 616d2054 636f6c6c     ... REENT malloc
  801adb0:	63757320 64656563 00006465 2e2f2e2e      succeeded..../.
  801adc0:	2e2e2f2e 2f2e2e2f 2e2f2e2e 2e2e2f2e     ./../../../../..
  801add0:	2f2e2e2f 6c77656e 6c2f6269 2f636269     /../newlib/libc/

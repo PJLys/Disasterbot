@@ -11195,7 +11195,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
                 0x0000000020000500                . = ALIGN (0x8)
                 0x0000000020000500                PROVIDE (_estack = .)
 
-.data           0x0000000020000500      0x148 load address 0x000000000801ae38
+.data           0x0000000020000500      0x14c load address 0x000000000801ae38
                 0x0000000020000500                __data_start__ = .
                 0x0000000020000500                _sdata = .
  *(vtable)
@@ -11230,640 +11230,643 @@ LOAD /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtn.o
  .data.state    0x000000002000059a        0x1 ../../framework/libframework.a(sx127x.c.obj)
  .data.persist_file
                 0x000000002000059b        0x1 ../../framework/libframework.a(power_tracking_file.c.obj)
+ .data.low_power_mode
+                0x000000002000059c        0x1 ../../framework/libframework.a(scheduler.c.obj)
+ *fill*         0x000000002000059d        0x3 
  .data.serial_protocol_driver
-                0x000000002000059c       0x18 ../../framework/libframework.a(serial_protocol.c.obj)
+                0x00000000200005a0       0x18 ../../framework/libframework.a(serial_protocol.c.obj)
  .data.fired_by_interrupt
-                0x00000000200005b4        0x1 ../../framework/libframework.a(timer.c.obj)
- *fill*         0x00000000200005b5        0x3 
+                0x00000000200005b8        0x1 ../../framework/libframework.a(timer.c.obj)
+ *fill*         0x00000000200005b9        0x3 
  .data.blockdevice_driver_ram
-                0x00000000200005b8       0x20 ../../framework/libframework.a(blockdevice_ram.c.obj)
-                0x00000000200005b8                blockdevice_driver_ram
- .data          0x00000000200005d8        0x1 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a(lib_a-s_lib_ver.o)
-                0x00000000200005d8                __fdlib_version
- *fill*         0x00000000200005d9        0x3 
- .data          0x00000000200005dc       0x64 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-impure.o)
-                0x00000000200005dc                _impure_ptr
-                0x0000000020000640                . = ALIGN (0x4)
-                0x0000000020000640                PROVIDE (__preinit_array_start = .)
+                0x00000000200005bc       0x20 ../../framework/libframework.a(blockdevice_ram.c.obj)
+                0x00000000200005bc                blockdevice_driver_ram
+ .data          0x00000000200005dc        0x1 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a(lib_a-s_lib_ver.o)
+                0x00000000200005dc                __fdlib_version
+ *fill*         0x00000000200005dd        0x3 
+ .data          0x00000000200005e0       0x64 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-impure.o)
+                0x00000000200005e0                _impure_ptr
+                0x0000000020000644                . = ALIGN (0x4)
+                0x0000000020000644                PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
-                0x0000000020000640                PROVIDE (__preinit_array_end = .)
-                0x0000000020000640                . = ALIGN (0x4)
-                0x0000000020000640                PROVIDE (__init_array_start = .)
+                0x0000000020000644                PROVIDE (__preinit_array_end = .)
+                0x0000000020000644                . = ALIGN (0x4)
+                0x0000000020000644                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x0000000020000640        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x0000000020000644                PROVIDE (__init_array_end = .)
-                0x0000000020000644                . = ALIGN (0x4)
-                0x0000000020000644                PROVIDE (__fini_array_start = .)
+ .init_array    0x0000000020000644        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x0000000020000648                PROVIDE (__init_array_end = .)
+                0x0000000020000648                . = ALIGN (0x4)
+                0x0000000020000648                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
- .fini_array    0x0000000020000644        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x0000000020000648                PROVIDE (__fini_array_end = .)
+ .fini_array    0x0000000020000648        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x000000002000064c                PROVIDE (__fini_array_end = .)
  *(.jcr*)
-                0x0000000020000648                . = ALIGN (0x4)
-                0x0000000020000648                __data_end__ = .
-                0x0000000020000648                _edata = .
+                0x000000002000064c                . = ALIGN (0x4)
+                0x000000002000064c                __data_end__ = .
+                0x000000002000064c                _edata = .
                 0x0000000000000000                ASSERT ((0x30000 >= ((__etext - 0x8000000) + (_edata - _sdata))), Error: The combination of flash and data will not fit in ROM with length 192K)
 
 .tm_clone_table
-                0x0000000020000648        0x0 load address 0x000000000801af80
+                0x000000002000064c        0x0 load address 0x000000000801af84
  .tm_clone_table
-                0x0000000020000648        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x000000002000064c        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
-                0x0000000020000648        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
+                0x000000002000064c        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x0000000020000648        0x0 load address 0x000000000801af80
- .igot.plt      0x0000000020000648        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+.igot.plt       0x000000002000064c        0x0 load address 0x000000000801af84
+ .igot.plt      0x000000002000064c        0x0 /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.bss            0x0000000020000648     0x3d90 load address 0x000000000801af80
-                0x0000000020000648                . = ALIGN (0x4)
-                0x0000000020000648                __bss_start__ = .
-                0x0000000020000648                _sbss = .
+.bss            0x000000002000064c     0x3d90 load address 0x000000000801af84
+                0x000000002000064c                . = ALIGN (0x4)
+                0x000000002000064c                __bss_start__ = .
+                0x000000002000064c                _sbss = .
  *(.bss*)
- .bss           0x0000000020000648       0x1c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
+ .bss           0x000000002000064c       0x1c /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp/crtbegin.o
  .bss.data.11818
-                0x0000000020000664        0x4 CMakeFiles/test_function.elf.dir/test_function.c.obj
+                0x0000000020000668        0x4 CMakeFiles/test_function.elf.dir/test_function.c.obj
  .bss.data_buffer
-                0x0000000020000668        0x7 CMakeFiles/test_function.elf.dir/test_function.c.obj
-                0x0000000020000668                data_buffer
- *fill*         0x000000002000066f        0x1 
- .bss.data_buffer_index
-                0x0000000020000670        0x2 CMakeFiles/test_function.elf.dir/test_function.c.obj
-                0x0000000020000670                data_buffer_index
- .bss.transmissionStarted
-                0x0000000020000672        0x1 CMakeFiles/test_function.elf.dir/test_function.c.obj
-                0x0000000020000672                transmissionStarted
+                0x000000002000066c        0x7 CMakeFiles/test_function.elf.dir/test_function.c.obj
+                0x000000002000066c                data_buffer
  *fill*         0x0000000020000673        0x1 
+ .bss.data_buffer_index
+                0x0000000020000674        0x2 CMakeFiles/test_function.elf.dir/test_function.c.obj
+                0x0000000020000674                data_buffer_index
+ .bss.transmissionStarted
+                0x0000000020000676        0x1 CMakeFiles/test_function.elf.dir/test_function.c.obj
+                0x0000000020000676                transmissionStarted
+ *fill*         0x0000000020000677        0x1 
  .bss.uarthandler
-                0x0000000020000674        0x4 CMakeFiles/test_function.elf.dir/test_function.c.obj
-                0x0000000020000674                uarthandler
+                0x0000000020000678        0x4 CMakeFiles/test_function.elf.dir/test_function.c.obj
+                0x0000000020000678                uarthandler
  .bss.__ng_single__commands__
-                0x0000000020000678      0xba0 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+                0x000000002000067c      0xba0 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
  .bss.__ng_single__init_args__
-                0x0000000020001218        0x4 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+                0x000000002000121c        0x4 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
  .bss.action.11070
-                0x000000002000121c      0x110 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
- .bss.alp_data  0x000000002000132c       0xff ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
- *fill*         0x000000002000142b        0x1 
+                0x0000000020001220      0x110 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+ .bss.alp_data  0x0000000020001330       0xff ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+ *fill*         0x000000002000142f        0x1 
  .bss.alp_data2
-                0x000000002000142c       0x64 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+                0x0000000020001430       0x64 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
  .bss.command.11067
-                0x0000000020001490        0x4 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+                0x0000000020001494        0x4 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
  .bss.command_fifo
-                0x0000000020001494       0x10 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+                0x0000000020001498       0x10 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
  .bss.command_fifo_buffer
-                0x00000000200014a4       0x20 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+                0x00000000200014a8       0x20 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
  .bss.current_itf_ctrl
-                0x00000000200014c4        0x2 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
- *fill*         0x00000000200014c6        0x2 
+                0x00000000200014c8        0x2 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+ *fill*         0x00000000200014ca        0x2 
  .bss.current_itf_deinit
-                0x00000000200014c8        0x4 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+                0x00000000200014cc        0x4 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
  .bss.fwd_unsollicited_serial
-                0x00000000200014cc        0x1 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
-                0x00000000200014cc                fwd_unsollicited_serial
+                0x00000000200014d0        0x1 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+                0x00000000200014d0                fwd_unsollicited_serial
  .bss.next_tag_id
-                0x00000000200014cd        0x1 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+                0x00000000200014d1        0x1 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
  .bss.previous_interface_file_id
-                0x00000000200014ce        0x1 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
- *fill*         0x00000000200014cf        0x1 
+                0x00000000200014d2        0x1 ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+ *fill*         0x00000000200014d3        0x1 
  .bss.session_config_saved
-                0x00000000200014d0       0x2c ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
+                0x00000000200014d4       0x2c ../../modules/modules/alp/libalp.a(alp_layer.c.obj)
  .bss.action.6499
-                0x00000000200014fc      0x110 ../../modules/modules/alp/libalp.a(alp.c.obj)
+                0x0000000020001500      0x110 ../../modules/modules/alp/libalp.a(alp.c.obj)
  .bss.command_copy.6483
-                0x000000002000160c      0x174 ../../modules/modules/alp/libalp.a(alp.c.obj)
+                0x0000000020001610      0x174 ../../modules/modules/alp/libalp.a(alp.c.obj)
  .bss.interfaces
-                0x0000000020001780       0x18 ../../modules/modules/alp/libalp.a(alp.c.obj)
-                0x0000000020001780                interfaces
+                0x0000000020001784       0x18 ../../modules/modules/alp/libalp.a(alp.c.obj)
+                0x0000000020001784                interfaces
  .bss.alp_command
-                0x0000000020001798       0xff ../../modules/modules/alp/libalp.a(serial_interface.c.obj)
- *fill*         0x0000000020001897        0x1 
+                0x000000002000179c       0xff ../../modules/modules/alp/libalp.a(serial_interface.c.obj)
+ *fill*         0x000000002000189b        0x1 
  .bss.alp_modem_interface
-                0x0000000020001898       0x14 ../../modules/modules/alp/libalp.a(serial_interface.c.obj)
-                0x0000000020001898                alp_modem_interface
+                0x000000002000189c       0x14 ../../modules/modules/alp/libalp.a(serial_interface.c.obj)
+                0x000000002000189c                alp_modem_interface
  .bss.alp_client_id
-                0x00000000200018ac        0x1 ../../modules/modules/alp/libalp.a(d7ap_interface.c.obj)
- *fill*         0x00000000200018ad        0x3 
+                0x00000000200018b0        0x1 ../../modules/modules/alp/libalp.a(d7ap_interface.c.obj)
+ *fill*         0x00000000200018b1        0x3 
  .bss.d7_alp_interface
-                0x00000000200018b0       0x14 ../../modules/modules/alp/libalp.a(d7ap_interface.c.obj)
- .bss.inited    0x00000000200018c4        0x1 ../../modules/modules/alp/libalp.a(d7ap_interface.c.obj)
+                0x00000000200018b4       0x14 ../../modules/modules/alp/libalp.a(d7ap_interface.c.obj)
+ .bss.inited    0x00000000200018c8        0x1 ../../modules/modules/alp/libalp.a(d7ap_interface.c.obj)
  .bss.d7ap_stack_state
-                0x00000000200018c5        0x1 ../../modules/modules/d7ap/libd7ap.a(d7ap_stack.c.obj)
- *fill*         0x00000000200018c6        0x2 
- .bss.sessions  0x00000000200018c8       0x10 ../../modules/modules/d7ap/libd7ap.a(d7ap_stack.c.obj)
+                0x00000000200018c9        0x1 ../../modules/modules/d7ap/libd7ap.a(d7ap_stack.c.obj)
+ *fill*         0x00000000200018ca        0x2 
+ .bss.sessions  0x00000000200018cc       0x10 ../../modules/modules/d7ap/libd7ap.a(d7ap_stack.c.obj)
  .bss.slave_session
-                0x00000000200018d8        0x3 ../../modules/modules/d7ap/libd7ap.a(d7ap_stack.c.obj)
- .bss.inited    0x00000000200018db        0x1 ../../modules/modules/d7ap/libd7ap.a(d7ap.c.obj)
-                0x00000000200018db                inited
+                0x00000000200018dc        0x3 ../../modules/modules/d7ap/libd7ap.a(d7ap_stack.c.obj)
+ .bss.inited    0x00000000200018df        0x1 ../../modules/modules/d7ap/libd7ap.a(d7ap.c.obj)
+                0x00000000200018df                inited
  .bss.registered_client
-                0x00000000200018dc       0x18 ../../modules/modules/d7ap/libd7ap.a(d7ap.c.obj)
-                0x00000000200018dc                registered_client
+                0x00000000200018e0       0x18 ../../modules/modules/d7ap/libd7ap.a(d7ap.c.obj)
+                0x00000000200018e0                registered_client
  .bss.registered_client_nb
-                0x00000000200018f4        0x1 ../../modules/modules/d7ap/libd7ap.a(d7ap.c.obj)
-                0x00000000200018f4                registered_client_nb
- *fill*         0x00000000200018f5        0x3 
+                0x00000000200018f8        0x1 ../../modules/modules/d7ap/libd7ap.a(d7ap.c.obj)
+                0x00000000200018f8                registered_client_nb
+ *fill*         0x00000000200018f9        0x3 
  .bss.__ng_single__current_master_session__
-                0x00000000200018f8       0xea ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
+                0x00000000200018fc       0xea ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
  .bss.__ng_single__current_request_id__
-                0x00000000200019e2        0x1 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
- *fill*         0x00000000200019e3        0x1 
+                0x00000000200019e6        0x1 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
+ *fill*         0x00000000200019e7        0x1 
  .bss.__ng_single__current_request_packet__
-                0x00000000200019e4        0x4 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
+                0x00000000200019e8        0x4 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
  .bss.__ng_single__current_request_retry_count__
-                0x00000000200019e8        0x1 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
- *fill*         0x00000000200019e9        0x3 
+                0x00000000200019ec        0x1 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
+ *fill*         0x00000000200019ed        0x3 
  .bss.__ng_single__current_response_packet__
-                0x00000000200019ec        0x4 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
+                0x00000000200019f0        0x4 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
  .bss.__ng_single__single_request_retry_limit__
-                0x00000000200019f0        0x1 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
+                0x00000000200019f4        0x1 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
  .bss.__ng_single__state__
-                0x00000000200019f1        0x1 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
- *fill*         0x00000000200019f2        0x2 
+                0x00000000200019f5        0x1 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
+ *fill*         0x00000000200019f6        0x2 
  .bss.current_responder_lowest_lb
-                0x00000000200019f4        0x9 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
- *fill*         0x00000000200019fd        0x3 
+                0x00000000200019f8        0x9 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
+ *fill*         0x0000000020001a01        0x3 
  .bss.current_session_timer
-                0x0000000020001a00       0x14 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
+                0x0000000020001a04       0x14 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
  .bss.dormant_session_timer
-                0x0000000020001a14       0x14 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
+                0x0000000020001a18       0x14 ../../modules/modules/d7ap/libd7ap.a(d7asp.c.obj)
  .bss.__ng_single__active_addressee_access_profile__
-                0x0000000020001a28       0x41 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
- *fill*         0x0000000020001a69        0x3 
+                0x0000000020001a2c       0x41 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
+ *fill*         0x0000000020001a6d        0x3 
  .bss.__ng_single__current_Tl_received__
-                0x0000000020001a6c        0x4 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
+                0x0000000020001a70        0x4 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
  .bss.__ng_single__current_access_class__
-                0x0000000020001a70        0x1 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
- *fill*         0x0000000020001a71        0x3 
+                0x0000000020001a74        0x1 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
+ *fill*         0x0000000020001a75        0x3 
  .bss.__ng_single__current_addressee__
-                0x0000000020001a74        0xa ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
+                0x0000000020001a78        0xa ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
  .bss.__ng_single__current_dialog_id__
-                0x0000000020001a7e        0x1 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
- .bss.__ng_single__current_transaction_id__
-                0x0000000020001a7f        0x1 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
- .bss.__ng_single__d7atp_state__
-                0x0000000020001a80        0x1 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
- .bss.__ng_single__stop_dialog_after_tx__
-                0x0000000020001a81        0x1 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
- .bss.ctrl_xoff
                 0x0000000020001a82        0x1 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
- *fill*         0x0000000020001a83        0x1 
+ .bss.__ng_single__current_transaction_id__
+                0x0000000020001a83        0x1 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
+ .bss.__ng_single__d7atp_state__
+                0x0000000020001a84        0x1 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
+ .bss.__ng_single__stop_dialog_after_tx__
+                0x0000000020001a85        0x1 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
+ .bss.ctrl_xoff
+                0x0000000020001a86        0x1 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
+ *fill*         0x0000000020001a87        0x1 
  .bss.d7atp_execution_delay_expired_timer
-                0x0000000020001a84       0x14 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
+                0x0000000020001a88       0x14 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
  .bss.d7atp_response_period_expired_timer
-                0x0000000020001a98       0x14 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
+                0x0000000020001a9c       0x14 ../../modules/modules/d7ap/libd7ap.a(d7atp.c.obj)
  .bss.__ng_single__d7anp_prev_state__
-                0x0000000020001aac        0x1 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
+                0x0000000020001ab0        0x1 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
  .bss.__ng_single__d7anp_state__
-                0x0000000020001aad        0x1 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
- *fill*         0x0000000020001aae        0x2 
+                0x0000000020001ab1        0x1 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
+ *fill*         0x0000000020001ab2        0x2 
  .bss.__ng_single__fg_scan_timeout_ticks__
-                0x0000000020001ab0        0x4 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
- .bss.__ng_single__latest_node__
                 0x0000000020001ab4        0x4 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
+ .bss.__ng_single__latest_node__
+                0x0000000020001ab8        0x4 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
  .bss.__ng_single__node_security_state__
-                0x0000000020001ab8      0x104 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
+                0x0000000020001abc      0x104 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
  .bss.__ng_single__security_state__
-                0x0000000020001bbc        0x8 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
+                0x0000000020001bc0        0x8 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
  .bss.address_id
-                0x0000000020001bc4        0x8 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
-                0x0000000020001bc4                address_id
+                0x0000000020001bc8        0x8 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
+                0x0000000020001bc8                address_id
  .bss.address_id_type
-                0x0000000020001bcc        0x1 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
-                0x0000000020001bcc                address_id_type
- *fill*         0x0000000020001bcd        0x3 
+                0x0000000020001bd0        0x1 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
+                0x0000000020001bd0                address_id_type
+ *fill*         0x0000000020001bd1        0x3 
  .bss.d7anp_fg_scan_expired_timer
-                0x0000000020001bd0       0x14 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
+                0x0000000020001bd4       0x14 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
  .bss.d7anp_start_fg_scan_after_d7aadvp_timer
-                0x0000000020001be4       0x14 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
+                0x0000000020001be8       0x14 ../../modules/modules/d7ap/libd7ap.a(d7anp.c.obj)
  .bss.active_mode
-                0x0000000020001bf8        0x1 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
- *fill*         0x0000000020001bf9        0x3 
- .bss.per_data  0x0000000020001bfc        0xa ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
- *fill*         0x0000000020001c06        0x2 
+                0x0000000020001bfc        0x1 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
+ *fill*         0x0000000020001bfd        0x3 
+ .bss.per_data  0x0000000020001c00        0xa ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
+ *fill*         0x0000000020001c0a        0x2 
  .bss.per_fill_data
-                0x0000000020001c08        0x6 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
+                0x0000000020001c0c        0x6 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
  .bss.per_missed_packets_counter
-                0x0000000020001c0e        0x2 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
+                0x0000000020001c12        0x2 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
  .bss.per_packet
-                0x0000000020001c10      0x110 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
+                0x0000000020001c14      0x110 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
  .bss.per_packet_counter
-                0x0000000020001d20        0x2 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
- .bss.per_packet_limit
-                0x0000000020001d22        0x2 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
- .bss.per_received_packets_counter
                 0x0000000020001d24        0x2 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
- *fill*         0x0000000020001d26        0x2 
- .bss.rx_cfg    0x0000000020001d28        0x6 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
- .bss.stop      0x0000000020001d2e        0x1 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
+ .bss.per_packet_limit
+                0x0000000020001d26        0x2 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
+ .bss.per_received_packets_counter
+                0x0000000020001d28        0x2 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
+ *fill*         0x0000000020001d2a        0x2 
+ .bss.rx_cfg    0x0000000020001d2c        0x6 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
+ .bss.stop      0x0000000020001d32        0x1 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
  .bss.timeout_em
-                0x0000000020001d2f        0x1 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
- .bss.tx_cfg    0x0000000020001d30        0x5 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
- *fill*         0x0000000020001d35        0x3 
+                0x0000000020001d33        0x1 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
+ .bss.tx_cfg    0x0000000020001d34        0x5 ../../modules/modules/d7ap/libd7ap.a(engineering_mode.c.obj)
+ *fill*         0x0000000020001d39        0x3 
  .bss.__ng_single__packet_queue__
-                0x0000000020001d38      0x9a8 ../../modules/modules/d7ap/libd7ap.a(packet_queue.c.obj)
+                0x0000000020001d3c      0x9a8 ../../modules/modules/d7ap/libd7ap.a(packet_queue.c.obj)
  .bss.__ng_single__packet_queue_element_status__
-                0x00000000200026e0        0x3 ../../modules/modules/d7ap/libd7ap.a(packet_queue.c.obj)
- *fill*         0x00000000200026e3        0x1 
+                0x00000000200026e4        0x3 ../../modules/modules/d7ap/libd7ap.a(packet_queue.c.obj)
+ *fill*         0x00000000200026e7        0x1 
  .bss.__ng_single__E_CCA__
-                0x00000000200026e4        0x2 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x00000000200026e8        0x2 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.__ng_single__active_access_class__
-                0x00000000200026e6        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x00000000200026ea        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.__ng_single__csma_ca_mode__
-                0x00000000200026e7        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x00000000200026eb        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.__ng_single__current_access_profile__
-                0x00000000200026e8       0x41 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
- *fill*         0x0000000020002729        0x3 
+                0x00000000200026ec       0x41 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+ *fill*         0x000000002000272d        0x3 
  .bss.__ng_single__current_channel_id__
-                0x000000002000272c        0x3 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x0000000020002730        0x3 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.__ng_single__current_eirp__
-                0x000000002000272f        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x0000000020002733        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.__ng_single__current_packet__
-                0x0000000020002730        0x4 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
- .bss.__ng_single__dll_cca_started__
                 0x0000000020002734        0x4 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+ .bss.__ng_single__dll_cca_started__
+                0x0000000020002738        0x4 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.__ng_single__dll_slot_duration__
-                0x0000000020002738        0x2 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
- .bss.__ng_single__dll_state__
-                0x000000002000273a        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
- *fill*         0x000000002000273b        0x1 
- .bss.__ng_single__dll_tca__
                 0x000000002000273c        0x2 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+ .bss.__ng_single__dll_state__
+                0x000000002000273e        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+ *fill*         0x000000002000273f        0x1 
+ .bss.__ng_single__dll_tca__
+                0x0000000020002740        0x2 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.__ng_single__dll_to__
-                0x000000002000273e        0x2 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x0000000020002742        0x2 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.__ng_single__guarded_channel__
-                0x0000000020002740        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x0000000020002744        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.__ng_single__process_received_packets_after_tx__
-                0x0000000020002741        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
- *fill*         0x0000000020002742        0x2 
+                0x0000000020002745        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+ *fill*         0x0000000020002746        0x2 
  .bss.__ng_single__remote_access_profile__
-                0x0000000020002744       0x41 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x0000000020002748       0x41 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.__ng_single__resume_fg_scan__
-                0x0000000020002785        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x0000000020002789        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.__ng_single__rx_nf_method__
-                0x0000000020002786        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
- *fill*         0x0000000020002787        0x1 
- .bss.__ng_single__tsched__
-                0x0000000020002788        0x2 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
- .bss.__ng_single__tx_nf_method__
                 0x000000002000278a        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  *fill*         0x000000002000278b        0x1 
- .bss.channels  0x000000002000278c       0x1e ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
- *fill*         0x00000000200027aa        0x2 
+ .bss.__ng_single__tsched__
+                0x000000002000278c        0x2 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+ .bss.__ng_single__tx_nf_method__
+                0x000000002000278e        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+ *fill*         0x000000002000278f        0x1 
+ .bss.channels  0x0000000020002790       0x1e ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+ *fill*         0x00000000200027ae        0x2 
  .bss.dll_background_scan_timer
-                0x00000000200027ac       0x14 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x00000000200027b0       0x14 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.dll_cca_timer
-                0x00000000200027c0       0x14 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x00000000200027c4       0x14 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.dll_csma_timer
-                0x00000000200027d4       0x14 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x00000000200027d8       0x14 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.dll_process_received_packet_timer
-                0x00000000200027e8       0x14 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x00000000200027ec       0x14 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.dll_scan_automation_timer
-                0x00000000200027fc       0x14 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x0000000020002800       0x14 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.guarded_channel_time_stop
-                0x0000000020002810        0x4 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x0000000020002814        0x4 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.noisefl_last_measurements
-                0x0000000020002814       0x1e ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x0000000020002818       0x1e ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.phy_status_channel_counter
-                0x0000000020002832        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x0000000020002836        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.phy_status_file_inited
-                0x0000000020002833        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+                0x0000000020002837        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
  .bss.reset_noisefl_last_measurements
-                0x0000000020002834        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
- *fill*         0x0000000020002835        0x3 
- .bss.bg_adv    0x0000000020002838       0x2c ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
-                0x0000000020002838                bg_adv
+                0x0000000020002838        0x1 ../../modules/modules/d7ap/libd7ap.a(dll.c.obj)
+ *fill*         0x0000000020002839        0x3 
+ .bss.bg_adv    0x000000002000283c       0x2c ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+                0x000000002000283c                bg_adv
  .bss.bitrate_hi_rate
-                0x0000000020002864        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.bitrate_lo_rate
                 0x0000000020002868        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.bitrate_normal_rate
+ .bss.bitrate_lo_rate
                 0x000000002000286c        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ .bss.bitrate_normal_rate
+                0x0000000020002870        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
  .bss.continuous_tx_expiration_timer
-                0x0000000020002870       0x14 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+                0x0000000020002874       0x14 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
  .bss.current_packet
-                0x0000000020002884        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+                0x0000000020002888        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
  .bss.current_syncword
-                0x0000000020002888        0x2 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+                0x000000002000288c        0x2 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
  .bss.current_syncword_class
-                0x000000002000288a        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+                0x000000002000288e        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
  .bss.fact_settings_changed
-                0x000000002000288b        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+                0x000000002000288f        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
  .bss.fdev_hi_rate
-                0x000000002000288c        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.fdev_lo_rate
                 0x0000000020002890        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.fdev_normal_rate
+ .bss.fdev_lo_rate
                 0x0000000020002894        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.fg_frame  0x0000000020002898      0x210 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
-                0x0000000020002898                fg_frame
+ .bss.fdev_normal_rate
+                0x0000000020002898        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ .bss.fg_frame  0x000000002000289c      0x210 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+                0x000000002000289c                fg_frame
  .bss.gain_offset
-                0x0000000020002aa8        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- *fill*         0x0000000020002aa9        0x3 
+                0x0000000020002aac        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ *fill*         0x0000000020002aad        0x3 
  .bss.init_args
-                0x0000000020002aac       0x28 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.lora_SF   0x0000000020002ad4        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- *fill*         0x0000000020002ad5        0x3 
- .bss.lora_bw   0x0000000020002ad8        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+                0x0000000020002ab0       0x28 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ .bss.lora_SF   0x0000000020002ad8        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ *fill*         0x0000000020002ad9        0x3 
+ .bss.lora_bw   0x0000000020002adc        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
  .bss.preamble_detector_size_hi_rate
-                0x0000000020002adc        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.preamble_detector_size_lo_rate
-                0x0000000020002add        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.preamble_detector_size_normal_rate
-                0x0000000020002ade        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.preamble_size_hi_rate
-                0x0000000020002adf        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.preamble_size_lo_rate
                 0x0000000020002ae0        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.preamble_size_normal_rate
+ .bss.preamble_detector_size_lo_rate
                 0x0000000020002ae1        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.preamble_tol_hi_rate
+ .bss.preamble_detector_size_normal_rate
                 0x0000000020002ae2        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.preamble_tol_lo_rate
+ .bss.preamble_size_hi_rate
                 0x0000000020002ae3        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.preamble_tol_normal_rate
+ .bss.preamble_size_lo_rate
                 0x0000000020002ae4        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- *fill*         0x0000000020002ae5        0x3 
+ .bss.preamble_size_normal_rate
+                0x0000000020002ae5        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ .bss.preamble_tol_hi_rate
+                0x0000000020002ae6        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ .bss.preamble_tol_lo_rate
+                0x0000000020002ae7        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ .bss.preamble_tol_normal_rate
+                0x0000000020002ae8        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ *fill*         0x0000000020002ae9        0x3 
  .bss.received_callback
-                0x0000000020002ae8        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.rx_bw_hi_rate
                 0x0000000020002aec        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.rx_bw_lo_rate
+ .bss.rx_bw_hi_rate
                 0x0000000020002af0        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.rx_bw_normal_rate
+ .bss.rx_bw_lo_rate
                 0x0000000020002af4        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.state     0x0000000020002af8        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- *fill*         0x0000000020002af9        0x1 
- .bss.total_bg  0x0000000020002afa        0x2 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- .bss.total_fg  0x0000000020002afc        0x2 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ .bss.rx_bw_normal_rate
+                0x0000000020002af8        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ .bss.state     0x0000000020002afc        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ *fill*         0x0000000020002afd        0x1 
+ .bss.total_bg  0x0000000020002afe        0x2 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ .bss.total_fg  0x0000000020002b00        0x2 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
  .bss.total_rssi_triggers
-                0x0000000020002afe        0x2 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+                0x0000000020002b02        0x2 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
  .bss.total_succeeded_fg
-                0x0000000020002b00        0x2 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- *fill*         0x0000000020002b02        0x2 
+                0x0000000020002b04        0x2 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ *fill*         0x0000000020002b06        0x2 
  .bss.transmitted_callback
-                0x0000000020002b04        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+                0x0000000020002b08        0x4 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
  .bss.write_file_counter
-                0x0000000020002b08        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
- *fill*         0x0000000020002b09        0x3 
+                0x0000000020002b0c        0x1 ../../modules/modules/d7ap/libd7ap.a(phy.c.obj)
+ *fill*         0x0000000020002b0d        0x3 
  .bss.file_buffer
-                0x0000000020002b0c       0x59 ../../modules/modules/d7ap_fs/libd7ap_fs.a(d7ap_fs.c.obj)
- *fill*         0x0000000020002b65        0x3 
+                0x0000000020002b10       0x59 ../../modules/modules/d7ap_fs/libd7ap_fs.a(d7ap_fs.c.obj)
+ *fill*         0x0000000020002b69        0x3 
  .bss.file_modified_callbacks
-                0x0000000020002b68      0x120 ../../modules/modules/d7ap_fs/libd7ap_fs.a(d7ap_fs.c.obj)
+                0x0000000020002b6c      0x120 ../../modules/modules/d7ap_fs/libd7ap_fs.a(d7ap_fs.c.obj)
  .bss.file_modifying_callbacks
-                0x0000000020002c88      0x120 ../../modules/modules/d7ap_fs/libd7ap_fs.a(d7ap_fs.c.obj)
+                0x0000000020002c8c      0x120 ../../modules/modules/d7ap_fs/libd7ap_fs.a(d7ap_fs.c.obj)
  .bss.process_d7aactp_callback
-                0x0000000020002da8        0x4 ../../modules/modules/d7ap_fs/libd7ap_fs.a(d7ap_fs.c.obj)
-                0x0000000020002da8                process_d7aactp_callback
+                0x0000000020002dac        0x4 ../../modules/modules/d7ap_fs/libd7ap_fs.a(d7ap_fs.c.obj)
+                0x0000000020002dac                process_d7aactp_callback
  .bss.d7ap_volatile_files_data
-                0x0000000020002dac       0x39 ../../modules/modules/d7ap_fs/libd7ap_fs.a(d7ap_fs_data.c.obj)
-                0x0000000020002dac                d7ap_volatile_files_data
- *fill*         0x0000000020002de5        0x3 
+                0x0000000020002db0       0x39 ../../modules/modules/d7ap_fs/libd7ap_fs.a(d7ap_fs_data.c.obj)
+                0x0000000020002db0                d7ap_volatile_files_data
+ *fill*         0x0000000020002de9        0x3 
  .bss.metadata_bd
-                0x0000000020002de8        0xc ../../framework/libframework.a(platf_main.c.obj)
+                0x0000000020002dec        0xc ../../framework/libframework.a(platf_main.c.obj)
  .bss.permanent_files_bd
-                0x0000000020002df4        0xc ../../framework/libframework.a(platf_main.c.obj)
- .bss.leds      0x0000000020002e00       0x10 ../../framework/libframework.a(platf_leds.c.obj)
- .bss.buttons   0x0000000020002e10       0x30 ../../framework/libframework.a(platf_button.c.obj)
-                0x0000000020002e10                buttons
- .bss.nests     0x0000000020002e40        0x1 ../../framework/libframework.a(stm32_common_atomic.c.obj)
- *fill*         0x0000000020002e41        0x3 
+                0x0000000020002df8        0xc ../../framework/libframework.a(platf_main.c.obj)
+ .bss.leds      0x0000000020002e04       0x10 ../../framework/libframework.a(platf_leds.c.obj)
+ .bss.buttons   0x0000000020002e14       0x30 ../../framework/libframework.a(platf_button.c.obj)
+                0x0000000020002e14                buttons
+ .bss.nests     0x0000000020002e44        0x1 ../../framework/libframework.a(stm32_common_atomic.c.obj)
+ *fill*         0x0000000020002e45        0x3 
  .bss.interrupts
-                0x0000000020002e44       0xc0 ../../framework/libframework.a(stm32_common_gpio.c.obj)
- .bss.handle    0x0000000020002f04       0xe8 ../../framework/libframework.a(stm32_common_spi.c.obj)
+                0x0000000020002e48       0xc0 ../../framework/libframework.a(stm32_common_gpio.c.obj)
+ .bss.handle    0x0000000020002f08       0xe8 ../../framework/libframework.a(stm32_common_spi.c.obj)
  .bss.next_spi_slave_handle
-                0x0000000020002fec        0x1 ../../framework/libframework.a(stm32_common_spi.c.obj)
-                0x0000000020002fec                next_spi_slave_handle
- *fill*         0x0000000020002fed        0x3 
+                0x0000000020002ff0        0x1 ../../framework/libframework.a(stm32_common_spi.c.obj)
+                0x0000000020002ff0                next_spi_slave_handle
+ *fill*         0x0000000020002ff1        0x3 
  .bss.slave_handle
-                0x0000000020002ff0       0x3c ../../framework/libframework.a(stm32_common_spi.c.obj)
-                0x0000000020002ff0                slave_handle
+                0x0000000020002ff4       0x3c ../../framework/libframework.a(stm32_common_spi.c.obj)
+                0x0000000020002ff4                slave_handle
  .bss.gpioa_moder
-                0x000000002000302c        0x4 ../../framework/libframework.a(stm32_common_system.c.obj)
- .bss.gpiob_moder
                 0x0000000020003030        0x4 ../../framework/libframework.a(stm32_common_system.c.obj)
- .bss.gpioc_moder
+ .bss.gpiob_moder
                 0x0000000020003034        0x4 ../../framework/libframework.a(stm32_common_system.c.obj)
- .bss.gpiod_moder
+ .bss.gpioc_moder
                 0x0000000020003038        0x4 ../../framework/libframework.a(stm32_common_system.c.obj)
- .bss.gpioe_moder
+ .bss.gpiod_moder
                 0x000000002000303c        0x4 ../../framework/libframework.a(stm32_common_system.c.obj)
- .bss.gpioh_moder
+ .bss.gpioe_moder
                 0x0000000020003040        0x4 ../../framework/libframework.a(stm32_common_system.c.obj)
- .bss.iopenr    0x0000000020003044        0x4 ../../framework/libframework.a(stm32_common_system.c.obj)
+ .bss.gpioh_moder
+                0x0000000020003044        0x4 ../../framework/libframework.a(stm32_common_system.c.obj)
+ .bss.iopenr    0x0000000020003048        0x4 ../../framework/libframework.a(stm32_common_system.c.obj)
  .bss.cmp_reg_write_pending
-                0x0000000020003048        0x1 ../../framework/libframework.a(stm32_common_timer.c.obj)
- *fill*         0x0000000020003049        0x3 
+                0x000000002000304c        0x1 ../../framework/libframework.a(stm32_common_timer.c.obj)
+ *fill*         0x000000002000304d        0x3 
  .bss.compare_f
-                0x000000002000304c        0x4 ../../framework/libframework.a(stm32_common_timer.c.obj)
- .bss.overflow_f
                 0x0000000020003050        0x4 ../../framework/libframework.a(stm32_common_timer.c.obj)
+ .bss.overflow_f
+                0x0000000020003054        0x4 ../../framework/libframework.a(stm32_common_timer.c.obj)
  .bss.ready_for_trigger
-                0x0000000020003054        0x1 ../../framework/libframework.a(stm32_common_timer.c.obj)
- *fill*         0x0000000020003055        0x3 
- .bss.timer     0x0000000020003058       0x30 ../../framework/libframework.a(stm32_common_timer.c.obj)
+                0x0000000020003058        0x1 ../../framework/libframework.a(stm32_common_timer.c.obj)
+ *fill*         0x0000000020003059        0x3 
+ .bss.timer     0x000000002000305c       0x30 ../../framework/libframework.a(stm32_common_timer.c.obj)
  .bss.timer_inited
-                0x0000000020003088        0x1 ../../framework/libframework.a(stm32_common_timer.c.obj)
- *fill*         0x0000000020003089        0x3 
- .bss.handle    0x000000002000308c      0x108 ../../framework/libframework.a(stm32_common_uart.c.obj)
+                0x000000002000308c        0x1 ../../framework/libframework.a(stm32_common_timer.c.obj)
+ *fill*         0x000000002000308d        0x3 
+ .bss.handle    0x0000000020003090      0x108 ../../framework/libframework.a(stm32_common_uart.c.obj)
  .bss.iwdg_hal_hadle
-                0x0000000020003194       0x10 ../../framework/libframework.a(stm32_common_watchdog.c.obj)
+                0x0000000020003198       0x10 ../../framework/libframework.a(stm32_common_watchdog.c.obj)
  .bss.FskPacketHandler_sx127x
-                0x00000000200031a4        0x6 ../../framework/libframework.a(sx127x.c.obj)
-                0x00000000200031a4                FskPacketHandler_sx127x
- *fill*         0x00000000200031aa        0x2 
+                0x00000000200031a8        0x6 ../../framework/libframework.a(sx127x.c.obj)
+                0x00000000200031a8                FskPacketHandler_sx127x
+ *fill*         0x00000000200031ae        0x2 
  .bss.alloc_packet_callback
-                0x00000000200031ac        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.current_center_freq
                 0x00000000200031b0        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.current_packet
+ .bss.current_center_freq
                 0x00000000200031b4        0x4 ../../framework/libframework.a(sx127x.c.obj)
+ .bss.current_packet
+                0x00000000200031b8        0x4 ../../framework/libframework.a(sx127x.c.obj)
  .bss.current_tx_power
-                0x00000000200031b8        0x1 ../../framework/libframework.a(sx127x.c.obj)
- .bss.enable_preloading
-                0x00000000200031b9        0x1 ../../framework/libframework.a(sx127x.c.obj)
- .bss.enable_refill
-                0x00000000200031ba        0x1 ../../framework/libframework.a(sx127x.c.obj)
- .bss.fifo_level_irq_triggered
-                0x00000000200031bb        0x1 ../../framework/libframework.a(sx127x.c.obj)
- .bss.io_inited
                 0x00000000200031bc        0x1 ../../framework/libframework.a(sx127x.c.obj)
- .bss.is_sx1272
+ .bss.enable_preloading
                 0x00000000200031bd        0x1 ../../framework/libframework.a(sx127x.c.obj)
- .bss.lora_closest_bw_index
+ .bss.enable_refill
                 0x00000000200031be        0x1 ../../framework/libframework.a(sx127x.c.obj)
-                0x00000000200031be                lora_closest_bw_index
- .bss.lora_mode
+ .bss.fifo_level_irq_triggered
                 0x00000000200031bf        0x1 ../../framework/libframework.a(sx127x.c.obj)
- .bss.previous_payload_length
-                0x00000000200031c0        0x2 ../../framework/libframework.a(sx127x.c.obj)
- .bss.previous_threshold
+ .bss.io_inited
+                0x00000000200031c0        0x1 ../../framework/libframework.a(sx127x.c.obj)
+ .bss.is_sx1272
+                0x00000000200031c1        0x1 ../../framework/libframework.a(sx127x.c.obj)
+ .bss.lora_closest_bw_index
                 0x00000000200031c2        0x1 ../../framework/libframework.a(sx127x.c.obj)
- *fill*         0x00000000200031c3        0x1 
+                0x00000000200031c2                lora_closest_bw_index
+ .bss.lora_mode
+                0x00000000200031c3        0x1 ../../framework/libframework.a(sx127x.c.obj)
+ .bss.previous_payload_length
+                0x00000000200031c4        0x2 ../../framework/libframework.a(sx127x.c.obj)
+ .bss.previous_threshold
+                0x00000000200031c6        0x1 ../../framework/libframework.a(sx127x.c.obj)
+ *fill*         0x00000000200031c7        0x1 
  .bss.release_packet_callback
-                0x00000000200031c4        0x4 ../../framework/libframework.a(sx127x.c.obj)
+                0x00000000200031c8        0x4 ../../framework/libframework.a(sx127x.c.obj)
  .bss.remaining_bytes_len
-                0x00000000200031c8        0x2 ../../framework/libframework.a(sx127x.c.obj)
+                0x00000000200031cc        0x2 ../../framework/libframework.a(sx127x.c.obj)
  .bss.rssi_smoothing_full
-                0x00000000200031ca        0x1 ../../framework/libframework.a(sx127x.c.obj)
- *fill*         0x00000000200031cb        0x1 
+                0x00000000200031ce        0x1 ../../framework/libframework.a(sx127x.c.obj)
+ *fill*         0x00000000200031cf        0x1 
  .bss.rx_buffer
-                0x00000000200031cc        0x4 ../../framework/libframework.a(sx127x.c.obj)
-                0x00000000200031cc                rx_buffer
+                0x00000000200031d0        0x4 ../../framework/libframework.a(sx127x.c.obj)
+                0x00000000200031d0                rx_buffer
  .bss.rx_bw_khz
-                0x00000000200031d0        0x1 ../../framework/libframework.a(sx127x.c.obj)
- *fill*         0x00000000200031d1        0x3 
+                0x00000000200031d4        0x1 ../../framework/libframework.a(sx127x.c.obj)
+ *fill*         0x00000000200031d5        0x3 
  .bss.rx_lora_error_callback
-                0x00000000200031d4        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.rx_lora_packet_callback
                 0x00000000200031d8        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.rx_lora_timeout_callback
+ .bss.rx_lora_packet_callback
                 0x00000000200031dc        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.rx_packet_callback
+ .bss.rx_lora_timeout_callback
                 0x00000000200031e0        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.rx_packet_header_callback
+ .bss.rx_packet_callback
                 0x00000000200031e4        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.rx_start_time
+ .bss.rx_packet_header_callback
                 0x00000000200031e8        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.spi_handle
+ .bss.rx_start_time
                 0x00000000200031ec        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.standby_start_time
+ .bss.spi_handle
                 0x00000000200031f0        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.sx127x_spi
+ .bss.standby_start_time
                 0x00000000200031f4        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.tx_lora_packet_callback
+ .bss.sx127x_spi
                 0x00000000200031f8        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.tx_packet_callback
+ .bss.tx_lora_packet_callback
                 0x00000000200031fc        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.tx_refill_callback
+ .bss.tx_packet_callback
                 0x0000000020003200        0x4 ../../framework/libframework.a(sx127x.c.obj)
- .bss.tx_start_time
+ .bss.tx_refill_callback
                 0x0000000020003204        0x4 ../../framework/libframework.a(sx127x.c.obj)
+ .bss.tx_start_time
+                0x0000000020003208        0x4 ../../framework/libframework.a(sx127x.c.obj)
  .bss.AES128_key
-                0x0000000020003208       0x10 ../../framework/libframework.a(aes.c.obj)
- .bss.Key       0x0000000020003218        0x4 ../../framework/libframework.a(aes.c.obj)
- .bss.RoundKey  0x000000002000321c       0xb0 ../../framework/libframework.a(aes.c.obj)
- .bss.state     0x00000000200032cc        0x4 ../../framework/libframework.a(aes.c.obj)
+                0x000000002000320c       0x10 ../../framework/libframework.a(aes.c.obj)
+ .bss.Key       0x000000002000321c        0x4 ../../framework/libframework.a(aes.c.obj)
+ .bss.RoundKey  0x0000000020003220       0xb0 ../../framework/libframework.a(aes.c.obj)
+ .bss.state     0x00000000200032d0        0x4 ../../framework/libframework.a(aes.c.obj)
  .bss.console_tx_buffer
-                0x00000000200032d0       0xff ../../framework/libframework.a(console.c.obj)
- *fill*         0x00000000200033cf        0x1 
+                0x00000000200032d4       0xff ../../framework/libframework.a(console.c.obj)
+ *fill*         0x00000000200033d3        0x1 
  .bss.console_tx_fifo
-                0x00000000200033d0       0x10 ../../framework/libframework.a(console.c.obj)
- .bss.uart      0x00000000200033e0        0x4 ../../framework/libframework.a(console.c.obj)
+                0x00000000200033d4       0x10 ../../framework/libframework.a(console.c.obj)
+ .bss.uart      0x00000000200033e4        0x4 ../../framework/libframework.a(console.c.obj)
  .bss.__ng_single__crc__
-                0x00000000200033e4        0x2 ../../framework/libframework.a(crc.c.obj)
- *fill*         0x00000000200033e6        0x2 
+                0x00000000200033e8        0x2 ../../framework/libframework.a(crc.c.obj)
+ *fill*         0x00000000200033ea        0x2 
  .bss.data_buffer
-                0x00000000200033e8      0x100 ../../framework/libframework.a(fec.c.obj)
+                0x00000000200033ec      0x100 ../../framework/libframework.a(fec.c.obj)
  .bss.fecprocessedbytes
-                0x00000000200034e8        0x2 ../../framework/libframework.a(fec.c.obj)
- *fill*         0x00000000200034ea        0x2 
+                0x00000000200034ec        0x2 ../../framework/libframework.a(fec.c.obj)
+ *fill*         0x00000000200034ee        0x2 
  .bss.output_buffer
-                0x00000000200034ec        0x4 ../../framework/libframework.a(fec.c.obj)
+                0x00000000200034f0        0x4 ../../framework/libframework.a(fec.c.obj)
  .bss.packetlength
-                0x00000000200034f0        0x2 ../../framework/libframework.a(fec.c.obj)
+                0x00000000200034f4        0x2 ../../framework/libframework.a(fec.c.obj)
  .bss.processedbytes
-                0x00000000200034f2        0x1 ../../framework/libframework.a(fec.c.obj)
- *fill*         0x00000000200034f3        0x1 
- .bss.vstate    0x00000000200034f4       0x4c ../../framework/libframework.a(fec.c.obj)
- .bss.bd        0x0000000020003540        0xc ../../framework/libframework.a(fs.c.obj)
+                0x00000000200034f6        0x1 ../../framework/libframework.a(fec.c.obj)
+ *fill*         0x00000000200034f7        0x1 
+ .bss.vstate    0x00000000200034f8       0x4c ../../framework/libframework.a(fec.c.obj)
+ .bss.bd        0x0000000020003544        0xc ../../framework/libframework.a(fs.c.obj)
  .bss.bd_data_offset
-                0x000000002000354c        0xc ../../framework/libframework.a(fs.c.obj)
- .bss.files     0x0000000020003558      0x288 ../../framework/libframework.a(fs.c.obj)
+                0x0000000020003550        0xc ../../framework/libframework.a(fs.c.obj)
+ .bss.files     0x000000002000355c      0x288 ../../framework/libframework.a(fs.c.obj)
  .bss.is_fs_init_completed
-                0x00000000200037e0        0x1 ../../framework/libframework.a(fs.c.obj)
- *fill*         0x00000000200037e1        0x3 
+                0x00000000200037e4        0x1 ../../framework/libframework.a(fs.c.obj)
+ *fill*         0x00000000200037e5        0x3 
  .bss.__ng_single_counter__
-                0x00000000200037e4        0x4 ../../framework/libframework.a(log.c.obj)
+                0x00000000200037e8        0x4 ../../framework/libframework.a(log.c.obj)
  .bss.cmd_handlers
-                0x00000000200037e8       0x18 ../../framework/libframework.a(modem_interface.c.obj)
+                0x00000000200037ec       0x18 ../../framework/libframework.a(modem_interface.c.obj)
  .bss.sp_handle
-                0x0000000020003800      0x250 ../../framework/libframework.a(modem_interface.c.obj)
+                0x0000000020003804      0x250 ../../framework/libframework.a(modem_interface.c.obj)
  .bss.cpu_active_time_prev_store_value
-                0x0000000020003a50        0x4 ../../framework/libframework.a(power_tracking_file.c.obj)
+                0x0000000020003a54        0x4 ../../framework/libframework.a(power_tracking_file.c.obj)
  .bss.current_power_tracking_file
-                0x0000000020003a54       0x11 ../../framework/libframework.a(power_tracking_file.c.obj)
- *fill*         0x0000000020003a65        0x3 
+                0x0000000020003a58       0x11 ../../framework/libframework.a(power_tracking_file.c.obj)
+ *fill*         0x0000000020003a69        0x3 
  .bss.last_store_time
-                0x0000000020003a68        0x4 ../../framework/libframework.a(power_tracking_file.c.obj)
+                0x0000000020003a6c        0x4 ../../framework/libframework.a(power_tracking_file.c.obj)
  .bss.__ng_single_current_priority__
-                0x0000000020003a6c        0x1 ../../framework/libframework.a(scheduler.c.obj)
-                0x0000000020003a6c                __ng_single_current_priority__
- *fill*         0x0000000020003a6d        0x3 
+                0x0000000020003a70        0x1 ../../framework/libframework.a(scheduler.c.obj)
+                0x0000000020003a70                __ng_single_current_priority__
+ *fill*         0x0000000020003a71        0x3 
  .bss.__ng_single_m_head__
-                0x0000000020003a70        0x8 ../../framework/libframework.a(scheduler.c.obj)
-                0x0000000020003a70                __ng_single_m_head__
+                0x0000000020003a74        0x8 ../../framework/libframework.a(scheduler.c.obj)
+                0x0000000020003a74                __ng_single_m_head__
  .bss.__ng_single_m_index__
-                0x0000000020003a78      0x148 ../../framework/libframework.a(scheduler.c.obj)
-                0x0000000020003a78                __ng_single_m_index__
+                0x0000000020003a7c      0x148 ../../framework/libframework.a(scheduler.c.obj)
+                0x0000000020003a7c                __ng_single_m_index__
  .bss.__ng_single_m_info__
-                0x0000000020003bc0      0x1ec ../../framework/libframework.a(scheduler.c.obj)
-                0x0000000020003bc0                __ng_single_m_info__
+                0x0000000020003bc4      0x1ec ../../framework/libframework.a(scheduler.c.obj)
+                0x0000000020003bc4                __ng_single_m_info__
  .bss.__ng_single_m_tail__
-                0x0000000020003dac        0x8 ../../framework/libframework.a(scheduler.c.obj)
-                0x0000000020003dac                __ng_single_m_tail__
+                0x0000000020003db0        0x8 ../../framework/libframework.a(scheduler.c.obj)
+                0x0000000020003db0                __ng_single_m_tail__
  .bss.__ng_single_num_registered_tasks__
-                0x0000000020003db4        0x1 ../../framework/libframework.a(scheduler.c.obj)
-                0x0000000020003db4                __ng_single_num_registered_tasks__
+                0x0000000020003db8        0x1 ../../framework/libframework.a(scheduler.c.obj)
+                0x0000000020003db8                __ng_single_num_registered_tasks__
  .bss.current_task_id
-                0x0000000020003db5        0x1 ../../framework/libframework.a(scheduler.c.obj)
-                0x0000000020003db5                current_task_id
- *fill*         0x0000000020003db6        0x2 
+                0x0000000020003db9        0x1 ../../framework/libframework.a(scheduler.c.obj)
+                0x0000000020003db9                current_task_id
+ *fill*         0x0000000020003dba        0x2 
  .bss.last_task_start_time
-                0x0000000020003db8        0x4 ../../framework/libframework.a(scheduler.c.obj)
- .bss.low_power_mode
-                0x0000000020003dbc        0x1 ../../framework/libframework.a(scheduler.c.obj)
+                0x0000000020003dbc        0x4 ../../framework/libframework.a(scheduler.c.obj)
  .bss.scheduler_active
-                0x0000000020003dbd        0x1 ../../framework/libframework.a(scheduler.c.obj)
+                0x0000000020003dc0        0x1 ../../framework/libframework.a(scheduler.c.obj)
  .bss.task_scheduled_after_sched_loop
-                0x0000000020003dbe        0x1 ../../framework/libframework.a(scheduler.c.obj)
-                0x0000000020003dbe                task_scheduled_after_sched_loop
+                0x0000000020003dc1        0x1 ../../framework/libframework.a(scheduler.c.obj)
+                0x0000000020003dc1                task_scheduled_after_sched_loop
  .bss.watchdog_wakeup
-                0x0000000020003dbf        0x1 ../../framework/libframework.a(scheduler.c.obj)
-                0x0000000020003dbf                watchdog_wakeup
+                0x0000000020003dc2        0x1 ../../framework/libframework.a(scheduler.c.obj)
+                0x0000000020003dc2                watchdog_wakeup
+ *fill*         0x0000000020003dc3        0x1 
  .bss._SEGGER_RTT
-                0x0000000020003dc0       0x30 ../../framework/libframework.a(SEGGER_RTT.c.obj)
-                0x0000000020003dc0                _SEGGER_RTT
+                0x0000000020003dc4       0x30 ../../framework/libframework.a(SEGGER_RTT.c.obj)
+                0x0000000020003dc4                _SEGGER_RTT
  .bss._acDownBuffer
-                0x0000000020003df0        0x0 ../../framework/libframework.a(SEGGER_RTT.c.obj)
+                0x0000000020003df4        0x0 ../../framework/libframework.a(SEGGER_RTT.c.obj)
  .bss._acUpBuffer
-                0x0000000020003df0      0x400 ../../framework/libframework.a(SEGGER_RTT.c.obj)
+                0x0000000020003df4      0x400 ../../framework/libframework.a(SEGGER_RTT.c.obj)
  .bss.first_serial_protocol
-                0x00000000200041f0        0x4 ../../framework/libframework.a(serial_protocol.c.obj)
+                0x00000000200041f4        0x4 ../../framework/libframework.a(serial_protocol.c.obj)
  .bss.payload.5876
-                0x00000000200041f4       0xf9 ../../framework/libframework.a(serial_protocol.c.obj)
+                0x00000000200041f8       0xf9 ../../framework/libframework.a(serial_protocol.c.obj)
  .bss.__ng_single_hw_event_scheduled__
-                0x00000000200042ed        0x1 ../../framework/libframework.a(timer.c.obj)
- *fill*         0x00000000200042ee        0x2 
+                0x00000000200042f1        0x1 ../../framework/libframework.a(timer.c.obj)
+ *fill*         0x00000000200042f2        0x2 
  .bss.__ng_single_next_event__
-                0x00000000200042f0        0x4 ../../framework/libframework.a(timer.c.obj)
- .bss.__ng_single_timer_offset__
                 0x00000000200042f4        0x4 ../../framework/libframework.a(timer.c.obj)
+ .bss.__ng_single_timer_offset__
+                0x00000000200042f8        0x4 ../../framework/libframework.a(timer.c.obj)
  .bss.__ng_single_timers__
-                0x00000000200042f8       0xc8 ../../framework/libframework.a(timer.c.obj)
+                0x00000000200042fc       0xc8 ../../framework/libframework.a(timer.c.obj)
  .bss.timer_busy_programming
-                0x00000000200043c0        0x1 ../../framework/libframework.a(timer.c.obj)
- *fill*         0x00000000200043c1        0x3 
+                0x00000000200043c4        0x1 ../../framework/libframework.a(timer.c.obj)
+ *fill*         0x00000000200043c5        0x3 
  .bss.timer_info
-                0x00000000200043c4        0x4 ../../framework/libframework.a(timer.c.obj)
- .bss           0x00000000200043c8        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-nano-mallocr.o)
-                0x00000000200043c8                __malloc_free_list
-                0x00000000200043cc                __malloc_sbrk_start
- .bss           0x00000000200043d0        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libnosys.a(sbrk.o)
+                0x00000000200043c8        0x4 ../../framework/libframework.a(timer.c.obj)
+ .bss           0x00000000200043cc        0x8 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-nano-mallocr.o)
+                0x00000000200043cc                __malloc_free_list
+                0x00000000200043d0                __malloc_sbrk_start
+ .bss           0x00000000200043d4        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libnosys.a(sbrk.o)
  *(COMMON)
- COMMON         0x00000000200043d4        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-reent.o)
-                0x00000000200043d4                errno
-                0x00000000200043d8                . = ALIGN (0x4)
-                0x00000000200043d8                __bss_end__ = .
-                0x00000000200043d8                _ebss = .
+ COMMON         0x00000000200043d8        0x4 /usr/lib/gcc/arm-none-eabi/9.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-reent.o)
+                0x00000000200043d8                errno
+                0x00000000200043dc                . = ALIGN (0x4)
+                0x00000000200043dc                __bss_end__ = .
+                0x00000000200043dc                _ebss = .
 
-.heap           0x00000000200043d8      0x300 load address 0x000000000801ed10
-                0x00000000200043d8                . = ALIGN (0x8)
-                0x00000000200043d8                PROVIDE (end = .)
+.heap           0x00000000200043dc      0x304 load address 0x000000000801ed14
+                0x00000000200043e0                . = ALIGN (0x8)
+ *fill*         0x00000000200043dc        0x4 
+                0x00000000200043e0                PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x00000000200046d8                . = (. + _heap_size)
- *fill*         0x00000000200043d8      0x300 
-                0x00000000200046d8                _eheap = .
+                0x00000000200046e0                . = (. + _heap_size)
+ *fill*         0x00000000200043e0      0x300 
+                0x00000000200046e0                _eheap = .
 OUTPUT(test_function.elf elf32-littlearm)
 LOAD linker stubs
 
