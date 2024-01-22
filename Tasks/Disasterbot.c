@@ -27,7 +27,7 @@ void InitSleepTask(void) {
 	PMIC.CTRL |= 0b10000111;
 	sei();
 	
-	set_sleep_mode(SLEEP_MODE_IDLE);
+	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 	
 	// Enable interrupt on pin 7
 	PORTF.DIRCLR = 0b10000000;
