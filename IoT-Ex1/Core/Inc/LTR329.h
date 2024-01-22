@@ -1,7 +1,9 @@
-#ifndef LTR329_H
-#define LTR329_H
+
+#ifndef INC_LTR329_H_
+#define INC_LTR329_H_
 
 #include "stm32l4xx_hal.h"
+#include <stdint.h>
 
 // LTR-329ALS-01 I2C Address
 #define LTR329_I2C_ADDRESS 0x29 << 1  // Shifted for 8-bit format
@@ -22,6 +24,7 @@
 
 // Function Prototypes
 void LTR329_Init(void);
-void LTR329_Read(uint16_t *ch0, uint16_t *ch1);
+void LTR329_Read_Light(uint16_t *ch0, uint16_t *ch1);
 
-#endif // LTR329_H
+
+#endif /* INC_LTR329_H_ */
