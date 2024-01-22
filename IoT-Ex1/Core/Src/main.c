@@ -217,7 +217,7 @@ int main(void)
 
 		  		  float dust = light0+t;
 
-		  		  HAL_GPIO_TogglePin(GPIOB, LD3_Pin);
+		  		  //HAL_GPIO_TogglePin(GPIOB, LD3_Pin);
 		  		  // SEND TEMP
 		  		  if(counter == 0){
 		  			SHT40_Read(&t, &rh, SHT40_MEAS_HIGH_PRECISION);
