@@ -11,8 +11,8 @@
 
 static int16_t SensorOffset=0;
 static float ReqSpeed;
-static const float LineFollowKp=0.1;
-static float Speed=3000.0;
+static const float LineFollowKp=0.15;
+static float Speed=2950.0;
 
 static TaskHandle_t LineFollowerDirectTaskHandle;
 

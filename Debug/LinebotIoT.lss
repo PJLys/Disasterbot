@@ -10571,16 +10571,16 @@ static void WorkerLineFollowerDirect(void *pvParameters)
     4e0c:	88 0b       	sbc	r24, r24
     4e0e:	99 0b       	sbc	r25, r25
     4e10:	0e 94 6e 32 	call	0x64dc	; 0x64dc <__floatsisf>
-    4e14:	2d ec       	ldi	r18, 0xCD	; 205
-    4e16:	3c ec       	ldi	r19, 0xCC	; 204
-    4e18:	4c ec       	ldi	r20, 0xCC	; 204
-    4e1a:	5d e3       	ldi	r21, 0x3D	; 61
+    4e14:	2a e9       	ldi	r18, 0x9A	; 154
+    4e16:	39 e9       	ldi	r19, 0x99	; 153
+    4e18:	49 e1       	ldi	r20, 0x19	; 25
+    4e1a:	5e e3       	ldi	r21, 0x3E	; 62
     4e1c:	0e 94 23 33 	call	0x6646	; 0x6646 <__mulsf3>
     4e20:	6b 01       	movw	r12, r22
     4e22:	7c 01       	movw	r14, r24
     4e24:	20 e0       	ldi	r18, 0x00	; 0
-    4e26:	30 e8       	ldi	r19, 0x80	; 128
-    4e28:	4b e3       	ldi	r20, 0x3B	; 59
+    4e26:	30 e6       	ldi	r19, 0x60	; 96
+    4e28:	48 e3       	ldi	r20, 0x38	; 56
     4e2a:	55 e4       	ldi	r21, 0x45	; 69
     4e2c:	0e 94 53 31 	call	0x62a6	; 0x62a6 <__addsf3>
     4e30:	4b 01       	movw	r8, r22
@@ -10589,8 +10589,8 @@ static void WorkerLineFollowerDirect(void *pvParameters)
     4e34:	a7 01       	movw	r20, r14
     4e36:	96 01       	movw	r18, r12
     4e38:	60 e0       	ldi	r22, 0x00	; 0
-    4e3a:	70 e8       	ldi	r23, 0x80	; 128
-    4e3c:	8b e3       	ldi	r24, 0x3B	; 59
+    4e3a:	70 e6       	ldi	r23, 0x60	; 96
+    4e3c:	88 e3       	ldi	r24, 0x38	; 56
     4e3e:	95 e4       	ldi	r25, 0x45	; 69
     4e40:	0e 94 52 31 	call	0x62a4	; 0x62a4 <__subsf3>
     4e44:	6b 01       	movw	r12, r22
@@ -15502,8 +15502,8 @@ void InitTerminalTask()
     6fe8:	30 91 03 20 	lds	r19, 0x2003	; 0x802003 <__malloc_heap_start+0x1>
     6fec:	20 93 af 29 	sts	0x29AF, r18	; 0x8029af <__brkval>
     6ff0:	30 93 b0 29 	sts	0x29B0, r19	; 0x8029b0 <__brkval+0x1>
-    6ff4:	20 91 00 20 	lds	r18, 0x2000	; 0x802000 <__data_start>
-    6ff8:	30 91 01 20 	lds	r19, 0x2001	; 0x802001 <__data_start+0x1>
+    6ff4:	20 91 00 20 	lds	r18, 0x2000	; 0x802000 <__DATA_REGION_ORIGIN__>
+    6ff8:	30 91 01 20 	lds	r19, 0x2001	; 0x802001 <__DATA_REGION_ORIGIN__+0x1>
     6ffc:	21 15       	cp	r18, r1
     6ffe:	31 05       	cpc	r19, r1
     7000:	41 f4       	brne	.+16     	; 0x7012 <malloc+0xea>
